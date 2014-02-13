@@ -1,0 +1,441 @@
+play-thread-1-ERROR-[2013-09-07 11:04:44,430]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l4
+Internal Server Error (500) for request POST /newestinfoct/downpagenews?sec.institutionId=106230&sec.secId=201000003747&sec.shareType=A&sec.name=*ST+%E5%9B%BD%E9%80%9A&sec.code=600444&sec.market=SSE
+
+Execution exception (In {module:f10Common}/app/util/MyFastTags.java around line 278)
+ClassCastException occured : play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+
+play.exceptions.JavaExecutionException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:90)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.NewestInfoCt.downPageNews(NewestInfoCt.java:261)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.ClassCastException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at util.MyFastTags._subString(MyFastTags.java:278)
+	at util.MyFastTags$_subString.call(Unknown Source)
+	at /app/views/NewestInfoCt/downPageNews.html.(line:5)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 11:04:47,490]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l5
+Internal Server Error (500) for request POST /newestinfoct/downpagenews?sec.institutionId=106230&sec.secId=201000003747&sec.shareType=A&sec.name=*ST+%E5%9B%BD%E9%80%9A&sec.code=600444&sec.market=SSE
+
+Execution exception (In {module:f10Common}/app/util/MyFastTags.java around line 278)
+ClassCastException occured : play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+
+play.exceptions.JavaExecutionException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:90)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.NewestInfoCt.downPageNews(NewestInfoCt.java:261)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.ClassCastException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at util.MyFastTags._subString(MyFastTags.java:278)
+	at util.MyFastTags$_subString.call(Unknown Source)
+	at /app/views/NewestInfoCt/downPageNews.html.(line:5)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 11:05:05,355]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l6
+Internal Server Error (500) for request POST /newestinfoct/downpagenews?sec.institutionId=106230&sec.secId=201000003747&sec.shareType=A&sec.name=*ST+%E5%9B%BD%E9%80%9A&sec.code=600444&sec.market=SSE
+
+Execution exception (In {module:f10Common}/app/util/MyFastTags.java around line 278)
+ClassCastException occured : play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+
+play.exceptions.JavaExecutionException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:90)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.NewestInfoCt.downPageNews(NewestInfoCt.java:261)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.ClassCastException: play.templates.BaseTemplate$RawData cannot be cast to java.lang.String
+	at util.MyFastTags._subString(MyFastTags.java:278)
+	at util.MyFastTags$_subString.call(Unknown Source)
+	at /app/views/NewestInfoCt/downPageNews.html.(line:5)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 11:10:16,197]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l7
+Internal Server Error (500) for request POST /newestinfoct/downpagenews?sec.institutionId=106230&sec.secId=201000003747&sec.shareType=A&sec.name=*ST+%E5%9B%BD%E9%80%9A&sec.code=600444&sec.market=SSE
+
+Execution exception (In /app/dto/NewsInfoDto.java around line 29)
+StringIndexOutOfBoundsException occured : String index out of range: 10
+
+play.exceptions.JavaExecutionException: String index out of range: 10
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:90)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.NewestInfoCt.downPageNews(NewestInfoCt.java:261)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 10
+	at java.lang.String.substring(Unknown Source)
+	at dto.NewsInfoDto.getRawTitle(NewsInfoDto.java:29)
+	at /app/views/NewestInfoCt/downPageNews.html.(line:5)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 11:10:19,369]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l8
+Internal Server Error (500) for request POST /newestinfoct/downpagenews?sec.institutionId=106230&sec.secId=201000003747&sec.shareType=A&sec.name=*ST+%E5%9B%BD%E9%80%9A&sec.code=600444&sec.market=SSE
+
+Execution exception (In /app/dto/NewsInfoDto.java around line 29)
+StringIndexOutOfBoundsException occured : String index out of range: 10
+
+play.exceptions.JavaExecutionException: String index out of range: 10
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:90)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.NewestInfoCt.downPageNews(NewestInfoCt.java:261)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 10
+	at java.lang.String.substring(Unknown Source)
+	at dto.NewsInfoDto.getRawTitle(NewsInfoDto.java:29)
+	at /app/views/NewestInfoCt/downPageNews.html.(line:5)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 14:58:04,264]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83l9
+Internal Server Error (500) for request GET /reportct/renameornewcond?id=-999&name=%E6%96%B0%E6%90%9C%E7%B4%A2%E6%9D%A1%E4%BB%B61&type=103
+
+Compilation error (In /app/bussiness/ReportService.java around line 182)
+The file /app/bussiness/ReportService.java could not be compiled. Error raised is : Syntax error on token "}", delete this token
+
+play.exceptions.CompilationException: Syntax error on token "}", delete this token
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:478)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:632)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-07 14:58:08,936]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83la
+Internal Server Error (500) for request GET /reportct/renameornewcond?id=-999&name=%E6%96%B0%E6%90%9C%E7%B4%A2%E6%9D%A1%E4%BB%B61&type=103
+
+Compilation error (In /app/bussiness/ReportService.java around line 182)
+The file /app/bussiness/ReportService.java could not be compiled. Error raised is : Syntax error on token "}", delete this token
+
+play.exceptions.CompilationException: Syntax error on token "}", delete this token
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:478)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:632)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-07 14:58:27,283]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lb
+Internal Server Error (500) for request GET /reportct/reportinfo?sp.keywords=%E5%AE%89%E4%BF%A1
+
+Compilation error (In /app/controllers/ReportCt.java around line 57)
+The file /app/controllers/ReportCt.java could not be compiled. Error raised is : The method reportList(ReportParameter, int, boolean) in the type ReportService is not applicable for the arguments (ReportParameter, int)
+
+play.exceptions.CompilationException: The method reportList(ReportParameter, int, boolean) in the type ReportService is not applicable for the arguments (ReportParameter, int)
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:632)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-07 15:04:29,221]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lc
+Internal Server Error (500) for request GET /reportct/exportreport?sp.keywords=%E5%B9%B3%E5%AE%89
+
+Database error (In {module:f10Common}/app/dbutils/CustomDbUtil.java around line 92)
+A database error occured : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 11 Query: SELECT a.REPORTID as reportId,                 a.DECLAREDATE,                 a.TITLE,                 b.INSTITUTIONNAME AS institutionName,                 GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName             FROM qic_db.c_rep_reportinfo_lst a                     LEFT JOIN c_rep_institution_lst b                 ON a.REPORTID = b.REPORTID                     LEFT JOIN c_rep_person_lst f                 ON a.REPORTID = f.REPORTID LEFT JOIN c_rep_security_lst d  ON a.`REPORTID` = d.`REPORTID` where (a.title like '%平安%' or d.symbol like '%平安%') and a.`DECLAREDATE` >= DATE_ADD((SELECT MAX(DECLAREDATE) FROM c_rep_reportinfo_lst), INTERVAL - 1 DAY) GROUP BY a.`REPORTID` ORDER BY a.`DECLAREDATE` desc limit 0,1000   limit 0,20  Parameters: []
+
+play.exceptions.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 11 Query: SELECT a.REPORTID as reportId,
+                a.DECLAREDATE,
+                a.TITLE,
+                b.INSTITUTIONNAME AS institutionName,
+                GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+            FROM qic_db.c_rep_reportinfo_lst a
+                    LEFT JOIN c_rep_institution_lst b
+                ON a.REPORTID = b.REPORTID
+                    LEFT JOIN c_rep_person_lst f
+                ON a.REPORTID = f.REPORTID LEFT JOIN c_rep_security_lst d  ON a.`REPORTID` = d.`REPORTID` where (a.title like '%平安%' or d.symbol like '%平安%') and a.`DECLAREDATE` >= DATE_ADD((SELECT MAX(DECLAREDATE) FROM c_rep_reportinfo_lst), INTERVAL - 1 DAY) GROUP BY a.`REPORTID` ORDER BY a.`DECLAREDATE` desc limit 0,1000 
+ limit 0,20
+ Parameters: []
+	at dbutils.CustomDbUtil.queryCustomDBBeanList(CustomDbUtil.java:94)
+	at bussiness.ReportService.reportList(ReportService.java:184)
+	at controllers.ReportCt.exportReport(ReportCt.java:106)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.sql.SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 11 Query: SELECT a.REPORTID as reportId,
+                a.DECLAREDATE,
+                a.TITLE,
+                b.INSTITUTIONNAME AS institutionName,
+                GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+            FROM qic_db.c_rep_reportinfo_lst a
+                    LEFT JOIN c_rep_institution_lst b
+                ON a.REPORTID = b.REPORTID
+                    LEFT JOIN c_rep_person_lst f
+                ON a.REPORTID = f.REPORTID LEFT JOIN c_rep_security_lst d  ON a.`REPORTID` = d.`REPORTID` where (a.title like '%平安%' or d.symbol like '%平安%') and a.`DECLAREDATE` >= DATE_ADD((SELECT MAX(DECLAREDATE) FROM c_rep_reportinfo_lst), INTERVAL - 1 DAY) GROUP BY a.`REPORTID` ORDER BY a.`DECLAREDATE` desc limit 0,1000 
+ limit 0,20
+ Parameters: []
+	at org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:363)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:350)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:211)
+	at dbutils.CustomDbUtil.queryCustomDBBeanList(CustomDbUtil.java:92)
+	... 8 more
+play-thread-1-ERROR-[2013-09-07 15:09:34,367]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83ld
+Internal Server Error (500) for request GET /reportct/reportinfo?ntToken=1d3ced104bd779612fa80e24e7eead22f0e91d107ac907e01d4f646d1f4fc24e30cb9b87cc15d018a0c72b92126d8d9b
+
+Compilation error (In /app/bussiness/ReportService.java around line 194)
+The file /app/bussiness/ReportService.java could not be compiled. Error raised is : reportList2 cannot be resolved to a variable
+
+play.exceptions.CompilationException: reportList2 cannot be resolved to a variable
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:246)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:676)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:520)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:282)
+	at play.classloading.ApplicationClasses$ApplicationClass.compile(ApplicationClasses.java:281)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:322)
+	at play.Play.detectChanges(Play.java:632)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-07 15:09:58,199]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83le
+Internal Server Error (500) for request GET /reportct/exportreport?sp.keywords=%E5%B9%B3%E5%AE%89
+
+Execution exception (In /app/controllers/ReportCt.java around line 113)
+IndexOutOfBoundsException occured : Index: 0, Size: 0
+
+play.exceptions.JavaExecutionException: Index: 0, Size: 0
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.RangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at controllers.ReportCt.exportReport(ReportCt.java:113)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-07 15:10:47,411]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lf
+Internal Server Error (500) for request GET /reportct/exportreport?sp.keywords=%E5%B9%B3%E5%AE%89
+
+Execution exception (In /app/controllers/ReportCt.java around line 113)
+IndexOutOfBoundsException occured : Index: 0, Size: 0
+
+play.exceptions.JavaExecutionException: Index: 0, Size: 0
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.RangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at controllers.ReportCt.exportReport(ReportCt.java:113)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-07 16:02:34,032]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lg
+Internal Server Error (500) for request GET /messageindexct/messageindex
+
+Template execution error (In /app/views/MessageIndexCt/messageIndex.html around line 48)
+Execution error occured in template /app/views/MessageIndexCt/messageIndex.html. Exception raised was NullPointerException : Cannot get property 'keyWord' on null object.
+
+play.exceptions.TemplateExecutionException: Cannot get property 'keyWord' on null object
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:86)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Cannot get property 'keyWord' on null object
+	at /app/views/MessageIndexCt/messageIndex.html.(line:48)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 16:03:07,694]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lh
+Internal Server Error (500) for request GET /messageindexct/messageindex
+
+Template execution error (In /app/views/MessageIndexCt/messageIndex.html around line 48)
+Execution error occured in template /app/views/MessageIndexCt/messageIndex.html. Exception raised was NullPointerException : Cannot get property 'keyWord' on null object.
+
+play.exceptions.TemplateExecutionException: Cannot get property 'keyWord' on null object
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:86)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Cannot get property 'keyWord' on null object
+	at /app/views/MessageIndexCt/messageIndex.html.(line:48)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 16:05:08,278]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83li
+Internal Server Error (500) for request GET /messageindexct/messageindex
+
+Template execution error (In /app/views/MessageIndexCt/messageIndex.html around line 48)
+Execution error occured in template /app/views/MessageIndexCt/messageIndex.html. Exception raised was NullPointerException : Cannot get property 'keyWord' on null object.
+
+play.exceptions.TemplateExecutionException: Cannot get property 'keyWord' on null object
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:86)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Cannot get property 'keyWord' on null object
+	at /app/views/MessageIndexCt/messageIndex.html.(line:48)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 16:11:29,734]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lj
+Internal Server Error (500) for request GET /messageindexct/messageindex
+
+Template execution error (In /app/views/MessageIndexCt/messageIndex.html around line 48)
+Execution error occured in template /app/views/MessageIndexCt/messageIndex.html. Exception raised was NullPointerException : Cannot get property 'keyWord' on null object.
+
+play.exceptions.TemplateExecutionException: Cannot get property 'keyWord' on null object
+	at play.templates.BaseTemplate.throwException(BaseTemplate.java:86)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:272)
+	at play.templates.Template.render(Template.java:26)
+	at play.templates.GroovyTemplate.render(GroovyTemplate.java:202)
+	at play.mvc.results.RenderTemplate.<init>(RenderTemplate.java:24)
+	at play.mvc.Controller.renderTemplate(Controller.java:661)
+	at play.mvc.Controller.renderTemplate(Controller.java:641)
+	at play.mvc.Controller.render(Controller.java:698)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Cannot get property 'keyWord' on null object
+	at /app/views/MessageIndexCt/messageIndex.html.(line:48)
+	at play.templates.GroovyTemplate.internalRender(GroovyTemplate.java:247)
+	... 13 more
+play-thread-1-ERROR-[2013-09-07 16:20:41,330]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgbm83lk
+Internal Server Error (500) for request GET /reportct/exportreport
+
+Execution exception (In /app/bussiness/ReportService.java around line 49)
+NullPointerException occured : Try to read classCode on null object dto.ReportParameter (bussiness.ReportService.reportList, line 49)
+
+play.exceptions.JavaExecutionException: Try to read classCode on null object dto.ReportParameter (bussiness.ReportService.reportList, line 49)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Try to read classCode on null object dto.ReportParameter (bussiness.ReportService.reportList, line 49)
+	at play.classloading.enhancers.PropertiesEnhancer$FieldAccessor.invokeReadProperty(PropertiesEnhancer.java:213)
+	at bussiness.ReportService.reportList(ReportService.java:49)
+	at controllers.ReportCt.exportReport(ReportCt.java:107)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more

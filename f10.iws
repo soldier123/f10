@@ -1,0 +1,1926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="ecf785b6-8649-4585-ac1d-f67477a03ed9" name="Default" comment="杜邦分析界面显示修改">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
+    </list>
+    <ignored path="f10.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="f10" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="info.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/predictprofitct/info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="52" selection-start="2204" selection-end="2204" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisUtil.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../f10Common/app/util/RedisUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="165" column="57" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.5223642">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinanceAnaCt.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/FinanceAnaCt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="49" selection-start="1405" selection-end="1419" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bussiness/ReportService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="152" column="69" selection-start="5865" selection-end="5865" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DividendCt.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/DividendCt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="39" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RedisKey.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../f10Common/app/util/RedisKey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="131" column="35" selection-start="5174" selection-end="5174" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/DividendCt/info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="41" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RaiseFundOverall.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../f10Common/app/dto/dividend/RaiseFundOverall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="38" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="44" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemDbUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../f10Common/app/dbutils/MemDbUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="130" column="44" selection-start="3788" selection-end="3788" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/public/js/newsjs/messageIndex.js" />
+        <option value="$PROJECT_DIR$/app/bussiness/MessageIndexService.java" />
+        <option value="$PROJECT_DIR$/app/controllers/MessageIndexCt.java" />
+        <option value="$PROJECT_DIR$/app/bussiness/ReportService.java" />
+        <option value="$PROJECT_DIR$/conf/sql/newsInfoSql.xml" />
+        <option value="$PROJECT_DIR$/app/bussiness/NewsInfoService.java" />
+        <option value="$PROJECT_DIR$/app/views/BulletinCt/bulletinInfo.html" />
+        <option value="$PROJECT_DIR$/public/js/newsjs/report.js" />
+        <option value="$PROJECT_DIR$/app/views/MessageIndexCt/messageIndex.html" />
+        <option value="$PROJECT_DIR$/app/views/NewestInfoCt/info.html" />
+        <option value="$PROJECT_DIR$/app/views/MajorMatterCt/info.html" />
+        <option value="$PROJECT_DIR$/app/views/IndustryAnaCt/info.html" />
+        <option value="$PROJECT_DIR$/public/js/global-f10.js" />
+        <option value="$PROJECT_DIR$/public/js/predictprofitct/info.js" />
+        <option value="$PROJECT_DIR$/app/controllers/PredictProfitCt.java" />
+        <option value="$PROJECT_DIR$/app/views/PredictProfitCt/info.html" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_INTERNAL" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="822" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dividendct" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="124" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="123" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="74" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="124" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="119" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="107" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="116" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="781" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="118" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="115" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="124" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="787" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="download.sources.last.used.dir" value="D:/src3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="Html" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\f10workspace\f10\app\views\NewsCt" />
+      <recent name="E:\f10workspace\f10\public\js" />
+      <recent name="E:\f10workspace\f10\public\style" />
+      <recent name="E:\f10workspace\f10\public\images" />
+      <recent name="E:\f10workspace\f10\app\views\MessageIndexCt" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\f10workspace\f10\public\js\newsjs" />
+      <recent name="E:\f10workspace\f10\public\js\treeResource" />
+      <recent name="E:\f10workspace\f10\public\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Remote.f10">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="false" name="f10" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8200" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8200" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Remote.f10" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">C:\Documents and Settings\panzhiwei\Application Data\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10Common" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10Common" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10doc" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10doc" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10Common" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10Common" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\f10workspace\f10doc" />
+          <option name="myCopyRoot" value="E:\f10workspace\f10doc" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecf785b6-8649-4585-ac1d-f67477a03ed9" name="Default" comment="" />
+      <created>1357634778123</created>
+      <updated>1357634778123</updated>
+    </task>
+    <task id="LOCAL-00001" summary="十大股东日期和单位">
+      <created>1357637120106</created>
+      <updated>1357637120106</updated>
+    </task>
+    <task id="LOCAL-00002" summary="离职日期修改">
+      <created>1358315060135</created>
+      <updated>1358315060135</updated>
+    </task>
+    <task id="LOCAL-00003" summary="增加单位">
+      <created>1358315119104</created>
+      <updated>1358315119104</updated>
+    </task>
+    <task id="LOCAL-00004" summary="调整对齐和宽度">
+      <created>1358315157102</created>
+      <updated>1358315157102</updated>
+    </task>
+    <task id="LOCAL-00005" summary="离职日期相关的">
+      <created>1358391964111</created>
+      <updated>1358391964111</updated>
+    </task>
+    <task id="LOCAL-00006" summary="出生年份相关的">
+      <created>1358392042105</created>
+      <updated>1358392042105</updated>
+    </task>
+    <task id="LOCAL-00007" summary="样式图片js">
+      <created>1358400594096</created>
+      <updated>1358400594096</updated>
+    </task>
+    <task id="LOCAL-00008" summary="删除">
+      <created>1358480881093</created>
+      <updated>1358480881093</updated>
+    </task>
+    <task id="LOCAL-00009" summary="研报相关的">
+      <created>1358487682116</created>
+      <updated>1358487682116</updated>
+    </task>
+    <task id="LOCAL-00010" summary="研报相关的">
+      <created>1358494468116</created>
+      <updated>1358494468116</updated>
+    </task>
+    <task id="LOCAL-00011" summary="图片">
+      <created>1358503894104</created>
+      <updated>1358503894104</updated>
+    </task>
+    <task id="LOCAL-00012" summary="....">
+      <created>1358503906981</created>
+      <updated>1358503906981</updated>
+    </task>
+    <task id="LOCAL-00014" summary="删除">
+      <created>1358505325101</created>
+      <updated>1358505325101</updated>
+    </task>
+    <task id="LOCAL-00015" summary="删除">
+      <created>1358505652095</created>
+      <updated>1358505652095</updated>
+    </task>
+    <task id="LOCAL-00016" summary="unchangelist">
+      <created>1358505729093</created>
+      <updated>1358505729093</updated>
+    </task>
+    <task id="LOCAL-00017" summary="研报相关的">
+      <created>1358505943099</created>
+      <updated>1358505943099</updated>
+    </task>
+    <task id="LOCAL-00018" summary="研报id">
+      <created>1358506232102</created>
+      <updated>1358506232102</updated>
+    </task>
+    <task id="LOCAL-00019" summary="。。。">
+      <created>1358507553096</created>
+      <updated>1358507553096</updated>
+    </task>
+    <task id="LOCAL-00020" summary="研报相关的">
+      <created>1358730363110</created>
+      <updated>1358730363110</updated>
+    </task>
+    <task id="LOCAL-00021" summary="加入ligerUI">
+      <created>1358738963098</created>
+      <updated>1358738963098</updated>
+    </task>
+    <task id="LOCAL-00022" summary="增加提示标签js,样式">
+      <created>1358939559111</created>
+      <updated>1358939559111</updated>
+    </task>
+    <task id="LOCAL-00023" summary="图片">
+      <created>1358939689104</created>
+      <updated>1358939689104</updated>
+    </task>
+    <task id="LOCAL-00024" summary="研报相关的">
+      <created>1358939726096</created>
+      <updated>1358939726096</updated>
+    </task>
+    <task id="LOCAL-00025" summary="研报相关的">
+      <created>1359366915110</created>
+      <updated>1359366915110</updated>
+    </task>
+    <task id="LOCAL-00026" summary="研报相关的">
+      <created>1359507708115</created>
+      <updated>1359507708115</updated>
+    </task>
+    <task id="LOCAL-00027" summary="研报">
+      <created>1359511629110</created>
+      <updated>1359511629110</updated>
+    </task>
+    <task id="LOCAL-00028" summary="删除">
+      <created>1359516784107</created>
+      <updated>1359516784107</updated>
+    </task>
+    <task id="LOCAL-00029" summary="删除">
+      <created>1359529350111</created>
+      <updated>1359529350111</updated>
+    </task>
+    <task id="LOCAL-00030" summary="研报">
+      <created>1359531456112</created>
+      <updated>1359531456112</updated>
+    </task>
+    <task id="LOCAL-00031" summary="修改数据库查询">
+      <created>1359603072099</created>
+      <updated>1359603072099</updated>
+    </task>
+    <task id="LOCAL-00032" summary="修改数据库查询">
+      <created>1359603082101</created>
+      <updated>1359603082101</updated>
+    </task>
+    <task id="LOCAL-00033" summary="研报相关的">
+      <created>1359603107106</created>
+      <updated>1359603107106</updated>
+    </task>
+    <task id="LOCAL-00034" summary="研报相关sql">
+      <created>1361181187108</created>
+      <updated>1361181187108</updated>
+    </task>
+    <task id="LOCAL-00035" summary="新建板块树dto">
+      <created>1361181213113</created>
+      <updated>1361181213113</updated>
+    </task>
+    <task id="LOCAL-00036" summary="板块树根节点js文件">
+      <created>1361181262091</created>
+      <updated>1361181262091</updated>
+    </task>
+    <task id="LOCAL-00037" summary="研报订阅板块树js">
+      <created>1361181315101</created>
+      <updated>1361181315101</updated>
+    </task>
+    <task id="LOCAL-00038" summary="研报板块树">
+      <created>1361181341106</created>
+      <updated>1361181341106</updated>
+    </task>
+    <task id="LOCAL-00039" summary="增加查找板块树方法">
+      <created>1361181394101</created>
+      <updated>1361181394101</updated>
+    </task>
+    <task id="LOCAL-00040" summary="研报页面">
+      <created>1361181468100</created>
+      <updated>1361181468100</updated>
+    </task>
+    <task id="LOCAL-00041" summary="板块树id得到股票代码sql">
+      <created>1361512380289</created>
+      <updated>1361512380289</updated>
+    </task>
+    <task id="LOCAL-00042" summary="加入注释">
+      <created>1361512437098</created>
+      <updated>1361512437098</updated>
+    </task>
+    <task id="LOCAL-00043" summary="板块树相关js">
+      <created>1361512461103</created>
+      <updated>1361512461103</updated>
+    </task>
+    <task id="LOCAL-00044" summary="修改方法">
+      <created>1361512742098</created>
+      <updated>1361512742098</updated>
+    </task>
+    <task id="LOCAL-00045" summary="订阅中加入板块搜索">
+      <created>1361512795093</created>
+      <updated>1361512795093</updated>
+    </task>
+    <task id="LOCAL-00046" summary="加入板块树属性">
+      <created>1361512835101</created>
+      <updated>1361512835101</updated>
+    </task>
+    <task id="LOCAL-00047" summary="板块树相关的">
+      <created>1361512869107</created>
+      <updated>1361512869107</updated>
+    </task>
+    <task id="LOCAL-00048" summary="修改数据库查询">
+      <created>1361522301110</created>
+      <updated>1361522301110</updated>
+    </task>
+    <task id="LOCAL-00049" summary="修改数据库查询">
+      <created>1361522533108</created>
+      <updated>1361522533108</updated>
+    </task>
+    <task id="LOCAL-00050" summary="研报相关js">
+      <created>1361524472091</created>
+      <updated>1361524472091</updated>
+    </task>
+    <task id="LOCAL-00051" summary="修改订阅查询">
+      <created>1361528564099</created>
+      <updated>1361528564099</updated>
+    </task>
+    <task id="LOCAL-00052" summary="研报订阅相关的">
+      <created>1361784760177</created>
+      <updated>1361784760177</updated>
+    </task>
+    <task id="LOCAL-00053" summary="研报板块树相关的">
+      <created>1361874465095</created>
+      <updated>1361874465095</updated>
+    </task>
+    <task id="LOCAL-00054" summary="研报板块相关的">
+      <created>1361931660103</created>
+      <updated>1361931660103</updated>
+    </task>
+    <task id="LOCAL-00055" summary="搜索自动完成">
+      <created>1361959092100</created>
+      <updated>1361959092100</updated>
+    </task>
+    <task id="LOCAL-00056" summary="根据关键字查询股票">
+      <created>1361959155114</created>
+      <updated>1361959155114</updated>
+    </task>
+    <task id="LOCAL-00057" summary="根据证券代码或简称自动查找股票">
+      <created>1361959183104</created>
+      <updated>1361959183104</updated>
+    </task>
+    <task id="LOCAL-00058" summary="关键字自动查询">
+      <created>1361959220096</created>
+      <updated>1361959220096</updated>
+    </task>
+    <task id="LOCAL-00059" summary="加autocomplete入样式">
+      <created>1362046205103</created>
+      <updated>1362046205103</updated>
+    </task>
+    <task id="LOCAL-00060" summary="研报订阅自动完成相关的">
+      <created>1362046265100</created>
+      <updated>1362046265100</updated>
+    </task>
+    <task id="LOCAL-00061" summary="加入sql">
+      <created>1362046289105</created>
+      <updated>1362046289105</updated>
+    </task>
+    <task id="LOCAL-00062" summary="研报订阅相关的">
+      <created>1362046339115</created>
+      <updated>1362046339115</updated>
+    </task>
+    <task id="LOCAL-00063" summary="研报页面修改">
+      <created>1362046375107</created>
+      <updated>1362046375107</updated>
+    </task>
+    <task id="LOCAL-00064" summary="加一个变量">
+      <created>1362046395095</created>
+      <updated>1362046395095</updated>
+    </task>
+    <task id="LOCAL-00065" summary="增加板块名称缓存">
+      <created>1362451855136</created>
+      <updated>1362451855136</updated>
+    </task>
+    <task id="LOCAL-00066" summary="根据板块id查询板块名称">
+      <created>1362451905098</created>
+      <updated>1362451905098</updated>
+    </task>
+    <task id="LOCAL-00067" summary="根据板块id查询板块名称">
+      <created>1362451920101</created>
+      <updated>1362451920101</updated>
+    </task>
+    <task id="LOCAL-00068" summary="根据板块id查询板块名称">
+      <created>1362451934104</created>
+      <updated>1362451934104</updated>
+    </task>
+    <task id="LOCAL-00069" summary="根据板块id查询板块名称">
+      <created>1362451961109</created>
+      <updated>1362451961109</updated>
+    </task>
+    <task id="LOCAL-00070" summary="研报订阅相关的">
+      <created>1362533865089</created>
+      <updated>1362533865089</updated>
+    </task>
+    <task id="LOCAL-00071" summary="清空板块树方法">
+      <created>1362535938104</created>
+      <updated>1362535938104</updated>
+    </task>
+    <task id="LOCAL-00072" summary="订阅相关的">
+      <created>1362539301101</created>
+      <updated>1362539301101</updated>
+    </task>
+    <task id="LOCAL-00073" summary="研报相关的">
+      <created>1362551146114</created>
+      <updated>1362551146114</updated>
+    </task>
+    <task id="LOCAL-00074" summary="研报订阅相关的">
+      <created>1362563950102</created>
+      <updated>1362563950102</updated>
+    </task>
+    <task id="LOCAL-00075" summary="修改字段显示">
+      <created>1362723870108</created>
+      <updated>1362723870108</updated>
+    </task>
+    <task id="LOCAL-00076" summary="修改预测表名">
+      <created>1362723921104</created>
+      <updated>1362723921104</updated>
+    </task>
+    <task id="LOCAL-00077" summary="研报相关的">
+      <created>1362730187135</created>
+      <updated>1362730187135</updated>
+    </task>
+    <task id="LOCAL-00078" summary="异步加载子节点">
+      <created>1362968672145</created>
+      <updated>1362968672145</updated>
+    </task>
+    <task id="LOCAL-00079" summary="订阅相关的">
+      <created>1362968689101</created>
+      <updated>1362968689101</updated>
+    </task>
+    <task id="LOCAL-00080" summary="。。。">
+      <created>1363317119105</created>
+      <updated>1363317119105</updated>
+    </task>
+    <task id="LOCAL-00081" summary="表格字段左对齐">
+      <created>1363327267100</created>
+      <updated>1363327267100</updated>
+    </task>
+    <task id="LOCAL-00082" summary="行业研究展开样式">
+      <created>1363571668125</created>
+      <updated>1363571668125</updated>
+    </task>
+    <task id="LOCAL-00083" summary="调整摘要字体颜色">
+      <created>1363685525094</created>
+      <updated>1363685525094</updated>
+    </task>
+    <task id="LOCAL-00084" summary="。。。">
+      <created>1363685551224</created>
+      <updated>1363685551224</updated>
+    </task>
+    <task id="LOCAL-00085" summary="重置点击事件">
+      <created>1363748456107</created>
+      <updated>1363748456107</updated>
+    </task>
+    <task id="LOCAL-00086" summary="摘要图标">
+      <created>1363748516103</created>
+      <updated>1363748516103</updated>
+    </task>
+    <task id="LOCAL-00087" summary="调整样式">
+      <created>1363749808094</created>
+      <updated>1363749808094</updated>
+    </task>
+    <task id="LOCAL-00088" summary="研报分类">
+      <created>1363828228107</created>
+      <updated>1363828228107</updated>
+    </task>
+    <task id="LOCAL-00089" summary="保存和取消位置互换">
+      <created>1363844841091</created>
+      <updated>1363844841091</updated>
+    </task>
+    <task id="LOCAL-00090" summary="订阅列表">
+      <created>1363844872112</created>
+      <updated>1363844872112</updated>
+    </task>
+    <task id="LOCAL-00091" summary="代码整理">
+      <created>1363844908103</created>
+      <updated>1363844908103</updated>
+    </task>
+    <task id="LOCAL-00092" summary="展开树重复的问题">
+      <created>1363921818093</created>
+      <updated>1363921818093</updated>
+    </task>
+    <task id="LOCAL-00093" summary="样式调整">
+      <created>1363933860116</created>
+      <updated>1363933860116</updated>
+    </task>
+    <task id="LOCAL-00094" summary="板块树子节点加载重复的问题">
+      <created>1363934000095</created>
+      <updated>1363934000095</updated>
+    </task>
+    <task id="LOCAL-00095" summary="调整样式">
+      <created>1363934045103</created>
+      <updated>1363934045103</updated>
+    </task>
+    <task id="LOCAL-00096" summary="行业分类">
+      <created>1363935909105</created>
+      <updated>1363935909105</updated>
+    </task>
+    <task id="LOCAL-00097" summary="。。。">
+      <created>1363935926093</created>
+      <updated>1363935926093</updated>
+    </task>
+    <task id="LOCAL-00098" summary="板块树异步加载相关的">
+      <created>1363944399102</created>
+      <updated>1363944399102</updated>
+    </task>
+    <task id="LOCAL-00099" summary="页面样式">
+      <created>1363944440751</created>
+      <updated>1363944440751</updated>
+    </task>
+    <task id="LOCAL-00100" summary="索引">
+      <created>1364375799128</created>
+      <updated>1364375799128</updated>
+    </task>
+    <task id="LOCAL-00101" summary="新建gson方法，会序列化空的值">
+      <created>1364438229099</created>
+      <updated>1364438229099</updated>
+    </task>
+    <task id="LOCAL-00102" summary="保存订阅后清空页面勾选记录">
+      <created>1364445260117</created>
+      <updated>1364445260117</updated>
+    </task>
+    <task id="LOCAL-00103" summary="资讯索引相关的">
+      <created>1364545462102</created>
+      <updated>1364545462102</updated>
+    </task>
+    <task id="LOCAL-00104" summary="资讯索引相关的">
+      <created>1364545505096</created>
+      <updated>1364545505096</updated>
+    </task>
+    <task id="LOCAL-00105" summary="访问服务器地址">
+      <created>1364782815099</created>
+      <updated>1364782815099</updated>
+    </task>
+    <task id="LOCAL-00106" summary="资讯基本检索">
+      <created>1364783955103</created>
+      <updated>1364783955103</updated>
+    </task>
+    <task id="LOCAL-00107" summary="基本搜索">
+      <created>1364784205106</created>
+      <updated>1364784205106</updated>
+    </task>
+    <task id="LOCAL-00108" summary="滚动分页">
+      <created>1364786783104</created>
+      <updated>1364786783104</updated>
+    </task>
+    <task id="LOCAL-00109" summary="104 资讯索引">
+      <created>1364798315111</created>
+      <updated>1364798315111</updated>
+    </task>
+    <task id="LOCAL-00110" summary="资讯索引搜索条件">
+      <created>1364798861103</created>
+      <updated>1364798861103</updated>
+    </task>
+    <task id="LOCAL-00111" summary="资讯索引搜索条件">
+      <created>1364801155102</created>
+      <updated>1364801155102</updated>
+    </task>
+    <task id="LOCAL-00112" summary="资讯索引相关的">
+      <created>1364808630099</created>
+      <updated>1364808630099</updated>
+    </task>
+    <task id="LOCAL-00113" summary="资讯索引相关的">
+      <created>1364866388094</created>
+      <updated>1364866388094</updated>
+    </task>
+    <task id="LOCAL-00114" summary="资讯索引相关的">
+      <created>1364866444104</created>
+      <updated>1364866444104</updated>
+    </task>
+    <task id="LOCAL-00115" summary="资讯索引相关的">
+      <created>1364866524103</created>
+      <updated>1364866524103</updated>
+    </task>
+    <task id="LOCAL-00116" summary="资讯索引相关的">
+      <created>1364896153110</created>
+      <updated>1364896153110</updated>
+    </task>
+    <task id="LOCAL-00117">
+      <created>1364976197111</created>
+      <updated>1364976197111</updated>
+    </task>
+    <task id="LOCAL-00118" summary="资讯索引相关的">
+      <created>1364976267109</created>
+      <updated>1364976267109</updated>
+    </task>
+    <task id="LOCAL-00119" summary="资讯索引相关的">
+      <created>1364983738104</created>
+      <updated>1364983738104</updated>
+    </task>
+    <task id="LOCAL-00120" summary="资讯索引相关的">
+      <created>1364985355108</created>
+      <updated>1364985355108</updated>
+    </task>
+    <task id="LOCAL-00121" summary="资讯索引相关的">
+      <created>1365299516103</created>
+      <updated>1365299516103</updated>
+    </task>
+    <task id="LOCAL-00122" summary="资讯索引相关的">
+      <created>1365314408101</created>
+      <updated>1365314408101</updated>
+    </task>
+    <task id="LOCAL-00123" summary="资讯索引相关的">
+      <created>1365320075106</created>
+      <updated>1365320075106</updated>
+    </task>
+    <task id="LOCAL-00124" summary="资讯索引相关的">
+      <created>1365321753104</created>
+      <updated>1365321753104</updated>
+    </task>
+    <task id="LOCAL-00125" summary="资讯索引相关的">
+      <created>1365323020105</created>
+      <updated>1365323020105</updated>
+    </task>
+    <task id="LOCAL-00126" summary="资讯索引相关的">
+      <created>1365382395100</created>
+      <updated>1365382395100</updated>
+    </task>
+    <task id="LOCAL-00127" summary="资讯索引相关的">
+      <created>1365409810106</created>
+      <updated>1365409810106</updated>
+    </task>
+    <task id="LOCAL-00128" summary="把资源文件都放到一个文件夹">
+      <created>1365415419115</created>
+      <updated>1365415419115</updated>
+    </task>
+    <task id="LOCAL-00129" summary="更改文件路径">
+      <created>1365415448105</created>
+      <updated>1365415448105</updated>
+    </task>
+    <task id="LOCAL-00130" summary="更改文件路径">
+      <created>1365416947102</created>
+      <updated>1365416947102</updated>
+    </task>
+    <task id="LOCAL-00131" summary="资讯索引相关的">
+      <created>1365417297104</created>
+      <updated>1365417297104</updated>
+    </task>
+    <task id="LOCAL-00132" summary="修改文件路径">
+      <created>1365468254100</created>
+      <updated>1365468254100</updated>
+    </task>
+    <task id="LOCAL-00133" summary="关键字搜索">
+      <created>1365469710104</created>
+      <updated>1365469710104</updated>
+    </task>
+    <task id="LOCAL-00134" summary="关键字搜索">
+      <created>1365471358097</created>
+      <updated>1365471358097</updated>
+    </task>
+    <task id="LOCAL-00135" summary="格式整理">
+      <created>1365489187125</created>
+      <updated>1365489187125</updated>
+    </task>
+    <task id="LOCAL-00136" summary="附件查看，新闻和研报点击弹出新窗口，公告是附件下载">
+      <created>1365489280111</created>
+      <updated>1365489280111</updated>
+    </task>
+    <task id="LOCAL-00137" summary="滚动分页">
+      <created>1365493792109</created>
+      <updated>1365493792109</updated>
+    </task>
+    <task id="LOCAL-00138" summary="时间选择">
+      <created>1365572433118</created>
+      <updated>1365572433118</updated>
+    </task>
+    <task id="LOCAL-00139" summary="自定义时间">
+      <created>1365572678109</created>
+      <updated>1365572678109</updated>
+    </task>
+    <task id="LOCAL-00140" summary="资讯索引相关的">
+      <created>1365731622140</created>
+      <updated>1365731622140</updated>
+    </task>
+    <task id="LOCAL-00141" summary="资讯索引相关的">
+      <created>1365756169090</created>
+      <updated>1365756169090</updated>
+    </task>
+    <task id="LOCAL-00142" summary="摘要分段">
+      <created>1366020699160</created>
+      <updated>1366020699160</updated>
+    </task>
+    <task id="LOCAL-00143" summary="板块删除按钮样式">
+      <created>1366093139107</created>
+      <updated>1366093139107</updated>
+    </task>
+    <task id="LOCAL-00144" summary="订阅界面修改">
+      <created>1366167803096</created>
+      <updated>1366167803096</updated>
+    </task>
+    <task id="LOCAL-00145" summary="订阅界面修改">
+      <created>1366187737113</created>
+      <updated>1366187737113</updated>
+    </task>
+    <task id="LOCAL-00146" summary="订阅界面修改">
+      <created>1366190174112</created>
+      <updated>1366190174112</updated>
+    </task>
+    <task id="LOCAL-00147" summary="资讯相关的">
+      <created>1366192804101</created>
+      <updated>1366192804101</updated>
+    </task>
+    <task id="LOCAL-00148" summary="摘要分段">
+      <created>1366252233105</created>
+      <updated>1366252233105</updated>
+    </task>
+    <task id="LOCAL-00149" summary="订阅相关的">
+      <created>1366254841104</created>
+      <updated>1366254841104</updated>
+    </task>
+    <task id="LOCAL-00150" summary="订阅相关的">
+      <created>1366266552105</created>
+      <updated>1366266552105</updated>
+    </task>
+    <task id="LOCAL-00151" summary="updatedate改成declaredate">
+      <created>1366268389103</created>
+      <updated>1366268389103</updated>
+    </task>
+    <task id="LOCAL-00152" summary="updatedate改成declaredate">
+      <created>1366268516110</created>
+      <updated>1366268516110</updated>
+    </task>
+    <task id="LOCAL-00153" summary="高级搜索">
+      <created>1366275449100</created>
+      <updated>1366275449100</updated>
+    </task>
+    <task id="LOCAL-00154" summary="订阅相关的">
+      <created>1366279256116</created>
+      <updated>1366279256116</updated>
+    </task>
+    <task id="LOCAL-00155" summary="资讯索引相关的">
+      <created>1366358577094</created>
+      <updated>1366358577094</updated>
+    </task>
+    <task id="LOCAL-00156" summary="资讯索引相关的">
+      <created>1366360809102</created>
+      <updated>1366360809102</updated>
+    </task>
+    <task id="LOCAL-00157" summary="资讯索引相关的">
+      <created>1366363687105</created>
+      <updated>1366363687105</updated>
+    </task>
+    <task id="LOCAL-00158" summary="资讯索引相关的">
+      <created>1366365274102</created>
+      <updated>1366365274102</updated>
+    </task>
+    <task id="LOCAL-00159" summary="资讯索引相关的">
+      <created>1366683418099</created>
+      <updated>1366683418099</updated>
+    </task>
+    <task id="LOCAL-00160" summary="资讯索引相关的">
+      <created>1367551647096</created>
+      <updated>1367551647096</updated>
+    </task>
+    <task id="LOCAL-00161" summary="公告高级搜索">
+      <created>1367562220163</created>
+      <updated>1367562220163</updated>
+    </task>
+    <task id="LOCAL-00162" summary="资讯索引高级搜索">
+      <created>1367826515128</created>
+      <updated>1367826515128</updated>
+    </task>
+    <task id="LOCAL-00163" summary="页面刷新后滚动条位置记住">
+      <created>1367832601103</created>
+      <updated>1367832601103</updated>
+    </task>
+    <task id="LOCAL-00164" summary="全部报告选中高亮">
+      <created>1367833186103</created>
+      <updated>1367833186103</updated>
+    </task>
+    <task id="LOCAL-00165" summary="订阅名称修改成功enter保存">
+      <created>1367908342103</created>
+      <updated>1367908342103</updated>
+    </task>
+    <task id="LOCAL-00166" summary="订阅名称修改成功enter保存">
+      <created>1367911566092</created>
+      <updated>1367911566092</updated>
+    </task>
+    <task id="LOCAL-00167" summary="高管持股饼图有几个持股显示几个">
+      <created>1368085931107</created>
+      <updated>1368085931107</updated>
+    </task>
+    <task id="LOCAL-00168" summary="分红明细每股分红显示四位小数">
+      <created>1368772188122</created>
+      <updated>1368772188122</updated>
+    </task>
+    <task id="LOCAL-00169" summary="杜邦分析界面显示修改">
+      <created>1369192246132</created>
+      <updated>1369192246132</updated>
+    </task>
+    <task id="LOCAL-00170" summary="重大事项大事提醒、财务分析">
+      <created>1370502039200</created>
+      <updated>1370502039200</updated>
+    </task>
+    <task id="LOCAL-00171" summary="条形图颜色修改">
+      <created>1370761506115</created>
+      <updated>1370761506115</updated>
+    </task>
+    <task id="LOCAL-00172" summary="固定表格头部">
+      <created>1371116669128</created>
+      <updated>1371116669128</updated>
+    </task>
+    <task id="LOCAL-00173" summary="高管离职变动出生年份查不到显示--">
+      <created>1371174709130</created>
+      <updated>1371174709130</updated>
+    </task>
+    <task id="LOCAL-00174" summary="估值分析表格头部固定">
+      <created>1371193771087</created>
+      <updated>1371193771103</updated>
+    </task>
+    <task id="LOCAL-00175" summary="个股新闻和最新公告显示六条">
+      <created>1371194716103</created>
+      <updated>1371194716103</updated>
+    </task>
+    <task id="LOCAL-00176" summary="财务状况更多显示四位小数">
+      <created>1371705765146</created>
+      <updated>1371705765146</updated>
+    </task>
+    <task id="LOCAL-00177" summary="xls文件中小数显示四位">
+      <created>1371782783133</created>
+      <updated>1371782783133</updated>
+    </task>
+    <task id="LOCAL-00178" summary="估值水平窗体伸缩表格同时伸缩">
+      <created>1375260474097</created>
+      <updated>1375260474097</updated>
+    </task>
+    <task id="LOCAL-00179" summary="更多弹出窗固定高和宽">
+      <created>1375870019124</created>
+      <updated>1375870019124</updated>
+    </task>
+    <task id="LOCAL-00180" summary="新闻高级搜索">
+      <created>1378108217137</created>
+      <updated>1378108217137</updated>
+    </task>
+    <task id="LOCAL-00181" summary="研报相关的">
+      <created>1378173784099</created>
+      <updated>1378173784099</updated>
+    </task>
+    <task id="LOCAL-00182" summary="公告订阅相关的">
+      <created>1378188135102</created>
+      <updated>1378188135102</updated>
+    </task>
+    <task id="LOCAL-00183" summary="高级搜索相关的">
+      <created>1378289327107</created>
+      <updated>1378289327107</updated>
+    </task>
+    <task id="LOCAL-00184" summary="新闻资讯相关的">
+      <created>1378342226100</created>
+      <updated>1378342226100</updated>
+    </task>
+    <task id="LOCAL-00185" summary="板块数相关的">
+      <created>1378349488133</created>
+      <updated>1378349488133</updated>
+    </task>
+    <task id="LOCAL-00186" summary="子节点全部取消选择，父节点也不选中">
+      <created>1378351397099</created>
+      <updated>1378351397099</updated>
+    </task>
+    <task id="LOCAL-00187" summary="公告类型树">
+      <created>1378358258094</created>
+      <updated>1378358258094</updated>
+    </task>
+    <task id="LOCAL-00188" summary="只提取股票代码是六位的数据">
+      <created>1378362029094</created>
+      <updated>1378362029094</updated>
+    </task>
+    <task id="LOCAL-00189" summary="新闻滚动分页">
+      <created>1378366156106</created>
+      <updated>1378366156106</updated>
+    </task>
+    <task id="LOCAL-00190" summary="今日头条来源限制显示6个字，多余的用省略号">
+      <created>1378373065103</created>
+      <updated>1378373065103</updated>
+    </task>
+    <task id="LOCAL-00191" summary="不选择订阅直接保存增加提示">
+      <created>1378428224105</created>
+      <updated>1378428224105</updated>
+    </task>
+    <task id="LOCAL-00192" summary="屏蔽backspace键">
+      <created>1378428726102</created>
+      <updated>1378428726102</updated>
+    </task>
+    <task id="LOCAL-00193" summary="公告只显示6位股票的数据">
+      <created>1378431444098</created>
+      <updated>1378431444098</updated>
+    </task>
+    <task id="LOCAL-00194" summary="增加公告提取数据类型注释">
+      <created>1378432123101</created>
+      <updated>1378432123101</updated>
+    </task>
+    <task id="LOCAL-00195" summary="新闻高级搜索">
+      <created>1378441550147</created>
+      <updated>1378441550147</updated>
+    </task>
+    <task id="LOCAL-00196" summary="屏蔽backspace键">
+      <created>1378454786114</created>
+      <updated>1378454786114</updated>
+    </task>
+    <task id="LOCAL-00197" summary="研究报告导出功能修正">
+      <created>1378460865100</created>
+      <updated>1378460865100</updated>
+    </task>
+    <task id="LOCAL-00198" summary="搜索输入框限制最长只能输入38字符">
+      <created>1378520268143</created>
+      <updated>1378520268143</updated>
+    </task>
+    <task id="LOCAL-00199" summary="处理数据中有字符串的问题">
+      <created>1378528008114</created>
+      <updated>1378528008114</updated>
+    </task>
+    <task id="LOCAL-00200" summary="backspace不屏蔽删除">
+      <created>1378536430104</created>
+      <updated>1378536430104</updated>
+    </task>
+    <task id="LOCAL-00201" summary="资讯索引相关的">
+      <created>1378545205095</created>
+      <updated>1378545205095</updated>
+    </task>
+    <task id="LOCAL-00202" summary="修改来源宽度">
+      <created>1378712708298</created>
+      <updated>1378712708298</updated>
+    </task>
+    <task id="LOCAL-00203" summary="杜邦分析界面显示修改">
+      <created>1378718216098</created>
+      <updated>1378718216098</updated>
+    </task>
+    <task id="LOCAL-00204" summary="自动完成输入框空提示">
+      <created>1378720086106</created>
+      <updated>1378720086106</updated>
+    </task>
+    <task id="LOCAL-00205" summary="板块树相关的">
+      <created>1378777541093</created>
+      <updated>1378777541093</updated>
+    </task>
+    <task id="LOCAL-00206" summary="日期比较">
+      <created>1378778225106</created>
+      <updated>1378778225106</updated>
+    </task>
+    <task id="LOCAL-00207" summary="订阅名称长度限制8个字符">
+      <created>1378798492098</created>
+      <updated>1378798492098</updated>
+    </task>
+    <task id="LOCAL-00208" summary="关键字搜索中间可以输入空格">
+      <created>1378800485111</created>
+      <updated>1378800485111</updated>
+    </task>
+    <task id="LOCAL-00209" summary="编辑订阅名称完成后才能编辑其他的">
+      <created>1378865149093</created>
+      <updated>1378865149093</updated>
+    </task>
+    <task id="LOCAL-00210" summary="处理无法删除的问题">
+      <created>1378867266097</created>
+      <updated>1378867266097</updated>
+    </task>
+    <task id="LOCAL-00211" summary="订阅条件全不选情况下itype赋值为{1,2,3}">
+      <created>1378880242103</created>
+      <updated>1378880242119</updated>
+    </task>
+    <task id="LOCAL-00212" summary="处理关键字输入为null情况">
+      <created>1378882003106</created>
+      <updated>1378882003106</updated>
+    </task>
+    <task id="LOCAL-00213" summary="板块树相关的">
+      <created>1378894394109</created>
+      <updated>1378894394109</updated>
+    </task>
+    <task id="LOCAL-00214" summary="多个代码的用,分隔">
+      <created>1378895425106</created>
+      <updated>1378895425106</updated>
+    </task>
+    <task id="LOCAL-00215" summary="分隔符替换成逗号">
+      <created>1378899135099</created>
+      <updated>1378899135099</updated>
+    </task>
+    <task id="LOCAL-00216" summary="板块树相关的">
+      <created>1378901589101</created>
+      <updated>1378901589101</updated>
+    </task>
+    <task id="LOCAL-00217" summary="修改节点宽度">
+      <created>1378956119128</created>
+      <updated>1378956119128</updated>
+    </task>
+    <task id="LOCAL-00218" summary="解决资讯索引直接搜索出错的问题">
+      <created>1378981187097</created>
+      <updated>1378981187097</updated>
+    </task>
+    <task id="LOCAL-00219" summary="自动完成设置滚动条">
+      <created>1379818434140</created>
+      <updated>1379818434140</updated>
+    </task>
+    <task id="LOCAL-00220" summary="直接搜索判断问题">
+      <created>1379841256102</created>
+      <updated>1379841256102</updated>
+    </task>
+    <task id="LOCAL-00221" summary="自动完成每选择一个后清空text">
+      <created>1379901984145</created>
+      <updated>1379901984145</updated>
+    </task>
+    <task id="LOCAL-00222" summary="设置弹出框居中">
+      <created>1379926285095</created>
+      <updated>1379926285095</updated>
+    </task>
+    <task id="LOCAL-00223" summary="单位改为万元">
+      <created>1380449032102</created>
+      <updated>1380449032102</updated>
+    </task>
+    <task id="LOCAL-00224" summary="修改成交量成交金额显示的值（不除以一万）">
+      <created>1382332893138</created>
+      <updated>1382332893138</updated>
+    </task>
+    <task id="LOCAL-00225" summary="修正弹出框滚动条滚动后面页面滚动条一起滚动的问题">
+      <created>1384828798101</created>
+      <updated>1384828798101</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="822" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3833581" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4947994" sideWeight="0.6805556" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45319465" sideWeight="0.504329" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43536404" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21933623" sideWeight="0.5690936" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4309064" sideWeight="0.4906205" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35809806" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963924" sideWeight="0.3922734" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正弹出框滚动条滚动后面页面滚动条一起滚动的问题" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="处理数据中有字符串的问题" />
+    <MESSAGE value="backspace不屏蔽删除" />
+    <MESSAGE value="资讯索引相关的" />
+    <MESSAGE value="修改来源宽度" />
+    <MESSAGE value="自动完成输入框空提示" />
+    <MESSAGE value="日期比较" />
+    <MESSAGE value="订阅名称长度限制8个字符" />
+    <MESSAGE value="关键字搜索中间可以输入空格" />
+    <MESSAGE value="编辑订阅名称完成后才能编辑其他的" />
+    <MESSAGE value="处理无法删除的问题" />
+    <MESSAGE value="订阅条件全不选情况下itype赋值为{1,2,3}" />
+    <MESSAGE value="处理关键字输入为null情况" />
+    <MESSAGE value="多个代码的用,分隔" />
+    <MESSAGE value="分隔符替换成逗号" />
+    <MESSAGE value="板块树相关的" />
+    <MESSAGE value="修改节点宽度" />
+    <MESSAGE value="解决资讯索引直接搜索出错的问题" />
+    <MESSAGE value="自动完成设置滚动条" />
+    <MESSAGE value="杜邦分析界面显示修改" />
+    <MESSAGE value="直接搜索判断问题" />
+    <MESSAGE value="自动完成每选择一个后清空text" />
+    <MESSAGE value="设置弹出框居中" />
+    <MESSAGE value="单位改为万元" />
+    <MESSAGE value="修改成交量成交金额显示的值（不除以一万）" />
+    <MESSAGE value="修正弹出框滚动条滚动后面页面滚动条一起滚动的问题" />
+  </component>
+  <component name="VssConfiguration">
+    <option name="CLIENT_PATH" value="" />
+    <option name="SRCSAFEINI_PATH" value="" />
+    <option name="USER_NAME" value="" />
+    <option name="PWD" value="" />
+    <CheckoutOptions>
+      <option name="COMMENT" value="" />
+      <option name="DO_NOT_GET_LATEST_VERSION" value="false" />
+      <option name="REPLACE_WRITABLE" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckoutOptions>
+    <CheckinOptions>
+      <option name="COMMENT" value="" />
+      <option name="KEEP_CHECKED_OUT" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckinOptions>
+    <AddOptions>
+      <option name="STORE_ONLY_LATEST_VERSION" value="false" />
+      <option name="CHECK_OUT_IMMEDIATELY" value="false" />
+    </AddOptions>
+    <UndocheckoutOptions>
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="REPLACE_LOCAL_COPY" value="2" />
+      <option name="RECURSIVE" value="false" />
+    </UndocheckoutOptions>
+    <GetOptions>
+      <option name="REPLACE_WRITABLE" value="0" />
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
+      <option name="ANSWER_POSITIVELY" value="false" />
+      <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
+    </GetOptions>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/views/IndustryAnaCt/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="90" selection-start="6637" selection-end="6637" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PredictProfitCt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="99" selection-start="1902" selection-end="1902" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/PredictProfitCt/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="62" selection-start="3030" selection-end="3030" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/ReportCt/reportInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="73" selection-start="6243" selection-end="6243" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/dividendct/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.08146965" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ReportCt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="85" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/predictprofitct/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="52" selection-start="2204" selection-end="2204" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bussiness/ReportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="69" selection-start="5865" selection-end="5865" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/DividendCt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="39" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../f10Common/app/util/RedisKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="35" selection-start="5174" selection-end="5174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/DividendCt/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="41" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../f10Common/app/dbutils/MemDbUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="44" selection-start="3788" selection-end="3788" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../f10Common/app/dto/dividend/RaiseFundOverall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="38" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="44" selection-start="742" selection-end="742" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/FinanceAnaCt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="49" selection-start="1405" selection-end="1419" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../f10Common/app/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="57" selection-start="4596" selection-end="4596" vertical-scroll-proportion="0.5223642">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>f10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jdk</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

@@ -1,0 +1,10 @@
+#{ifnot  org.apache.commons.lang.StringUtils.isBlank(reportDetailDto.summary) }
+<div><a href="javascript:void(0);" onclick="javascript:exportFile('@{MessageCombinationCt.exportReportSummary(reportDetailDto.reportId)}')" class="tooltip" ><img src="@{'/public/images/fontword.png'}" style=" width:22px; height:23px; margin:1px auto; float:right;"></a></div>
+#{/ifnot}
+<h1 class="cont_title">研报摘要：</h1>
+<br>
+<div class="sub_title">
+#{if reportDetailDto.summary!=null&&!"".equals(reportDetailDto.summary)}
+${reportDetailDto.summary.nl2br()}
+#{/if}
+</div>

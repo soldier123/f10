@@ -1,0 +1,424 @@
+#{extends 'f10Main.html'/}
+#{set title:'财务分析'/}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/jRating/jRating.jquery.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/highChart/js/highcharts-more.js'}" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#FinanceAna").addClass('sub_menu_current');
+        tableBgFunc("tbl_common", "#000"); //表格隔行换色
+        //tabMenu("menuTab", "subCont", "display", {"2":treeRenderFun}); //定义第3个tab的回调函数
+        tabMenu("menuTab", "subCont", "display"); //定义第3个tab的回调函数
+    });
+
+    //财务全景
+    var fvItemStr = ${fvItemStr.raw()}; //项名
+    var fvJsonData = ${fvJsonData.raw()}; //项值
+
+    var mainIndexRoute = #{jsRoute @FinanceAnaCt.mainIndexDivContent() /}
+
+    //主要财务指标
+    $("#mainYearSel").change(function(){
+        var $this = $(this);
+        var year = $this.val();
+        var param = {
+            scode:"${sec.code}",
+            year:$this.val(),
+            isFirstYear:$this[0].selectedIndex == 0
+        };
+        $("#mainIndexDiv").load(mainIndexRoute.url(), param);
+    });
+
+    $("#mainYearSel").trigger("change");
+
+    $("#reportSelect").change(function(){ //年度选择变化
+        $("#financeDataTypeList > a.rptypeSelected").trigger("click");
+    });
+
+    $("#financeDataTypeList > a").click(function(){
+        $("#financeDataTypeList > a.rptypeSelected").removeClass("rptypeSelected");
+        var $this = $(this);
+        $this.addClass("rptypeSelected");
+        var funType = $this.attr("data-ftype");
+        if(funType == "balance"){ //资产负债表
+            $("#selTypeDiv").show();
+            $("#selTypeDiv a.hasSingle").hide();
+            if($("#selTypeDiv a.rptypeSelected").hasClass("hasSingle")){
+                $("#selTypeDiv a.rptypeSelected").removeClass("rptypeSelected");
+                $("#selTypeDiv a").first().addClass("rptypeSelected");
+            }
+            $("#selTypeDiv a.rptypeSelected").trigger("click");
+        }else if(funType == "income" || funType == "cashflow"){
+            $("#selTypeDiv").show();
+            $("#selTypeDiv a.byItem").show();
+            $("#selTypeDiv a.rptypeSelected").trigger("click");
+        }else if(funType == "zcfzb" || funType == "llb"){
+            $("#selTypeDiv").hide(); //把子类型的选择就隐藏掉
+            //处理报表附注
+            var route ="";
+            if(funType == "zcfzb"){
+                route = #{jsRoute @FinanceAnaCt.zcfzbfz() /};
+            }else if(funType == "llb"){
+                route = #{jsRoute @FinanceAnaCt.llbfz() /};
+            }else{
+                alert("不知道的类型处理");
+                return ;
+            }
+            var $yearSel = $("#reportSelect");
+            var param = {
+                scode:"${sec.code}",
+                year:$yearSel.val()
+            };
+            $("#financeDataDiv").load(route.url(), param);
+        }
+
+    });
+
+    $("#selTypeDiv a.byItem").click(function(){
+        $("#selTypeDiv a.rptypeSelected").removeClass("rptypeSelected");
+        var $this = $(this);
+        $this.addClass("rptypeSelected");
+        var selType = $this.attr("data-selType"); //查询类型
+        var route = "";
+        if(selType == "byReportDate"){
+            route = #{jsRoute @FinanceAnaCt.financeDataDivByReportDate() /};
+        }else if(selType == "byYear"){
+            route = #{jsRoute @FinanceAnaCt.financeDataDivByYear() /};
+        }else if(selType == "bySingle"){
+            route = #{jsRoute @FinanceAnaCt.financeDataDivBySingle() /};
+        }else{
+            alert("不知道的类型处理");
+            return ;
+        }
+
+        var $yearSel = $("#reportSelect");
+        var typeVal = $("#financeDataTypeList > a.rptypeSelected").attr("data-type");
+        var param = {
+            scode:"${sec.code}",
+            year:$yearSel.val(),
+            isFirstYear:$yearSel[0].selectedIndex == 0,
+            type : typeVal
+        };
+        $("#financeDataDiv").load(route.url(), param);
+    });
+
+    $("#reportSelect").trigger("change"); //财务简表时间选择变化
+
+    $(function(){
+        $("#reportType").change(function(){ //公告选择
+            var $this = $(this);
+            var route = #{jsRoute @FinanceAnaCt.reportList() /};
+            var param = {
+                scode:"${sec.code}",
+                reportType:$this.val()
+            };
+            $("#reportList").load(route.url(), param);
+        });
+
+        $("#reportType").trigger("change");
+    });
+
+    $(function(){
+        $(".exemple2").jRating(
+                {
+                    length : 5,
+                    rateMax : 5,
+                    decimalLength : 1,
+                    isDisabled : true,
+                    bigStarsPath:"/public/js/jRating/icons/stars.png",
+                    smallStarsPath:"/public/js/jRating/icons/small.png"
+                }
+        );
+    });
+
+
+</script>
+<script src="@{'/public/js/financeanact/info.js'}" type="text/javascript" charset="utf-8"></script>
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list" style="display: none;">
+    <iframe id="subPageIframe" src="#" frameborder="0" width="100%"></iframe>
+</div>
+#{/set}
+
+#{set 'moreStyles'}
+<link href="@{'/public/js/jRating/jRating.jquery.css'}" rel="stylesheet" type="text/css">
+<style type="text/css">
+.fuzuSel{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+.fuzuSel li{
+    float: left;
+}
+.exemple2{
+    display: inline-block;
+    float: right;
+}
+</style>
+
+#{/set}
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <h2 class="h2_title h2_finance"><span>财务全景</span></h2>
+
+            <div class="level_scroll_wrap">
+            <div class="level_scroll">
+            <div class="finance_top">
+                <div id="finFullViewChart" style="float:left;width: 700px;height: 300px;padding: 10px 0 20px 5px;"></div>
+                <div style="float: left; margin: 15px 0 5px 30px">
+                    <dl>
+                        <dd>报表日期:#{emVF fv?.shortDebtRepaymentDate /}</dd>
+                        <dd>盈利能力:<div class="exemple2" id="#{emVF2 fv?.earnPowerCapacityStep /}_6"></div></dd>
+                        <dd>经营能力:<div class="exemple2" id="#{emVF2 fv?.operateCapacityStep /}_6"></div></dd>
+                        <dd>投资效益:<div class="exemple2" id="#{emVF2 fv?.roiCapacityStep /}_6"></div></dd>
+                        <dd>短期偿债能力:<div class="exemple2" id="#{emVF2 fv?.shortDebtRepaymentStep /}_6"></div></dd>
+                        <dd>长期偿债能力:<div class="exemple2" id="#{emVF2 fv?.longDebtRepaymentStep /}_6"></div></dd>
+                        <dd>成长能力:<div class="exemple2" id="#{emVF2 fv?.developmentCapacityStep /}_6"></div></dd>
+                        <dd>综合能力:<div class="exemple2" id="#{emVF2 fv?.comprehensiveCapacity(), f:'#,##0.00' /}_6"></div></dd>
+                    </dl>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="finance_tab">
+                <ul id="menuTab" class="tab_li" style="clear: both">
+                    <li class="display">主要指标</li>
+                    <li>财务简表</li>
+                    <li>杜邦分析</li>
+                    <li>财务报表下载</li>
+                </ul>
+                <ul id="subCont">
+                    <li class="display">
+                    <!--主要指标 Begin-->
+                        <div class="main_index">
+                            <label>报告期:</label>
+                            <select name="mainYearSel" id="mainYearSel">
+                            #{list items:yearList, as:'y'}
+                                <option value="${y}">${y}</option>
+                            #{/list}
+                            </select>
+                            <span class="three_cur">
+                                <a href="#mainTable1">每股指标</a>
+                                <a href="#mainTable2">盈利能力</a>
+                                <a href="#mainTable3">偿债能力</a>
+                            </span>
+                            <div class="three_table" id="mainIndexDiv"></div> *{主要财务指标显示}*
+                        </div>
+                        <!--主要指标 End-->
+                    </li>
+                    <li>
+                        <!--财务简表 Begin-->
+                        <div class="main_index">
+                            <label for="reportSelect">报告期:</label>
+                            <select name="reportSelect" id="reportSelect">
+                            #{list items:yearList, as:'y'}
+                                <option value="${y}">${y}</option>
+                            #{/list}
+                            </select>
+                            *{选择财务报表类型}*
+                            <span class="three_cur" id="financeDataTypeList">
+                                <a href="javascript:;" data-ftype="balance" data-fid="fin_1_div" data-type="balanceSheet" class="rptypeSelected">资产负债表</a>
+                                <a href="javascript:;" data-ftype="income" data-fid="fin_1_div" data-type="incomeSheet">利润表</a>
+                                <a href="javascript:;" data-ftype="cashflow" data-fid="fin_1_div" data-type="cashFlowSheet">现金流量表</a>
+                                *{<a href="javascript:;" data-ftype="zcfzb" data-fid="fin_2_div">资产负债表附注</a>
+                                <a href="javascript:;" data-ftype="llb" data-fid="fin_3_div">利润表附注</a>}*
+                            </span>
+                            <div class="three_table finshow" id="fin_1_div">
+                                <div id="selTypeDiv">
+                                    <span><a class="byItem rptypeSelected" href="javascript:;" data-selType="byReportDate">按报告期浏览</a></span>
+                                    <span><a class="byItem" href="javascript:;" data-selType="byYear">按年度浏览</a></span>
+                                    <span><a class="byItem hasSingle" href="javascript:;" data-selType="bySingle">按单季度浏览</a></span>
+                                </div>
+                                <div id="financeDataDiv"></div>
+                            </div>
+                        </div>
+                        <!--财务简表 End-->
+                    </li>
+                    <li>
+                        <!--杜邦分析图表-->
+                        *{<div id="dupontChart" style="background:#f2f2f2; margin-right: 30px;"></div>}*
+                        <div class="dbang_bg_wrap">
+                            <div class="dbang_bg">
+                                <div class="first">
+                                    <p>净资产收益率%</p>
+                                    <p>#{emVF2 dupontVal.getRoe(sec), f:'#,##0.00', scale:2 /}</p>
+                                </div>
+                                <div class="second">
+                                    <div class="second1">
+                                        <p>总资产净利率%</p>
+                                        <p>#{emVF2 dupontVal.getJroa(sec), f:'#,##0.00', scale:2 /}</p>
+                                    </div>
+                                    <div class="second2">
+                                        <p>权益乘数</p>
+                                        <p>#{emVF2 dupontVal.getEm(), f:'#,##0.00', scale:0 /}</p>
+                                    </div>
+                                    <div class="second3">
+                                        <p>资产/权益</p>
+                                    </div>
+                                    <div class="second4">
+                                        <p>1 / (1 - #{emVF2 dupontVal.lev, f:'#,##0.00', scale:0 /})</p>
+                                    </div>
+                                </div>
+                                <div class="third">
+                                    <div class="third1">
+                                        <p>销售净利率%</p>
+                                        <p>#{emVF2 dupontVal.getNetProfitMargain(), f:'#,##0.00', scale:2 /}</p>
+                                    </div>
+                                    <div class="third2">
+                                        <p>总资产周转率%</p>
+                                        <p>#{emVF2 dupontVal.getAssetTurnoverRatio(sec), f:'#,##0.00', scale:2 /}</p>
+                                    </div>
+                                </div>
+                                <div class="fourth">
+                                    <div class="fourth1">
+                                        <p>净利润</p>
+                                        <p>#{emVF2 dupontVal.getNetProfit(), f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fourth2">
+                                        <p>销售收入</p>
+                                        <p>#{emVF2 dupontVal.salesIncome, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fourth3">
+                                        <p>销售收入</p>
+                                        <p>#{emVF2 dupontVal.salesIncome, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fourth4">
+                                        <p>资产总额</p>
+                                        <p> #{emVF2 dupontVal.getTotalAssets(sec), f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                </div>
+                                <div class="fiveth">
+                                    <div class="fiveth1">
+                                        <p>销售收入</p>
+                                        <p>#{emVF2 dupontVal.salesIncome, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fiveth2">
+                                        <p>全部成本</p>
+                                        <p>#{emVF2 dupontVal.getAllCost(), f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fiveth3">
+                                        <p>其它利润</p>
+                                        <p>#{emVF2 dupontVal.otherIncome, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fiveth4">
+                                        <p>所得税</p>
+                                        <p>#{emVF2 dupontVal.incomeTax, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="fiveth5">
+                                        <p>长期资产</p>
+                                        <p>
+                                            #{if sec.isFinancial()}--#{/if}
+                                            #{else} #{emVF2 dupontVal.livedAssets, f:'#,##0.00', scale:-4 /} #{/else}
+                                        </p>
+                                    </div>
+                                    <div class="fiveth6">
+                                        <p>流动资产</p>
+                                        <p>
+                                            #{if sec.isFinancial()}--#{/if}
+                                            #{else} #{emVF2 dupontVal.getFloatingAssets(), f:'#,##0.00', scale:-4 /} #{/else}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="sixth">
+                                    <div class="sixth1">
+                                        <p>主营业务成本</p>
+                                        <p>#{emVF2 dupontVal.mainBusinessCost, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth2">
+                                        <p>销售费用</p>
+                                        <p>#{emVF2 dupontVal.sellingCost, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth3">
+                                        <p>管理费用</p>
+                                        <p>#{emVF2 dupontVal.adminCost, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth4">
+                                        <p>财务费用</p>
+                                        <p>#{emVF2 dupontVal.financialCost, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth5">
+                                        <p>其它成本</p>
+                                        <p>#{emVF2 dupontVal.otherCost, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth6">
+                                        <p>现金有价证券</p>
+                                        <p>#{emVF2 dupontVal.cashSecurities, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth7">
+                                        <p>应收账款</p>
+                                        <p>#{emVF2 dupontVal.accountsReceivable, f:'#,##0.00', scale:-4 /}</p>
+                                    </div>
+                                    <div class="sixth8">
+                                        <p>存货</p>
+                                        <p>
+                                            #{if sec.isFinancial()} -- #{/if}
+                                            #{else} #{emVF2 dupontVal.inventory, f:'#,##0.00', scale:-4 /} #{/else}
+                                        </p>
+                                    </div>
+                                    <div class="sixth9">
+                                        <p>其它流动资产</p>
+                                        <p>
+                                            #{if sec.isFinancial()} -- #{/if}
+                                            #{else} #{emVF2 dupontVal.otherCurrentAssets, f:'#,##0.00', scale:-4 /} #{/else}
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                                                    </div>
+                                                    <script>
+                        							(function(){
+
+                                                        var dbWidth = function(){
+                                                            var clientWidth = document.documentElement.clientWidth,
+                                                                dbWidth = clientWidth - 280;
+                                                            return dbWidth;
+                                                        };
+                                                        $(".dbang_bg_wrap").width(dbWidth);
+                                                        window.onresize = function(){
+                                                            $(".dbang_bg_wrap").width(dbWidth);
+                                                        }
+
+                                                    })();
+                                                    </script>
+                    </li>
+
+                    <li>
+                        <div>
+                            <span>全文类型</span>
+                            <select name="reportType" id="reportType">
+                                <option value="1">一季报</option>
+                                <option value="2">中报</option>
+                                <option value="3">三季报</option>
+                                <option value="4">年报</option>
+                            </select>
+                            <div id="reportList"></div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--main End-->
+
+<style type="text/css">
+    .rptypeSelected{ background:none; color: #daa520; font-weight: bold;}
+    .body{ overflow:inherit;}
+    .submenu, .main, .extra, .folder{margin-bottom:-100px; padding-bottom:100px;min-height:120px;}
+</style>

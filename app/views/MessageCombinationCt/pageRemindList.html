@@ -1,0 +1,17 @@
+#{list items:remindList, as:'item'}
+<tr>
+    <td>#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+    <td>
+        #{ifnot org.apache.commons.lang.StringUtils.isBlank(item.symbol)} [#{emVF item.symbol/}]#{/ifnot}#{emVF item.shortName/}
+    </td>
+    <td>
+        <a href="javascript:void(0);" class="remindDialog"
+           eventType="#{emVF item.eventType/}"
+           symbol="#{emVF item.symbol/}"
+           shortName="#{emVF item.shortName/}"
+           content="#{emVF item.content/}"
+           declareDate="#{emVF item.declareDate/}">
+            #{emVF item.eventType /}
+        </a>
+</tr>
+#{/list}

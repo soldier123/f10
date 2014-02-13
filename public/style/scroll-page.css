@@ -1,0 +1,19 @@
+
+.p_loading span {
+    padding: 0 0 0 18px;
+}
+.p_loading span {
+    background: url("images/loading.gif") no-repeat 0 1px;
+    padding: 0 0 0 20px;
+    line-height: 18px;
+    height: 18px;
+    display: inline-block;
+
+}
+
+.p_loading {
+  margin: 2px 0 17px;
+  text-align: center;
+  padding: 20px 0 10px;
+  display: block;
+}

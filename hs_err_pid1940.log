@@ -1,0 +1,223 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (signature.cpp:67), pid=1940, tid=2660
+#  fatal error: expecting (
+#
+# JRE version: 6.0_37-b06
+# Java VM: Java HotSpot(TM) Client VM (20.12-b01 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x16cd4000):  VMThread [stack: 0x16d60000,0x16db0000] [id=2660]
+
+Stack: [0x16d60000,0x16db0000],  sp=0x16daefa0,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13471a]
+V  [jvm.dll+0x12f19d]
+V  [jvm.dll+0x110dee]
+V  [jvm.dll+0x75bf2]
+V  [jvm.dll+0x76abe]
+V  [jvm.dll+0x7710c]
+V  [jvm.dll+0x77328]
+V  [jvm.dll+0x77435]
+V  [jvm.dll+0x4ef6b]
+V  [jvm.dll+0x4f1fd]
+V  [jvm.dll+0x4f57b]
+V  [jvm.dll+0x77ab6]
+V  [jvm.dll+0x8b8f7]
+V  [jvm.dll+0xf93b4]
+V  [jvm.dll+0xf94d2]
+V  [jvm.dll+0x116c68]
+V  [jvm.dll+0x11702f]
+V  [jvm.dll+0x66949]
+V  [jvm.dll+0x60cf0]
+V  [jvm.dll+0x5b052]
+V  [jvm.dll+0x60748]
+V  [jvm.dll+0x5835b]
+V  [jvm.dll+0x13c087]
+V  [jvm.dll+0x11e543]
+V  [jvm.dll+0x11d80e]
+V  [jvm.dll+0x11db32]
+V  [jvm.dll+0x11df42]
+V  [jvm.dll+0x14209c]
+C  [msvcr71.dll+0x9565]  endthreadex+0xa0
+C  [kernel32.dll+0x2481f]  GetModuleHandleA+0xdf
+
+JavaThread 0x1719a800 (nid = 4412) was being processed
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::new_type_array Runtime1 stub
+J  java.util.Arrays.copyOfRange([CII)[C
+J  java.lang.String.<init>([CII)V
+J  play.classloading.enhancers.PropertiesEnhancer$FieldAccessor.invokeReadProperty(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;
+J  bussiness.MessageIndexService.retriveAnnoucemnetClassifyId(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+j  bussiness.MessageIndexService.getRealAnnouncementClassifyId(Ljava/util/List;Ljava/util/List;)Lplay/libs/F$T2;+143
+j  bussiness.MessageIndexService.doAdvanceSearch(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;+245
+j  bussiness.MessageIndexService.advanceInfoSearch(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;+138
+j  controllers.MessageIndexCt.doAdvanceInfoSearch(JLdto/CommonSearchDto;I)Ljava/util/List;+143
+j  controllers.MessageIndexCt.getMessageIndexList(Ldto/CommonSearchDto;I)Lplay/libs/F$T2;+214
+j  controllers.MessageIndexCt.messageIndex(Ldto/CommonSearchDto;I)V+205
+j  sun.reflect.GeneratedMethodAccessor579.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+106
+J  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  play.mvc.ActionInvoker.invokeWithContinuation(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+234
+J  play.mvc.ActionInvoker.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+40
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;)Ljava/lang/Object;+2
+j  play.mvc.ActionInvoker.invoke(Lplay/mvc/Http$Request;Lplay/mvc/Http$Response;)V+341
+j  play.server.PlayHandler$NettyInvocation.execute()V+64
+j  play.Invoker$Invocation.run()V+31
+j  play.server.PlayHandler$NettyInvocation.run()V+16
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask$Sync.innerRun()V+30
+j  java.util.concurrent.FutureTask.run()V+4
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Ljava/util/concurrent/ScheduledThreadPoolExecutor$ScheduledFutureTask;)V+1
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V+15
+j  java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Ljava/lang/Runnable;)V+59
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+28
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+VM_Operation (0x1750f188): GenCollectForAllocation, mode: safepoint, requested by thread 0x1719a800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x17e65400 JavaThread "New I/O  worker #28" daemon [_thread_blocked, id=1388, stack(0x19980000,0x199d0000)]
+  0x17bbbc00 JavaThread "New I/O  worker #27" daemon [_thread_blocked, id=5992, stack(0x19930000,0x19980000)]
+  0x17e0b400 JavaThread "New I/O  worker #26" daemon [_thread_blocked, id=1888, stack(0x198e0000,0x19930000)]
+  0x17c14800 JavaThread "AsyncHttpClient-Reaper" daemon [_thread_blocked, id=4668, stack(0x19890000,0x198e0000)]
+  0x17c14400 JavaThread "AsyncHttpClient-Reaper" daemon [_thread_blocked, id=3880, stack(0x19840000,0x19890000)]
+  0x17c32c00 JavaThread "New I/O  worker #25" daemon [_thread_blocked, id=5552, stack(0x187f0000,0x18840000)]
+  0x18899000 JavaThread "Timer-12" daemon [_thread_blocked, id=5000, stack(0x186b0000,0x18700000)]
+  0x18075400 JavaThread "jobs-thread-1" [_thread_blocked, id=3792, stack(0x18660000,0x186b0000)]
+  0x1824e400 JavaThread "Timer-11" daemon [_thread_blocked, id=4636, stack(0x17600000,0x17650000)]
+  0x18019400 JavaThread "net.sf.ehcache.CacheManager@a5d8f8" daemon [_thread_blocked, id=4212, stack(0x175b0000,0x17600000)]
+  0x17f47400 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=5848, stack(0x18750000,0x187a0000)]
+  0x17b2d800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4616, stack(0x18610000,0x18660000)]
+  0x17b2c000 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4612, stack(0x185c0000,0x18610000)]
+  0x17b2b400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4608, stack(0x18570000,0x185c0000)]
+  0x172b7000 JavaThread "Timer-3" daemon [_thread_blocked, id=4604, stack(0x18520000,0x18570000)]
+  0x17b4f400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4600, stack(0x184d0000,0x18520000)]
+  0x171e7800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4596, stack(0x18480000,0x184d0000)]
+  0x171e7400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4592, stack(0x18430000,0x18480000)]
+  0x171d5400 JavaThread "Timer-2" daemon [_thread_blocked, id=4588, stack(0x183e0000,0x18430000)]
+  0x177f9c00 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4584, stack(0x18390000,0x183e0000)]
+  0x17a37400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4580, stack(0x18340000,0x18390000)]
+  0x177b1400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4576, stack(0x176a0000,0x176f0000)]
+  0x17b50c00 JavaThread "Timer-1" daemon [_thread_blocked, id=4572, stack(0x17650000,0x176a0000)]
+  0x17b19400 JavaThread "New I/O  worker #4" [_thread_blocked, id=4480, stack(0x17560000,0x175b0000)]
+  0x17d04800 JavaThread "New I/O  worker #3" [_thread_blocked, id=4468, stack(0x17510000,0x17560000)]
+  0x1719a800 JavaThread "play-thread-1" [_thread_blocked, id=4412, stack(0x174c0000,0x17510000)]
+  0x17b7c400 JavaThread "New I/O  worker #2" [_thread_blocked, id=4340, stack(0x17470000,0x174c0000)]
+  0x17bde000 JavaThread "New I/O  worker #1" [_thread_blocked, id=4336, stack(0x17420000,0x17470000)]
+  0x00309400 JavaThread "DestroyJavaVM" [_thread_blocked, id=3392, stack(0x00910000,0x00960000)]
+  0x17bca000 JavaThread "New I/O server boss #1 ([id: 0x9680192f, /0.0.0.0:9200])" [_thread_in_native, id=1348, stack(0x173d0000,0x17420000)]
+  0x16d29800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3480, stack(0x170c0000,0x17110000)]
+  0x16d1e000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=2180, stack(0x17070000,0x170c0000)]
+  0x16d17400 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=2080, stack(0x17020000,0x17070000)]
+  0x16d01800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=3624, stack(0x16fd0000,0x17020000)]
+  0x16ced400 JavaThread "Attach Listener" daemon [_thread_blocked, id=3680, stack(0x16ea0000,0x16ef0000)]
+  0x16cef400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=184, stack(0x16e50000,0x16ea0000)]
+  0x16cdc800 JavaThread "Finalizer" daemon [_thread_blocked, id=3336, stack(0x16e00000,0x16e50000)]
+  0x16cd7c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2484, stack(0x16db0000,0x16e00000)]
+
+Other Threads:
+=>0x16cd4000 VMThread [stack: 0x16d60000,0x16db0000] [id=2660]
+  0x16d3d400 WatcherThread [stack: 0x17110000,0x17160000] [id=1812]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00306750] Threads_lock - owner thread: 0x16cd4000
+[0x00306b60] Heap_lock - owner thread: 0x1719a800
+
+Heap
+ def new generation   total 18432K, used 16773K [0x02b20000, 0x03f10000, 0x08070000)
+  eden space 16448K, 100% used [0x02b20000, 0x03b30000, 0x03b30000)
+  from space 1984K,  16% used [0x03d20000, 0x03d71458, 0x03f10000)
+  to   space 1984K,   0% used [0x03b30000, 0x03b30638, 0x03d20000)
+ tenured generation   total 40684K, used 37805K [0x08070000, 0x0a82b000, 0x12b20000)
+   the space 40684K,  92% used [0x08070000, 0x0a55b750, 0x0a55b800, 0x0a82b000)
+ compacting perm gen  total 38656K, used 38439K [0x12b20000, 0x150e0000, 0x16b20000)
+   the space 38656K,  99% used [0x12b20000, 0x150a9e70, 0x150aa000, 0x150e0000)
+No shared spaces configured.
+
+Code Cache  [0x00aa0000, 0x01838000, 0x02aa0000)
+ total_blobs=5698 nmethods=5268 adapters=372 free_code_cache=19331904 largest_free_block=384
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\WINDOWS\system32\java.exe
+0x7c930000 - 0x7ca03000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c92b000 	C:\WINDOWS\system32\kernel32.dll
+0x77f30000 - 0x77fdc000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77c20000 - 0x77cc1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x76eb0000 - 0x76ec3000 	C:\WINDOWS\system32\Secur32.dll
+0x7c340000 - 0x7c396000 	D:\jdk\bin\msvcr71.dll
+0x6d7f0000 - 0x6daa0000 	D:\jdk\bin\client\jvm.dll
+0x77e10000 - 0x77ea0000 	C:\WINDOWS\system32\USER32.dll
+0x77bd0000 - 0x77c19000 	C:\WINDOWS\system32\GDI32.dll
+0x769e0000 - 0x76a0a000 	C:\WINDOWS\system32\WINMM.dll
+0x76180000 - 0x7619d000 	C:\WINDOWS\system32\IMM32.DLL
+0x7f000000 - 0x7f009000 	C:\WINDOWS\system32\LPK.DLL
+0x74ae0000 - 0x74b45000 	C:\WINDOWS\system32\USP10.dll
+0x6fa00000 - 0x6fa38000 	C:\PROGRA~1\Sophos\SOPHOS~1\SOPHOS~1.DLL
+0x76ab0000 - 0x76abb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d7a0000 - 0x6d7ac000 	D:\jdk\bin\verify.dll
+0x6d320000 - 0x6d33f000 	D:\jdk\bin\java.dll
+0x6d370000 - 0x6d399000 	D:\jdk\bin\jdwp.dll
+0x6d2c0000 - 0x6d2da000 	D:\jdk\bin\instrument.dll
+0x6d690000 - 0x6d696000 	D:\jdk\bin\npt.dll
+0x6d7e0000 - 0x6d7ef000 	D:\jdk\bin\zip.dll
+0x6d200000 - 0x6d207000 	D:\jdk\bin\dt_socket.dll
+0x71b60000 - 0x71b77000 	C:\WINDOWS\system32\WS2_32.dll
+0x77b70000 - 0x77bca000 	C:\WINDOWS\system32\msvcrt.dll
+0x71b50000 - 0x71b58000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6fa40000 - 0x6fa57000 	C:\Documents and Settings\All Users\Application Data\Sophos\Web Intelligence\swi_ifslsp.dll
+0x77b60000 - 0x77b68000 	C:\WINDOWS\system32\VERSION.dll
+0x7ca10000 - 0x7d1ec000 	C:\WINDOWS\system32\SHELL32.dll
+0x77eb0000 - 0x77f02000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x77cd0000 - 0x77dd3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.4770_x-ww_05FDF087\comctl32.dll
+0x71a80000 - 0x71ac0000 	C:\WINDOWS\system32\mswsock.dll
+0x69660000 - 0x696b7000 	C:\WINDOWS\system32\hnetcfg.dll
+0x71a40000 - 0x71a48000 	C:\WINDOWS\System32\wshtcpip.dll
+0x6d600000 - 0x6d613000 	D:\jdk\bin\net.dll
+0x76e30000 - 0x76e5b000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76ed0000 - 0x76ed7000 	C:\WINDOWS\System32\winrnr.dll
+0x76e70000 - 0x76e9e000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76ee0000 - 0x76ee5000 	C:\WINDOWS\system32\rasadhlp.dll
+0x68000000 - 0x68035000 	C:\WINDOWS\system32\rsaenh.dll
+0x75870000 - 0x7592d000 	C:\WINDOWS\system32\USERENV.dll
+0x71ba0000 - 0x71bf7000 	C:\WINDOWS\system32\netapi32.dll
+0x6d620000 - 0x6d629000 	D:\jdk\bin\nio.dll
+0x6d550000 - 0x6d559000 	D:\jdk\bin\management.dll
+
+VM Arguments:
+jvm_args: -javaagent:E:\javaTools\play1\framework/play-master-localbuild.jar -XX:-UseSplitVerifier -Dfile.encoding=utf-8 -Xdebug -Xrunjdwp:transport=dt_socket,address=8200,server=y,suspend=n -Dplay.debug=yes -Dapplication.path=E:\f10workspace\f10 -Dplay.id= 
+java_command: play.server.Server 
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=D:\Program Files\JetBrains\IntelliJ IDEA 11.1.3\bin\..\.\bin;d:\Program Files\GTA\QSim_MinGW\QIDE\jre\bin;D:\jdk\bin;d:\Program Files\GTA\QSim_MinGW\QIDE\MinGW\msys\1.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;E:\javaTools\play1\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\nodejs\;d:\Program Files\MATLAB\R2012a\runtime\win32;d:\Program Files\MATLAB\R2012a\bin;d:\program files\jetbrains\intellij idea 11.1.3\jre\jre\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 16 Model 6 Stepping 2, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2003 family Build 3790 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 16 model 6 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a
+
+Memory: 4k page, physical 3931200k(2052508k free), swap 5860952k(3512136k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.12-b01) for windows-x86 JRE (1.6.0_37-b06), built on Sep 24 2012 12:44:35 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu Sep 12 17:23:53 2013
+elapsed time: 23945 seconds
+

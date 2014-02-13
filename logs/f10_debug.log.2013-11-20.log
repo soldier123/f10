@@ -1,0 +1,829 @@
+ main- INFO-[2013-11-20 11:00:44,286]-play.Logger.info(Logger.java:290)-Starting E:\f10workspace\f10
+ main- INFO-[2013-11-20 11:00:49,256]-play.Logger.info(Logger.java:290)-Module redis is available (E:\javaTools\play1\modules\redis-0.3)
+ main- INFO-[2013-11-20 11:00:49,256]-play.Logger.info(Logger.java:290)-Module excel is available (E:\javaTools\play1\modules\excel-1.2.3)
+ main- INFO-[2013-11-20 11:00:49,256]-play.Logger.info(Logger.java:290)-Module f10doc is available (E:\f10workspace\f10\..\f10doc)
+ main- INFO-[2013-11-20 11:00:49,256]-play.Logger.info(Logger.java:290)-Module f10Common is available (E:\f10workspace\f10\..\f10Common)
+ main- WARN-[2013-11-20 11:00:51,131]-play.Logger.warn(Logger.java:345)-You're running Play! in DEV mode
+ main- INFO-[2013-11-20 11:00:51,381]-play.Logger.info(Logger.java:290)-Listening for HTTP on port 9200 (Waiting a first request to start) ...
+play-thread-1- INFO-[2013-11-20 11:01:50,454]-play.Logger.info(Logger.java:290)-Connecting to redis with redis://localhost:6379
+play-thread-1- INFO-[2013-11-20 11:01:51,439]-play.Logger.info(Logger.java:290)-Connected to jdbc:h2:mem:mem;MODE=MYSQL;DB_CLOSE_ON_EXIT=FALSE
+play-thread-1- INFO-[2013-11-20 11:01:51,720]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+play-thread-1- INFO-[2013-11-20 11:01:51,751]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+play-thread-1- INFO-[2013-11-20 11:01:51,751]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+play-thread-1- INFO-[2013-11-20 11:01:51,767]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+play-thread-1- INFO-[2013-11-20 11:01:51,767]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+play-thread-1- INFO-[2013-11-20 11:01:51,767]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+play-thread-1- INFO-[2013-11-20 11:01:51,767]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+play-thread-1- INFO-[2013-11-20 11:01:51,767]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,782]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,798]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,782]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,814]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,814]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,814]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,814]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+play-thread-1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-Connected to jdbc:mysql://192.168.103.108/qic_db?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&statementInterceptors=com.tom.mysql.ShowSqlStatementInterceptor
+play-thread-1- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,829]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+play-thread-1- INFO-[2013-11-20 11:01:51,845]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,876]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+play-thread-1- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-Connected to jdbc:mysql://192.168.103.108/gta_data?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&zeroDateTimeBehavior=convertToNull&statementInterceptors=com.tom.mysql.ShowSqlStatementInterceptor
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,892]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,907]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,907]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 11:01:51,907]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+play-thread-1- INFO-[2013-11-20 11:01:52,048]-play.Logger.info(Logger.java:290)-Application 'f10' is now started !
+play-thread-1- INFO-[2013-11-20 11:01:52,454]-play.Logger.info(Logger.java:290)-loading sql from  module[f10Common]
+play-thread-1- INFO-[2013-11-20 11:01:52,517]-play.Logger.info(Logger.java:290)-初始化股票数据开始...
+play-thread-1- INFO-[2013-11-20 11:01:52,564]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS scode,
+        a.SHORTNAME AS name 
+    from
+        stk_stockinfo a 
+    where
+        a.SYMBOL is not null
+play-thread-1- INFO-[2013-11-20 11:01:52,611]-play.Logger.info(Logger.java:290)-sql==
+    /*股票基本数据*/ SELECT
+        a.`SECURITYID` AS secId,
+        a.`SYMBOL` AS `scode`,
+        a.`SHORTNAME` AS `name`,
+        a.`EXCHANGECODE` AS market,
+        a.`INSTITUTIONID` AS institutionId,
+        a.SHARETYPE AS shareType 
+    FROM
+        `stk_stockinfo` a 
+    WHERE
+        a.STATUSID IN (
+            'P0801','P0804','P0805','P0806','P0807','P0808','P0809','P0810','P0811','P0812','P0899'
+        )  
+        AND DELISTEDDATE IS NULL 
+    ORDER BY
+        INSTITUTIONID,
+        SHARETYPE
+play-thread-1- INFO-[2013-11-20 11:01:52,814]-play.Logger.info(Logger.java:290)-sql==
+    /*公司与行业对应关系*/ SELECT
+        k.institutionId,
+        k.industryCode 
+    FROM
+        stk_industryclass k  
+    INNER JOIN
+        (
+            SELECT
+                INSTITUTIONID,
+                MAX(CHANGEDATE) AS CHANGEDATE   
+            FROM
+                stk_industryclass   
+            WHERE
+                INDUSTRYCLASSIFICATIONID = 'P0207'   
+            GROUP BY
+                INSTITUTIONID  
+        ) AS v  
+            ON k.`INSTITUTIONID` = v.INSTITUTIONID 
+            AND k.CHANGEDATE = v.CHANGEDATE 
+    WHERE
+        k.INDUSTRYCLASSIFICATIONID='P0207'
+play-thread-1- INFO-[2013-11-20 11:01:54,080]-play.Logger.info(Logger.java:290)-sql==
+    /*行业名称*/ SELECT
+        a.industrycode,
+        a.industryname 
+    FROM
+        pub_indclassifysets a 
+    WHERE
+        a.INDCLASSIFYSYSTEMCODE='P0207' 
+        AND a.industryCode IN (
+            'Q83','D46','D44','D45','R85','G53','G54','G55','G56','G57','P82','G58','G59','E49','E47','E48','R86','R87','C17','C18','C19','C13','C14','C15','S90','K70','C42','C41','E50','F52','L72','L71','F51','C29','C27','C28','B11','M74','C25','C26','C23','M73','C24','C21','C22','C20','N77','N78','A02','A01','A05','A04','A03','B06','B07','B08','B09','C38','I65','C39','C34','H61','C35','I64','J67','C36','J66','C37','I63','C30','J69','J68','C31','H62','C32','C33','C40'
+        )
+play-thread-1- INFO-[2013-11-20 11:01:54,080]-play.Logger.info(Logger.java:290)-初始化股票数据结束...
+play-thread-1- INFO-[2013-11-20 11:01:54,080]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系开始...
+play-thread-1- INFO-[2013-11-20 11:01:54,080]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        `SECURITYID` AS secId,
+        `SYMBOL` AS CODE,
+        `INDEXFULLNAME` AS 'name' 
+    FROM
+        idx_indexinfo 
+    WHERE
+        SYMBOL IN (
+            '000004', '000005', '000006', '000007', '000008', '399231', '399232', '399233', '399234', '399235', '399236', '399327', '399328', '399239', '399240', '399241', '399242', '399243', '399244', '399248', '399249','000001', '399001', '399006', '399005', '000300'
+        )
+play-thread-1- INFO-[2013-11-20 11:01:54,095]-play.Logger.info(Logger.java:290)-sql==/*行业指数与股票对应关系*/
+SELECT SAMPLESECURITYCODE AS scode , SYMBOL AS indexCode
+FROM (
+	SELECT distA.*, FIND_IN_SET(distA.CHANGEDATE, rankData.smallList) AS RANK
+	FROM
+	(
+		SELECT SAMPLESECURITYCODE, SYMBOL, CHANGEDATE
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+			AND SYMBOL IN (
+			'000004', '000005', '000006', '000007', '000008',
+			'399231', '399232', '399233', '399234', '399235', '399236',
+			'399327', '399328', '399239', '399240', '399241', '399242',
+			'399243', '399244', '399248', '399249'
+			)
+	) distA,
+
+	(
+		SELECT SAMPLESECURITYCODE, GROUP_CONCAT(CHANGEDATE ORDER BY CHANGEDATE DESC) AS smallList
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+		AND SYMBOL IN (
+		'000004', '000005', '000006', '000007', '000008',
+        '399231', '399232', '399233', '399234', '399235', '399236',
+        '399327', '399328', '399239', '399240', '399241', '399242',
+        '399243', '399244', '399248', '399249'
+		)
+		GROUP BY SAMPLESECURITYCODE
+	) rankData
+
+	WHERE distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE
+
+) ttt
+
+WHERE RANK = 1
+play-thread-1- INFO-[2013-11-20 11:01:55,283]-play.Logger.info(Logger.java:290)-sql==
+    /*市场指数与股票对应关系*/ SELECT
+        SAMPLESECURITYCODE AS scode ,
+        SYMBOL AS indexCode 
+    FROM
+        (  SELECT
+            distA.*,
+            FIND_IN_SET(distA.CHANGEDATE,
+            rankData.smallList) AS RANK  
+        FROM
+            (   SELECT
+                SAMPLESECURITYCODE,
+                SYMBOL,
+                CHANGEDATE   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/    
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )  ) distA,
+            (   SELECT
+                SAMPLESECURITYCODE,
+                GROUP_CONCAT(CHANGEDATE 
+            ORDER BY
+                CHANGEDATE DESC) AS smallList   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/   
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )   
+            GROUP BY
+                SAMPLESECURITYCODE  ) rankData   
+        WHERE
+            distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE  
+        ) ttt  
+    WHERE
+        RANK = 1
+play-thread-1- INFO-[2013-11-20 11:01:56,080]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系结束...
+play-thread-1- INFO-[2013-11-20 11:01:56,080]-play.Logger.info(Logger.java:290)-初始化融资融券信息------start
+play-thread-1- INFO-[2013-11-20 11:01:56,080]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        DISTINCT securityId AS secId 
+    FROM
+        SMT_TradeD
+play-thread-1- INFO-[2013-11-20 11:01:56,080]-play.Logger.info(Logger.java:290)-初始化融资融券信息------stop
+play-thread-1- INFO-[2013-11-20 11:01:56,143]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS symbol,
+        a.SHORTNAME AS shortname,
+        a.PYSHORTNAME as pyshortname             
+    FROM
+        gta_data.stk_stockinfo a
+play-thread-1-ERROR-[2013-11-20 11:02:02,378]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6gb3p1i4n
+Internal Server Error (500) for request GET /companyinfoct/info
+
+Execution exception (In {module:f10Common}/app/util/RedisUtil.java around line 160)
+JedisConnectionException occured : Could not get a resource from the pool
+
+play.exceptions.JavaExecutionException: Could not get a resource from the pool
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionInternal(RedisConnectionManager.java:40)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionFromShard(RedisConnectionManager.java:47)
+	at play.modules.redis.Redis.get(Redis.java:267)
+	at util.RedisUtil.fetchFromRedis(RedisUtil.java:160)
+	at controllers.CompanyInfoCt.info(CompanyInfoCt.java:25)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:124)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:54)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1657)
+	at redis.clients.jedis.JedisPool$JedisFactory.makeObject(JedisPool.java:63)
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1158)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 11 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:119)
+	... 16 more
+play-thread-1-ERROR-[2013-11-20 11:02:09,754]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6gb3p1i4o
+Internal Server Error (500) for request GET /companyinfoct/info
+
+Execution exception (In {module:f10Common}/app/util/RedisUtil.java around line 160)
+JedisConnectionException occured : Could not get a resource from the pool
+
+play.exceptions.JavaExecutionException: Could not get a resource from the pool
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionInternal(RedisConnectionManager.java:40)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionFromShard(RedisConnectionManager.java:47)
+	at play.modules.redis.Redis.get(Redis.java:267)
+	at util.RedisUtil.fetchFromRedis(RedisUtil.java:160)
+	at controllers.CompanyInfoCt.info(CompanyInfoCt.java:25)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:124)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:54)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1657)
+	at redis.clients.jedis.JedisPool$JedisFactory.makeObject(JedisPool.java:63)
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1158)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 11 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:119)
+	... 16 more
+play-thread-1-ERROR-[2013-11-20 11:02:15,490]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6gb3p1i4p
+Internal Server Error (500) for request GET /companyinfoct/info
+
+Execution exception (In {module:f10Common}/app/util/RedisUtil.java around line 160)
+JedisConnectionException occured : Could not get a resource from the pool
+
+play.exceptions.JavaExecutionException: Could not get a resource from the pool
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionInternal(RedisConnectionManager.java:40)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionFromShard(RedisConnectionManager.java:47)
+	at play.modules.redis.Redis.get(Redis.java:267)
+	at util.RedisUtil.fetchFromRedis(RedisUtil.java:160)
+	at controllers.CompanyInfoCt.info(CompanyInfoCt.java:25)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:124)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:54)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1657)
+	at redis.clients.jedis.JedisPool$JedisFactory.makeObject(JedisPool.java:63)
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1158)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 11 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:119)
+	... 16 more
+play-thread-1-ERROR-[2013-11-20 11:02:30,977]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6gb3p1i50
+Internal Server Error (500) for request GET /companyinfoct/info
+
+Execution exception (In {module:f10Common}/app/util/RedisUtil.java around line 160)
+JedisConnectionException occured : Could not get a resource from the pool
+
+play.exceptions.JavaExecutionException: Could not get a resource from the pool
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionInternal(RedisConnectionManager.java:40)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionFromShard(RedisConnectionManager.java:47)
+	at play.modules.redis.Redis.get(Redis.java:267)
+	at util.RedisUtil.fetchFromRedis(RedisUtil.java:160)
+	at controllers.CompanyInfoCt.info(CompanyInfoCt.java:25)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:124)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:54)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1657)
+	at redis.clients.jedis.JedisPool$JedisFactory.makeObject(JedisPool.java:63)
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1158)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 11 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:119)
+	... 16 more
+play-thread-1- INFO-[2013-11-20 11:32:43,993]-play.Logger.info(Logger.java:290)-公司研究报告,send data to es= {"cmd":"symbolInfoSearch","pageNo":1,"pageSize":6,"startTime":"2012-11-20","endTime":"2013-11-20","symbols":["000001"],"itype":[1],"sortField":null,"sortType":1}
+play-thread-1- INFO-[2013-11-20 11:32:44,259]-play.Logger.info(Logger.java:290)-公司研究报告,send data to es= {"cmd":"symbolInfoSearch","pageNo":1,"pageSize":6,"startTime":"2012-11-20","endTime":"2013-11-20","symbols":["000001"],"itype":[2],"sortField":null,"sortType":1}
+play-thread-1- INFO-[2013-11-20 11:32:45,509]-play.Logger.info(Logger.java:290)-公司研究报告,send data to es= {"cmd":"symbolInfoSearch","pageNo":1,"pageSize":6,"startTime":"2012-11-20","endTime":"2013-11-20","symbols":["000001"],"itype":[1],"sortField":null,"sortType":1}
+play-thread-1- INFO-[2013-11-20 11:32:45,587]-play.Logger.info(Logger.java:290)-公司研究报告,send data to es= {"cmd":"symbolInfoSearch","pageNo":1,"pageSize":6,"startTime":"2012-11-20","endTime":"2013-11-20","symbols":["000001"],"itype":[2],"sortField":null,"sortType":1}
+play-thread-1- INFO-[2013-11-20 12:09:13,621]-play.Logger.info(Logger.java:290)-Connecting to redis with redis://localhost:6379
+play-thread-1- INFO-[2013-11-20 12:09:13,684]-play.Logger.info(Logger.java:290)-loading sql from  module[f10Common]
+play-thread-1- INFO-[2013-11-20 12:09:13,699]-play.Logger.info(Logger.java:290)-初始化股票数据开始...
+play-thread-1- INFO-[2013-11-20 12:09:13,699]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS scode,
+        a.SHORTNAME AS name 
+    from
+        stk_stockinfo a 
+    where
+        a.SYMBOL is not null
+play-thread-1- INFO-[2013-11-20 12:09:13,731]-play.Logger.info(Logger.java:290)-sql==
+    /*股票基本数据*/ SELECT
+        a.`SECURITYID` AS secId,
+        a.`SYMBOL` AS `scode`,
+        a.`SHORTNAME` AS `name`,
+        a.`EXCHANGECODE` AS market,
+        a.`INSTITUTIONID` AS institutionId,
+        a.SHARETYPE AS shareType 
+    FROM
+        `stk_stockinfo` a 
+    WHERE
+        a.STATUSID IN (
+            'P0801','P0804','P0805','P0806','P0807','P0808','P0809','P0810','P0811','P0812','P0899'
+        )  
+        AND DELISTEDDATE IS NULL 
+    ORDER BY
+        INSTITUTIONID,
+        SHARETYPE
+play-thread-1- INFO-[2013-11-20 12:09:13,903]-play.Logger.info(Logger.java:290)-sql==
+    /*公司与行业对应关系*/ SELECT
+        k.institutionId,
+        k.industryCode 
+    FROM
+        stk_industryclass k  
+    INNER JOIN
+        (
+            SELECT
+                INSTITUTIONID,
+                MAX(CHANGEDATE) AS CHANGEDATE   
+            FROM
+                stk_industryclass   
+            WHERE
+                INDUSTRYCLASSIFICATIONID = 'P0207'   
+            GROUP BY
+                INSTITUTIONID  
+        ) AS v  
+            ON k.`INSTITUTIONID` = v.INSTITUTIONID 
+            AND k.CHANGEDATE = v.CHANGEDATE 
+    WHERE
+        k.INDUSTRYCLASSIFICATIONID='P0207'
+play-thread-1- INFO-[2013-11-20 12:09:13,918]-play.Logger.info(Logger.java:290)-sql==
+    /*行业名称*/ SELECT
+        a.industrycode,
+        a.industryname 
+    FROM
+        pub_indclassifysets a 
+    WHERE
+        a.INDCLASSIFYSYSTEMCODE='P0207' 
+        AND a.industryCode IN (
+            'Q83','D46','D44','D45','R85','G53','G54','G55','G56','G57','P82','G58','G59','E49','E47','E48','R86','R87','C17','C18','C19','C13','C14','C15','S90','K70','C42','C41','E50','F52','L72','L71','F51','C29','C27','C28','B11','M74','C25','C26','C23','M73','C24','C21','C22','C20','N77','N78','A02','A01','A05','A04','A03','B06','B07','B08','B09','C38','I65','C39','C34','H61','C35','I64','J67','C36','J66','C37','I63','C30','J69','J68','C31','H62','C32','C33','C40'
+        )
+play-thread-1- INFO-[2013-11-20 12:09:13,918]-play.Logger.info(Logger.java:290)-初始化股票数据结束...
+play-thread-1- INFO-[2013-11-20 12:09:13,918]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系开始...
+play-thread-1- INFO-[2013-11-20 12:09:13,918]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        `SECURITYID` AS secId,
+        `SYMBOL` AS CODE,
+        `INDEXFULLNAME` AS 'name' 
+    FROM
+        idx_indexinfo 
+    WHERE
+        SYMBOL IN (
+            '000004', '000005', '000006', '000007', '000008', '399231', '399232', '399233', '399234', '399235', '399236', '399327', '399328', '399239', '399240', '399241', '399242', '399243', '399244', '399248', '399249','000001', '399001', '399006', '399005', '000300'
+        )
+play-thread-1- INFO-[2013-11-20 12:09:13,934]-play.Logger.info(Logger.java:290)-sql==/*行业指数与股票对应关系*/
+SELECT SAMPLESECURITYCODE AS scode , SYMBOL AS indexCode
+FROM (
+	SELECT distA.*, FIND_IN_SET(distA.CHANGEDATE, rankData.smallList) AS RANK
+	FROM
+	(
+		SELECT SAMPLESECURITYCODE, SYMBOL, CHANGEDATE
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+			AND SYMBOL IN (
+			'000004', '000005', '000006', '000007', '000008',
+			'399231', '399232', '399233', '399234', '399235', '399236',
+			'399327', '399328', '399239', '399240', '399241', '399242',
+			'399243', '399244', '399248', '399249'
+			)
+	) distA,
+
+	(
+		SELECT SAMPLESECURITYCODE, GROUP_CONCAT(CHANGEDATE ORDER BY CHANGEDATE DESC) AS smallList
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+		AND SYMBOL IN (
+		'000004', '000005', '000006', '000007', '000008',
+        '399231', '399232', '399233', '399234', '399235', '399236',
+        '399327', '399328', '399239', '399240', '399241', '399242',
+        '399243', '399244', '399248', '399249'
+		)
+		GROUP BY SAMPLESECURITYCODE
+	) rankData
+
+	WHERE distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE
+
+) ttt
+
+WHERE RANK = 1
+play-thread-1- INFO-[2013-11-20 12:09:15,137]-play.Logger.info(Logger.java:290)-sql==
+    /*市场指数与股票对应关系*/ SELECT
+        SAMPLESECURITYCODE AS scode ,
+        SYMBOL AS indexCode 
+    FROM
+        (  SELECT
+            distA.*,
+            FIND_IN_SET(distA.CHANGEDATE,
+            rankData.smallList) AS RANK  
+        FROM
+            (   SELECT
+                SAMPLESECURITYCODE,
+                SYMBOL,
+                CHANGEDATE   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/    
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )  ) distA,
+            (   SELECT
+                SAMPLESECURITYCODE,
+                GROUP_CONCAT(CHANGEDATE 
+            ORDER BY
+                CHANGEDATE DESC) AS smallList   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/   
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )   
+            GROUP BY
+                SAMPLESECURITYCODE  ) rankData   
+        WHERE
+            distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE  
+        ) ttt  
+    WHERE
+        RANK = 1
+play-thread-1- INFO-[2013-11-20 12:09:15,950]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系结束...
+play-thread-1- INFO-[2013-11-20 12:09:15,950]-play.Logger.info(Logger.java:290)-初始化融资融券信息------start
+play-thread-1- INFO-[2013-11-20 12:09:15,950]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        DISTINCT securityId AS secId 
+    FROM
+        SMT_TradeD
+play-thread-1- INFO-[2013-11-20 12:09:15,950]-play.Logger.info(Logger.java:290)-初始化融资融券信息------stop
+play-thread-1- INFO-[2013-11-20 12:09:15,997]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS symbol,
+        a.SHORTNAME AS shortname,
+        a.PYSHORTNAME as pyshortname             
+    FROM
+        gta_data.stk_stockinfo a
+play-thread-1- INFO-[2013-11-20 12:09:16,122]-play.Logger.info(Logger.java:290)-targetPriceCharJson----------
+play-thread-1- INFO-[2013-11-20 12:09:16,137]-play.Logger.info(Logger.java:290)-actualPriceCharJson----------
+play-thread-1- INFO-[2013-11-20 12:11:05,234]-play.Logger.info(Logger.java:290)-targetPriceCharJson----------
+play-thread-1- INFO-[2013-11-20 12:11:05,234]-play.Logger.info(Logger.java:290)-actualPriceCharJson----------
+ main- INFO-[2013-11-20 12:14:59,337]-play.Logger.info(Logger.java:290)-Starting E:\f10workspace\f10
+ main- INFO-[2013-11-20 12:15:00,431]-play.Logger.info(Logger.java:290)-Module redis is available (E:\javaTools\play1\modules\redis-0.3)
+ main- INFO-[2013-11-20 12:15:00,431]-play.Logger.info(Logger.java:290)-Module excel is available (E:\javaTools\play1\modules\excel-1.2.3)
+ main- INFO-[2013-11-20 12:15:00,431]-play.Logger.info(Logger.java:290)-Module f10doc is available (E:\f10workspace\f10\..\f10doc)
+ main- INFO-[2013-11-20 12:15:00,431]-play.Logger.info(Logger.java:290)-Module f10Common is available (E:\f10workspace\f10\..\f10Common)
+ main- WARN-[2013-11-20 12:15:01,135]-play.Logger.warn(Logger.java:345)-You're running Play! in DEV mode
+ main- INFO-[2013-11-20 12:15:01,228]-play.Logger.info(Logger.java:290)-Listening for HTTP on port 9200 (Waiting a first request to start) ...
+play-thread-1- INFO-[2013-11-20 12:15:24,935]-play.Logger.info(Logger.java:290)-Connecting to redis with redis://localhost:6379
+play-thread-1- INFO-[2013-11-20 12:15:25,436]-play.Logger.info(Logger.java:290)-Connected to jdbc:h2:mem:mem;MODE=MYSQL;DB_CLOSE_ON_EXIT=FALSE
+play-thread-1- INFO-[2013-11-20 12:15:25,639]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+play-thread-1- INFO-[2013-11-20 12:15:25,686]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+play-thread-1- INFO-[2013-11-20 12:15:25,686]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+play-thread-1- INFO-[2013-11-20 12:15:25,686]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+play-thread-1- INFO-[2013-11-20 12:15:25,701]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+play-thread-1- INFO-[2013-11-20 12:15:25,701]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+play-thread-1- INFO-[2013-11-20 12:15:25,701]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+play-thread-1- INFO-[2013-11-20 12:15:25,701]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,717]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,733]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,748]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+play-thread-1- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-Connected to jdbc:mysql://192.168.103.108/qic_db?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&statementInterceptors=com.tom.mysql.ShowSqlStatementInterceptor
+play-thread-1- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+play-thread-1- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+play-thread-1- INFO-[2013-11-20 12:15:25,764]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+play-thread-1- INFO-[2013-11-20 12:15:25,779]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+play-thread-1- INFO-[2013-11-20 12:15:25,779]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+play-thread-1- INFO-[2013-11-20 12:15:25,779]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+play-thread-1- INFO-[2013-11-20 12:15:25,779]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+play-thread-1- INFO-[2013-11-20 12:15:25,779]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,795]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,795]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,795]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,795]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,795]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==/* mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw ) */SELECT @@session.auto_increment_increment
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SHOW COLLATION
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET NAMES utf8
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET character_set_results = NULL
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,811]-play.Logger.info(Logger.java:290)-sql==SET collation_connection = utf8_general_ci
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET autocommit=1
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SET sql_mode='STRICT_TRANS_TABLES'
+play-thread-1- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-Connected to jdbc:mysql://192.168.103.108/gta_data?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci&zeroDateTimeBehavior=convertToNull&statementInterceptors=com.tom.mysql.ShowSqlStatementInterceptor
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2- INFO-[2013-11-20 12:15:25,826]-play.Logger.info(Logger.java:290)-sql==SELECT @@session.tx_isolation
+play-thread-1- INFO-[2013-11-20 12:15:25,858]-play.Logger.info(Logger.java:290)-Application 'f10' is now started !
+play-thread-1- INFO-[2013-11-20 12:15:26,092]-play.Logger.info(Logger.java:290)-loading sql from  module[f10Common]
+play-thread-1- INFO-[2013-11-20 12:15:26,108]-play.Logger.info(Logger.java:290)-初始化股票数据开始...
+play-thread-1- INFO-[2013-11-20 12:15:26,154]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS scode,
+        a.SHORTNAME AS name 
+    from
+        stk_stockinfo a 
+    where
+        a.SYMBOL is not null
+play-thread-1- INFO-[2013-11-20 12:15:26,170]-play.Logger.info(Logger.java:290)-sql==
+    /*股票基本数据*/ SELECT
+        a.`SECURITYID` AS secId,
+        a.`SYMBOL` AS `scode`,
+        a.`SHORTNAME` AS `name`,
+        a.`EXCHANGECODE` AS market,
+        a.`INSTITUTIONID` AS institutionId,
+        a.SHARETYPE AS shareType 
+    FROM
+        `stk_stockinfo` a 
+    WHERE
+        a.STATUSID IN (
+            'P0801','P0804','P0805','P0806','P0807','P0808','P0809','P0810','P0811','P0812','P0899'
+        )  
+        AND DELISTEDDATE IS NULL 
+    ORDER BY
+        INSTITUTIONID,
+        SHARETYPE
+play-thread-1- INFO-[2013-11-20 12:15:26,358]-play.Logger.info(Logger.java:290)-sql==
+    /*公司与行业对应关系*/ SELECT
+        k.institutionId,
+        k.industryCode 
+    FROM
+        stk_industryclass k  
+    INNER JOIN
+        (
+            SELECT
+                INSTITUTIONID,
+                MAX(CHANGEDATE) AS CHANGEDATE   
+            FROM
+                stk_industryclass   
+            WHERE
+                INDUSTRYCLASSIFICATIONID = 'P0207'   
+            GROUP BY
+                INSTITUTIONID  
+        ) AS v  
+            ON k.`INSTITUTIONID` = v.INSTITUTIONID 
+            AND k.CHANGEDATE = v.CHANGEDATE 
+    WHERE
+        k.INDUSTRYCLASSIFICATIONID='P0207'
+play-thread-1- INFO-[2013-11-20 12:15:26,404]-play.Logger.info(Logger.java:290)-sql==
+    /*行业名称*/ SELECT
+        a.industrycode,
+        a.industryname 
+    FROM
+        pub_indclassifysets a 
+    WHERE
+        a.INDCLASSIFYSYSTEMCODE='P0207' 
+        AND a.industryCode IN (
+            'Q83','D46','D44','D45','R85','G53','G54','G55','G56','G57','P82','G58','G59','E49','E47','E48','R86','R87','C17','C18','C19','C13','C14','C15','S90','K70','C42','C41','E50','F52','L72','L71','F51','C29','C27','C28','B11','M74','C25','C26','C23','M73','C24','C21','C22','C20','N77','N78','A02','A01','A05','A04','A03','B06','B07','B08','B09','C38','I65','C39','C34','H61','C35','I64','J67','C36','J66','C37','I63','C30','J69','J68','C31','H62','C32','C33','C40'
+        )
+play-thread-1- INFO-[2013-11-20 12:15:26,404]-play.Logger.info(Logger.java:290)-初始化股票数据结束...
+play-thread-1- INFO-[2013-11-20 12:15:26,404]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系开始...
+play-thread-1- INFO-[2013-11-20 12:15:26,404]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        `SECURITYID` AS secId,
+        `SYMBOL` AS CODE,
+        `INDEXFULLNAME` AS 'name' 
+    FROM
+        idx_indexinfo 
+    WHERE
+        SYMBOL IN (
+            '000004', '000005', '000006', '000007', '000008', '399231', '399232', '399233', '399234', '399235', '399236', '399327', '399328', '399239', '399240', '399241', '399242', '399243', '399244', '399248', '399249','000001', '399001', '399006', '399005', '000300'
+        )
+play-thread-1- INFO-[2013-11-20 12:15:26,420]-play.Logger.info(Logger.java:290)-sql==/*行业指数与股票对应关系*/
+SELECT SAMPLESECURITYCODE AS scode , SYMBOL AS indexCode
+FROM (
+	SELECT distA.*, FIND_IN_SET(distA.CHANGEDATE, rankData.smallList) AS RANK
+	FROM
+	(
+		SELECT SAMPLESECURITYCODE, SYMBOL, CHANGEDATE
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+			AND SYMBOL IN (
+			'000004', '000005', '000006', '000007', '000008',
+			'399231', '399232', '399233', '399234', '399235', '399236',
+			'399327', '399328', '399239', '399240', '399241', '399242',
+			'399243', '399244', '399248', '399249'
+			)
+	) distA,
+
+	(
+		SELECT SAMPLESECURITYCODE, GROUP_CONCAT(CHANGEDATE ORDER BY CHANGEDATE DESC) AS smallList
+		FROM IDX_SampleChange
+		WHERE CHANGINGMETHODID = 'S2701'/*进入*/
+		AND SYMBOL IN (
+		'000004', '000005', '000006', '000007', '000008',
+        '399231', '399232', '399233', '399234', '399235', '399236',
+        '399327', '399328', '399239', '399240', '399241', '399242',
+        '399243', '399244', '399248', '399249'
+		)
+		GROUP BY SAMPLESECURITYCODE
+	) rankData
+
+	WHERE distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE
+
+) ttt
+
+WHERE RANK = 1
+play-thread-1- INFO-[2013-11-20 12:15:26,436]-play.Logger.info(Logger.java:290)-sql==
+    /*市场指数与股票对应关系*/ SELECT
+        SAMPLESECURITYCODE AS scode ,
+        SYMBOL AS indexCode 
+    FROM
+        (  SELECT
+            distA.*,
+            FIND_IN_SET(distA.CHANGEDATE,
+            rankData.smallList) AS RANK  
+        FROM
+            (   SELECT
+                SAMPLESECURITYCODE,
+                SYMBOL,
+                CHANGEDATE   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/    
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )  ) distA,
+            (   SELECT
+                SAMPLESECURITYCODE,
+                GROUP_CONCAT(CHANGEDATE 
+            ORDER BY
+                CHANGEDATE DESC) AS smallList   
+            FROM
+                IDX_SampleChange   
+            WHERE
+                CHANGINGMETHODID = 'S2701'/*进入*/   
+                AND SYMBOL IN (
+                    '000001','399001','399006','399005' 
+                )   
+            GROUP BY
+                SAMPLESECURITYCODE  ) rankData   
+        WHERE
+            distA.SAMPLESECURITYCODE = rankData.SAMPLESECURITYCODE  
+        ) ttt  
+    WHERE
+        RANK = 1
+play-thread-1- INFO-[2013-11-20 12:15:26,451]-play.Logger.info(Logger.java:290)-处理指数与行业对应关系结束...
+play-thread-1- INFO-[2013-11-20 12:15:26,451]-play.Logger.info(Logger.java:290)-初始化融资融券信息------start
+play-thread-1- INFO-[2013-11-20 12:15:26,451]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        DISTINCT securityId AS secId 
+    FROM
+        SMT_TradeD
+play-thread-1- INFO-[2013-11-20 12:15:26,451]-play.Logger.info(Logger.java:290)-初始化融资融券信息------stop
+play-thread-1- INFO-[2013-11-20 12:15:26,498]-play.Logger.info(Logger.java:290)-sql==
+    SELECT
+        a.SYMBOL AS symbol,
+        a.SHORTNAME AS shortname,
+        a.PYSHORTNAME as pyshortname             
+    FROM
+        gta_data.stk_stockinfo a

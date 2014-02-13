@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script src="@{'/public/js/jquery-1.7.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        var _gF10 = {
+            "ctx":"${play.ctxPath}"
+        };
+        var _gIsProd = ${play.mode.prod};
+        var _openKeyBrowser = true;
+    </script>
+    <script src="@{'/public/js/global-f10.js'}" type="text/javascript" charset="utf-8"></script>
+
+
+    <style type="text/css">
+.black{ background-color:#000; position:absolute; left:0; right:0; top:0; bottom:0;}
+.none_txt{ font-size:13px; padding-left:24px; height:30px; background:url("@{'/public/js/jRating/icons/none_ico.png'}") no-repeat 0 -4px; color:#CCC; position:absolute; left:42%; margin:80px auto;}
+</style>
+</head>
+
+<body>
+<div class="black">
+    <div class="none_txt">
+    该品种无相关资料!
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+#{extends 'f10Main.html'/}
+#{set title:'融资融券'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function(){
+        $("#Financing").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+    });
+
+    $(function(){
+        $(".more, .left_more").click(function(){
+            var $this = $(this);
+            var url = $this.attr("data-url");
+            var title = $this.attr("data-title");
+            if (url) {
+                $("#subPageIframe").get(0).src = url;
+                $(".dialog_list").dialog({
+                    autoOpen:true,
+                    width:800,
+                    height:500,
+                    resizable:false,
+                    modal:true,
+                    title:title
+                });
+            }
+        });
+    });
+</script>
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list" style="display: none;">
+    <iframe id="subPageIframe" src="#" frameborder="0" width="100%"></iframe>
+</div>
+#{/set}
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <!--高管列表 Begin-->
+            <div class="common_wrap" style="margin-right: 20px;">
+                <h3 class="news_main common_til" style="position: relative;">
+                    融资融劵
+                    <a href="javascript:void(0);" data-url="@{FinancingCt.more(sec.code)}" data-title="融资融劵" class="more" style=" position:absolute; left:inherit; right: 20px;">更多>></a>
+                </h3>
+                <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th width="10%">时间</th>
+                        <th width="15%">融资买入额(元)</th>
+                        <th width="15%">融资偿还额(元)</th>
+                        <th width="15%">融资余额(元)</th>
+                        <th width="15%">融劵卖出量(股)</th>
+                        <th>融劵偿还量(股)</th>
+                        <th>融劵余额(元)</th>
+                    </tr>
+                #{list items:financingList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.tradingDate, f:'yyyy-MM-dd'/}</td>
+                        <td>#{emVF item.buyValue, f:'#,###'/}</td>
+                        <td>#{emVF item.repayValue, f:'#,###'/}</td>
+                        <td>#{emVF item.balanceValue, f:'#,###'/}</td>
+                        <td>#{emVF item.sellShares, f:'#,###'/}</td>
+                        <td>#{emVF item.repayShares, f:'#,###'/}</td>
+                        <td>#{emVF item.balanceSharesValue, f:'#,###'/}</td>
+                    </tr>
+                #{/list}
+                </table>
+            </div>
+            <!--高管列表 End-->
+        </div>
+    </div>
+</div>
+<!--main End-->
+    
+

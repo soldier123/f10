@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>服务器错误</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>
+        <style type="text/css">
+            .black{ background-color:#000; position:absolute; left:0; right:0; top:0; bottom:0;}
+            .none_txt{ font-size:13px; padding-left:24px; height:30px; background:url("@{'/public/js/jRating/icons/none_ico.png'}") no-repeat 0 -4px; color:#CCC; position:absolute; left:42%; margin:80px auto;}
+        </style>
+    </head>
+    <body>
+    <div class="black">
+        <div class="none_txt">
+            服务器链接错误
+        </div>
+        </div>
+    </body>
+</html>

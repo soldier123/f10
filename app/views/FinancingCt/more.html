@@ -1,0 +1,60 @@
+#{extends 'subPageMain.html'/}
+
+<style type="text/css">
+    #scrollTable table.thead th{/*表头*/
+        border: 1px solid #3e3e3e;
+        border-right:#C96;
+        color:#fff;
+        background: #4b4b4b;/*亮桔黄色*/
+        text-align: center;
+    }
+
+    #scrollTable div{/*能带滚动条的表身*/
+        /*div的第二个子元素*/
+        width:100%;
+        height:400px;
+        overflow:auto;/*必需*/
+    }
+</style>
+
+<div id="scrollTable">
+    <table class="thead" width="100%" border="1" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+        <col width="106px"/><col width="106px"/><col width="106px"/><col width="118px"/><col width="106px"/><col width="106px"/><col width=""/>
+        <tbody>
+        <tr>
+            <th >时间</th>
+            <th>融资买入额(元)</th>
+            <th>融资偿还额(元)</th>
+            <th >融资余额(元)</th>
+            <th >融劵卖出量(股)</th>
+            <th>融劵偿还量(股)</th>
+            <th>融劵余额(元)</th>
+        </tr>
+        </tbody>
+    </table>
+<div>
+<table width="100%" border="1" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+
+    <tbody>
+    #{list items:financingList, as:'item'}
+    <tr>
+        <td>#{emVF item.tradingDate, f:'yyyy-MM-dd'/}</td>
+        <td>#{emVF item.buyValue, f:'#,###'/}</td>
+        <td>#{emVF item.repayValue, f:'#,###'/}</td>
+        <td>#{emVF item.balanceValue, f:'#,###'/}</td>
+        <td>#{emVF item.sellShares, f:'#,###'/}</td>
+        <td>#{emVF item.repayShares, f:'#,###'/}</td>
+        <td>#{emVF item.balanceSharesValue, f:'#,###'/}</td>
+    </tr>
+    #{/list}
+    </tbody>
+</table>
+</div>
+</div>
+#{set 'moreScripts'}
+<script type="text/javascript">
+$(function(){
+    tableBgFunc(); //表格隔行换色
+});
+</script>
+#{/set}

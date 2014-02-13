@@ -1,0 +1,192 @@
+#{extends 'f10Main.html'/}
+#{set title:'重大事项'/}
+
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/global-f10.js'}"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#MajorMatter").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+    });
+
+    tabMenu("menuTab", "subContImp", "display");
+
+    tableBgFunc_2("tbl_important");
+
+    $(function(){
+        $("#moreList").click(function(){
+            var $this = $(this);
+            var url = $this.attr("data-url");
+            var title = $this.attr("data-title");
+            if (url) {
+                $("#subPageIframe").get(0).src = url;
+                $(".dialog_list").dialog({
+                    autoOpen:true,
+                    width:800,
+                    height:500,
+                    resizable:false,
+                    Scroll:true,
+                    modal:true,
+                    title:title
+                });
+            }
+        });
+    });
+
+</script>
+
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list" style="display: none;">
+    <iframe id="subPageIframe" src="#" frameborder="0" width="100%"></iframe>
+</div>
+#{/set}
+
+
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <h3 class="news_main til_left">大事提醒</h3>
+            <table width="100%" border="0" class="tbl_important" cellspacing="0" cellpadding="0">
+            #{if remindList == null}
+                暂无提醒
+            #{/if}
+            #{else }
+                #{list items:remindList, as:'item'}
+                    <tr>
+                        <td width="15%"><strong>#{emVF item.eventType /}</strong></td>
+                        <td width="71%">#{emVF item.content /}</td>
+                        <td>#{emVF item.declareDate /}</td>
+                    </tr>
+                #{/list}
+            #{/else}
+            </table>
+
+            <h3 class="news_main til_left">重大事项</h3>
+
+            <div class="finance_tab">
+                <ul id="menuTab" class="tab_li">
+                    <li class="display">对外担保</li>
+                    <li>违规处理</li>
+                </ul>
+                <ul id="subContImp" class="sub_content">
+                    <li class="display">
+                        <!--对外担保 Begin-->
+                        <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                            <thead>
+                            <tr>
+                                <th width="13%">公告日期</th>
+                                <th width="11%">担保起始日</th>
+                                <th width="11%">担保终止日</th>
+                                <th width="13%">担保金额（万元）</th>
+                                <th width="11%">担保类型</th>
+                                <th width="15%">担保方</th>
+                                <th width="26%">被担保方</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                        #{list items:guaranteeList, as:'item'}
+                            <tr>
+                                <td>#{emVF item.declareDate/}</td>
+                                <td>#{emVF item.sdate/}</td>
+                                <td>#{emVF item.edate/}</td>
+                                <td>#{emVF item.amount, f: '#,##0.00'/}</td>
+                                <td>#{emVF item.method/}</td>
+                                <td>#{emVF item.guarantor/}</td>
+                                <td>#{emVF item.guarantee/}</td>
+                            </tr>
+                        #{/list}
+                            </tbody>
+                        </table>
+                        <!--对外担保 End-->
+                    </li>
+                    <li>
+                        <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                            <thead>
+                            <tr>
+                                <th>公告日期</th>
+                                <th>违规类型</th>
+                                <th>处理单位</th>
+                                <th>处理决定文件日期</th>
+                                <th>处理对象</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                        #{list items:violationList, as:'item'}
+                            <tr>
+                                <td>#{emVF item.declareDate /}</td>
+                                <td>#{emVF item.violationType/}</td>
+                                <td>#{emVF item.supervisor /}</td>
+                                <td>#{emVF item.disposalDate /}</td>
+                                <td>#{emVF item.processObject /}</td>
+                            </tr>
+                        #{/list}
+                            </tbody>
+                        </table>
+                    </li>
+
+                </ul>
+            </div>
+
+            <h3 class="news_main til_left">限售解禁</h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec hhmore" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th width="14%">解禁时间</th>
+                    <th width="17%">解禁数量（股）</th>
+                    <th width="21%">解禁股占总股本比例</th>
+                    <th width="21%">解禁股占流通股本比例</th>
+                    <th width="27%">解禁原因</th>
+                </tr>
+                </thead>
+                <tbody>
+                #{list items:limitedAndLiftList, as:'item'}
+                <tr>
+                    <td>#{emVF item.changeDate /}</td>
+                    <td>#{emVF item.liftNum, f:'###,##0'/}</td>
+                    <td>#{emVF item.liftTotalScale(), f:'0.00', u:'%'/}</td>
+                    <td>#{emVF item.liftTradeScale(), f:'0.00', u:'%'/}</td>
+                    <td>#{emVF item.changeReason /}</td>
+                </tr>
+                #{/list}
+                </tbody>
+            </table>
+
+            <h3 class="news_main til_left">大宗交易
+                <a id="moreList"  href="javascript:void(0);" data-url="@{MajorMatterCt.moreBlocktrade(sec.code)}" data-title="大宗交易" style="position:absolute; left:inherit; right: 25px;">更多&gt;&gt;</a>
+            </h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th width="16%">交易日期</th>
+                    <th width="15%">成交价(元)</th>
+                    <th width="10%">成交量(万股)</th>
+                    <th width="14%">成交金额(万元)</th>
+                    <th width="22%">买入营业部</th>
+                    <th width="23%">卖出营业部</th>
+                </tr>
+                </thead>
+                <tbody>
+            #{list items:blockTradeList, as:'item'}
+                <tr>
+                    <td>#{emVF item.tradeDate /}</td>
+                    <td>#{emVF item.price, f:'#,##0.00' /}</td>
+                    <td>#{emVF item.volume, f:'###,##0.00'/}</td>
+                    <td>#{emVF item.amout, f:'###,##0.00'/}</td>
+                    <td>#{emVF item.buyer /}</td>
+                    <td>#{emVF item.seller /}</td>
+                </tr>
+            #{/list}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<!--main End-->

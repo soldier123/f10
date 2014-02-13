@@ -1,0 +1,199 @@
+#{extends 'f10Main.html'/}
+#{set title:'公司基本信息'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+$(function(){
+    $("#CompanyInfo").addClass('sub_menu_current');
+    tableBgFunc(); //表格隔行换色
+});
+</script>
+#{/set}
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <!--基本资料 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">基本资料</h2>
+                <div class="tbl_wrap">
+                    <table width="100%" border="0" class="tbl_common" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="10%" align="left"><strong>公司简称</strong></td>
+                            <td width="28%">#{emVF institutionInfoDto?.fullName /}</td>
+                            <td width="10%" align="left"><strong>股票代码</strong></td>
+                            <td width="16%">#{emVF sec?.code /}</td>
+                            <td width="10%" align="left"><strong>总股本</strong></td>
+                            <td width="26%">#{emVF v : sharesStructureInfoDto?.totalStock, f:'#,##0.00', u:'万股', scale:-4 /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>流通股</strong></td>
+                            <td>#{emVF v : sharesStructureInfoDto?.tradeSharesTotal, f:'###,##0.00', u:'万股', scale:-4 /}</td>
+                            <td align="left"><strong>发行日期</strong></td>
+                            <td>#{emVF v : eqIpoInfoDto?.issueDate, f:'yyyy-MM-dd' /}</td>
+                            <td align="left"><strong>上市日期</strong></td>
+                            <td>#{emVF v : eqIpoInfoDto?.listDate, f:'yyyy-MM-dd' /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>所属行业</strong></td>
+                            <td>#{emVF sec.fetchInduName() /}</td>
+                            <td align="left"><strong>所属地区</strong></td>
+                            <td>#{emVF institutionInfoDto?.province /}</td>
+                            <td align="left"><strong>所得税率</strong></td>
+                            <td>#{emVF v : eqIpoInfoDto?.taxRate, f:'#,##0.00', u:'%' /} </td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>法人代表</strong></td>
+                            <td>#{emVF institutionInfoDto?.lawPerson /}</td>
+                            <td align="left"><strong>联系人</strong></td>
+                            <td>#{emVF institutionInfoDto?.secretary /}</td>
+                            <td align="left"></td>
+                            <td></td>
+                            *{<td align="center"><strong>主承销商</strong></td>}*
+                            *{<td>#{emVF agencyOrg?.mainSaleMan /}</td>}*
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>公司地址</strong></td>
+                            <td>#{emVF institutionInfoDto?.regAddress /}</td>
+                            <td align="left"><strong>邮政编码</strong></td>
+                            <td>#{emVF institutionInfoDto?.zipCode /}</td>
+                            <td align="left"><strong>公司电话</strong></td>
+                            <td>#{emVF institutionInfoDto?.secretaryTel /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>公司传真</strong></td>
+                            <td>#{emVF institutionInfoDto?.secretaryFax /}</td>
+                            <td align="left"><strong>电子邮箱</strong></td>
+                            <td>#{emVF institutionInfoDto?.email /}</td>
+                            <td align="left"><strong>公司网址</strong></td>
+                            #{if institutionInfoDto.fetchWebSiteList().size()==1}
+                                <td>#{emVF institutionInfoDto.fetchWebSiteList().get(0)/}</td>
+                            #{/if}
+                            #{else }
+                                <td>
+                                    #{list items:institutionInfoDto.fetchWebSiteList(), as:'website'}
+                                       #{emVF website/}
+                                    #{/list}
+                                </td>
+                            #{/else}
+
+                           *{ #{if institutionInfoDto.fetchWebSiteList().size()==1}
+                                <td><a target="_blank" href="${institutionInfoDto.fetchWebSiteList().get(0).raw()}">#{emVF institutionInfoDto.fetchWebSiteList().get(0)/}</a></td>
+                            #{/if}
+                            #{else }
+                            <td>
+                                #{list items:institutionInfoDto.fetchWebSiteList(), as:'website'}
+                                    <a target="_blank" href="${website.raw()}">#{emVF website/}</a>
+                                #{/list}
+                            </td>
+                            #{/else}}*
+
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>经营范围</strong></td>
+                            <td colspan="5">#{emVF institutionInfoDto?.businessScope /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>主要产品</strong></td>
+                            <td colspan="5">#{emVF institutionInfoDto?.mainBusiness /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>公司介绍</strong></td>
+                            <td colspan="5">#{emVF institutionInfoDto?.introduce /}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <!--基本资料 End-->
+
+            <!--首发资料 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">首发资料</h2>
+                <div class="tbl_wrap">
+                    <table width="100%" border="0" class="tbl_common" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="13%" align="left"><strong>股票代码</strong></td>
+                            <td width="25%">#{emVF sec.code /}</td>
+                            <td width="13%" align="left"><strong>股票简称</strong></td>
+                            <td width="16%">#{emVF sec.name /}</td>
+                            <td width="13%" align="left"><strong>发行日期</strong></td>
+                            <td width="20%">#{emVF v : eqIpoInfoDto?.issueDate, f: "yyyy-MM-dd" /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>发行股数</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.issueNumber, u:'万股',scale:-4,f:'###,##0.00'/}</td>
+                            <td align="left"><strong>发行价</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.pubPrice, f:'#,##0.00' /}</td>
+                            <td align="left"><strong>上市日期</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.listDate, f:"yyyy-MM-dd" /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>发行后总股本</strong></td>
+                            <td>#{emVF sharesStructureInfoDto?.issueTotal, f:'###,##0.00' /}</td>
+                            <td align="left"><strong>发行询价区间</strong></td>
+                            <td>#{emVF eqIpoResultDto?.priceScope /}</td>
+                            <td align="left"><strong>募集资金总计</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.raiseNetFund,f:'###,##0.00' /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>发行费用</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.issueExpenses, f:'###,##0.00' /}</td>
+                            <td align="left"><strong>股票面值</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.parValue , f:'#,##0.00'/}</td>
+                            <td align="left"><strong>发行方式</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.issueMode /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>中签率1</strong></td>
+                            <td>#{emVF eqIpoResultDto?.successRate, f:'#,##0.00' /}</td>
+                            <td align="left"><strong>申购股数</strong></td>
+                            <td>#{emVF eqIpoResultDto?.purchaseHouseholders, u:'万',scale:-4,f:'###,##0.00'/}</td>
+                            <td align="left"><strong>开盘价</strong></td>
+                            <td>#{emVF ipoMaketQuotation?.openPrice, f:'#,##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>发行市盈率</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.pe4, f:'#,##0.000' /}</td>
+                            <td align="left"><strong>发行前每股收益</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.eps1, f:'#,##0.000'/}</td>
+                            <td align="left"><strong>发行后每股收益</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.eps2, f:'#,##0.000' /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>年度预测每股收益</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.forecastEps, f:'#,##0.000' /}</td>
+                            <td align="left"><strong>发行前每股净资产</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.nav1, f:'#,##0.00'/}</td>
+                            <td align="left"><strong>发行后每股净资产</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.nav2, f:'#,##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>首日上市股数</strong></td>
+                            <td>#{emVF eqIpoResultDto?.listedShares, f:'#,##0.00'/}</td>
+                            <td align="left"><strong>币种</strong></td>
+                            <td>#{emVF eqIpoInfoDto?.currencyCode/}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>主承销商</strong></td>
+                            <td colspan="5">#{emVF agencyOrg?.mainSaleMan /}</td>
+                        <tr>
+                            <td align="left"><strong>副主承销商</strong></td>
+                            <td colspan="5">#{emVF agencyOrg?.secondSaleMan /}</td>
+                        </tr>
+                        <tr>
+                            <td align="left"><strong>上市推荐人</strong></td>
+                            <td colspan="5">#{emVF agencyOrg?.referrer /}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <!--首发资料 End-->
+        </div>
+    </div>
+</div>
+<!--main End-->

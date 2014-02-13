@@ -1,0 +1,7 @@
+#{list items:induReportList, as:'item'}
+<tr>
+    <td>#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+    <td><a href="javascript:void(0)" data-url="@{MessageCombinationCt.fetchReportSummary(item.reportId)}" data-title="#{cutStr item.title, len:50 /}" class="newstd" >#{emVF item.title/}</a></td>
+    <td>#{emVF item.institutionName/}</td>
+</tr>
+#{/list}

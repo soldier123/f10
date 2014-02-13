@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>每日头条 sql</comment>
+
+    <!--根据新闻ID获取详细信息 -->
+    <entry key="newsInfoDetail">
+        <![CDATA[
+        SELECT nn.NEWSID as newsId,
+                nn.TITLE as title,
+                nn.NEWSSOURCE as newsSource,
+                nn.AUTOR as autor,
+                nn.DECLAREDATE as declareDate,
+                nn.NEWSCONTENT as newsContent,
+                nn.ISACCESSORY AS isAccessory
+            FROM gta_data.news_newsinfo nn
+            WHERE nn.NEWSID = ?
+        ]]>
+    </entry>
+
+    <entry key="orderSelectNews">
+        <![CDATA[
+        SELECT distinct a.NEWSID as newsId,
+                a.TITLE as title,
+                a.DECLAREDATE as declareDate,
+                a.NEWSSOURCE as newsSource
+            FROM qic_db.c_news_newsinfo_lst a
+
+
+        ]]>
+    </entry>
+
+    <entry key="newsListSql">
+        <![CDATA[
+       SELECT
+          a.NEWSID AS newsId,
+          a.TITLE AS title,
+          a.DECLAREDATE AS declareDate,
+          a.NEWSSOURCE AS newsSource
+        FROM
+          qic_db.c_news_newsinfo_lst a
+        WHERE a.DECLAREDATE >= DATE_ADD(
+            (SELECT
+              MAX(DECLAREDATE)
+            FROM
+              qic_db.c_news_newsinfo_lst),
+            INTERVAL - 1 DAY
+          )
+        ]]>
+    </entry>
+
+
+    <entry key="newsAccessSql">
+        <![CDATA[
+        SELECT b.FULLNAME AS fullName,
+                b.ACCESSORYROUTE AS accessOryroute
+            FROM gta_data.news_accessory b
+            WHERE b.NEWSID = ?
+            ORDER BY rank ASC
+        ]]>
+    </entry>
+
+    <entry key="newNewstotalSql">
+        <![CDATA[
+        SELECT
+             COUNT(1)
+        FROM
+          qic_db.c_news_newsinfo_lst a
+        WHERE
+           a.DECLAREDATE>?
+        ]]>
+    </entry>
+
+    <entry key="maxDeclareDateSql">
+        <![CDATA[
+        SELECT
+             MAX(a.`DECLAREDATE`) AS declareDate
+        FROM
+              qic_db.c_news_newsinfo_lst a
+        ]]>
+    </entry>
+
+    <!--根据股票代码查大事提醒 -->
+    <entry key="greatInventReminds">
+        <![CDATA[
+        /*大事提醒*/
+        SELECT
+          a.SECURITYID AS secId,
+          a.SYMBOL AS symbol,
+          b.`SHORTNAME` AS shortName,
+          a.EventType AS eventType,
+          a.PromptContent AS content,
+          DATE_FORMAT(a.DeclareDate, '%Y-%m-%d') AS declareDate
+        FROM
+          gta_data.`news_specialtips` a
+        LEFT JOIN gta_data.`stk_stockinfo` b
+        ON a.`SYMBOL` =b.`SYMBOL`
+        WHERE a.SecurityTypeID = 'S0101' /*找股票的*/
+          AND a.DeclareDate >= DATE_ADD(CURDATE(), INTERVAL -1 YEAR)
+          AND a.SYMBOL IN (#secIdGroup#)
+        ORDER BY  a.DeclareDate DESC, a.SECURITYID
+        ]]>
+    </entry>
+
+</properties>

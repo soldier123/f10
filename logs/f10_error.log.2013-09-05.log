@@ -1,0 +1,448 @@
+play-thread-1-ERROR-[2013-09-05 13:31:08,937]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4li
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 13:31:11,563]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4lj
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 13:31:14,048]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4lk
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 13:34:11,304]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4ll
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 13:34:14,742]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4lm
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 14:51:46,193]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4ln
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 14:51:54,992]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4lo
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 14:52:07,916]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffh6i4lp
+Internal Server Error (500) for request POST /newsct/advancemorenews
+
+Execution exception (In /app/controllers/NewsCt.java around line 97)
+IllegalStateException occured : Not a JSON Object: null
+
+play.exceptions.JavaExecutionException: Not a JSON Object: null
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.IllegalStateException: Not a JSON Object: null
+	at com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:84)
+	at controllers.NewsCt.advanceMoreNews(NewsCt.java:97)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-05 15:12:20,766]-play.Logger.niceThrowable(Logger.java:571)-Cannot connected to the database (db config name: custom) : Access denied for user 'qic'@'localhost' (using password: YES)
+java.sql.SQLException: Access denied for user 'qic'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:951)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1717)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1276)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2395)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at play.db.DBConfig.configure(DBConfig.java:239)
+	at play.db.DB.setConfigurations(DB.java:67)
+	at play.db.DBPlugin.onApplicationStart(DBPlugin.java:72)
+	at play.plugins.PluginCollection.onApplicationStart(PluginCollection.java:525)
+	at play.Play.start(Play.java:533)
+	at play.Play.detectChanges(Play.java:637)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-05 15:12:21,923]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldh
+Internal Server Error (500) for request GET /
+
+Database error
+A database error occured : Cannot connected to the database (db config name: custom), Access denied for user 'qic'@'localhost' (using password: YES)
+
+play.exceptions.DatabaseException: Cannot connected to the database (db config name: custom), Access denied for user 'qic'@'localhost' (using password: YES)
+	at play.db.DBConfig.configure(DBConfig.java:289)
+	at play.db.DB.setConfigurations(DB.java:67)
+	at play.db.DBPlugin.onApplicationStart(DBPlugin.java:72)
+	at play.plugins.PluginCollection.onApplicationStart(PluginCollection.java:525)
+	at play.Play.start(Play.java:533)
+	at play.Play.detectChanges(Play.java:637)
+	at play.Invoker$Invocation.init(Invoker.java:197)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.sql.SQLException: Access denied for user 'qic'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1073)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:951)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1717)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1276)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2395)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2428)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2213)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:797)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at play.db.DBConfig.configure(DBConfig.java:239)
+	... 7 more
+play-thread-1-ERROR-[2013-09-05 15:13:36,095]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldi
+Error during job execution (job.common.InitSystemDataJob)
+
+Database error (In {module:f10Common}/app/dbutils/ExtractDbUtil.java around line 107)
+A database error occured : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/ SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+
+play.exceptions.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/
+SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+	at dbutils.ExtractDbUtil.queryExtractDbWithHandler(ExtractDbUtil.java:109)
+	at dto.BondSec.init(BondSec.java:205)
+	at job.common.InitSystemDataJob.doJob(InitSystemDataJob.java:26)
+	at play.jobs.Job.doJobWithResult(Job.java:50)
+	at play.jobs.Job.call(Job.java:146)
+	at Invocation.Job(Play!)
+Caused by: java.sql.SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/
+SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+	at org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:363)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:350)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:211)
+	at dbutils.ExtractDbUtil.queryExtractDbWithHandler(ExtractDbUtil.java:107)
+	... 5 more
+play-thread-1-ERROR-[2013-09-05 15:13:36,204]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldi
+Internal Server Error (500) for request GET /
+
+Database error (In {module:f10Common}/app/dbutils/ExtractDbUtil.java around line 107)
+A database error occured : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/ SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+
+play.exceptions.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/
+SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+	at dbutils.ExtractDbUtil.queryExtractDbWithHandler(ExtractDbUtil.java:109)
+	at dto.BondSec.init(BondSec.java:205)
+	at job.common.InitSystemDataJob.doJob(InitSystemDataJob.java:26)
+	at play.jobs.Job.doJobWithResult(Job.java:50)
+	at play.jobs.Job.call(Job.java:146)
+	at Invocation.Job(Play!)
+Caused by: java.sql.SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 2 Query: /*行业名称*/
+SELECT a.industrycode, a.industryname FROM pub_indclassifysets a WHERE  a.INDCLASSIFYSYSTEMCODE='P0207' AND a.industryCode IN () Parameters: []
+	at org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:363)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:350)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:211)
+	at dbutils.ExtractDbUtil.queryExtractDbWithHandler(ExtractDbUtil.java:107)
+	... 5 more
+play-thread-1-ERROR-[2013-09-05 15:33:47,835]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldj
+Internal Server Error (500) for request GET /messageindexct/messageindex?&ntToken=298033e023af1ada3901c1c658a467f56f14a437719a9d4daccc9b09e2ead4e0d69d0ccad7cfe7d77cf770b5fb24ad16
+
+Execution exception (In /app/bussiness/MessageIndexService.java around line 49)
+RuntimeException occured : java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+
+play.exceptions.JavaExecutionException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.libs.ws.WSAsync$WSAsyncRequest.post(WSAsync.java:236)
+	at bussiness.MessageIndexService.commonList(MessageIndexService.java:49)
+	at controllers.MessageIndexCt.doCommonInfoSearch(MessageIndexCt.java:144)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyResponseFuture.abort(NettyResponseFuture.java:297)
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:104)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:428)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:419)
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:381)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:400)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:100)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:440)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:396)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	... 3 more
+play-thread-1-ERROR-[2013-09-05 15:33:48,804]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldk
+Internal Server Error (500) for request GET /messageindexct/messageindex?&ntToken=298033e023af1ada3901c1c658a467f56f14a437719a9d4daccc9b09e2ead4e0d69d0ccad7cfe7d77cf770b5fb24ad16
+
+Execution exception (In /app/bussiness/MessageIndexService.java around line 49)
+RuntimeException occured : java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+
+play.exceptions.JavaExecutionException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.libs.ws.WSAsync$WSAsyncRequest.post(WSAsync.java:236)
+	at bussiness.MessageIndexService.commonList(MessageIndexService.java:49)
+	at controllers.MessageIndexCt.doCommonInfoSearch(MessageIndexCt.java:144)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyResponseFuture.abort(NettyResponseFuture.java:297)
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:104)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:428)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:419)
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:381)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:400)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:100)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:440)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:396)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	... 3 more
+play-thread-1-ERROR-[2013-09-05 15:36:11,475]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldl
+Internal Server Error (500) for request GET /messageindexct/messageindex?&ntToken=a50548642980797e860147a325450a08d9cc341c0a3f8560e234b529fd8b02a3d69d0ccad7cfe7d77cf770b5fb24ad16
+
+Execution exception (In /app/bussiness/MessageIndexService.java around line 49)
+RuntimeException occured : java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+
+play.exceptions.JavaExecutionException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.libs.ws.WSAsync$WSAsyncRequest.post(WSAsync.java:236)
+	at bussiness.MessageIndexService.commonList(MessageIndexService.java:49)
+	at controllers.MessageIndexCt.doCommonInfoSearch(MessageIndexCt.java:144)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyResponseFuture.abort(NettyResponseFuture.java:297)
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:104)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:428)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:419)
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:381)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:400)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:100)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:440)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:396)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	... 3 more
+play-thread-1-ERROR-[2013-09-05 15:36:12,772]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ffoehldm
+Internal Server Error (500) for request GET /messageindexct/messageindex?&ntToken=a50548642980797e860147a325450a08d9cc341c0a3f8560e234b529fd8b02a3d69d0ccad7cfe7d77cf770b5fb24ad16
+
+Execution exception (In /app/bussiness/MessageIndexService.java around line 49)
+RuntimeException occured : java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+
+play.exceptions.JavaExecutionException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at play.libs.ws.WSAsync$WSAsyncRequest.post(WSAsync.java:236)
+	at bussiness.MessageIndexService.commonList(MessageIndexService.java:49)
+	at controllers.MessageIndexCt.doCommonInfoSearch(MessageIndexCt.java:144)
+	at controllers.MessageIndexCt.messageIndex(MessageIndexCt.java:76)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: java.util.concurrent.ExecutionException: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyResponseFuture.abort(NettyResponseFuture.java:297)
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:104)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:428)
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:419)
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:381)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:400)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:102)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: no further information to http://192.168.103.103:9400/search
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:100)
+	... 10 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:440)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:396)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:312)
+	... 3 more

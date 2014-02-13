@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <title>#{get 'title' /}</title>
+    <meta charset="utf-8">
+    *{这里定义全局变量, 用javascript表示. 如上下文路径等}*
+    <script type="text/javascript">
+        var _gF10 = {
+            "ctx":"${play.ctxPath}"
+        };
+        var _gIsProd = ${play.mode.prod};
+        var _openKeyBrowser = true;
+    </script>
+    <script src="@{'/public/js/jquery-1.7.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+    <link href="@{'/public/style/global-f10.css'}" rel="stylesheet" type="text/css">
+    #{get 'moreStyles' /}
+</head>
+<body>
+    <div class="body">
+        #{doLayout /}
+
+        <!--submenu Begin-->
+        <div class="submenu" id="subMenu">
+            <ul class="sub_menu_ul">
+                <li><a id="NewestInfo" href="@{NewestInfoCt.info(c)}">最新动态</a></li>
+                <li><a id="CompanyInfo" href="@{CompanyInfoCt.info(c)}">公司概况</a></li>
+                <li><a id="StockHolderCapital" href="@{StockHolderCapitalCt.info(c)}">股东股本</a></li>
+                <li><a id="TopManager" href="@{TopManagerCt.info(c)}">高管研究</a></li>
+                <li><a id="Dividend" href="@{DividendCt.info(c)}">分红融资</a></li>
+                <li><a id="IndustryAna" href="@{IndustryAnaCt.info(c)}">行业分析</a></li>
+                <li><a id="FinanceAna" href="@{FinanceAnaCt.info(c)}">财务分析</a></li>
+                <li><a id="PredictProfit" href="@{PredictProfitCt.info(c)}">盈利预测</a></li>
+                <li><a id="MajorMatter" href="@{MajorMatterCt.info(c)}">重大事项</a></li>
+                <li><a id="RelatedStock"  href="@{RelatedStockCt.info(c)}">关联个股</a></li>
+                #{if hasFinancing }
+                <li><a id="Financing"  href="@{FinancingCt.info(c)}">融资融券</a></li>
+                #{/if}
+            </ul>
+        </div>
+        <!--submenu End-->
+
+        <!--folder Begin-->
+        <div class="folder" id="folder" title="折叠菜单">
+            <div class="folder_tips_hide">
+                &nbsp;
+            </div>
+        </div>
+        <!--folder End-->
+
+        <!-- <div class="extra">
+         3extra
+        </div>-->
+    </div>
+
+    #{get 'footHtml' /}
+
+
+    <script src="@{'/public/js/global-f10.js'}" type="text/javascript" charset="utf-8"></script>
+    <script src="@{'/public/highChart/js/highcharts.js'}" type="text/javascript" charset="utf-8"></script>
+    <script src="@{'/public/js/highchartstheme.js'}" type="text/javascript" charset="utf-8"></script>
+    <link href="@{'/public/style/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+    <script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+    #{get 'moreScripts' /}
+</body>
+</html>

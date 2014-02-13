@@ -1,0 +1,19 @@
+*{研报列表}*
+<dl class="display">
+#{list items:resultList, as:'item'}
+<dd>
+    ${item.declareDateStr}&nbsp;&nbsp;
+    #{if org.apache.commons.lang.StringUtils.isBlank(item.route) }
+        <a href="#">${item.title}</a>
+    #{/if}
+    #{else}
+        <a href="@{AttachCt.attachDownload(item.route)}">${item.title}</a>
+    #{/else}
+
+    *{<a href="javascript:void(0);" data-url="${preUrl.raw()}${item.route.raw()}" data-title="${item.title}" class="downloadReport">${item.title}</a>}*
+</dd>
+#{/list}
+#{else}
+    <dd>没有找到数据</dd>
+#{/else}
+</dl>

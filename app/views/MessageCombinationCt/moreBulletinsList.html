@@ -1,0 +1,51 @@
+<!--sider_news Begin-->
+<div class="dialog_more">
+        <table class="dialog_table_thead">
+        <thead>
+        <tr>
+        <td width="20%">发布时间</td>
+        <td>标题</td>
+        </tr>
+        </thead>
+        </table>
+        <div class="dialog_scoll">
+        <table class="dialog_table_tbody">
+        <tbody>
+            #{list items:bulletinsList, as:'item'}
+                    <tr>
+                    <td width="20%">#{emVF item.pubDate, f:"yyyy-MM-dd" /}</td>
+                    <td>
+                #{if org.apache.commons.lang.StringUtils.isBlank(item.attachUrl) }
+                        <a href="javascript:void(0);">#{emVF item.title/}</a>
+                #{/if}
+                #{else}
+                        <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.attachUrl)}')" href="javascript:void(0)">#{emVF item.title/}</a>
+                #{/else}
+                </td>
+                </tr>
+            #{/list}
+        </tbody>
+        </table>
+        </div>
+        </div>
+    <!--sider_news End-->
+        <script>
+        new ScrollPage({
+            scrollTarget:".dialog_scoll",
+            appendTarget:".dialog_table_tbody",
+            getUrl:getQueryUrl,
+            pageNo:2,
+            data:{"scodeStr":$("#scodes").val(), "pageNo":2},
+            complete:registerDialog
+        });
+function getQueryUrl() {
+    var url = "@{MessageCombinationCt.moreBulletinsList()}";
+    return url;
+}
+
+        </script>
+
+
+
+
+

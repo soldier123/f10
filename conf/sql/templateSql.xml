@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>订阅模板 sql</comment>
+
+    <!-- 获取用户订阅的内容列表-->
+    <entry key="fetchUserTemplateList">
+        <![CDATA[
+SELECT id, name, content FROM user_template WHERE uid = ? AND utype = ? AND type = ? order by id desc limit 20;
+        ]]>
+    </entry>
+
+    <!--得到订阅条件内容 -->
+    <entry key="fetchUserTemplateContentById">
+        <![CDATA[
+SELECT content FROM user_template WHERE id = ? and uid = ? and utype = ?
+        ]]>
+    </entry>
+
+<!--增加订阅内容-->
+    <entry key="addUserTemplate">
+    <![CDATA[
+insert into user_template(uid, utype, name, content, type) values (?, ?, ?, ?, ?)
+        ]]>
+        </entry>
+
+    <!--删除用户订阅-->
+    <entry key="deleteUserTemplateById">
+    <![CDATA[
+delete from user_template where id = ?  and uid = ? and utype = ?
+        ]]>
+        </entry>
+
+    <!--编辑订阅内容-->
+    <entry key="editUserTemplateById">
+    <![CDATA[
+UPDATE
+    user_template
+SET
+    name = ?,
+    content = ?
+WHERE
+     id = ?
+ AND
+     uid = ?
+ AND
+     utype = ?
+        ]]>
+        </entry>
+
+    <!--根据名称查询-->
+    <!--编辑订阅内容-->
+    <entry key="editUserTemplateWithOutNameById">
+    <![CDATA[
+UPDATE
+    user_template
+SET
+    content = ?
+WHERE
+     id = ?
+ AND
+     uid = ?
+ AND
+     utype = ?
+        ]]>
+        </entry>
+
+    <!--根据名称查询-->
+    <entry key="fetchUserTemplateByName">
+    <![CDATA[
+SELECT id, uid, name, type
+FROM user_template
+WHERE name = ? AND uid = ? AND utype = ? AND type = ?
+        ]]>
+        </entry>
+     <!--唯一性-->
+    <entry key="findUserTemplateById">
+        <![CDATA[
+            SELECT
+              id,
+              uid,
+              NAME,
+              TYPE,
+              content
+            FROM
+              user_template
+            WHERE id = ?
+        ]]>
+    </entry>
+
+</properties>

@@ -1,0 +1,279 @@
+#{extends 'f10Main.html'/}
+#{set title:'高管研究'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function () {
+        $("#TopManager").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+
+        //简历查看
+        $(".moreContent").click(function(){
+            var $this = $(this);
+            $("#displayResume").dialog({
+                    autoOpen: true,
+                    width: 450,
+                    modal: false,
+                    resizable: false,
+                    draggable: true
+            });
+
+            var left = $(this).offset().left -430,
+                top = $(this).offset().top;
+           // $("#displayResume2").
+            $(".ui-dialog").css({left: left, top: top})
+
+
+            var content = $(this).children("span").text();
+            if(content == "--"){
+               $("#resumeContent").text("暂无简历");
+                return;
+            }
+            $("#resumeContent").text(content);
+
+        });
+    });
+    var picData = ${picDataStr.raw()};
+    var barXData = ${barXDataStr.raw()};
+    var barYData = ${barYDataStr.raw()};
+</script>
+
+<script src="@{'/public/js/topmanagerct/info.js'}" type="text/javascript" charset="utf-8"></script>
+#{/set}
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <!--高管列表 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">高管列表</h2>
+
+                <h3 class="news_main common_til">高管人员</h3>
+                <table id="ta1" width="100%" border="0" class="tbl_common tbl_exec hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="16%">姓名</th>
+                        <th width="7%">出生年份</th>
+                        <th width="9%">性别</th>
+                        <th width="12%">学历</th>
+                        <th width="10%">任职日期</th>
+                        *{<th width="10%">离职日期</th>}*
+                        <th width="17%">职位</th>
+                        <th width="10%">职称</th>
+                        <th width="9%">简历</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:executiveList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.name /}</td>
+                        #{if item.birthYear==0}
+                            <td>--</td>
+                        #{/if}
+                        #{else }
+                            <td>#{emVF item.birthYear /}</td>
+                        #{/else}
+
+                        <td>#{emVF item.sex /}</td>
+                        <td>#{emVF item.degree /}</td>
+                        <td>#{emVF item.entrantDate /}</td>
+                        *{<td>#{emVF item.leaveDate /}</td>}*
+                        <td>#{emVF item.position /}</td>
+                        <td>#{emVF item.professionalTitle /}</td>
+                        <td class="moreContent">
+                            <div>点击查看</div>
+                            <span style="display: none;">#{emVF item.resume /}</span>
+                        </td>
+                    </tr>
+                #{/list}
+                    </tbody>
+
+                </table>
+
+                <h3 class="news_main common_til">董事会</h3>
+                <table id="ta2" width="100%" border="0" class="tbl_common tbl_exec hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="16%">姓名</th>
+                        <th width="7%">出生年份</th>
+                        <th width="9%">性别</th>
+                        <th width="12%">学历</th>
+                        <th width="10%">任职日期</th>
+                        *{<th width="10%">离职日期</th>}*
+                        <th width="17%">职位</th>
+                        <th width="10%">职称</th>
+                        <th width="9%">简历</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:boardList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.name /}</td>
+                        #{if item.birthYear==0}
+                            <td>--</td>
+                        #{/if}
+                        #{else }
+                            <td>#{emVF item.birthYear /}</td>
+                        #{/else}
+                        <td>#{emVF item.sex /}</td>
+                        <td>#{emVF item.degree /}</td>
+                        <td>#{emVF item.entrantDate /}</td>
+                        *{<td>#{emVF item.leaveDate /}</td>}*
+                        <td>#{emVF item.position /}</td>
+                        <td>#{emVF item.professionalTitle /}</td>
+                        <td class="moreContent">
+                            <div>点击查看</div>
+                            <span style="display: none;">#{emVF item.resume /}</span>
+                        </td>
+                    </tr>
+                #{/list}
+                    </tbody>
+
+                </table>
+
+                <h3 class="news_main common_til">监事会</h3>
+                <table id="ta3" width="100%" border="0" class="tbl_common tbl_exec hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="16%">姓名</th>
+                        <th width="7%">出生年份</th>
+                        <th width="9%">性别</th>
+                        <th width="12%">学历</th>
+                        <th width="10%">任职日期</th>
+                        *{<th width="10%">离职日期</th>}*
+                        <th width="17%">职位</th>
+                        <th width="10%">职称</th>
+                        <th width="9%">简历</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:aufsichtsratList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.name /}</td>
+                        #{if item.birthYear==0}
+                            <td>--</td>
+                        #{/if}
+                        #{else }
+                            <td>#{emVF item.birthYear /}</td>
+                        #{/else}
+                        <td>#{emVF item.sex /}</td>
+                        <td>#{emVF item.degree /}</td>
+                        <td>#{emVF item.entrantDate /}</td>
+                        *{<td>#{emVF item.leaveDate /}</td>}*
+                        <td>#{emVF item.position /}</td>
+                        <td>#{emVF item.professionalTitle /}</td>
+                        <td class="moreContent">
+                            <div>点击查看</div>
+                            <span style="display: none;">#{emVF item.resume /}</span>
+                        </td>
+                    </tr>
+                #{/list}
+                    </tbody>
+
+                </table>
+                <h2 class="h2_title">高管持股及变动</h2>
+                <h3 class="news_main common_til">高管持股</h3>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        #{if picDataStr.trim().equals("[]")}
+                            <p align="center">该公司暂无高管持股数据</p>
+                        #{/if}
+                        #{else }
+                            <td width="48%" align="center">
+                                <div id="picChart" style="width:452px ;height:280px;"></div>
+                            </td>
+                            <td width="52%" align="center">
+                                <div id="top4Chart" style="width:452px;height: 280px"></div>
+                            </td>
+                        #{/else}
+                    </tr>
+                </table>
+            </div>
+            <!--高管列表 End-->
+            <!--高管持股变动 Begin-->
+            <h3 class="news_main common_til">高管持股变动</h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th width="16%">日期</th>
+                    <th width="7%">变动人</th>
+                    <th width="9%">变动数量（股）</th>
+                    <th width="12%">结存股票（股）</th>
+                    <th width="13%">交易均价（元）</th>
+                    <th width="13%">董监高管</th>
+                    <th width="17%">与高管关系</th>
+                    <th width="13%">股份变动途径</th>
+                </tr>
+                </thead>
+                <tbody>
+            #{list items:changeList, as:'item'}
+                <tr>
+                    <td>#{emVF v:item.changeDate, f:'yyyy-MM-dd'/}</td>
+                    <td>#{emVF v:item.shareholderName /}</td>
+                    <td>#{emVF v:item.changeNum, f:'#,000'/}</td>
+                    <td>#{emVF v:item.afterNum, f:'#,000'/}</td>
+                    <td>#{emVF v:item.avgPrice, f:'0.00'/}</td>
+                    <td>#{emVF v:item.mangeName /}</td>
+                    <td>#{emVF v:item.relationship /}</td>
+                    <td>#{emVF v:item.changeMethod /}</td>
+                </tr>
+            #{/list}
+                </tbody>
+            </table>
+
+            <!--高管持股变动 End-->
+            <!--高管离职变动 Begin-->
+            <h3 class="news_main common_til">高管离职变动</h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec hhmore" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th width="16%">姓名</th>
+                    <th width="7%">出生年份</th>
+                    <th width="9%">性别</th>
+                    <th width="12%">学历</th>
+                    <th width="13%">任职日期</th>
+                    <th width="13%">离职日期</th>
+                    <th width="17%">职位</th>
+                    <th width="13%">职称</th>
+                </tr>
+                </thead>
+                <tbody>
+            #{list items:leaveList, as:'item'}
+                <tr>
+                    <td>#{emVF item.name /}</td>
+                    #{if item.birthYear==0}
+                        <td>--</td>
+                    #{/if}
+                    #{else }
+                        <td>#{emVF item.birthYear /}</td>
+                    #{/else}
+                    <td>#{emVF item.sex /}</td>
+                    <td>#{emVF item.degree /}</td>
+                    <td>#{emVF item.entrantDate /}</td>
+                    <td>#{emVF item.leaveDate /}</td>
+                    <td>#{emVF item.position /}</td>
+                    <td>#{emVF item.professionalTitle /}</td>
+                </tr>
+            #{/list}
+                </tbody>
+            </table>
+            <!--高管离职变动 End-->
+
+        </div>
+    </div>
+    <!--resume-->
+    <div style="display: none" id="displayResume" title="简历">
+        <p id="resumeContent">This is the resume</p>
+    </div>
+    <!--resume-->
+</div>
+<!--main End-->
+
+<style>
+    .hhmore{ background-color: #222222;}
+    .noshow{cursor: pointer;}
+
+</style>

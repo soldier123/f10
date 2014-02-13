@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>研究报告 sql</comment>
+
+    <!--根据研报ID获取详细信息 -->
+    <entry key="reportDetail">
+        <![CDATA[
+        SELECT re.REPORTID, re.TITLE, re.SUMMARY
+            FROM gta_data.rep_reportinfo re
+            WHERE re.REPORTID = ?
+        ]]>
+    </entry>
+
+    <!--研报列表 -->
+    <entry key="reportList">
+<![CDATA[
+        SELECT a.REPORTID as reportId,
+                a.DECLAREDATE,
+                a.TITLE,
+                b.INSTITUTIONNAME AS institutionName,
+                GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+        FROM
+            qic_db.c_rep_reportinfo_lst a
+        LEFT JOIN
+            qic_db.c_rep_institution_lst b
+                ON a.REPORTID = b.REPORTID
+        LEFT JOIN
+            qic_db.c_rep_person_lst f
+                ON a.REPORTID = f.REPORTID
+        ]]>
+    </entry>
+
+    <!-- 24小时内没人别的附加条件的研报 -->
+    <entry key="reportWithoutConditionWith24hour">
+        <![CDATA[
+    SELECT
+        a.REPORTID as reportId,
+        a.DECLAREDATE,
+        a.TITLE,
+        b.INSTITUTIONNAME AS institutionName,
+        GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+    FROM
+        qic_db.c_rep_reportinfo_lst a
+    LEFT JOIN
+        qic_db.c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+    where
+        a.`DECLAREDATE` >= DATE_ADD((SELECT
+            MAX(DECLAREDATE)
+        FROM
+            c_rep_reportinfo_lst), INTERVAL - 1 DAY)
+    GROUP BY
+        a.`REPORTID`
+    ORDER BY
+        a.`DECLAREDATE` desc, a.REPORTID DESC
+                ]]>
+    </entry>
+
+    <!-- 24小时内加上研报分类的研报 -->
+    <entry key="reportWithClassifyAnd24hour">
+        <![CDATA[
+    SELECT
+        a.REPORTID as reportId,
+        a.DECLAREDATE,
+        a.TITLE,
+        b.INSTITUTIONNAME AS institutionName,
+        GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+    FROM
+        qic_db.c_rep_reportinfo_lst a
+    LEFT JOIN
+        qic_db.c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_category_lst c
+            ON a.`REPORTID` = c.`REPORTID`
+    where
+        c.CATEGORYCODE = '#classifyCode#'
+        and a.`DECLAREDATE` >= DATE_ADD((SELECT
+            MAX(DECLAREDATE)
+        FROM
+            c_rep_reportinfo_lst), INTERVAL - 1 DAY)
+    GROUP BY
+        a.`REPORTID`
+    ORDER BY
+        a.`DECLAREDATE` desc, a.REPORTID DESC
+                ]]>
+    </entry>
+
+    <!-- 24小时内按行业分类的行业研报 -->
+    <entry key="reportWithInduCodeAnd24hour">
+        <![CDATA[
+    SELECT
+        a.REPORTID as reportId,
+        a.DECLAREDATE,
+        a.TITLE,
+        b.INSTITUTIONNAME AS institutionName,
+        GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+    FROM
+        qic_db.c_rep_reportinfo_lst a
+    LEFT JOIN
+        qic_db.c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_industry_lst e
+            ON a.`REPORTID` = e.`REPORTID`
+    where
+        e.`INDUSTRYCODE` like '#induCode#%'
+        and a.`DECLAREDATE` >= DATE_ADD((SELECT
+            MAX(DECLAREDATE)
+        FROM
+            c_rep_reportinfo_lst), INTERVAL - 1 DAY)
+    GROUP BY
+        a.`REPORTID`
+    ORDER BY
+        a.`DECLAREDATE` desc, a.REPORTID DESC
+                ]]>
+    </entry>
+
+    <!-- 24小时内按关键字查找的研报 -->
+    <entry key="reportWithKeyWordAnd24hour">
+        <![CDATA[
+    SELECT
+        a.REPORTID as reportId,
+        a.DECLAREDATE,
+        a.TITLE,
+        b.INSTITUTIONNAME AS institutionName,
+        GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+    FROM
+        qic_db.c_rep_reportinfo_lst a
+    LEFT JOIN
+        qic_db.c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+    LEFT JOIN
+        qic_db.c_rep_security_lst d
+            ON a.`REPORTID` = d.`REPORTID`
+    where
+        (
+            a.title like '%#keyword#%'
+            or d.symbol like '%#keyword#%'
+        )
+        and a.`DECLAREDATE` >= DATE_ADD((SELECT
+            MAX(DECLAREDATE)
+        FROM
+            c_rep_reportinfo_lst), INTERVAL - 1 DAY)
+    GROUP BY
+        a.`REPORTID`
+    ORDER BY
+        a.`DECLAREDATE` desc, a.REPORTID DESC
+                ]]>
+    </entry>
+
+
+    <!--根据id查找模板研报 -->
+    <entry key="findReportById">
+        <![CDATA[
+        SELECT a.id AS id,
+                a.uid AS uid,
+                a.name AS NAME,
+                a.type AS TYPE,
+                a.content AS content
+            FROM qic_db.user_template a
+            WHERE a.id = ?
+        ]]>
+    </entry>
+    <!--根据研报id查找发布机构名称 -->
+    <entry key="fetchInstitutionNameById">
+        <![CDATA[
+        SELECT
+        a.`INSTITUTIONNAME`
+        FROM
+            qic_db.`rep_institution` a
+        WHERE
+            a.`REPORTID`=?
+        ]]>
+    </entry>
+
+    <!--板块树-->
+    <entry key="getPlateTree">
+        <![CDATA[
+        SELECT c.PLATEID AS id,
+                c.PLATETREEID AS pid,
+                c.PLATETITLE AS NAME,
+                c.PLATECODE AS 'code'
+            FROM gta_data.plate_platetree c
+            WHERE c.PLATETREEID = ?
+            ORDER BY c.PLATEID
+        ]]>
+    </entry>
+
+     <entry key="getSymbolByPlateId">
+        <![CDATA[
+        SELECT DISTINCT
+          a.SYMBOL AS stockCode
+        FROM gta_data.Plate_StockChangelatest a
+        WHERE a.PLATEID like '#typeid#%' and a.SECURITYID IS NOT NULL
+        ]]>
+    </entry>
+
+    <entry key="findStockByName_startsWith">
+        <![CDATA[
+        SELECT a.SYMBOL AS symbol,
+                a.SHORTNAME AS shortname
+            FROM stockinfo a
+            WHERE a.SYMBOL LIKE ?
+                    OR a.SHORTNAME LIKE ? OR a.PYSHORTNAME LIKE ?
+        ]]>
+    </entry>
+
+    <entry key="findStockBySymbol">
+        <![CDATA[
+        SELECT a.SYMBOL AS symbol,
+                a.SHORTNAME AS shortname
+            FROM gta_data.stk_stockinfo a
+            WHERE a.SYMBOL in
+        ]]>
+    </entry>
+
+    <entry key="getPlateTreeName">
+        <![CDATA[
+        SELECT a.PLATETITLE AS 'name',
+                a.PLATEID AS id
+            FROM gta_data.plate_platetree a
+            WHERE a.PLATEID IN
+        ]]>
+    </entry>
+
+</properties>

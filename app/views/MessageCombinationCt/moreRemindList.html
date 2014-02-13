@@ -1,0 +1,52 @@
+<!--sider_news Begin-->
+<div class="dialog_more">
+        <table class="dialog_table_thead">
+        <thead>
+        <tr>
+        <td width="25%">日期</td>
+        <td width="35%">名称</td>
+        <td>来源</td>
+        </tr>
+        </thead>
+        </table>
+        <div class="dialog_scoll">
+        <table class="dialog_table_tbody">
+        <tbody>
+#{list items:remindList, as:'item'}
+        <tr>
+        <td width="25%">#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+        <td width="35%">
+    #{ifnot org.apache.commons.lang.StringUtils.isBlank(item.symbol)} [#{emVF item.symbol/}]#{/ifnot}#{emVF item.shortName/}
+        </td>
+        <td>
+        <a href="javascript:void(0);" class="remindDialog"
+eventType="#{emVF item.eventType/}"
+symbol="#{emVF item.symbol/}"
+shortName="#{emVF item.shortName/}"
+content="#{emVF item.content/}"
+        declareDate="#{emVF item.declareDate/}">
+    #{emVF item.eventType /}
+        </a>
+        </td>
+        </tr>
+#{/list}
+        </tbody>
+        </table>
+        </div>
+        </div>
+    <!--sider_news End-->
+        <script>
+        new ScrollPage({
+            scrollTarget:".dialog_scoll",
+            appendTarget:".dialog_table_tbody",
+            getUrl:getQueryUrl,
+            pageNo:2,
+            data:{"scodeStr":$("#scodes").val(), "pageNo":2},
+            complete:registerDialog
+        });
+function getQueryUrl() {
+    var url = "@{MessageCombinationCt.moreRemindList()}";
+    return url;
+}
+
+        </script>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>#{get 'title' /}</title>
+    <meta charset="utf-8">
+*{这里定义全局变量, 用javascript表示. 如上下文路径等}*
+    <script type="text/javascript">
+        var _gF10 = {
+            "ctx":"${play.ctxPath}"
+        };
+        var _gIsProd = ${play.mode.prod};
+        var _openKeyBrowser = true;
+    </script>
+    <script src="@{'/public/js/jquery-1.7.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+    <script src="@{'/public/js/blockUI/jquery.blockUI.js'}" type="text/javascript" charset="utf-8"></script>
+    <link href="@{'/public/style/global-f10.css'}" rel="stylesheet" type="text/css">
+#{get 'moreStyles' /}
+</head>
+<body>
+#{doLayout /}
+#{get 'footHtml' /}
+<script src="@{'/public/js/global-f10.js'}" type="text/javascript" charset="utf-8"></script>
+<link href="@{'/public/style/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+*{<link href="@{'/public/style/ui-lightness/jquery-ui-1.10.1.custom.css'}" rel="stylesheet" type="text/css">}*
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+#{get 'moreScripts' /}
+</body>
+</html>

@@ -1,0 +1,213 @@
+play-thread-1-ERROR-[2013-09-06 11:56:37,808]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg4m1ci9
+Internal Server Error (500) for request GET /newsct/ordernews?id=1324
+
+Database error (In {module:f10Common}/app/dbutils/CustomDbUtil.java around line 149)
+A database error occured : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC  ) distTable' at line 6 Query: select count(*) from ( SELECT a.NEWSID as newsId,                 a.TITLE as title,                 a.DECLAREDATE as declareDate,                 a.NEWSSOURCE as newsSource             FROM qic_db.c_news_newsinfo_lst a INNER JOIN qic_db.c_news_classify_lst b ON a.NEWSID = b.NEWSID where DATE_FORMAT((SELECT MAX(DECLAREDATE)  FROM c_news_newsinfo_lst),'%Y-%m-%d') = DATE_FORMAT(a.DECLAREDATE, '%Y-%m-%d') AND b.`CLASSIFYID` IN  AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC  ) distTable    Parameters: []
+
+play.exceptions.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC 
+) distTable' at line 6 Query: select count(*) from (
+SELECT a.NEWSID as newsId,
+                a.TITLE as title,
+                a.DECLAREDATE as declareDate,
+                a.NEWSSOURCE as newsSource
+            FROM qic_db.c_news_newsinfo_lst a INNER JOIN qic_db.c_news_classify_lst b ON a.NEWSID = b.NEWSID where DATE_FORMAT((SELECT MAX(DECLAREDATE)  FROM c_news_newsinfo_lst),'%Y-%m-%d') = DATE_FORMAT(a.DECLAREDATE, '%Y-%m-%d') AND b.`CLASSIFYID` IN  AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC 
+) distTable  
+ Parameters: []
+	at dbutils.CustomDbUtil.queryCount(CustomDbUtil.java:151)
+	at bussiness.NewsInfoService.orderSelect(NewsInfoService.java:101)
+	at controllers.NewsCt.orderNews(NewsCt.java:326)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.sql.SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC 
+) distTable' at line 6 Query: select count(*) from (
+SELECT a.NEWSID as newsId,
+                a.TITLE as title,
+                a.DECLAREDATE as declareDate,
+                a.NEWSSOURCE as newsSource
+            FROM qic_db.c_news_newsinfo_lst a INNER JOIN qic_db.c_news_classify_lst b ON a.NEWSID = b.NEWSID where DATE_FORMAT((SELECT MAX(DECLAREDATE)  FROM c_news_newsinfo_lst),'%Y-%m-%d') = DATE_FORMAT(a.DECLAREDATE, '%Y-%m-%d') AND b.`CLASSIFYID` IN  AND a.`NEWSSOURCE` IN ORDER BY a.`DECLAREDATE` DESC 
+) distTable  
+ Parameters: []
+	at org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:363)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:350)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:211)
+	at dbutils.CustomDbUtil.queryCount(CustomDbUtil.java:149)
+	... 8 more
+ main-ERROR-[2013-09-06 14:03:02,847]-play.Logger.error(Logger.java:400)-Could not bind on port 9200
+ main-ERROR-[2013-09-06 14:21:19,157]-play.Logger.error(Logger.java:400)-Could not bind on port 9200
+play-thread-1-ERROR-[2013-09-06 14:57:23,411]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg5jkegd
+Internal Server Error (500) for request GET /reportct/renameornewcond?id=-999&name=%E6%96%B0%E6%90%9C%E7%B4%A2%E6%9D%A1%E4%BB%B61&type=103
+
+Execution exception (In /app/bussiness/TemplateService.java around line 62)
+NullPointerException occured : Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+
+play.exceptions.JavaExecutionException: Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+	at play.classloading.enhancers.PropertiesEnhancer$FieldAccessor.invokeReadProperty(PropertiesEnhancer.java:213)
+	at bussiness.TemplateService.fetchUserTemplateByName(TemplateService.java:62)
+	at bussiness.TemplateService.hasSameName(TemplateService.java:70)
+	at controllers.ReportCt.addCond(ReportCt.java:291)
+	at controllers.ReportCt.renameOrNewCond(ReportCt.java:264)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-06 16:48:15,659]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg5jkege
+Internal Server Error (500) for request GET /reportct/exportreport
+
+Oops: RuntimeException
+An unexpected error occured caused by exception RuntimeException: Can't parse an expression list
+
+play.exceptions.UnexpectedException: Unexpected Error
+	at play.modules.excel.RenderExcel.apply(RenderExcel.java:112)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:252)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: Can't parse an expression list
+	at net.sf.jxls.tag.ForEachTag.parseItemsProperty(ForEachTag.java:142)
+	at net.sf.jxls.tag.ForEachTag.init(ForEachTag.java:104)
+	at net.sf.jxls.parser.CellParser.parseTag(CellParser.java:292)
+	at net.sf.jxls.parser.CellParser.parseCellValue(CellParser.java:194)
+	at net.sf.jxls.parser.CellParser.parseCell(CellParser.java:55)
+	at net.sf.jxls.transformer.SheetTransformer.parseCells(SheetTransformer.java:203)
+	at net.sf.jxls.transformer.SheetTransformer.parseRow(SheetTransformer.java:273)
+	at net.sf.jxls.transformer.SheetTransformer.transformSheet(SheetTransformer.java:80)
+	at net.sf.jxls.transformer.XLSTransformer.transformWorkbook(XLSTransformer.java:243)
+	at net.sf.jxls.transformer.XLSTransformer.transformXLS(XLSTransformer.java:218)
+	at play.modules.excel.RenderExcel.apply(RenderExcel.java:106)
+	... 2 more
+Caused by: java.lang.RuntimeException: items property in forEach tag must be a collection. list is not 
+	at net.sf.jxls.tag.ForEachTag.parseItemsProperty(ForEachTag.java:139)
+	... 12 more
+play-thread-1-ERROR-[2013-09-06 16:48:15,659]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg5jkegf
+Error during the 500 response generation
+
+Template not found
+The template errors/500.xls does not exist.
+
+play.exceptions.TemplateNotFoundException: Template not found : errors/500.xls
+	at play.templates.TemplateLoader.load(TemplateLoader.java:192)
+	at play.server.PlayHandler.serve500(PlayHandler.java:755)
+	at Invocation.HTTP Request(Play!)
+play-thread-1-ERROR-[2013-09-06 16:59:15,345]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg5jkegg
+Internal Server Error (500) for request GET /reportct/exportreport
+
+Execution exception (In {module:f10Common}/app/dbutils/SqlLoader.java around line 124)
+RuntimeException occured : 没有sqlid为[exportReportList]的sql, 请重启程序试试
+
+play.exceptions.JavaExecutionException: 没有sqlid为[exportReportList]的sql, 请重启程序试试
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: 没有sqlid为[exportReportList]的sql, 请重启程序试试
+	at dbutils.SqlLoader.getSqlById(SqlLoader.java:124)
+	at bussiness.ReportService.exportReportList(ReportService.java:186)
+	at controllers.ReportCt.exportReport(ReportCt.java:105)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-06 16:59:41,366]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg5jkegh
+Internal Server Error (500) for request GET /reportct/exportreport
+
+Execution exception (In {module:f10Common}/app/dbutils/SqlLoader.java around line 124)
+RuntimeException occured : 没有sqlid为[exportReportList]的sql, 请重启程序试试
+
+play.exceptions.JavaExecutionException: 没有sqlid为[exportReportList]的sql, 请重启程序试试
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.RuntimeException: 没有sqlid为[exportReportList]的sql, 请重启程序试试
+	at dbutils.SqlLoader.getSqlById(SqlLoader.java:124)
+	at bussiness.ReportService.exportReportList(ReportService.java:186)
+	at controllers.ReportCt.exportReport(ReportCt.java:105)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+play-thread-1-ERROR-[2013-09-06 17:01:21,622]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fg6a1jmp
+Internal Server Error (500) for request GET /reportct/exportreport
+
+Database error (In {module:f10Common}/app/dbutils/CustomDbUtil.java around line 92)
+A database error occured : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1000' at line 22 Query: SELECT           a.REPORTID AS reportId,           a.DECLAREDATE,           a.TITLE,           b.INSTITUTIONNAME AS institutionName,           GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName         FROM           qic_db.c_rep_reportinfo_lst a           LEFT JOIN c_rep_institution_lst b             ON a.REPORTID = b.REPORTID           LEFT JOIN c_rep_person_lst f             ON a.REPORTID = f.REPORTID         WHERE a.`DECLAREDATE` >= DATE_ADD(             (SELECT               MAX(DECLAREDATE)             FROM               c_rep_reportinfo_lst),             INTERVAL - 1 DAY           )         GROUP BY a.`REPORTID`         ORDER BY a.`DECLAREDATE` DESC         LIMIT 1000 limit 1000 Parameters: []
+
+play.exceptions.DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1000' at line 22 Query: SELECT
+          a.REPORTID AS reportId,
+          a.DECLAREDATE,
+          a.TITLE,
+          b.INSTITUTIONNAME AS institutionName,
+          GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+        FROM
+          qic_db.c_rep_reportinfo_lst a
+          LEFT JOIN c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+          LEFT JOIN c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+        WHERE a.`DECLAREDATE` >= DATE_ADD(
+            (SELECT
+              MAX(DECLAREDATE)
+            FROM
+              c_rep_reportinfo_lst),
+            INTERVAL - 1 DAY
+          )
+        GROUP BY a.`REPORTID`
+        ORDER BY a.`DECLAREDATE` DESC
+        LIMIT 1000 limit 1000 Parameters: []
+	at dbutils.CustomDbUtil.queryCustomDBBeanList(CustomDbUtil.java:94)
+	at bussiness.ReportService.exportReportList(ReportService.java:188)
+	at controllers.ReportCt.exportReport(ReportCt.java:105)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.sql.SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 1000' at line 22 Query: SELECT
+          a.REPORTID AS reportId,
+          a.DECLAREDATE,
+          a.TITLE,
+          b.INSTITUTIONNAME AS institutionName,
+          GROUP_CONCAT(f.RESEARCHERNAME) AS researcherName
+        FROM
+          qic_db.c_rep_reportinfo_lst a
+          LEFT JOIN c_rep_institution_lst b
+            ON a.REPORTID = b.REPORTID
+          LEFT JOIN c_rep_person_lst f
+            ON a.REPORTID = f.REPORTID
+        WHERE a.`DECLAREDATE` >= DATE_ADD(
+            (SELECT
+              MAX(DECLAREDATE)
+            FROM
+              c_rep_reportinfo_lst),
+            INTERVAL - 1 DAY
+          )
+        GROUP BY a.`REPORTID`
+        ORDER BY a.`DECLAREDATE` DESC
+        LIMIT 1000 limit 1000 Parameters: []
+	at org.apache.commons.dbutils.AbstractQueryRunner.rethrow(AbstractQueryRunner.java:363)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:350)
+	at org.apache.commons.dbutils.QueryRunner.query(QueryRunner.java:211)
+	at dbutils.CustomDbUtil.queryCustomDBBeanList(CustomDbUtil.java:92)
+	... 8 more

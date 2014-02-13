@@ -1,0 +1,7 @@
+#{list items:newsList ,as:'item'}
+<tr id="tb_news" class="tbl_news">
+    <td><a href="javascript:fun(${item.newsId})" id="news${item.newsId}" #{if item.title.length()>16}title="#{emVF item.title/}"#{/if} class="news_a tooltip">#{subString v : item.title,l:16/}</a></td>
+    <td align="center">#{emVF item.declareDate ,f:'HH:mm'/}</td>
+    <td><div class="news_source">${item.newsSource}</div></td>
+</tr>
+#{/list}

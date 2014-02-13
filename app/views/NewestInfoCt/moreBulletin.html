@@ -1,0 +1,75 @@
+#{extends 'main.html' /}
+#{set title:'更多公告' /}
+
+#{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" href="@{'/public/style/global-marketnews.css'}">
+<link rel="stylesheet" type="text/css" href="@{'/public/style/scroll-page.css'}">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/newsjs/news.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+#{/set}
+<!--sider_news Begin-->
+<div class="sider_news" style="width: 100%">
+    <div id="news_list" style="margin: 0px" class="news_list">
+*{        <table width="100%" id="tb_news" class="tbl_news" border="0" cellspacing="0" cellpadding="0">}*
+        <table width="100%" border="1" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <td width="70%">标题</td>
+                <td width="30%">发布时间</td>
+            </tr>
+            </thead>
+            <tbody>
+            #{list items:bulletinsList, as:'item'}
+            <tr>
+            *{<td><a #{bulletinUrl item.attachUrl /}> #{emVF item.title /} </a></td>}*
+                <td width="70%">
+                    #{if org.apache.commons.lang.StringUtils.isBlank(item.attachUrl) }
+                        <a href="#">#{emVF item.title /}</a>
+                    #{/if}
+                    #{else}
+                        <a href="@{AttachCt.attachDownload(item.attachUrl)}">#{emVF item.title /}</a>
+                    #{/else}
+                </td>
+                <td width="30%">#{emVF item.pubDate, f:"yyyy-MM-dd" /}</td>
+            </tr>
+            #{/list}
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+<!--sider_news End-->
+
+<!--folder Begin-->
+
+<!--folder End-->
+
+
+
+<script>
+    new ScrollPage({
+        scrollTarget:".sider_news",
+        appendTarget:"#news_list",
+        pageNo:2,
+        getUrl:getQueryUrl
+    });
+
+    function getQueryUrl(){
+        var url = "@{NewestInfoCt.downPageBulletin(sec)}";
+        return url;
+    }
+
+</script>
+
+
+</script>

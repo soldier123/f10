@@ -1,0 +1,414 @@
+#{extends 'f10Main.html'/}
+#{set title:'最新动态' /}
+
+#{set 'moreScripts'}
+
+<script type="text/javascript">
+//画行情的json数据
+var markUpPicData = ${markUpPicDataStr.raw()};
+
+//财务画图的json数据
+var finDrawDataJson = ${finDrawDataJson.raw()};
+
+//综合评级数据
+var reportRatingCharJson = ${reportRatingCharJson.raw()};
+
+$(function(){
+    $("#NewestInfo").addClass("sub_menu_current");
+});
+
+$(function(){
+    $(".more").click(function(){
+        var $this = $(this);
+        var url = $this.attr("data-url");
+        var title = $this.attr("data-title");
+        if (url) {
+            $("#subPageIframe").get(0).src = url;
+            $(".dialog_list").dialog({
+                autoOpen:true,
+                width:1000,
+                height:500,
+                resizable:false,
+                modal:true,
+                title:title
+            });
+        }
+    });
+    var jqDom =  $(".newstd");
+    getDialog(jqDom);
+    function getDialog(jqDom){
+        jqDom.click(function(){
+            var $this = $(this);
+            var url = $this.attr("data-url");
+            var title = $this.attr("data-title");
+            if(url){
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    data:{},
+                    dataType:"html",
+                    success:function(data){
+                        $(".news_lists").html(data);
+                    }
+                });
+                $(".news_lists").dialog({
+                    autoOpen:true,
+                    width:800,
+                    height:500,
+                    resizable:true,
+                    title:title,
+                    modal:true
+                });
+            }
+        });
+    }
+});
+
+
+</script>
+<script type="text/javascript">
+    //处理iframe里面弹窗受限制的问题
+    window.addEventListener('load', function(){//这里只能用原生的load 事件  用jq 的 $(document).ready(function(){});不行
+        $("#subPageIframe").load(function(){
+//            var jqDom = $("#subPageIframe").contents().find(".newstd");
+//            getDialog(jqDom);
+            $("#subPageIframe").contents().find(".newstd").click(function(){
+                var $this = $(this);
+                var url = $this.attr("data-url");
+                var title = $this.attr("data-title");
+                if (url) {
+                    //$("#subPageIframes").get(0).src = url;
+                    $.ajax({
+                        type:"GET",
+                        url:url,
+                        data:{},
+                        dataType:"html",
+                        success:function(data){
+                            $(".news_lists").html(data);
+                        }
+                    });
+                    $(".news_lists").dialog({
+                        autoOpen:true,
+                        width:800,
+                        height:500,
+                        resizable:true,
+                        title:title,
+                        modal:true
+                    });
+                }
+            });
+        });
+    });
+</script>
+<script src="@{'/public/js/newestinfoct/info.js'}" type="text/javascript" charset="utf-8"></script>
+
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list" style="display: none;">
+    <iframe id="subPageIframe" src="#" frameborder="0" width="100%"></iframe>
+</div>
+
+<div class="news_lists" style="display: none;">
+    *{<iframe id="subPageIframes" src="#" frameborder="0" width="100%"></iframe>}*
+</div>
+#{/set}
+
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="common_wrap">
+
+
+
+            <h2 class="h2_title">最新市场表现</h2>
+
+            <div class="level_scroll_wrap">
+            <div class="level_scroll">
+
+            <div class="market_per_img marketImg" id="lastMarketShowChart"></div>
+            <div class="market_per_total">
+                <p>最近一个月共<span class="deepred" >${reportRating?.orgCount()}</span>机构对<span class="deepred" >${sec.name}</span>做出投资评级,综合评级为<span class="deepred">${reportRating?.calcLastRateResult()}</span></p>
+                <div class="total_apprise">
+                    <h3>最新综合评级：</h3>
+                    <div class="total_apprise_left" id="compositeRatingChart"></div>
+                    <div class="total_apprise_right for_iquean_p">
+                        <p>最近一个月机构评级:
+                        <p>买入<span class="deepred">(#{emVF reportRating?.buy /})</span>家  </p>
+                        <p>增持<span class="deepred">(#{emVF reportRating?.outperform /})</span>家   </p>
+                        <p> 中性<span class="deepred">(#{emVF reportRating?.neutral /})</span>家    </p>
+                        <p> 减持<span class="deepred">(#{emVF reportRating?.underperform /})</span>家  </p>
+                        <p>卖出<span class="deepred">(#{emVF reportRating?.sell /})</span>家  </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            </div>   </div>
+
+
+            <!--所属板块概念 Begin-->
+            <div class="belong_model">
+                <h3>所属概念板块</h3>
+                <ul>
+                    #{list items:plateDtoList, as:'plate'}
+                        *{<li><a href="#" data-code="#{emVF plate.plateId /}">#{emVF plate.plateTitle /}</a></li>}*
+                        <li>#{emVF plate.plateTitle /}</li>
+                    #{/list}
+                </ul>
+            </div>
+            <!--所属板块概念 End-->
+        </div>
+
+
+        <!--新闻资讯 Begin-->
+        <div class="common_wrap wrap_news">
+            <h2 class="h2_title">新闻资讯</h2>
+
+            <div class="news_content">
+                <h3 class="news_main">投资要点</h3>
+                <p>#{emVF investMainpoint /}</p>
+            </div>
+
+            <table width="100%" class="tbl_news_a" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th colspan="2" align="left">大事提醒</th>
+                </tr>
+            #{list items:remindList, as:'remind'}
+                <tr>
+                    <td width="96%">#{emVF remind.eventType /} : #{emVF remind.content /}</td>
+                    <td width="4%">#{emVF remind.declareDate /}</td>
+                </tr>
+            #{/list}
+            #{else}
+                <tr>
+                    <td colspan="2">没有数据</td>
+                </tr>
+            #{/else}
+            </table>
+        </div>
+        <!--新闻资讯 End-->
+
+
+        <div class="market_wrap">
+
+            <div class="level_scroll_wrap">
+                <div class="level_scroll">
+
+                <div class="industry_left industry_right left forWidth">
+                <h2 class="h2_title">新闻</h2>
+                <h3 class="news_main common_til">个股新闻<a href="javascript:void(0);" data-url="@{NewestInfoCt.moreNews(sec.code, 1)}" data-title="个股新闻列表" class="more" style="right: 10px">更多&gt;&gt;</a></h3>
+                <div>
+                    <table width="100%" class="tbl_two_border" border="0" cellspacing="0" cellpadding="0">
+                    #{list items:newsList, as:'news'}
+                        <tr>
+                            <td width="85%"><a href="javascript:void(0);" data-url="@{NewsCt.newsDetail(news.newsId)}" data-title="#{cutStr news.title, len:50 /}"  title="${news.title}" class="newstd">#{cutStr news.title, len:30 /}</a></td>
+                            <td width="15%">#{emVF news.declareDate /}</td>
+                        </tr>
+                    #{/list}
+                    #{else }
+                        <tr>
+                            <td colspan="2">没有数据</td>
+                        </tr>
+                    #{/else}
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="industry_right right forWidth">
+                <h2 class="h2_title">公告</h2>
+                <h3 class="news_main common_til">最新公告<a href="javascript:void(0);" data-url="@{NewestInfoCt.moreBulletin(sec.code, 1)}" data-title="公告列表" class="more"style="right: 10px">更多&gt;&gt;</a></h3>
+                <div>
+                    <table width="100%" class="tbl_two_border" border="0" cellspacing="0" cellpadding="0">
+                    #{list items:bulletinsList, as:'bulletin'}
+                        <tr>
+                            *{<td width="85%"><a #{bulletinUrl bulletin.attachUrl /} title="${bulletin.title}">#{cutStr bulletin.title, len:30 /}</a></td>}*
+                            <td>
+                                #{if org.apache.commons.lang.StringUtils.isBlank(bulletin.attachUrl) }
+                                   <a href="#">#{cutStr bulletin.title, len:30 /}</a>
+                                #{/if}
+                                #{else}
+                                   <a href="@{AttachCt.attachDownload(bulletin.attachUrl)}">#{cutStr bulletin.title, len:30 /}</a>
+                                #{/else}
+                            </td>
+                            <td width="15%">#{emVF bulletin.pubDate /}</td>
+                        </tr>
+                    #{/list}
+                    #{else}
+                        <tr>
+                            <td colspan="2">没有数据</td>
+                        </tr>
+                    #{/else}
+                    </table>
+                </div>
+            </div>
+
+                </div>
+            </div>
+
+            <!--最新财务分析 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">最新财务分析</h2>
+                <h3 class="news_main common_til">主营业务收入</h3>
+                <table width="100%" class="tbl_main_sr" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="11%">
+                            #{if top3MainBusinessList?.size() >= 3}
+                                <strong>前三大主营业务</strong>
+                            #{/if}
+                            #{else }
+                                <strong>主营业务</strong>
+                            #{/else}
+                        </td>
+                        <td width="89%">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>项目</td>
+                                    <td>主营收入(万元)</td>
+                                    <td>占比(%)</td>
+                                    <td>毛利(万元)</td>
+                                    <td>毛利率(%)</td>
+                                    <td>同比增速(%)</td>
+                                </tr>
+                                #{list items:top3MainBusinessList, as:'item'}
+                                <tr>
+                                    <td>#{emVF item.itemName /}</td>
+                                    <td>#{emVF item.earnings, scale:-4, f:'#,##0.00' /}</td>
+                                    <td>#{emVF item.earningsProportion, scale:0, f:'#,##0.00' /}</td>
+                                    <td>#{emVF item.grossMargin, scale:-4, f:'#,##0.00'/}</td>
+                                    <td>#{emVF item.grossMarginRate, scale:0, f:'#,##0.00'/}</td>
+                                    <td>#{emVF item.incomeGrowthRate, scale:0, f:'#,##0.00' /}</td>
+                                </tr>
+                                #{/list}
+                                #{else}
+                                    <tr>
+                                        <td colspan="6">没有数据</td>
+                                    </tr>
+                                #{/else}
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+
+                <div class="market_per_img n_left" style="width: 430px;">
+                    <div id="mainIncomeChart" style="width: 425px;height: 215px"></div>
+                    <div id="netProfitChart" style="width: 425px;height: 215px; margin-top: 30px;"></div>
+                </div>
+
+                <div class="market_per_total n_right" style="width: 650px;">
+                    <table width="100%" border="0" class="tbl_common tbl_equ tbl_sec_l" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th>报告日期</th>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <th width="14%">#{emVF item.endDate/}</th>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>财务比率</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                            <td align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>基本每股收益</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.eps, f:'#,##0.0000'/}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>稀释每股收益</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.dilutedEps, f:'#,##0.0000' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>每股净资产</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.nav, f:'#,##0.0000' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>每股经营活动现金流</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.operatingNcfPerShare, f:'#,##0.0000' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>净资产收益率(%)</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.roeb, scale:2, f:'#,##0.00' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>毛利率(%)</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.operatingMarginRatio, scale:2, f:'#,##0.00' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>净利润增长率(%)</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.netProfitGrowthB, scale:2, f:'#,##0.00' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr>
+                            <td>主营收入增长率(%)</td>
+                        #{list items:financialRatiosDtoList, as:'item'}
+                            <td align="center">#{emVF item.operatingRevenueGrowthB, scale:2, f:'#,##0.00' /}</td>
+                        #{/list}
+                        </tr>
+                    </table>
+                </div>
+
+                    </div>   </div>
+            </div>
+            <!--最新财务分析 End-->
+        </div>
+
+    </div>
+</div>
+
+<!--main End-->
+
+<script>
+    //根据客户端宽来计算market_per_img的margin-right
+    (function(){
+        var offsetWidth = document.documentElement.offsetWidth;
+        var marketImg = document.getElementsByClassName("marketImg");
+        var marginRight = marketImg[0].style.marginRight;
+        if( offsetWidth >= 1280){
+            marketImg[0].style.marginRight = 45 + 'px';
+        }else if(offsetWidth < 1280 && offsetWidth >= 1250){
+            marketImg[0].style.marginRight = 10 + 'px';
+        }
+        window.onresize = function(){
+            var offsetWidth = document.documentElement.offsetWidth;
+            if(offsetWidth >= 1280){
+                marketImg[0].style.marginRight = 45 + 'px';
+            }else if(offsetWidth < 1280 && offsetWidth >= 1250){
+                marketImg[0].style.marginRight = 10 + 'px';
+            }else{
+                marketImg[0].style.marginRight = 20 + 'px';
+            }
+        }
+
+
+        var forWidth = document.getElementsByClassName("forWidth");
+        //计算新闻和公告的宽
+        for(var i= 0, len=forWidth.length; i<len; i++){
+            forWidth[i].style.width = (offsetWidth- 180)/2 + "px";
+        }
+
+    })();
+
+</script>

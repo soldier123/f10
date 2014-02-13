@@ -1,0 +1,64 @@
+play-thread-1-ERROR-[2013-09-09 09:24:39,431]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgpn81ni
+Internal Server Error (500) for request GET /companyinfoct/info
+
+Execution exception (In {module:f10Common}/app/util/RedisUtil.java around line 156)
+JedisConnectionException occured : Could not get a resource from the pool
+
+play.exceptions.JavaExecutionException: Could not get a resource from the pool
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:22)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionInternal(RedisConnectionManager.java:40)
+	at play.modules.redis.RedisConnectionManager.getRawConnectionFromShard(RedisConnectionManager.java:47)
+	at play.modules.redis.Redis.get(Redis.java:267)
+	at util.RedisUtil.fetchFromRedis(RedisUtil.java:156)
+	at controllers.CompanyInfoCt.info(CompanyInfoCt.java:25)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: Connection refused: connect
+	at redis.clients.jedis.Connection.connect(Connection.java:124)
+	at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:54)
+	at redis.clients.jedis.BinaryJedis.connect(BinaryJedis.java:1657)
+	at redis.clients.jedis.JedisPool$JedisFactory.makeObject(JedisPool.java:63)
+	at org.apache.commons.pool.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:1158)
+	at redis.clients.util.Pool.getResource(Pool.java:20)
+	... 11 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at redis.clients.jedis.Connection.connect(Connection.java:119)
+	... 16 more
+play-thread-1-ERROR-[2013-09-09 10:29:42,510]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6fgpn81nj
+Internal Server Error (500) for request GET /reportct/renameornewcond?id=-999&name=%E6%96%B0%E6%90%9C%E7%B4%A2%E6%9D%A1%E4%BB%B61&type=103
+
+Execution exception (In /app/bussiness/TemplateService.java around line 62)
+NullPointerException occured : Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+
+play.exceptions.JavaExecutionException: Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:237)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.NullPointerException: Try to read uid on null object util.UserComposeInfo (bussiness.TemplateService.fetchUserTemplateByName, line 62)
+	at play.classloading.enhancers.PropertiesEnhancer$FieldAccessor.invokeReadProperty(PropertiesEnhancer.java:213)
+	at bussiness.TemplateService.fetchUserTemplateByName(TemplateService.java:62)
+	at bussiness.TemplateService.hasSameName(TemplateService.java:70)
+	at controllers.ReportCt.addCond(ReportCt.java:302)
+	at controllers.ReportCt.renameOrNewCond(ReportCt.java:275)
+	at play.mvc.ActionInvoker.invokeWithContinuation(ActionInvoker.java:557)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:508)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:484)
+	at play.mvc.ActionInvoker.invokeControllerMethod(ActionInvoker.java:479)
+	at play.mvc.ActionInvoker.invoke(ActionInvoker.java:161)
+	... 1 more

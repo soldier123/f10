@@ -1,0 +1,31 @@
+#{list items:list ,as:'item' }
+<tr>
+    #{if pageNo == null}
+        <td width="5%"><div class="rr_num">${item_index  }</div></td>
+    #{/if}
+    #{else }
+        <td width="5%"><div class="rr_num">${item_index + 21*(pageNo-1)}</div></td>
+    #{/else}
+    <td width="10%">#{emVF item.declareDate/}</td>
+    <td width="18%">
+        #{if item.symbol != null && !"".equals(item.symbol)}
+            <a href="javascript:jumpToQuote('#{emVF v : item.symbol/}');" style="text-decoration: none"> #{emVF item.shortName/}（#{emVF item.symbol/}）</a>
+        #{/if}
+        #{else}
+            #{emVF item.shortName/}（#{emVF item.symbol/}）
+        #{/else}
+    </td>
+    <td width="60%">#{emVF item.title/}</td>
+    <td width="7%">
+        *{<a #{bulletinUrl item.announcementRoute /}><div class="m_attachement">附件</div></a>}*
+        #{if org.apache.commons.lang.StringUtils.isBlank(item.announcementRoute) }
+            <a href="#"><div class="m_attachement">附件</div></a>
+        #{/if}
+        #{else}
+            <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.announcementRoute)}')" href="javascript:void(0)"> <div class="m_attachement">附件</div> </a>
+        #{/else}
+
+
+    </td>
+</tr>
+#{/list}

@@ -1,0 +1,19 @@
+#{if bulletinsList!=null&&bulletinsList.size()>0}
+<table width="100%" border="1" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+    <tbody>
+    #{list items:bulletinsList, as:'item'}
+    <tr>
+        <td width="70%">
+            #{if org.apache.commons.lang.StringUtils.isBlank(item.attachUrl) }
+                <a href="#">#{emVF item.title /}</a>
+            #{/if}
+            #{else}
+                <a href="@{AttachCt.attachDownload(item.attachUrl)}">#{emVF item.title /}</a>
+            #{/else}
+        </td>
+        <td width="30%">#{emVF item.pubDate, f:"yyyy-MM-dd" /}</td>
+    </tr>
+    #{/list}
+    </tbody>
+</table>
+#{/if}

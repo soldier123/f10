@@ -1,0 +1,76 @@
+*{利率表附注}*
+<div>
+    <ul class="fuzuSel">
+        <li><a href="#llbf1">营业收入、营业成本</a></li>
+        <li><a href="#llbf2">财务费用</a></li>
+        <li><a href="#llbf3">营业税金及附加</a></li>
+    </ul>
+</div>
+
+<div id="llbf1">营业收入、营业成本</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>项目</td>
+        <td>类别</td>
+        <td>分布标准</td>
+        <td>币种</td>
+        <td>本期收入金额(万元)</td>
+        <td>本期成本金额(万元)</td>
+        <td>本期毛利率</td>
+        <td>上期收入金额(万元)</td>
+        <td>上期成本金额(万元)</td>
+        <td>上期毛利率</td>
+    </tr>
+#{list items:operateIncomeCostsSubList, as:'oic'}
+    <tr>
+        <td>${oic.item}</td>
+        <td>${oic.category2Cn()}</td>
+        <td>${oic.distributionStandard2Cn()}</td>
+        <td>#{currency2Cn oic.currency /}</td>
+        <td>#{emVF oic.earnings, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF oic.costs, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF oic.grossMarginRate, f:'#,##0.00', scale:0/}</td>
+        <td>#{emVF oic.previousEarnings, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF oic.previousCosts, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF oic.previousGrossMarginRate, f:'#,##0.00', scale:0/}</td>
+    </tr>
+#{/list}
+</table>
+
+<div id="llbf2">财务费用</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>项目</td>
+        <td>币种</td>
+        <td>本期金额(万元)</td>
+        <td>上期金额(万元)</td>
+    </tr>
+#{list items:financeCostsSubList, as:'fcl'}
+    <tr>
+        <td>${fcl.item2Cn()}</td>
+        <td>#{currency2Cn fcl.currency /}</td>
+        <td>#{emVF fcl.amount, f:'#,##0.00', scale:-4 /}</td>
+        <td>#{emVF fcl.previousAmount, f:'#,##0.00', scale:-4 /}</td>
+    </tr>
+#{/list}
+</table>
+
+<div id="llbf3">营业税金及附加</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>税种</td>
+        <td>币种</td>
+        <td>本期金额(万元)</td>
+        <td>上期金额(万元)</td>
+        <td>计税基础</td>
+    </tr>
+#{list items:businessTaxAppendSubList, as:'bta'}
+    <tr>
+        <td>${bta.taxType}</td>
+        <td>#{currency2Cn bta.currency/}</td>
+        <td>#{emVF bta.amount, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF bta.previousAmount, f:'#,##0.00', scale:-4/}</td>
+        <td>${bta.taxBasis}</td>
+    </tr>
+#{/list}
+</table>

@@ -1,0 +1,244 @@
+#{extends 'f10Main.html'/}
+#{set title:'分红融资'/}
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function () {
+        $("#Dividend").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+    });
+
+    //个股图的数据, 注意, 这里的 data数组里第一个数据表示第一个矩形, 第二个数据表示第二个矩形
+    var secChartData = [
+
+        {
+            name:'配股(万)',
+            data:[#{emVF2 secRaiseFund.allotmentSum, scale: -4, f:'0.00' /}, 0]
+        },
+        {
+            name:'增发(万)',
+            data:[#{emVF2 secRaiseFund.addIssuingSum(), scale: -4, f:'0.00' /}, 0]
+        },
+        {
+            name:'新股发行(万)',
+            data:[#{emVF2 secRaiseFund.firstIssuingSum, scale: -4, f:'0.00' /}, 0]
+        },
+        {
+            name:'现金分红(万)',
+            color:'red',
+            data:[0, #{emVF2 secRaiseFund.cashBonusSum, scale: -4, f:'0.00' /}]
+        }
+    ];
+    //市场的数据
+    var marketCharData = [
+        {
+            name:"${sec.name}",
+            data:[#{emVF2 secRaiseFund.rate, scale: 2, f:'0.000000' /}, 0]
+        },
+        {
+            name:'市场平均',
+            data:[0, #{emVF2 marketRaiseFund.rate, scale: 2, f:'0.000000' /}]
+        }
+    ];
+
+    //股票名称
+    var sname = "${sec.name}";
+</script>
+<script src="@{'/public/js/dividendct/info.js'}" type="text/javascript" charset="utf-8"></script>
+#{/set}
+
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <!--派现与募集对比 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">派现与募集对比</h2>
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+
+                    <div class="fh_wrap">
+                    <div id="secChart" class="fh_wrap_left" style="width: 450px;height: 130px;"></div> *{各股的图}*
+                    <div id="marketChart" style="width: 450px;height: 130px;padding-left: 23px; clear: both;float: left;"></div> *{市场的图}*
+                    <div class="fh_wrap_right" style="margin-top: -120px; padding-bottom: 25px;">
+                        <table width="100%" border="0" class="tbl_common tbl_fh" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th width="45%">统计项目</th>
+                                <th width="22%">次数</th>
+                                <th width="33%">募集资金(万元)</th>
+                            </tr>
+
+                            <tr>
+                                <td>新股发行</td>
+                                <td>#{emVF secRaiseFund.firstIssuingCount/}</td>
+                                <td>#{emVF secRaiseFund.firstIssuingSum, scale: -4, f:'#,##0.00'/}</td>
+                            </tr>
+                            <tr>
+                                <td>配股</td>
+                                <td>#{emVF secRaiseFund.allotmentCount /}</td>
+                                <td>#{emVF secRaiseFund.allotmentSum, scale: -4, f:'#,##0.00' /}</td>
+                            </tr>
+                            <tr>
+                                <td>增发</td>
+                                <td>#{emVF secRaiseFund.addIssuingCount() /}</td>
+                                <td>#{emVF secRaiseFund.addIssuingSum(), scale: -4, f:'#,##0.00' /}</td>
+                            </tr>
+                            <tr>
+                                <td>送转股</td>
+                                <td>#{emVF secRaiseFund.sendCount /}</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>分红</td>
+                                <td>#{emVF secRaiseFund.cashBonusCount /}</td>
+                                <td>#{emVF secRaiseFund.cashBonusSum, scale: -4, f:'#,##0.00' /}</td>
+                            </tr>
+                            <tr>
+                                <td>融资总额</td>
+                                <td></td>
+                                <td>#{emVF secRaiseFund.fundRaisingTotal(), scale: -4, f:'#,##0.00' /}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">派现总额/融资总额(%)</td>
+                                <td>#{emVF secRaiseFund.getRate(), scale: 2, f:'#,##0.00' /}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                    </div>  </div>
+            </div>
+            <!--派现与募集对比 End-->
+
+            <!--分红、配股、增发 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">分红、配股、增发</h2>
+
+                <h3 class="news_main common_til">分红明细</h3>
+                <table width="100%" border="0" class="tbl_common tbl_exec tbl_fh_2 hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="16%">公告日</th>
+                        <th width="7%">分红(每股)</th>
+                        <th width="9%">送股(每股)</th>
+                        <th width="12%">转股(每股)</th>
+                        <th width="10%">登记日</th>
+                        <th width="10%">派现额度(万元)</th>
+                        <th width="17%">除权日</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:cashBonusDetailList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.declareDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.cashBonus, f:'#,##0.0000'/}</td>
+                        <td>#{emVF item.send, f:'#,##0.00'/}</td>
+                        <td>#{emVF item.turn, f:'#,##0.00'/}</td>
+                        <td>#{emVF item.recordDate, f:'yyyy-MM-dd'/}</td>
+                        <td>#{emVF item.dividendDistri, f:'#,##0.00' ,scale:-4/}</td>
+                        <td>#{emVF item.exDividendDate, f:'yyyy-MM-dd' /}</td>
+                    </tr>
+                #{/list}
+                    </tbody>
+                </table>
+            </div>
+            <!--分红、配股、增发 End-->
+            <!--增发明细  Begin-->
+            <div class="common_wrap">
+                <h3 class="news_main common_til">增发明细</h3>
+                <table width="100%" border="0" class="tbl_common tbl_exec tbl_fh_2 hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="10%">公告日期</th>
+                        <th width="19%">增发对象</th>
+                        <th width="10%">发行方式</th>
+                        <th width="8%">增发价格</th>
+                        <th width="12%">实际增发数量(万股)</th>
+                        <th width="12%">实际募集净额(万元)</th>
+                        <th width="17%">增发上市日</th>
+                        <th width="12%">增发后总股本(万股)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:addIssuingDetailList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.declareDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.issueObject /}</td>
+                        <td>#{emVF item.issueMode /}</td>
+                        <td>#{emVF item.price, f:'#,##0.00' /}</td>
+                        <td>#{emVF item.issueShares, f:'#,##0.00', scale:-4/}</td>
+                        <td>#{emVF item.raiseNetFund, f:'#,##0.00', scale:-4/}</td>
+                        <td>#{emVF item.listedDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.totNumShares, f:'#,##0.00', scale:-4/}</td>
+                    </tr>
+                #{/list}
+                    </tbody>
+                </table>
+            </div>
+            <!--增发明细  End-->
+            <!--配股明细  Begin-->
+            <div class="common_wrap">
+                <h3 class="news_main common_til">配股明细</h3>
+                <table width="100%" border="0" class="tbl_common tbl_exec tbl_fh_2 hhmore" cellspacing="0" cellpadding="0">
+                    <thead>
+                    <tr>
+                        <th width="10%">公告日期</th>
+                        <th width="7%">配股比例</th>
+                        <th width="7%">配股价格</th>
+                        <th width="10%">配股登记日</th>
+                        <th width="10%">配股除权日</th>
+                        <th width="10%">配股上市日</th>
+                        <th width="14%">实际募集资金(万元)</th>
+                        <th width="36%">配股承销商</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                #{list items:allotmentDetailList, as:'item'}
+                    <tr>
+                        <td>#{emVF item.declareDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.placingRatio, f:'#,##0.00' /}</td>
+                        <td>#{emVF item.price, f:'#,##0.00' /}</td>
+                        <td>#{emVF item.registerDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.exRightDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.listedDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF item.raiseFund, f:'#,##0.00', scale:-4/}</td>
+                        <td>#{emVF item.saleMan /}</td>
+                    </tr>
+                #{/list}
+                    </tbody>
+                </table>
+            </div>
+            <!--配股明细  End-->
+            <!--首次发行  Begin-->
+            <div class="common_wrap">
+                <h3 class="news_main common_til">首次发行</h3>
+                <table width="100%" border="0" class="tbl_common tbl_exec tbl_fh_2" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th width="10%">发行日期</th>
+                        <th width="7%">上市日期</th>
+                        <th width="7%">首日价格</th>
+                        <th width="10%">首日市盈率</th>
+                        <th width="10%">募集资金总计</th>
+                        <th width="10%">发行价</th>
+                        <th width="14%">发行股数(万股)</th>
+                        <th width="36%">主承销商</th>
+                    </tr>
+                    <tr>
+                        <td>#{emVF ipo?.issueDate, f:'yyyy-MM-dd' /}</td>
+                        <td>#{emVF ipo?.listDate, f:'yyyy-MM-dd'/}</td>
+                        <td>#{emVF marketQuotationDto?.closePrice, f:'#,##0.00'/}</td>
+                        <td>#{emVF marketQuotationDto?.pe, f:'#,##0.00'/}</td>
+                        <td>#{emVF ipo?.raiseNetFund, f:'#,##0.00', scale:-4/}</td>
+                        <td>#{emVF ipo?.pubPrice, f:'#,##0.00'/}</td>
+                        <td>#{emVF ipo?.issueNumber, f:'#,##0.00', scale:-4/}</td>
+                        <td>#{emVF orgDto?.mainSaleMan/}</td>
+                    </tr>
+                </table>
+            </div>
+            <!--首次发行  End-->
+        </div>
+    </div>
+</div>
+<!--main End-->

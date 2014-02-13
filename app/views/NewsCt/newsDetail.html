@@ -1,0 +1,26 @@
+<style type="text/css">
+    .m_attachement{ width:22px; height:23px; margin:0 auto; text-indent:-9999px; background:url("@{'/public/images/m_attachment.png'}") no-repeat; cursor:pointer;}
+</style>
+<h1 class="cont_title">#{emVF newsInfo.title/}</h1>
+<br>
+<div class="sub_title">
+    <span class="c_source">#{emVF newsInfo.newsSource/}</span>
+    <span class="author">#{emVF newsInfo.autor/}</span>
+    <span class="report_date">#{emVF newsInfo.declareDate,f:'yyyy-MM-dd HH:mm'/}</span>
+</div>
+
+<div class="c_detail">
+#{if newsInfo.newsContent!=null&&!"null".equals(newsInfo.newsContent)}
+${newsInfo.newsContent.nl2br()}
+#{/if}
+#{elseif nadlist.size()>0}
+    内容请查看附件
+#{/elseif}
+#{else }
+    内容和附件都为空
+#{/else}
+    <br>
+#{list items:nadlist, as:'item'}
+<a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><img src="@{'/public/images/fontword.png'}" style=" width:22px; height:23px; margin:0 auto;"></a>${item.fullName}
+#{/list}
+</div>

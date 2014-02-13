@@ -1,0 +1,250 @@
+#{extends 'f10Main.html'/}
+#{set title:'行业分析'/}
+
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function () {
+        $("#IndustryAna").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+    });
+    //最新市场表现 个股数据
+    var marketPerforseriesDataJson = ${marketPerforseriesDataJson.raw()};
+
+    //公司规模
+    var companyScaleCharJson = ${companyScaleCharJson.raw()};
+
+    //估值水平
+    var appraisementCharJson = ${appraisementCharJson.raw()};
+
+    //财务状态
+    //var financeStatusCharJson =${financeStatusCharJson.raw()};
+    var financeXData = ${financeXData.raw()};
+    var financeSeriesData = ${financeSeriesData.raw()};
+
+    $(function(){
+        $(".more, .left_more").click(function(){
+            var $this = $(this);
+            var url = $this.attr("data-url");
+            var title = $this.attr("data-title");
+            if (url) {
+                $("#subPageIframe").get(0).src = url;
+                $(".dialog_list").dialog({
+                    autoOpen:true,
+                    width:900,
+                    height:500,
+                    resizable:false,
+                    modal:true,
+                    title:title
+                });
+            }
+        });
+    });
+</script>
+<script src="@{'/public/js/industryanact/info.js'}" type="text/javascript" charset="utf-8"></script>
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list" style="display: none;">
+    <iframe id="subPageIframe" src="#" frameborder="0" width="100%"></iframe>
+</div>
+#{/set}
+
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+
+            <div class="level_scroll_wrap">
+                <div class="level_scroll">
+
+            <div class="industry_left" style="width: 540px;height: 520px;">
+                <h2 class="h2_title">市场表现</h2>
+
+                <div id="marketPerforChar" class="industry-autocontent" style="width: 510px;height: 300px;margin-left: 10px;margin-top: 5px;"></div>
+                <table border="1" cellspacing="8" class="industry-autocontent" align="center" cellpadding="4" width="500px" style="margin-top: 20px;margin-left: 10px;">
+                    <tr align="center"  border="0">
+                        <td colspan="4"> 注:个股上市满三个月后，将计入市场表现。</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>近三月累计涨跌幅(%)</td>
+                        <td>近三月单日最大涨幅(%)</td>
+                        <td>近三月单日最大跌幅(%)</td>
+                    </tr>
+                    <tr>
+                        <td>#{emVF marketIdxInfo?.name /}</td>
+                        <td>#{emVF marketPerfor?.return3Month1, scale:0, f:'#,##0.00'/}</td>
+                        <td>#{emVF marketPerfor?.maxReturnDaily1, scale:0, f:'#,##0.00'/}</td>
+                        <td>#{emVF marketPerfor?.minReturnDaily1, scale:0, f:'#,##0.00'/}</td>
+                    </tr>
+                    #{if induIdxInfo==null}
+
+                    #{/if}
+                    #{else }
+                    <tr>
+                        <td>#{emVF induIdxInfo?.name /}</td>
+                        <td>#{emVF induPerfor?.return3Month1, scale:0, f:'#,##0.00'/}</td>
+                        <td>#{emVF induPerfor?.maxReturnDaily1, scale:0, f:'#,##0.00'/}</td>
+                        <td>#{emVF induPerfor?.minReturnDaily1, scale:0, f:'#,##0.00'/}</td>
+                    </tr>
+                    #{/else}
+                    <tr>
+                        <td>#{emVF sec?.name /}</td>
+                        <td>#{emVF secPerfor?.return3Month1, scale:2, f:'#,##0.00'/}</td>
+                        <td>#{emVF secPerfor?.maxReturnDaily1, scale:2, f:'#,##0.00'/}</td>
+                        <td>#{emVF secPerfor?.minReturnDaily1, scale:2, f:'#,##0.00'/}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="industry_right" style="width: 540px;height: 500px">
+                <h2 class="h2_title">公司规模(总市值 亿元)</h2>
+                <a href="javascript:void(0);" data-url="@{IndustryAnaCt.morecompanyscale(sec.code)}" data-title="公司规模" class="more">更多&gt;&gt;</a>
+
+                <div id="companyScalChart" class="industry-autocontent" style="width: 510px;height: 300px;margin-left: 10px;margin-top: 5px"></div>
+                <table border="1" cellspacing="8" class="industry-autocontent" align="center" cellpadding="4" width="500px" style="margin-top: 20px; margin-left: 10px;">
+                    <tr align="center">
+                        <td></td>
+                    #{list items:companyScaleList, as:'item'}
+                        <td>${item.secName()}</td>
+                    #{/list}
+                    </tr>
+                    <tr align="center">
+                        <td>市值</td>
+                    #{list items:companyScaleList, as:'item'}
+                        <td>#{emVF2 item.totalValue, f:'#,##0.00', scale:-8/}</td>
+                    #{/list}
+                    </tr>
+                    <tr align="center">
+                        <td>排名</td>
+                    #{list items:companyScaleList, as:'item'}
+                        <td>${item.rank}</td>
+                    #{/list}
+                    </tr>
+                </table>
+            </div>
+
+                    </div>  </div>
+
+            <div class="level_scroll_wrap">
+                <div class="level_scroll">
+            <div class="common_wrap">
+                <div class="industry_left" style="width: 540px;height: 500px">
+                    <h2 class="h2_title" style="position: relative;">估值水平（市盈率 倍） <a  style="position: absolute;top:5px;right: -0px; left: inherit;" href="javascript:void(0);" data-url="@{IndustryAnaCt.moreAppraisement(sec.code)}" data-title="估值水平" class="left_more">更多&gt;&gt;</a></h2>
+
+
+                    <div id="appraisementChart" class="industry-autocontent" style="width: 510px;height: 300px;margin-left: 10px;margin-top: 5px">
+                    </div>
+                    <table border="1" cellspacing="8" class="industry-autocontent" align="center" cellpadding="4" width="510px" style="margin-top: 20px;margin-left: 10px;">
+                        <tr align="center">
+                            <td></td>
+                        #{list items:appraisementList, as:'item'}
+                            <td>#{emVF item.secName() /}</td>
+                        #{/list}
+                        </tr>
+                        <tr align="center">
+                            <td>市盈率</td>
+                        #{list items:appraisementList, as:'item'}
+                            <td>#{emVF2 item.pe1a, f:'#,##0.00' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr align="center">
+                            <td>排名</td>
+                        #{list items:appraisementList, as:'item'}
+                            <td>${item.rank}</td>
+                        #{/list}
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="industry_right" style="width: 540px;height: 500px">
+                    <h2 class="h2_title">财务状况（每股收益 元）</h2>
+                    <a href="javascript:void(0);" data-url="@{IndustryAnaCt.moreFinance(sec.code)}" data-title="财务状况" class="more">更多&gt;&gt;</a>
+                    <div id="financeStatusChar" class="industry-autocontent" style="width: 510px;height: 300px;margin-left: 10px;margin-top: 5px">
+                    </div>
+                    <table border="1" cellspacing="8" class="industry-autocontent" align="center" cellpadding="4" width="500px" style="margin-top: 10px;margin-left: 10px;">
+                        <tr align="center">
+                            <td></td>
+                        #{list items:zeroRow ,as:'item' }
+                            <td>${item}</td>
+                        #{/list}
+                        </tr>
+                        <tr align="center">
+                            <td>#{emVF firstDate, f:'yyyy-MM-dd' /}</td>
+                        #{list items:firstRow ,as:'item'}
+                            <td>#{emVF2 item, f:'#,##0.0000'/}</td>
+                        #{/list}
+                        </tr>
+                        <tr align="center">
+                            <td>#{emVF secondDate, f:'yyyy-MM-dd' /}</td>
+                        #{list items:secondRow ,as:'item' }
+                            <td>#{emVF2 item, f:'#,##0.0000' /}</td>
+                        #{/list}
+                        </tr>
+                        <tr align="center">
+                            <td>排名</td>
+                        #{list items:thirdRow ,as:'item' }
+                            <td>${item}</td>
+                        #{/list}
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+                </div></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function(){
+        var cAll =  $(".industry_left, .industry_right"),
+            docWidth = document.documentElement.clientWidth;
+
+        cAll.css({"width": (docWidth -180)/2});
+        window.onresize = function(){
+//              throttle(resizeWidth)
+            docWidth = document.documentElement.clientWidth;
+            if(docWidth > 800){
+                cAll.css({"width": (docWidth -180)/2});
+                setWidth(docWidth);
+
+            }
+
+        }
+
+        function resizeWidth(){
+            docWidth = document.documentElement.clientWidth;
+            if(docWidth > 800){
+                cAll.css({"width": (docWidth -180)/2});
+                setWidth(docWidth);
+
+            }
+        }
+
+        //内容根据窗口宽度来变化
+        var doc = document,
+            marketContainer = doc.getElementsByClassName('industry-autocontent');
+        //初始化宽度
+        function setWidth(paramWidth){
+            for(var i= 0, len=marketContainer.length; i<len; i++){
+                marketContainer[i].style.width = (paramWidth-250)/2 + 'px';
+            }
+        }
+        setWidth(docWidth);
+
+        //函数节流
+        function throttle(method, context){
+            clearTimeout(method.tID);
+            method.tID = setTimeout(function(){
+                method.call(context)
+            }, 0)
+        }
+
+
+    })();
+
+
+</script>

@@ -1,0 +1,38 @@
+<h1 class="cont_title tooltip"  #{if newsInfo.title.length()>38} title="#{emVF newsInfo.title/}" #{/if}>#{subString v : newsInfo.title,l:38/}</h1>
+<div class="sub_title">
+    <span class="c_source">#{emVF newsInfo.newsSource/}</span>
+    <span class="author">#{emVF newsInfo.autor/}</span>
+    <span class="report_date">#{emVF newsInfo.declareDate,f:'yyyy-MM-dd HH:mm'/}</span>
+
+    <div class="c_service">
+    #{if newsInfo.newsContent!=null}
+        <a onclick="javascript:exportFile('@{NewsCt.exportNews(newsInfo.newsId)}')" href="javascript:void(0)"><span class="c_word tooltip" title="导出word" >导出word</span></a>
+        <span class="c_print  tooltip" title="打印" >打印</span>
+    #{/if}
+
+    </div>
+</div>
+
+<div class="c_detail">
+    #{list items:nadlist, as:'item'}
+        #{if item.filenameExtension.equals("PDF")}
+            <a  onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_attachement5">${item.fullName}</div></a>
+        #{/if}
+        #{elseif item.filenameExtension.equals("DOC")}
+            <a  onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_fontword">${item.fullName}</div></a>
+        #{/elseif}
+        #{else }
+            <a  onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_fujian">${item.fullName}</div></a>
+        #{/else}
+    #{/list}
+    #{if newsInfo.newsContent!=null&&!"null".equals(newsInfo.newsContent)}
+        <pre>${newsInfo.newsContent}</pre>
+        <br>
+    #{/if}
+    #{elseif nadlist==null && nadlist.size()<0}
+        内容和附件都为空<br>
+    #{/elseif}
+</div>
+<script>
+    registToolTip();
+</script>

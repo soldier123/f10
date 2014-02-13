@@ -1,0 +1,130 @@
+*{财务简表指标div内容}*
+#{if balanceMap.size() > 0}
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="38%"></td>
+        #{list items:dateList, as:'item'}
+            <td class="rpdate" align="center">${item}</td>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">流动资产(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'currentAssets', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">非流动资产(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'noncurrentAssets', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">资产总计(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'totalAssets', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">流动负债(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'currentLiabilities', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">非流动负债(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'noncurrentLiabilities', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">负债合计(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'totalLiabilities', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">归属于母公司股东权益(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'stockholderEquity', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">少数股东权益(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'fewStockholderEquity', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">负债和股东权益(万元)</td>
+        #{outFinanceItem balanceMap, dl: dateList, field:'liabiStockholderEquity', f:'#,##0.00', scale:-4/}
+    </tr>
+</table>
+#{/if}
+
+#{if cashFlowMap.size() > 0}
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="38%"></td>
+        #{list items:dateList, as:'item'}
+            <td class="rpdate" align="center">${item}</td>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">经营性现金流(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'cFFO', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">投资性现金流(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'cFIA', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">融资性现金流(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'cFFF', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">净现金流(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'freeCashFlow', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">期初现金及等价物(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'initialCashEquivalent', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">期末现金及等价物(万元)</td>
+        #{outFinanceItem cashFlowMap, dl: dateList, field:'finalCashEquivalent', f:'#,##0.00', scale:-4/}
+    </tr>
+</table>
+#{/if}
+
+#{if incomeMap.size() > 0}
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="38%"></td>
+        #{list items:dateList, as:'item'}
+            <td class="rpdate" align="center">${item}</td>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">营业总收入(万元)</td>
+        #{outFinanceItem incomeMap, dl: dateList, field:'grossRevenue', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">营业收入(万元)</td>
+        #{outFinanceItem incomeMap, dl: dateList, field:'taking', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">营业利润(万元)</td>
+        #{outFinanceItem incomeMap, dl: dateList, field:'operatingProfit', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">利润总额(万元)</td>
+        #{outFinanceItem incomeMap, dl: dateList, field:'totalProfit', f:'#,##0.00', scale:-4/}
+    </tr>
+
+    <tr>
+        <td width="38%">净利润(万元)</td>
+        #{outFinanceItem incomeMap, dl: dateList, field:'retainedProfits', f:'#,##0.00', scale:-4/}
+    </tr>
+</table>
+#{/if}

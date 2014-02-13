@@ -1,0 +1,249 @@
+*{主要财务指标div内容}*
+<table width="100%" border="0" class="tbl_title" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="38%"><strong>报告日期</strong></td>
+    *{#{list items:dateList, as:'item'}}*
+        *{<td width="15%" align="right">${item}</td>}*
+    *{#{/list}}*
+    </tr>
+</table>
+<table id="mainTable1" width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr align="left">
+        <th colspan="5" class="none"><a></a></th>
+    </tr>
+    <tr align="left">
+        <th>每股指标</th>
+        #{list items:perShareDateList, as:'item'}
+            <th width="15%" align="right">${item}</th>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">基本每股收益(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'eps', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td >稀释每股收益(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'dilutedEPS', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td >每股收益-期末股本摊薄(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'ePSA', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股收益-最新股本摊薄(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'ePSB', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股收益TTM-期末股本摊薄(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'ePSTTMA', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股收益TTM-最新股本摊薄(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'ePSTTMB', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股留存收益(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'retainedEarningPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>息税前每股收益(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'eBITPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股营业总收入(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'totalRevenuePerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股营业收入(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'revenuePerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股营业利润(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'operatingProfitPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股净资产(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'nAV', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股经营活动产生的现金流量(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'operatingNCFPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股资本公积(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'capitalSurplusPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股盈余公积(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'surplusReservePerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股未分配利润(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'undistributedProfitPerShare', f:'0.0000'/}
+    </tr>
+    <tr>
+        <td>每股企业自由现金流量(元)</td>
+    #{outFinanceItem perShareMap, dl: perShareDateList, field:'companyNCFPerShareA', f:'0.0000'/}
+    </tr>
+
+</table>
+
+<table id="mainTable2" width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr align="left">
+        <th colspan="5" class="none"><a></a></th>
+    </tr>
+    <tr align="left">
+        <th>盈利能力</th>
+        #{list items:earnPowerDateList, as:'item'}
+            <th width="15%" align="right">${item}</th>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">营业利润率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'operatingProfiToRevenue', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>营业毛利率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'operatingMarginRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>资产报酬率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'rOA1B', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>总资产净利润率(ROA)(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'rOA2B', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>流动资产净利润率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'netProfitToCurrentAssetB', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>净资产收益率(ROE)(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'rOEB', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>加权平均净资产收益率(%)</td>
+    #{outFinanceItem lcDiscloseIndexMap, dl: earnPowerDateList, field:'roe', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>投入资本回报率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'returnOnInvestedCapital', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>长期资本收益率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'returnOnLongTermInvested', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>营业成本率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'operatingCostRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>销售费用率(%)</td>
+    #{outFinanceItem earnPowerMap, dl: earnPowerDateList, field:'salesExpenseRate', f:'0.00', scale:2/}
+    </tr>
+</table>
+
+<table id="mainTable3" width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr align="left">
+        <th colspan="5" class="none"><a></a></th>
+    </tr>
+    <tr align="left">
+        <th>偿债能力</th>
+        #{list items:debtPlayDateList, as:'item'}
+            <th width="15%" align="right">${item}</th>
+        #{/list}
+    </tr>
+    <tr>
+        <td width="38%">流动比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'currentRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>速动比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'quickRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>保守速动比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'conservativeQuickRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>现金比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'cashRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>营运资金与借款比</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'workingCapitalToliability', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>利息保障倍数</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'interestCoverageRatioB', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>经营活动产生的现金流量净额／流动负债</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'currentLiabilityCoverage', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>现金流利息保障倍数</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'interestCoverageRatioC', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>现金流到期债务保障倍数</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'maturingLiabilityCoverage', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>资产负债率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'assetLiabilityRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>长期借款与总资产比</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'longtermLiabilityToAsset', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>有形资产负债率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'liabilityToTangibleAsset', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>有形资产带息债务比</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'interesLiabilityToTangib', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>权益乘数</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'equityMultiplier', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>产权比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'debtEquityRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>权益对负债比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'equityToDebtRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>长期资本负债率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'longtermAssetLiabilityRatio', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>长期负债权益比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'longtermLiabilityToEquity', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>长期债务与营运资金比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'longtermLiabilityToWorking', f:'0.00', scale:2/}
+    </tr>
+    <tr>
+        <td>息税折旧摊销前利润／负债合计</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'eBITDAToLiability', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>经营活动产生的现金流量净额／负债合计</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'liabilityCoverage', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>经营活动产生的现金流量净额／带息债务</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'interesLiabilityCoverage', f:'0.00', scale:0/}
+    </tr>
+    <tr>
+        <td>负债与权益市价比率(%)</td>
+    #{outFinanceItem debtPayMap, dl: debtPlayDateList, field:'liabilityToMarketValue', f:'0.00', scale:2/}
+    </tr>
+</table>

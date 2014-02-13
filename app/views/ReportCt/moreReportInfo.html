@@ -1,0 +1,16 @@
+#{list items : reportList, as : 'item'}
+  <tr>
+      #{if pageNo == null}
+          <td width="3%"><div class="rr_num">${item_index  }</div></td>
+      #{/if}
+      #{else }
+          <td width="3%"><div class="rr_num">${item_index + pageSize * (pageNo - 1)}</div></td>
+      #{/else}
+        <td width="50%"><span class="p_c3">#{emVF v : item.title/}</span></td><strong></strong>
+        <td width="10%">#{emVF v : item.declareDate/}</td>
+        <td width="22%"><span class="p_c2">#{emVF v : item.institutionName/}</span></td>
+        <td width="10%"><span  class="p_c2" >#{emVF v : item.researcherName/}</span></td>
+        <td width="5%"><span id="${item.reportId}" class="m_attachement m_attachement_2">摘要</span></td>
+  </tr>
+ #{/list}
+

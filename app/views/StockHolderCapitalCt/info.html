@@ -1,0 +1,232 @@
+#{extends 'f10Main.html'/}
+#{set title:'股东股本'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $("#StockHolderCapital").addClass('sub_menu_current');
+    tableBgFunc(undefined, '#4b4b4b'); //表格隔行换色
+    $("#StockHolderCapital").addClass('sub_menu_current');
+
+    //股本股东 柱状图 数据. xAxis 为横坐标. series 为系列数据
+    var barData = ${barData.raw()};
+
+    //股本结构饼图数据, seriesData 为系列数据
+    var picData = ${picData.raw()};
+
+    //股本结构图数据. tradableSharesA 流通A股. lockSharesTotal 股改限售股份
+    var structureData = ${structureData.raw()};
+</script>
+
+<script src="@{'/public/js/stockholdercapitalct/info.js'}" type="text/javascript" charset="utf-8"></script>
+
+#{/set}
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly>
+
+        <div class="market_per_wrap">
+            <!--股东研究 Begin-->
+            <div class="common_wrap">
+                <h2 class="h2_title">股东研究</h2>
+                <h3 class="news_main common_til" style="margin: 10px 0 20px;">十大股东(截止日期:${holderCurReportDate})</h3>
+
+                <div class="tbl_wrap">
+                    <table width="100%" border="0" class="tbl_common tbl_equ" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="38%">股东名称</th>
+                            <th width="14%">股东类型</th>
+                            <th width="12%">持股数(万)</th>
+                            <th width="17%">占总股本比例(%)</th>
+                            <th width="19%">较${holderLastReportDate}持股变动数(万)</th>
+                        </tr>
+                        #{list items:holderTop10List, as:'item'}
+                        <tr>
+                            <td>#{emVF  item.holderName /}</td>
+                            <td align="center">#{emVF item.holderType /}</td>
+                            <td align="center">#{emVF v: item.holdNum, f:'#,##0.00', scale:-4/}</td>
+                            <td align="center">#{emVF v: item.rate , f:'#,##0.00' , scale:0/}</td>
+                            <td align="center">#{emVF3 v: item.change ,f:'#,##0.00', scale:-4 /}</td>
+                        </tr>
+                        #{/list}
+                        <tr>
+                            <td>合计</td>
+                            <td>&nbsp;</td>
+                            <td align="center">#{emVF holdNumSum, f:'#,##0.00', scale:-4 /}</td>
+                            <td align="center">#{emVF holdRateSum, f:'#,##0.00', scale:0 /}</td>
+                            <td align="center">&nbsp;</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <h3 class="news_main common_til">十大流通股东(截止日期:${flowHolderCurReportDate})</h3>
+                <div class="tbl_wrap">
+                    <table width="100%" border="0" class="tbl_common tbl_equ" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="38%">股东名称</th>
+                            <th width="14%">股东类型</th>
+                            <th width="12%">持股数(万)</th>
+                            <th width="17%">占总股本比例(%)</th>
+                            <th width="19%">较${flowHolderLastReportDate}持股变动数(万)</th>
+                        </tr>
+                    #{list items:flowHolderTop10List, as:'item'}
+                        <tr>
+                            <td>#{emVF  item.holderName /}</td>
+                            <td align="center">#{emVF item.holderType /}</td>
+                            <td align="center">#{emVF v: item.holdNum, f:'#,##0.00', scale:-4/}</td>
+                            <td align="center">#{emVF v: item.rate , f:'#,##0.00',scale:0 /}</td>
+                            <td align="center">#{emVF3 v: item.change, f:'#,##0.00', scale:-4 /}</td>
+                        </tr>
+                    #{/list}
+                        <tr>
+                            <td>合计</td>
+                            <td>&nbsp;</td>
+                            <td align="center">#{emVF flowHoldNumSum, f:'#,##0.00', scale:-4/}</td>
+                            <td align="center">#{emVF flowHoldRateSum, f:'#,##0.00', scale:0 /}</td>
+                            <td align="center">&nbsp;</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <!--股东研究 End-->
+            <div class="common_wrap">
+            <h2 class="h2_title">机构主力持股统计(来源:十大股东、十大流通股东)</h2>
+
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+
+                    <div class="equity_map">
+                <div id="histogram" style="float:left;width: 520px;height: 300px;margin-top: 20px" ></div>
+                <div id="pieChart" style="float:left;width: 510px;height: 300px;margin: 20px 0 0 20px" ></div>
+            </div>
+                    </div></div>
+
+            <div class="equity_2" style="clear: both;  position:relative; padding-bottom: 15px; top: 25px;">
+                *{<div class="equity_date">}*
+                    *{<a href="#">2011-12-13</a>}*
+                    *{<a href="#">2011-12-13</a>}*
+                *{</div>}*
+                <table width="100%" border="0" class="tbl_common tbl_equ" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <th width="42%" align="left">&#12288;机构名称</th>
+                        <th width="13%">机构类型 </th>
+                        <th width="16%">持股数(万)</th>
+                        <th width="10%">持股比例(%)</th>
+                        <th width="19%">较${orgHolderLastReportDate}持股变动数(万)</th>
+                    </tr>
+                    #{list items:togetherOrgHoldList, as:'item' }
+                    <tr>
+                        <td>#{emVF  item.holderName /}</td>
+                        <td>#{emVF item.holderType /}</td>
+                        <td align="center">#{emVF item.holdNum, f:'#,##0.00', scale:-4/}</td>
+                        <td align="center">#{emVF item.rate , f:'#,##0.00' ,scale:0/}</td>
+                        <td align="center">#{emVF3 item.change ,f:'#,##0.00', scale:-4 /}</td>
+                    </tr>
+                    #{/list}
+                </table>
+            </div>
+
+
+            <div class="equity_3">
+
+                <h3 class="news_main common_til">股本结构</h3>
+
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+                <div class="equity_3_lf" >
+                    <div id="structureChart" style=" float: left;width:450px;height: 300px" ></div>
+                </div>
+                <div class="equity_3_rg" style="padding: 0 0 0 20px">
+                    <table width="100%" border="0" class="tbl_common tbl_fh" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="45%">股份流通受限表</th>
+                            <th width="22%">数值(万股)</th>
+                            <th width="33%">占比(%)</th>
+                        </tr>
+                      
+                        <tr>
+                            <td>未流通股份</td>
+                            <td>#{emVF capitalStructure?.nonTradableShare, f:'#,##0', scale:-4/}</td>
+                            <td>#{emVF capitalStructure?.nonTradableShareRate(), f:'##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td>流通受限股份</td>
+                            <td>#{emVF capitalStructure?.lockSharesTotal, f:'#,##0', scale:-4/}</td>
+                            <td>#{emVF capitalStructure?.lockSharesTotalRate(), f:'##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td>已流通股份</td>
+                            <td>#{emVF capitalStructure?.tradeSharesTotal, f:'#,##0', scale:-4/}</td>
+                            <td>#{emVF capitalStructure?.tradeSharesTotalRate(), f:'##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td>总股本</td>
+                            <td>#{emVF capitalStructure?.total, f:'#,##0', scale:-4/}</td>
+                            <td>100%</td>
+                        </tr>
+                    </table>
+
+                    <table width="100%" border="0" class="tbl_common tbl_fh" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="45%">流通股份分布情况表</th>
+                            <th width="22%">数值(万股)</th>
+                            <th width="33%">占比(%)</th>
+                        </tr>
+                        <tr>
+                            <td>已流通A股</td>
+                            <td>#{emVF capitalStructure?.tradableSharesA , f:'#,##0', scale:-4/}</td>
+                            <td>#{emVF capitalStructure?.tradableSharesARate(), f:'##0.00'/}</td>
+                        <tr>
+                            <td>已流通B股</td>
+                            <td>#{emVF capitalStructure?.tradableSharesB, f:'#,##0', scale:-4/}</td>
+                            <td>#{emVF capitalStructure?.tradableSharesBRate(), f:'##0.00' /}</td>
+                        <tr>
+                            <td>已流通H股</td>
+                            <td>#{emVF capitalStructure?.tradableSharesH, f:'#,##0', scale:-4  /}</td>
+                            <td>#{emVF capitalStructure?.tradableSharesHRate(), f:'##0.00'/}</td>
+                        </tr>
+                        <tr>
+                            <td>其他已流通股份</td>
+                            <td>#{emVF capitalStructure?.otherTradableShares, f:'#,##0', scale:-4 /}</td>
+                            <td>#{emVF capitalStructure?.otherTradableSharesRate(), f:'##0.00' /}</td>
+                        </tr>
+                        <tr>
+                            <td>流通股份合计</td>
+                            <td>#{emVF capitalStructure?.tradeSharesTotal, f:'#,##0' , scale:-4 /}</td>
+                            <td>100%</td>
+                        </tr>
+                    </table>
+                </div>
+
+                    </div></div>
+            </div>
+
+
+            <h3 class="news_main common_til">限售解禁</h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th width="14%">解禁时间</th>
+                    <th width="16%">解禁数量(万股)</th>
+                    <th width="16%">解禁股占总股本比例(%)</th>
+                    <th width="14%">解禁股占流通股本比例(%)</th>
+                    <th width="20%">解禁原因</th>
+                </tr>
+                #{list items:limitedAndLiftList,as:'item' }
+                <tr>
+                    <td>#{emVF item.changeDate/}</td>
+                    <td>#{emVF item.liftNum, f:'###,##0',scale:-4/}</td>
+                    <td>#{emVF item.liftTotalScale(), f:'#,##0.00'/}</td>
+                    <td>#{emVF item.liftTradeScale(), f:'#,##0.00'/}</td>
+                    <td>#{emVF item.changeReason /}</td>
+                </tr>
+                #{/list}
+            </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--main End-->

@@ -1,0 +1,22 @@
+# Application dependencies
+
+require:
+    - play
+    - play -> redis 0.3
+    - play -> excel 1.2.3
+    - com.google.guava -> guava 14.0.1 :
+        transitive: false
+    - commons-dbutils -> commons-dbutils 1.5
+    - org.apache.poi -> poi-ooxml-schemas 3.8 :
+        transitive: false
+    - f10doc -> f10doc
+    - f10Common -> f10Common
+
+
+repositories:
+    - MyModules:
+        type:     local
+        artifact: ${application.path}/../[module]
+        contains:
+            - f10doc
+            - f10Common

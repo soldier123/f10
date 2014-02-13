@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<p>#{a @CompanyInfoCt.info(), target:'_blank'}新公司信息#{/a}</p>
+
+<p>#{a @Application.setupbin()}安装#{/a}</p>
+
+<p>#{a @NewsCt.todayNews(), target:'_blank'}新闻#{/a} 加上 ntToken参数, 可以点下面的生成token生成一个</p>
+<p>#{a @BulletinCt.bulletinInfo(), target:'_blank'}公告#{/a}加上 ntToken参数, 可以点下面的生成token生成一个</p>
+<p>#{a @ReportCt.reportInfo(), target:'_blank'}研报#{/a}加上 ntToken参数, 可以点下面的生成token生成一个</p>
+<p>#{a @MessageIndexCt.messageIndex(), target:'_blank'}资讯索引#{/a}加上 ntToken参数, 可以点下面的生成token生成一个</p>
+<p><a href="/MessageCombinationCt/info?scodes=000001,000002,000003,000004" target="_blank">资讯组合</a></p>
+
+<p><a href="http://192.168.103.103:9000/SSO/api/loginWithoutCryp?u=admin&p=123456&mac=00E06F05EA4E&pid=3" target="_blank">生成token</a></p>
+
+
+<p><a href="@documentation/modules/f10doc/home" target="_blank">系统文档</a></p>
+
+<p><a href="@{AttachCt.attachDownload("公告/2013/2013-04-30/中国奥园：月报表.PDF")}" target="_blank">研报下载测试</a></p>

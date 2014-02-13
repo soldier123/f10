@@ -1,0 +1,42 @@
+var newsResourceTree = [
+    {
+        text:"新闻来源",
+        isexpand:false,
+        children:[
+            {text:"easy-forex","code":"easy-forex"},
+            {text:"FBS","code":"FBS"},
+            {text:"FT中文网","code":"FT中文网"},
+            {text:"FxPro","code":"FxPro"},
+            {text:"GMI","code":"GMI"},
+            {text:"IFX","code":"IFX"},
+            {text:"NordFX","code":"NordFX"},
+            {text:"ThinkForex","code":"ThinkForex"},
+            {text:"Trading Point","code":"Trading Point"},
+            {text:"XTB","code":"XTB"},
+            {text:"长江商报","code":"长江商报"},
+            {text:"成都商报","code":"成都商报"},
+            {text:"第一财经日报","code":"第一财经日报"},
+            {text:"观点地产网","code":"观点地产网"},
+            {text:"国际金融报","code":"国际金融报"},
+            {text:"华西都市报","code":"华西都市报"},
+            {text:"环球外汇网","code":"环球外汇网"},
+            {text:"金融投资报","code":"金融投资报"},
+            {text:"巨潮网（www.cninfo.com.cn）","code":"巨潮网（www.cninfo.com.cn）"},
+            {text:"每日经济新闻","code":"每日经济新闻"},
+            {text:"全景网","code":"全景网"},
+            {text:"人民日报","code":"人民日报"},
+            {text:"上海证券报","code":"上海证券报"},
+            {text:"深圳商报","code":"深圳商报"},
+            {text:"新华网","code":"新华网"},
+            {text:"新浪财经","code":"新浪财经"},
+            {text:"证券日报","code":"证券日报"},
+            {text:"证券时报","code":"证券时报"},
+            {text:"中国广播网","code":"中国广播网"},
+            {text:"中国经济时报","code":"中国经济时报"},
+            {text:"中国新闻网","code":"中国新闻网"},
+            {text:"中国证券报","code":"中国证券报"},
+            {text:"中华工商时报","code":"中华工商时报"},
+            {text:"重庆商报","code":"重庆商报"}
+        ]
+    }
+];

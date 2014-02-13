@@ -1,0 +1,10 @@
+#{if newsList!=null&&newsList.size()>0}
+<table width="100%" id="tb_news" class="tbl_news" border="0" cellspacing="0" cellpadding="0">
+#{list items:newsList, as:'item'}
+    <tr>
+        <td width="70%"><a href="javascript:fun(${item.newsId})">${item.getRawTitle()}</a></td>
+        <td width="30%">#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+    </tr>
+#{/list}
+</table>
+#{/if}

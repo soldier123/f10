@@ -1,0 +1,1254 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d860bd1, pid=3228, tid=140
+#
+# JRE version: 6.0_37-b06
+# Java VM: Java HotSpot(TM) Client VM (20.12-b01 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0x70bd1]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x17c9e400):  JavaThread "play-thread-1" [_thread_in_vm, id=140, stack(0x174c0000,0x17510000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000004
+
+Registers:
+EAX=0x00000028, EBX=0x00000000, ECX=0x15843de0, EDX=0x17c318bc
+ESP=0x1750f3e0, EBP=0x1750f510, ESI=0x17c314e8, EDI=0x00000000
+EIP=0x6d860bd1, EFLAGS=0x00010212
+
+Top of Stack: (sp=0x1750f3e0)
+0x1750f3e0:   00000000 17c9e400 15840d73 6d9fac50
+0x1750f3f0:   6d9fd6f0 ffffffff 1750f408 6d7f2bc0
+0x1750f400:   08085070 03a697c8 08079378 00000000
+0x1750f410:   08089530 00000002 00002000 00000002
+0x1750f420:   00000002 1750f454 6d7f2b66 17c9e400
+0x1750f430:   17c9e400 17c9e400 1750f468 6d7f2b66
+0x1750f440:   17c9e400 17c9e400 17c9e400 000012b4
+0x1750f450:   1750f444 1750f448 1750fda8 6d9fac50 
+
+Instructions: (pc=0x6d860bd1)
+0x6d860bb1:   8b ec 81 ec 24 01 00 00 53 8b 5d 0c 56 8b 75 08
+0x6d860bc1:   8b 0e 8d 04 9d 28 00 00 00 57 8b 3c 08 89 45 f8
+0x6d860bd1:   8b 47 04 8b 50 08 8d 48 08 ff 92 88 00 00 00 84
+0x6d860be1:   c0 0f 85 da 03 00 00 8b 7d 10 6a 01 88 45 0b 88 
+
+
+Register to memory mapping:
+
+EAX=0x00000028 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x15843de0 is an oop
+{constant pool} 
+ - klass: {other class}
+ - cache: 0x15845180
+ -   1 :  : 'bussiness/MessageIndexService' {0x15749408}
+ -   2 :  : 'bussiness/MessageIndexService'
+ -   3 :  : 'java/lang/Object' {0x12b268e0}
+ -   4 :  : 'java/lang/Object'
+ -   5 :  : 'requestUrl'
+ -   6 :  : 'Ljava/lang/String;'
+ -   7 :  : '<clinit>'
+ -   8 :  : '()V'
+ -   9 :  : 'Code'
+ -  10 :  : klass_index=11 name_and_type_index=13
+ -  11 :  : 'play/Play'
+ -  12 :  : 'play/Play'
+ -  13 :  : name_index=14 signature_index=15
+ -  14 :  : 'configuration'
+ -  15 :  : 'Ljava/util/Properties;'
+ -  16 :  : "search.url" {0x14a38ba0}
+ -  17 :  : 'search.url'
+ -  18 :  : klass_index=19 name_and_type_index=21
+ -  19 :  : 'java/util/Properties'
+ -  20 :  : 'java/util/Properties'
+ -  21 :  : name_index=22 signature_index=23
+ -  22 :  : 'get'
+ -  23 :  : '(Ljava/lang/Object;)Ljava/lang/Object;'
+ -  24 :  : klass_index=25 name_and_type_index=27
+ -  25 :  : 'java/lang/String' {0x12b2d318}
+ -  26 :  : 'java/lang/String'
+ -  27 :  : name_index=28 signature_index=29
+ -  28 :  : 'valueOf'
+ -  29 :  : '(Ljava/lang/Object;)Ljava/lang/String;'
+ -  30 :  : klass_index=1 name_and_type_index=31
+ -  31 :  : name_index=5 signature_index=6
+ -  32 :  : 'LineNumberTable'
+ -  33 :  : 'LocalVariableTable'
+ -  34 :  : '<init>'
+ -  35 :  : klass_index=3 name_and_type_index=36
+ -  36 :  : name_index=34 signature_index=8
+ -  37 :  : 'this'
+ -  38 :  : 'Lbussiness/MessageIndexService;'
+ -  39 :  : 'commonList'
+ -  40 :  : '(Ldto/CommonSearchDto;)Ljava/util/List;'
+ -  41 :  : 'Signature'
+ -  42 :  : '(Ldto/CommonSearchDto;)Ljava/util/List<Ldto/MessageIndexDto;>;'
+ -  43 :  : klass_index=44 name_and_type_index=46
+ -  44 :  : 'dto/CommonSearchDto'
+ -  45 :  : 'dto/CommonSearchDto'
+ -  46 :  : name_index=47 signature_index=6
+ -  47 :  : 'startTime'
+ -  48 :  : klass_index=1 name_and_type_index=49
+ -  49 :  : name_index=50 signature_index=51
+ -  50 :  : 'getRealStartDateValueFromDetail'
+ -  51 :  : '(Ljava/lang/String;)Ljava/lang/String;'
+ -  52 :  : "�I" {0x13a82450}
+ -  53 :  : '自定义'
+ -  54 :  : klass_index=44 name_and_type_index=55
+ -  55 :  : name_index=56 signature_index=6
+ -  56 :  : 'timeName'
+ -  57 :  : klass_index=25 name_and_type_index=58
+ -  58 :  : name_index=59 signature_index=60
+ -  59 :  : 'equals'
+ -  60 :  : '(Ljava/lang/Object;)Z'
+ -  61 :  : klass_index=44 name_and_type_index=62
+ -  62 :  : name_index=63 signature_index=6
+ -  63 :  : 'endTime'
+ -  64 :  : klass_index=1 name_and_type_index=65
+ -  65 :  : name_index=66 signature_index=51
+ -  66 :  : 'getRealEndDateValueFromDetail'
+ -  67 :  : "" {0x12bc94c8}
+ -  68 :  : ''
+ -  69 :  : klass_index=70 name_and_type_index=72
+ -  70 :  : 'util/CommonUtils' {0x1572ff60}
+ -  71 :  : 'util/CommonUtils'
+ -  72 :  : name_index=73 signature_index=74
+ -  73 :  : 'createIncludeNullsWithExpose'
+ -  74 :  : '()Lcom/google/gson/Gson;'
+ -  75 :  : klass_index=76 name_and_type_index=78
+ -  76 :  : 'com/google/gson/Gson' {0x14382e58}
+ -  77 :  : 'com/google/gson/Gson'
+ -  78 :  : name_index=79 signature_index=29
+ -  79 :  : 'toJson'
+ -  80 :  : klass_index=81 name_and_type_index=83
+ -  81 :  : 'play/libs/WS' {0x13454118}
+ -  82 :  : 'play/libs/WS'
+ -  83 :  : name_index=84 signature_index=85
+ -  84 :  : 'url'
+ -  85 :  : '(Ljava/lang/String;)Lplay/libs/WS$WSRequest;'
+ -  86 :  : klass_index=87 name_and_type_index=89
+ -  87 :  : 'play/libs/WS$WSRequest' {0x14a42dd0}
+ -  88 :  : 'play/libs/WS$WSRequest'
+ -  89 :  : name_index=90 signature_index=91
+ -  90 :  : 'body'
+ -  91 :  : '(Ljava/lang/Object;)Lplay/libs/WS$WSRequest;'
+ -  92 :  : klass_index=87 name_and_type_index=93
+ -  93 :  : name_index=94 signature_index=95
+ -  94 :  : 'post'
+ -  95 :  : '()Lplay/libs/WS$HttpResponse;'
+ -  96 :  : klass_index=97 name_and_type_index=99
+ -  97 :  : 'play/libs/WS$HttpResponse' {0x14aa1560}
+ -  98 :  : 'play/libs/WS$HttpResponse'
+ -  99 :  : name_index=100 signature_index=101
+ - 100 :  : 'getJson'
+ - 101 :  : '()Lcom/google/gson/JsonElement;'
+ - 102 :  : klass_index=103 name_and_type_index=105
+ - 103 :  : 'com/google/gson/JsonElement' {0x13424f50}
+ - 104 :  : 'com/google/gson/JsonElement'
+ - 105 :  : name_index=106 signature_index=107
+ - 106 :  : 'getAsJsonObject'
+ - 107 :  : '()Lcom/google/gson/JsonObject;'
+ - 108 :  : "data" {0x1315ebc8}
+ - 109 :  : 'data'
+ - 110 :  : klass_index=111 name_and_type_index=113
+ - 111 :  : 'com/google/gson/JsonObject' {0x13426330}
+ - 112 :  : 'com/google/gson/JsonObject'
+ - 113 :  : name_index=22 signature_index=114
+ - 114 :  : '(Ljava/lang/String;)Lcom/google/gson/JsonElement;'
+ - 115 :  : 'bussiness/MessageIndexService$1' {0x1579ace0}
+ - 116 :  : 'bussiness/MessageIndexService$1'
+ - 117 :  : klass_index=115 name_and_type_index=36
+ - 118 :  : klass_index=115 name_and_type_index=119
+ - 119 :  : name_index=120 signature_index=121
+ - 120 :  : 'getType'
+ - 121 :  : '()Ljava/lang/reflect/Type;'
+ - 122 :  : klass_index=76 name_and_type_index=123
+ - 123 :  : name_index=124 signature_index=125
+ - 124 :  : 'fromJson'
+ - 125 :  : '(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;)Ljava/lang/Object;'
+ - 126 :  : 'java/util/List' {0x12bbabd0}
+ - 127 :  : 'java/util/List'
+ - 128 :  : klass_index=44 name_and_type_index=129
+ - 129 :  : name_index=130 signature_index=6
+ - 130 :  : 'keyWord'
+ - 131 :  : klass_index=132 name_and_type_index=134
+ - 132 :  : 'org/apache/commons/lang/StringUtils' {0x13bd06c8}
+ - 133 :  : 'org/apache/commons/lang/StringUtils'
+ - 134 :  : name_index=135 signature_index=136
+ - 135 :  : 'isNotBlank'
+ - 136 :  : '(Ljava/lang/String;)Z'
+ - 137 :  : klass_index=126 name_and_type_index=138
+ - 138 :  : name_index=139 signature_index=140
+ - 139 :  : 'iterator'
+ - 140 :  : '()Ljava/util/Iterator;'
+ - 141 :  : klass_index=142 name_and_type_index=144
+ - 142 :  : 'java/util/Iterator' {0x12bc8158}
+ - 143 :  : 'java/util/Iterator'
+ - 144 :  : name_index=145 signature_index=146
+ - 145 :  : 'next'
+ - 146 :  : '()Ljava/lang/Object;'
+ - 147 :  : 'dto/MessageIndexDto'
+ - 148 :  : 'dto/MessageIndexDto'
+ - 149 :  : klass_index=147 name_and_type_index=150
+ - 150 :  : name_index=151 signature_index=6
+ - 151 :  : 'keyword'
+ - 152 :  : klass_index=142 name_and_type_index=153
+ - 153 :  : name_index=154 signature_index=155
+ - 154 :  : 'hasNext'
+ - 155 :  : '()Z'
+ - 156 :  : 'cs'
+ - 157 :  : 'Ldto/CommonSearchDto;'
+ - 158 :  : 'gson'
+ - 159 :  : 'Lcom/google/gson/Gson;'
+ - 160 :  : 'json'
+ - 161 :  : 'result'
+ - 162 :  : 'Lcom/google/gson/JsonElement;'
+ - 163 :  : 'jsonObject'
+ - 164 :  : 'Lcom/google/gson/JsonObject;'
+ - 165 :  : 'messageData'
+ - 166 :  : 'type'
+ - 167 :  : 'Ljava/lang/reflect/Type;'
+ - 168 :  : 'messageIndexDtoList'
+ - 169 :  : 'Ljava/util/List;'
+ - 170 :  : 'dto'
+ - 171 :  : 'Ldto/MessageIndexDto;'
+ - 172 :  : 'LocalVariableTypeTable'
+ - 173 :  : 'Ljava/util/List<Ldto/MessageIndexDto;>;'
+ - 174 :  : 'StackMapTable'
+ - 175 :  : 'java/lang/reflect/Type'
+ - 176 :  : 'java/lang/reflect/Type'
+ - 177 :  : 'advanceInfoSearch'
+ - 178 :  : '(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;'
+ - 179 :  : '(JILutil/UserComposeInfo;Ljava/util/List<Ldto/BulletinClassify;>;Ldto/CommonSearchDto;)Ljava/util/List<Ldto/MessageIndexDto;>;'
+ - 180 :  : klass_index=181 name_and_type_index=183
+ - 181 :  : 'java/lang/Long' {0x12b90930}
+ - 182 :  : 'java/lang/Long'
+ - 183 :  : name_index=28 signature_index=184
+ - 184 :  : '(J)Ljava/lang/Long;'
+ - 185 :  : klass_index=186 name_and_type_index=188
+ - 186 :  : 'bussiness/TemplateService' {0x156df260}
+ - 187 :  : 'bussiness/TemplateService'
+ - 188 :  : name_index=189 signature_index=190
+ - 189 :  : 'fetchUserTemplateContentById'
+ - 190 :  : '(Ljava/lang/Long;Lutil/UserComposeInfo;)Ljava/lang/String;'
+ - 191 :  : klass_index=76 name_and_type_index=36
+ - 192 :  : 'dto/MessageIndexCnd' {0x15737f78}
+ - 193 :  : 'dto/MessageIndexCnd'
+ - 194 :  : klass_index=76 name_and_type_index=195
+ - 195 :  : name_index=124 signature_index=196
+ - 196 :  : '(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;'
+ - 197 :  : klass_index=1 name_and_type_index=198
+ - 198 :  : name_index=199 signature_index=200
+ - 199 :  : 'doAdvanceSearch'
+ - 200 :  : '(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;'
+ - 201 :  : 'advanceId'
+ - 202 :  : 'J'
+ - 203 :  : 'pageNo'
+ - 204 :  : 'I'
+ - 205 :  : 'uci'
+ - 206 :  : 'Lutil/UserComposeInfo;'
+ - 207 :  : 'classifyList'
+ - 208 :  : 'mic'
+ - 209 :  : 'Ldto/MessageIndexCnd;'
+ - 210 :  : 'Ljava/util/List<Ldto/BulletinClassify;>;'
+ - 211 :  : '(Ldto/MessageIndexCnd;Ljava/util/List<Ldto/BulletinClassify;>;ILdto/CommonSearchDto;)Ljava/util/List<Ldto/MessageIndexDto;>;'
+ - 212 :  : 'dto/AdvanceSearchDto' {0x156e44a0}
+ - 213 :  : 'dto/AdvanceSearchDto'
+ - 214 :  : klass_index=212 name_and_type_index=36
+ - 215 :  : klass_index=192 name_and_type_index=216
+ - 216 :  : name_index=217 signature_index=169
+ - 217 :  : 'newsSource'
+ - 218 :  : klass_index=212 name_and_type_index=219
+ - 219 :  : name_index=220 signature_index=169
+ - 220 :  : 'nsource'
+ - 221 :  : klass_index=212 name_and_type_index=222
+ - 222 :  : name_index=223 signature_index=169
+ - 223 :  : 'ncids'
+ - 224 :  : klass_index=192 name_and_type_index=225
+ - 225 :  : name_index=226 signature_index=169
+ - 226 :  : 'newsClassify'
+ - 227 :  : klass_index=228 name_and_type_index=230
+ - 228 :  : 'util/NewsHelper' {0x15713858}
+ - 229 :  : 'util/NewsHelper'
+ - 230 :  : name_index=231 signature_index=232
+ - 231 :  : 'getRealNewsClassifyIdByCode'
+ - 232 :  : '(Ljava/util/List;)Ljava/util/List;'
+ - 233 :  : klass_index=126 name_and_type_index=234
+ - 234 :  : name_index=235 signature_index=236
+ - 235 :  : 'addAll'
+ - 236 :  : '(Ljava/util/Collection;)Z'
+ - 237 :  : klass_index=192 name_and_type_index=238
+ - 238 :  : name_index=239 signature_index=169
+ - 239 :  : 'bulletinClassify'
+ - 240 :  : klass_index=126 name_and_type_index=241
+ - 241 :  : name_index=242 signature_index=243
+ - 242 :  : 'size'
+ - 243 :  : '()I'
+ - 244 :  : klass_index=1 name_and_type_index=245
+ - 245 :  : name_index=246 signature_index=247
+ - 246 :  : 'getRealAnnouncementClassifyId'
+ - 247 :  : '(Ljava/util/List;Ljava/util/List;)Lplay/libs/F$T2;'
+ - 248 :  : " " {0x12d92ab8}
+ - 249 :  : ' '
+ - 250 :  : klass_index=251 name_and_type_index=253
+ - 251 :  : 'com/google/common/base/Joiner' {0x141a0380}
+ - 252 :  : 'com/google/common/base/Joiner'
+ - 253 :  : name_index=254 signature_index=255
+ - 254 :  : 'on'
+ - 255 :  : '(Ljava/lang/String;)Lcom/google/common/base/Joiner;'
+ - 256 :  : klass_index=251 name_and_type_index=257
+ - 257 :  : name_index=258 signature_index=259
+ - 258 :  : 'skipNulls'
+ - 259 :  : '()Lcom/google/common/base/Joiner;'
+ - 260 :  : klass_index=261 name_and_type_index=263
+ - 261 :  : 'play/libs/F$T2' {0x14a02640}
+ - 262 :  : 'play/libs/F$T2'
+ - 263 :  : name_index=264 signature_index=265
+ - 264 :  : '_1'
+ - 265 :  : 'Ljava/lang/Object;'
+ - 266 :  : 'java/lang/Iterable' {0x12bb5bb0}
+ - 267 :  : 'java/lang/Iterable'
+ - 268 :  : klass_index=251 name_and_type_index=269
+ - 269 :  : name_index=270 signature_index=271
+ - 270 :  : 'join'
+ - 271 :  : '(Ljava/lang/Iterable;)Ljava/lang/String;'
+ - 272 :  : klass_index=212 name_and_type_index=150
+ - 273 :  : klass_index=261 name_and_type_index=274
+ - 274 :  : name_index=275 signature_index=265
+ - 275 :  : '_2'
+ - 276 :  : klass_index=212 name_and_type_index=277
+ - 277 :  : name_index=278 signature_index=169
+ - 278 :  : 'acids'
+ - 279 :  : klass_index=192 name_and_type_index=280
+ - 280 :  : name_index=281 signature_index=169
+ - 281 :  : 'bulletinPlateTree'
+ - 282 :  : klass_index=212 name_and_type_index=283
+ - 283 :  : name_index=284 signature_index=169
+ - 284 :  : 'aiids'
+ - 285 :  : klass_index=192 name_and_type_index=286
+ - 286 :  : name_index=287 signature_index=169
+ - 287 :  : 'reportOrg'
+ - 288 :  : klass_index=212 name_and_type_index=289
+ - 289 :  : name_index=290 signature_index=169
+ - 290 :  : 'rsource'
+ - 291 :  : klass_index=192 name_and_type_index=292
+ - 292 :  : name_index=293 signature_index=169
+ - 293 :  : 'reportClassify'
+ - 294 :  : klass_index=212 name_and_type_index=295
+ - 295 :  : name_index=296 signature_index=169
+ - 296 :  : 'rcids'
+ - 297 :  : klass_index=192 name_and_type_index=298
+ - 298 :  : name_index=299 signature_index=169
+ - 299 :  : 'reportPlateTree'
+ - 300 :  : klass_index=212 name_and_type_index=301
+ - 301 :  : name_index=302 signature_index=169
+ - 302 :  : 'riids'
+ - 303 :  : klass_index=192 name_and_type_index=304
+ - 304 :  : name_index=305 signature_index=169
+ - 305 :  : 'advanceType'
+ - 306 :  : klass_index=212 name_and_type_index=307
+ - 307 :  : name_index=308 signature_index=169
+ - 308 :  : 'itype'
+ - 309 :  : "1" {0x12ebe580}
+ - 310 :  : '1'
+ - 311 :  : "2" {0x13be86c0}
+ - 312 :  : '2'
+ - 313 :  : "3" {0x14a1cce0}
+ - 314 :  : '3'
+ - 315 :  : klass_index=316 name_and_type_index=318
+ - 316 :  : 'com/google/common/collect/Lists' {0x142243b0}
+ - 317 :  : 'com/google/common/collect/Lists'
+ - 318 :  : name_index=319 signature_index=320
+ - 319 :  : 'newArrayList'
+ - 320 :  : '([Ljava/lang/Object;)Ljava/util/ArrayList;'
+ - 321 :  : klass_index=212 name_and_type_index=46
+ - 322 :  : klass_index=212 name_and_type_index=62
+ - 323 :  : klass_index=44 name_and_type_index=324
+ - 324 :  : name_index=325 signature_index=204
+ - 325 :  : 'iType'
+ - 326 :  : 'java/util/ArrayList'
+ - 327 :  : 'java/util/ArrayList'
+ - 328 :  : klass_index=326 name_and_type_index=36
+ - 329 :  : klass_index=25 name_and_type_index=330
+ - 330 :  : name_index=28 signature_index=331
+ - 331 :  : '(I)Ljava/lang/String;'
+ - 332 :  : klass_index=126 name_and_type_index=333
+ - 333 :  : name_index=334 signature_index=60
+ - 334 :  : 'add'
+ - 335 :  : klass_index=126 name_and_type_index=336
+ - 336 :  : name_index=337 signature_index=236
+ - 337 :  : 'retainAll'
+ - 338 :  : klass_index=44 name_and_type_index=339
+ - 339 :  : name_index=340 signature_index=6
+ - 340 :  : 'timeValue'
+ - 341 :  : klass_index=212 name_and_type_index=342
+ - 342 :  : name_index=203 signature_index=204
+ - 343 :  : klass_index=70 name_and_type_index=344
+ - 344 :  : name_index=345 signature_index=74
+ - 345 :  : 'createIncludeNulls'
+ - 346 :  : klass_index=212 name_and_type_index=347
+ - 347 :  : name_index=79 signature_index=348
+ - 348 :  : '()Ljava/lang/String;'
+ - 349 :  : klass_index=350 name_and_type_index=352
+ - 350 :  : 'java/lang/System' {0x12b42250}
+ - 351 :  : 'java/lang/System'
+ - 352 :  : name_index=353 signature_index=354
+ - 353 :  : 'out'
+ - 354 :  : 'Ljava/io/PrintStream;'
+ - 355 :  : "send data:%s" {0x14e34840}
+ - 356 :  : 'send data:%s'
+ - 357 :  : klass_index=25 name_and_type_index=358
+ - 358 :  : name_index=359 signature_index=360
+ - 359 :  : 'format'
+ - 360 :  : '(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;'
+ - 361 :  : klass_index=362 name_and_type_index=364
+ - 362 :  : 'java/io/PrintStream' {0x12ca0898}
+ - 363 :  : 'java/io/PrintStream'
+ - 364 :  : name_index=365 signature_index=366
+ - 365 :  : 'println'
+ - 366 :  : '(Ljava/lang/String;)V'
+ - 367 :  : 'bussiness/MessageIndexService$2' {0x1579b040}
+ - 368 :  : 'bussiness/MessageIndexService$2'
+ - 369 :  : klass_index=367 name_and_type_index=36
+ - 370 :  : klass_index=367 name_and_type_index=119
+ - 371 :  : 'asd'
+ - 372 :  : 'Ldto/AdvanceSearchDto;'
+ - 373 :  : 'Lplay/libs/F$T2;'
+ - 374 :  : 'iTypeList'
+ - 375 :  : 'asdJson'
+ - 376 :  : 'Lplay/libs/F$T2<Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/lang/String;>;>;'
+ - 377 :  : 'Ljava/util/List<Ljava/lang/String;>;'
+ - 378 :  : "yyyy-MM-dd" {0x13a1f620}
+ - 379 :  : 'yyyy-MM-dd'
+ - 380 :  : "today" {0x14a378b0}
+ - 381 :  : 'today'
+ - 382 :  : 'java/util/Date' {0x12ef2a50}
+ - 383 :  : 'java/util/Date'
+ - 384 :  : klass_index=382 name_and_type_index=36
+ - 385 :  : klass_index=70 name_and_type_index=386
+ - 386 :  : name_index=387 signature_index=388
+ - 387 :  : 'getFormatDate'
+ - 388 :  : '(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;'
+ - 389 :  : "week" {0x14e266d0}
+ - 390 :  : 'week'
+ - 391 :  : klass_index=392 name_and_type_index=394
+ - 392 :  : 'org/apache/commons/lang/time/DateUtils'
+ - 393 :  : 'org/apache/commons/lang/time/DateUtils'
+ - 394 :  : name_index=395 signature_index=396
+ - 395 :  : 'addWeeks'
+ - 396 :  : '(Ljava/util/Date;I)Ljava/util/Date;'
+ - 397 :  : "month" {0x12e8ab10}
+ - 398 :  : 'month'
+ - 399 :  : klass_index=392 name_and_type_index=400
+ - 400 :  : name_index=401 signature_index=396
+ - 401 :  : 'addMonths'
+ - 402 :  : "threeMonth" {0x14e26700}
+ - 403 :  : 'threeMonth'
+ - 404 :  : "year" {0x12e8aae0}
+ - 405 :  : 'year'
+ - 406 :  : klass_index=392 name_and_type_index=407
+ - 407 :  : name_index=408 signature_index=396
+ - 408 :  : 'addYears'
+ - 409 :  : 'detail'
+ - 410 :  : 'datePartern'
+ - 411 :  : '(Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ldto/BulletinClassify;>;)Lplay/libs/F$T2<Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/lang/String;>;>;'
+ - 412 :  : klass_index=316 name_and_type_index=413
+ - 413 :  : name_index=319 signature_index=414
+ - 414 :  : '()Ljava/util/ArrayList;'
+ - 415 :  : klass_index=1 name_and_type_index=416
+ - 416 :  : name_index=417 signature_index=418
+ - 417 :  : 'retriveAnnoucemnetClassifyId'
+ - 418 :  : '(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V'
+ - 419 :  : klass_index=420 name_and_type_index=422
+ - 420 :  : 'play/libs/F' {0x14413400}
+ - 421 :  : 'play/libs/F'
+ - 422 :  : name_index=423 signature_index=424
+ - 423 :  : 'T2'
+ - 424 :  : '(Ljava/lang/Object;Ljava/lang/Object;)Lplay/libs/F$T2;'
+ - 425 :  : 'lists'
+ - 426 :  : 'joiner'
+ - 427 :  : 'Lcom/google/common/base/Joiner;'
+ - 428 :  : 'keywords'
+ - 429 :  : 'annClassifyIds'
+ - 430 :  : 'str'
+ - 431 :  : '(Ljava/lang/String;Ljava/util/List<Ldto/BulletinClassify;>;Ljava/util/List<Ljava/lang/String;>;Ljava/util/List<Ljava/lang/String;>;)V'
+ - 432 :  : 'dto/BulletinClassify' {0x1578cdd0}
+ - 433 :  : 'dto/BulletinClassify'
+ - 434 :  : klass_index=432 name_and_type_index=435
+ - 435 :  : name_index=436 signature_index=6
+ - 436 :  : 'code'
+ - 437 :  : klass_index=432 name_and_type_index=438
+ - 438 :  : name_index=439 signature_index=6
+ - 439 :  : 'pcode'
+ - 440 :  : klass_index=432 name_and_type_index=441
+ - 441 :  : name_index=442 signature_index=443
+ - 442 :  : 'classfyId'
+ - 443 :  : '[Ljava/lang/String;'
+ - 444 :  : klass_index=126 name_and_type_index=445
+ - 445 :  : name_index=22 signature_index=446
+ - 446 :  : '(I)Ljava/lang/Object;'
+ - 447 :  : "%" {0x12d92a00}
+ - 448 :  : '%'
+ - 449 :  : klass_index=25 name_and_type_index=450
+ - 450 :  : name_index=451 signature_index=452
+ - 451 :  : 'contains'
+ - 452 :  : '(Ljava/lang/CharSequence;)Z'
+ - 453 :  : klass_index=25 name_and_type_index=454
+ - 454 :  : name_index=455 signature_index=456
+ - 455 :  : 'replaceAll'
+ - 456 :  : '(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'
+ - 457 :  : klass_index=432 name_and_type_index=458
+ - 458 :  : name_index=459 signature_index=169
+ - 459 :  : 'children'
+ - 460 :  : 'myCode'
+ - 461 :  : 'classify'
+ - 462 :  : 'Ldto/BulletinClassify;'
+ - 463 :  : 'curClassifyIds'
+ - 464 :  : 'SourceFile'
+ - 465 :  : 'MessageIndexService.java'
+ - 466 :  : 'InnerClasses'
+ - 467 :  : 'HttpResponse'
+ - 468 :  : 'WSRequest'
+ - 469 :  : '$commonList1699654851'
+ - 470 :  : 'bussiness.MessageIndexService'
+ - 471 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 472 :  : "commonList" {0x14a38390}
+ - 473 :  : "(Ldto/CommonSearchDto;)Ljava/util/List;" {0x14a38280}
+ - 474 :  : 'play/classloading/enhancers/LVEnhancer$LVEnhancerRuntime'
+ - 475 :  : 'play/classloading/enhancers/LVEnhancer$LVEnhancerRuntime' {0x1410f148}
+ - 476 :  : 'enterMethod'
+ - 477 :  : '(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V'
+ - 478 :  : name_index=476 signature_index=477
+ - 479 :  : klass_index=475 name_and_type_index=478
+ - 480 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 481 :  : 'initMethodCall'
+ - 482 :  : '(Ljava/lang/String;ILjava/lang/String;[Ljava/lang/String;)V'
+ - 483 :  : name_index=481 signature_index=482
+ - 484 :  : klass_index=475 name_and_type_index=483
+ - 485 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 486 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 487 :  : "createIncludeNullsWithExpose" {0x14a38f48}
+ - 488 :  : "toJson" {0x14a39058}
+ - 489 :  : "gson" {0x149a9930}
+ - 490 :  : "cs" {0x14a35f90}
+ - 491 :  : "url" {0x13363258}
+ - 492 :  : "body" {0x142827f0}
+ - 493 :  : "json" {0x14aa2980}
+ - 494 :  : "post" {0x14aa29b0}
+ - 495 :  : "getJson" {0x14ade8f0}
+ - 496 :  : "getAsJsonObject" {0x14ae4e80}
+ - 497 :  : "result" {0x14a171d0}
+ - 498 :  : "get" {0x12e735d0}
+ - 499 :  : "jsonObject" {0x14ae4ec8}
+ - 500 :  : "<init>" {0x12f5e188}
+ - 501 :  : "getType" {0x13ef5a10}
+ - 502 :  : "fromJson" {0x149fd3f8}
+ - 503 :  : "gson" {0x149a9930}
+ - 504 :  : "messageData" {0x14ae4f28}
+ - 505 :  : "type" {0x12fd6ca8}
+ - 506 :  : "isNotBlank" {0x141f9ef8}
+ - 507 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 508 :  : "commonList" {0x14a38390}
+ - 509 :  : "(Ldto/CommonSearchDto;)Ljava/util/List;" {0x14a38280}
+ - 510 :  : 'exitMethod'
+ - 511 :  : name_index=510 signature_index=477
+ - 512 :  : klass_index=475 name_and_type_index=511
+ - 513 :  : '$advanceInfoSearch1320572067'
+ - 514 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 515 :  : "advanceInfoSearch" {0x14e2d8e0}
+ - 516 :  : "(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;" {0x14e2d968}
+ - 517 :  : "fetchUserTemplateContentById" {0x14e2da30}
+ - 518 :  : "advanceId" {0x14a35fb8}
+ - 519 :  : "uci" {0x1437da00}
+ - 520 :  : "<init>" {0x12f5e188}
+ - 521 :  : "fromJson" {0x149fd3f8}
+ - 522 :  : "json" {0x14aa2980}
+ - 523 :  : "doAdvanceSearch" {0x14e2dc20}
+ - 524 :  : "mic" {0x14a38ad0}
+ - 525 :  : "classifyList" {0x14a38a90}
+ - 526 :  : "pageNo" {0x1437d830}
+ - 527 :  : "cs" {0x14a35f90}
+ - 528 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 529 :  : "advanceInfoSearch" {0x14e2d8e0}
+ - 530 :  : "(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;" {0x14e2d968}
+ - 531 :  : '$doAdvanceSearch1181187435'
+ - 532 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 533 :  : "doAdvanceSearch" {0x14e2dc20}
+ - 534 :  : "(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;" {0x14e2dc68}
+ - 535 :  : "<init>" {0x12f5e188}
+ - 536 :  : "getRealNewsClassifyIdByCode" {0x14e2ea88}
+ - 537 :  : "getRealAnnouncementClassifyId" {0x14e31328}
+ - 538 :  : "classifyList" {0x14a38a90}
+ - 539 :  : "on" {0x1305e318}
+ - 540 :  : "skipNulls" {0x14ae7c18}
+ - 541 :  : "join" {0x14076220}
+ - 542 :  : "newArrayList" {0x14b0d9e0}
+ - 543 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 544 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 545 :  : "createIncludeNulls" {0x14e34468}
+ - 546 :  : "toJson" {0x14a39058}
+ - 547 :  : "asd" {0x14e344b0}
+ - 548 :  : "url" {0x13363258}
+ - 549 :  : "body" {0x142827f0}
+ - 550 :  : "asdJson" {0x14e34880}
+ - 551 :  : "post" {0x14aa29b0}
+ - 552 :  : "getJson" {0x14ade8f0}
+ - 553 :  : "getAsJsonObject" {0x14ae4e80}
+ - 554 :  : "result" {0x14a171d0}
+ - 555 :  : "get" {0x12e735d0}
+ - 556 :  : "jsonObject" {0x14ae4ec8}
+ - 557 :  : "<init>" {0x12f5e188}
+ - 558 :  : "getType" {0x13ef5a10}
+ - 559 :  : "fromJson" {0x149fd3f8}
+ - 560 :  : "gson" {0x149a9930}
+ - 561 :  : "messageData" {0x14ae4f28}
+ - 562 :  : "type" {0x12fd6ca8}
+ - 563 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 564 :  : "doAdvanceSearch" {0x14e2dc20}
+ - 565 :  : "(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;" {0x14e2dc68}
+ - 566 :  : '$getRealStartDateValueFromDetail1195259493'
+ - 567 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 568 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 569 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 570 :  : "getFormatDate" {0x14a38cc8}
+ - 571 :  : "datePartern" {0x14a38d08}
+ - 572 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 573 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 574 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 575 :  : "addWeeks" {0x14e26a60}
+ - 576 :  : "getFormatDate" {0x14a38cc8}
+ - 577 :  : "datePartern" {0x14a38d08}
+ - 578 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 579 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 580 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 581 :  : "addMonths" {0x14e21b20}
+ - 582 :  : "getFormatDate" {0x14a38cc8}
+ - 583 :  : "datePartern" {0x14a38d08}
+ - 584 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 585 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 586 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 587 :  : "addMonths" {0x14e21b20}
+ - 588 :  : "getFormatDate" {0x14a38cc8}
+ - 589 :  : "datePartern" {0x14a38d08}
+ - 590 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 591 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 592 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 593 :  : "addYears" {0x14e34f50}
+ - 594 :  : "getFormatDate" {0x14a38cc8}
+ - 595 :  : "datePartern" {0x14a38d08}
+ - 596 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 597 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 598 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 599 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 600 :  : "getRealStartDateValueFromDetail" {0x14a38c60}
+ - 601 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 602 :  : '$getRealEndDateValueFromDetail1195259493'
+ - 603 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 604 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 605 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 606 :  : "getFormatDate" {0x14a38cc8}
+ - 607 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 608 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 609 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 610 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 611 :  : "getRealEndDateValueFromDetail" {0x14a38e60}
+ - 612 :  : "(Ljava/lang/String;)Ljava/lang/String;" {0x141bb890}
+ - 613 :  : '$getRealAnnouncementClassifyId591120324'
+ - 614 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 615 :  : "getRealAnnouncementClassifyId" {0x14e31328}
+ - 616 :  : "(Ljava/util/List;Ljava/util/List;)Lplay/libs/F$T2;" {0x14e31388}
+ - 617 :  : "on" {0x1305e318}
+ - 618 :  : "skipNulls" {0x14ae7c18}
+ - 619 :  : "newArrayList" {0x14b0d9e0}
+ - 620 :  : "newArrayList" {0x14b0d9e0}
+ - 621 :  : "retriveAnnoucemnetClassifyId" {0x14e31410}
+ - 622 :  : "str" {0x14402440}
+ - 623 :  : "classifyList" {0x14a38a90}
+ - 624 :  : "keywords" {0x14402820}
+ - 625 :  : "annClassifyIds" {0x14a38b60}
+ - 626 :  : "T2" {0x14ae79c8}
+ - 627 :  : "keywords" {0x14402820}
+ - 628 :  : "annClassifyIds" {0x14a38b60}
+ - 629 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 630 :  : "getRealAnnouncementClassifyId" {0x14e31328}
+ - 631 :  : "(Ljava/util/List;Ljava/util/List;)Lplay/libs/F$T2;" {0x14e31388}
+ - 632 :  : '$retriveAnnoucemnetClassifyId498671169'
+ - 633 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 634 :  : "retriveAnnoucemnetClassifyId" {0x14e31410}
+ - 635 :  : "(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V" {0x14e31470}
+ - 636 :  : "newArrayList" {0x14b0d9e0}
+ - 637 :  : "newArrayList" {0x14b0d9e0}
+ - 638 :  : "retriveAnnoucemnetClassifyId" {0x14e31410}
+ - 639 :  : "myCode" {0x14a38b30}
+ - 640 :  : "keywords" {0x14402820}
+ - 641 :  : "annClassifyIds" {0x14a38b60}
+ - 642 :  : "bussiness.MessageIndexService" {0x13ac2708}
+ - 643 :  : "retriveAnnoucemnetClassifyId" {0x14e31410}
+ - 644 :  : "(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V" {0x14e31470}
+ - 645 :  : "cs" {0x14a35f90}
+ - 646 :  : name_index=469 signature_index=443
+ - 647 :  : klass_index=1 name_and_type_index=646
+ - 648 :  : "advanceId" {0x14a35fb8}
+ - 649 :  : "pageNo" {0x1437d830}
+ - 650 :  : "uci" {0x1437da00}
+ - 651 :  : "classifyList" {0x14a38a90}
+ - 652 :  : "cs" {0x14a35f90}
+ - 653 :  : name_index=513 signature_index=443
+ - 654 :  : klass_index=1 name_and_type_index=653
+ - 655 :  : "mic" {0x14a38ad0}
+ - 656 :  : "classifyList" {0x14a38a90}
+ - 657 :  : "pageNo" {0x1437d830}
+ - 658 :  : "cs" {0x14a35f90}
+ - 659 :  : name_index=531 signature_index=443
+ - 660 :  : klass_index=1 name_and_type_index=659
+ - 661 :  : "detail" {0x14260df0}
+ - 662 :  : name_index=566 signature_index=443
+ - 663 :  : klass_index=1 name_and_type_index=662
+ - 664 :  : "detail" {0x14260df0}
+ - 665 :  : name_index=602 signature_index=443
+ - 666 :  : klass_index=1 name_and_type_index=665
+ - 667 :  : "lists" {0x14a38b00}
+ - 668 :  : "classifyList" {0x14a38a90}
+ - 669 :  : name_index=613 signature_index=443
+ - 670 :  : klass_index=1 name_and_type_index=669
+ - 671 :  : "myCode" {0x14a38b30}
+ - 672 :  : "classifyList" {0x14a38a90}
+ - 673 :  : "keywords" {0x14402820}
+ - 674 :  : "annClassifyIds" {0x14a38b60}
+ - 675 :  : name_index=632 signature_index=443
+ - 676 :  : klass_index=1 name_and_type_index=675
+ - 677 :  : "startTime" {0x14a37660}
+ - 678 :  : 'dto.CommonSearchDto'
+ - 679 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 680 :  : 'bussiness.MessageIndexService.commonList, line 41'
+ - 681 :  : "bussiness.MessageIndexService.commonList, line 41" {0x14a38bd8}
+ - 682 :  : 'play/classloading/enhancers/PropertiesEnhancer$FieldAccessor'
+ - 683 :  : 'play/classloading/enhancers/PropertiesEnhancer$FieldAccessor' {0x141e6f98}
+ - 684 :  : 'invokeReadProperty'
+ - 685 :  : '(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;'
+ - 686 :  : name_index=684 signature_index=685
+ - 687 :  : klass_index=683 name_and_type_index=686
+ - 688 :  : "startTime" {0x14a37660}
+ - 689 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 690 :  : "bussiness.MessageIndexService.commonList, line 41" {0x14a38bd8}
+ - 691 :  : 'invokeWriteProperty'
+ - 692 :  : '(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V'
+ - 693 :  : name_index=691 signature_index=692
+ - 694 :  : klass_index=683 name_and_type_index=693
+ - 695 :  : "timeName" {0x14a377f8}
+ - 696 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 697 :  : 'bussiness.MessageIndexService.commonList, line 42'
+ - 698 :  : "bussiness.MessageIndexService.commonList, line 42" {0x14a38dd8}
+ - 699 :  : "endTime" {0x14a37718}
+ - 700 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 701 :  : 'bussiness.MessageIndexService.commonList, line 43'
+ - 702 :  : "bussiness.MessageIndexService.commonList, line 43" {0x14e26738}
+ - 703 :  : "endTime" {0x14a37718}
+ - 704 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 705 :  : "bussiness.MessageIndexService.commonList, line 43" {0x14e26738}
+ - 706 :  : "endTime" {0x14a37718}
+ - 707 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 708 :  : 'bussiness.MessageIndexService.commonList, line 45'
+ - 709 :  : "bussiness.MessageIndexService.commonList, line 45" {0x14a38ec0}
+ - 710 :  : "keyWord" {0x14a375a8}
+ - 711 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 712 :  : 'bussiness.MessageIndexService.commonList, line 55'
+ - 713 :  : "bussiness.MessageIndexService.commonList, line 55" {0x14ae7940}
+ - 714 :  : "keyWord" {0x14a375a8}
+ - 715 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 716 :  : 'bussiness.MessageIndexService.commonList, line 57'
+ - 717 :  : "bussiness.MessageIndexService.commonList, line 57" {0x14e2c9f8}
+ - 718 :  : "keyword" {0x14ae5ad8}
+ - 719 :  : 'dto.MessageIndexDto'
+ - 720 :  : "dto.MessageIndexDto" {0x13abfba8}
+ - 721 :  : "bussiness.MessageIndexService.commonList, line 57" {0x14e2c9f8}
+ - 722 :  : "newsSource" {0x14a37998}
+ - 723 :  : 'dto.MessageIndexCnd'
+ - 724 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 725 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 83'
+ - 726 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 83" {0x14e2e968}
+ - 727 :  : "nsource" {0x14e2e220}
+ - 728 :  : 'dto.AdvanceSearchDto'
+ - 729 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 730 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 83" {0x14e2e968}
+ - 731 :  : "ncids" {0x14e2e2d8}
+ - 732 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 733 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 84'
+ - 734 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 84" {0x14e2e9f8}
+ - 735 :  : "newsClassify" {0x14a37a50}
+ - 736 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 737 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 84" {0x14e2e9f8}
+ - 738 :  : "bulletinClassify" {0x14a37b10}
+ - 739 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 740 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 86'
+ - 741 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 86" {0x14e31208}
+ - 742 :  : "bulletinClassify" {0x14a37b10}
+ - 743 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 744 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 87'
+ - 745 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 87" {0x14e31298}
+ - 746 :  : "keyword" {0x14ae5ad8}
+ - 747 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 748 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 88'
+ - 749 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 88" {0x14e33ce8}
+ - 750 :  : "acids" {0x14e2e388}
+ - 751 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 752 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 89'
+ - 753 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 89" {0x14e33d78}
+ - 754 :  : "bulletinPlateTree" {0x14a37bd8}
+ - 755 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 756 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 91'
+ - 757 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 91" {0x14e33e08}
+ - 758 :  : "aiids" {0x14e2e438}
+ - 759 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 760 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 91" {0x14e33e08}
+ - 761 :  : "reportOrg" {0x14a37d68}
+ - 762 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 763 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 92'
+ - 764 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 92" {0x14e33e98}
+ - 765 :  : "rsource" {0x14e2e4e8}
+ - 766 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 767 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 92" {0x14e33e98}
+ - 768 :  : "reportClassify" {0x14a37e20}
+ - 769 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 770 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 93'
+ - 771 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 93" {0x14e33f28}
+ - 772 :  : "rcids" {0x14e2e5a0}
+ - 773 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 774 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 93" {0x14e33f28}
+ - 775 :  : "reportPlateTree" {0x14a37ca0}
+ - 776 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 777 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 94'
+ - 778 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 94" {0x14e33fb8}
+ - 779 :  : "riids" {0x14e2e650}
+ - 780 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 781 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 94" {0x14e33fb8}
+ - 782 :  : "advanceType" {0x14a37ee0}
+ - 783 :  : "dto.MessageIndexCnd" {0x13ac2080}
+ - 784 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 95'
+ - 785 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 95" {0x14e34048}
+ - 786 :  : "itype" {0x14e2e7b8}
+ - 787 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 788 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 95" {0x14e34048}
+ - 789 :  : "itype" {0x14e2e7b8}
+ - 790 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 791 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 98'
+ - 792 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 98" {0x14f29638}
+ - 793 :  : "startTime" {0x14a37660}
+ - 794 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 795 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 100'
+ - 796 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 100" {0x14e340d8}
+ - 797 :  : "startTime" {0x14a37660}
+ - 798 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 799 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 100" {0x14e340d8}
+ - 800 :  : "endTime" {0x14a37718}
+ - 801 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 802 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 101'
+ - 803 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 101" {0x14e34170}
+ - 804 :  : "endTime" {0x14a37718}
+ - 805 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 806 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 101" {0x14e34170}
+ - 807 :  : "iType" {0x14a3a9e8}
+ - 808 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 809 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 103'
+ - 810 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 103" {0x14e34208}
+ - 811 :  : 'java/lang/Integer'
+ - 812 :  : 'java/lang/Integer' {0x12b8e110}
+ - 813 :  : 'intValue'
+ - 814 :  : name_index=813 signature_index=243
+ - 815 :  : klass_index=812 name_and_type_index=814
+ - 816 :  : "itype" {0x14e2e7b8}
+ - 817 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 818 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 103" {0x14e34208}
+ - 819 :  : "iType" {0x14a3a9e8}
+ - 820 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 821 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 105'
+ - 822 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 105" {0x154c3f18}
+ - 823 :  : "itype" {0x14e2e7b8}
+ - 824 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 825 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 106'
+ - 826 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 106" {0x154c3fb0}
+ - 827 :  : "keyWord" {0x14a375a8}
+ - 828 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 829 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 110'
+ - 830 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 110" {0x14e342a0}
+ - 831 :  : "startTime" {0x14a37660}
+ - 832 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 833 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 113'
+ - 834 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 113" {0x14e34338}
+ - 835 :  : "timeValue" {0x14a378e0}
+ - 836 :  : "dto.CommonSearchDto" {0x13ac3a10}
+ - 837 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 113" {0x14e34338}
+ - 838 :  : "pageNo" {0x1437d830}
+ - 839 :  : 'TYPE'
+ - 840 :  : 'Ljava/lang/Class;'
+ - 841 :  : name_index=839 signature_index=840
+ - 842 :  : klass_index=812 name_and_type_index=841
+ - 843 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 844 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 116'
+ - 845 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 116" {0x14e360d0}
+ - 846 :  : '(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;ILjava/lang/String;Ljava/lang/String;)V'
+ - 847 :  : name_index=691 signature_index=846
+ - 848 :  : klass_index=683 name_and_type_index=847
+ - 849 :  : "pageNo" {0x1437d830}
+ - 850 :  : "dto.AdvanceSearchDto" {0x13abf9d0}
+ - 851 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 118'
+ - 852 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 118" {0x14e343d0}
+ - 853 :  : "code" {0x141e7a88}
+ - 854 :  : 'dto.BulletinClassify'
+ - 855 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 856 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 174'
+ - 857 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 174" {0x14e31520}
+ - 858 :  : "pcode" {0x14d29168}
+ - 859 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 860 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 174" {0x14e31520}
+ - 861 :  : "classfyId" {0x14d29198}
+ - 862 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 863 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 176'
+ - 864 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 176" {0x14e315d0}
+ - 865 :  : 'java/lang/String'[] {0x12bd0ed0}
+ - 866 :  : "classfyId" {0x14d29198}
+ - 867 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 868 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 177'
+ - 869 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 177" {0x14e31680}
+ - 870 :  : "children" {0x143cb3d8}
+ - 871 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 872 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 187'
+ - 873 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 187" {0x14e33b88}
+ - 874 :  : "children" {0x143cb3d8}
+ - 875 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 876 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 187" {0x14e33b88}
+ - 877 :  : "children" {0x143cb3d8}
+ - 878 :  : "dto.BulletinClassify" {0x13ac3d80}
+ - 879 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 188'
+ - 880 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 188" {0x14e33c38}
+ - 881 :  : '(I)Ljava/lang/Integer;'
+ - 882 :  : name_index=28 signature_index=881
+ - 883 :  : klass_index=812 name_and_type_index=882
+ - 884 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 104'
+ - 885 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 104" {0x15831dc8}
+ - 886 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 108'
+ - 887 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 108" {0x1586d0a8}
+ - 888 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 109'
+ - 889 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 109" {0x1586d140}
+ - 890 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 119'
+ - 891 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 119" {0x1586d1d8}
+ - 892 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 121'
+ - 893 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 121" {0x15831e60}
+ - 894 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 179'
+ - 895 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 179" {0x1586d270}
+ - 896 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 180'
+ - 897 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 180" {0x1584dad0}
+ - 898 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 190'
+ - 899 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 190" {0x1586d320}
+ - 900 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 191'
+ - 901 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 191" {0x1584dc30}
+ - 902 :  : "lists" {0x14a38b00}
+ - 903 :  : "timeName" {0x14a377f8}
+ - 904 :  : "bussiness.MessageIndexService.commonList, line 42" {0x14a38dd8}
+ - 905 :  : "bussiness.MessageIndexService.commonList, line 45" {0x14a38ec0}
+ - 906 :  : "bussiness.MessageIndexService.commonList, line 55" {0x14ae7940}
+ - 907 :  : "newsSource" {0x14a37998}
+ - 908 :  : "nsource" {0x14e2e220}
+ - 909 :  : "ncids" {0x14e2e2d8}
+ - 910 :  : "newsClassify" {0x14a37a50}
+ - 911 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 86" {0x14e31208}
+ - 912 :  : "bulletinPlateTree" {0x14a37bd8}
+ - 913 :  : "aiids" {0x14e2e438}
+ - 914 :  : "reportOrg" {0x14a37d68}
+ - 915 :  : "rsource" {0x14e2e4e8}
+ - 916 :  : "reportClassify" {0x14a37e20}
+ - 917 :  : "rcids" {0x14e2e5a0}
+ - 918 :  : "reportPlateTree" {0x14a37ca0}
+ - 919 :  : "riids" {0x14e2e650}
+ - 920 :  : "advanceType" {0x14a37ee0}
+ - 921 :  : "1" {0x12ebe580}
+ - 922 :  : "2" {0x13be86c0}
+ - 923 :  : "3" {0x14a1cce0}
+ - 924 :  : "createIncludeNulls" {0x14e34468}
+ - 925 :  : "toJson" {0x14a39058}
+ - 926 :  : "asd" {0x14e344b0}
+ - 927 :  : "url" {0x13363258}
+ - 928 :  : "body" {0x142827f0}
+ - 929 :  : "asdJson" {0x14e34880}
+ - 930 :  : "post" {0x14aa29b0}
+ - 931 :  : "getJson" {0x14ade8f0}
+ - 932 :  : "getAsJsonObject" {0x14ae4e80}
+ - 933 :  : "result" {0x14a171d0}
+ - 934 :  : "get" {0x12e735d0}
+ - 935 :  : "jsonObject" {0x14ae4ec8}
+ - 936 :  : "getType" {0x13ef5a10}
+ - 937 :  : "messageData" {0x14ae4f28}
+ - 938 :  : "type" {0x12fd6ca8}
+ - 939 :  : "(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;" {0x14e2dc68}
+ - 940 :  : "bussiness.MessageIndexService.commonList, line 41" {0x14a38bd8}
+ - 941 :  : "timeName" {0x14a377f8}
+ - 942 :  : "bussiness.MessageIndexService.commonList, line 42" {0x14a38dd8}
+ - 943 :  : "bussiness.MessageIndexService.commonList, line 45" {0x14a38ec0}
+ - 944 :  : "bussiness.MessageIndexService.commonList, line 55" {0x14ae7940}
+ - 945 :  : "newsSource" {0x14a37998}
+ - 946 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 83" {0x14e2e968}
+ - 947 :  : "nsource" {0x14e2e220}
+ - 948 :  : "ncids" {0x14e2e2d8}
+ - 949 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 84" {0x14e2e9f8}
+ - 950 :  : "newsClassify" {0x14a37a50}
+ - 951 :  : "bulletinClassify" {0x14a37b10}
+ - 952 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 86" {0x14e31208}
+ - 953 :  : "bulletinPlateTree" {0x14a37bd8}
+ - 954 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 91" {0x14e33e08}
+ - 955 :  : "aiids" {0x14e2e438}
+ - 956 :  : "reportOrg" {0x14a37d68}
+ - 957 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 92" {0x14e33e98}
+ - 958 :  : "rsource" {0x14e2e4e8}
+ - 959 :  : "reportClassify" {0x14a37e20}
+ - 960 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 93" {0x14e33f28}
+ - 961 :  : "rcids" {0x14e2e5a0}
+ - 962 :  : "reportPlateTree" {0x14a37ca0}
+ - 963 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 94" {0x14e33fb8}
+ - 964 :  : "riids" {0x14e2e650}
+ - 965 :  : "advanceType" {0x14a37ee0}
+ - 966 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 95" {0x14e34048}
+ - 967 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 96'
+ - 968 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 96" {0x158486f0}
+ - 969 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 98" {0x14f29638}
+ - 970 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 104" {0x15831dc8}
+ - 971 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 106" {0x154c3fb0}
+ - 972 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 116" {0x14e360d0}
+ - 973 :  : "timeValue" {0x14a378e0}
+ - 974 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 121" {0x15831e60}
+ - 975 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 102'
+ - 976 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 102" {0x15848378}
+ - 977 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 107'
+ - 978 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 107" {0x15848410}
+ - 979 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 114'
+ - 980 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 114" {0x158484a8}
+ - 981 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 117'
+ - 982 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 117" {0x15848540}
+ - 983 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 120'
+ - 984 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 120" {0x158557f8}
+ - 985 :  : 'bussiness.MessageIndexService.doAdvanceSearch, line 122'
+ - 986 :  : "bussiness.MessageIndexService.doAdvanceSearch, line 122" {0x158485d8}
+ - 987 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 178'
+ - 988 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 178" {0x1584da20}
+ - 989 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 181'
+ - 990 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 181" {0x1584db80}
+ - 991 :  : 'bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 192'
+ - 992 :  : "bussiness.MessageIndexService.retriveAnnoucemnetClassifyId, line 192" {0x1584dce0}
+
+EDX=0x17c318bc is an unknown value
+ESP=0x1750f3e0 is pointing into the stack for thread: 0x17c9e400
+EBP=0x1750f510 is pointing into the stack for thread: 0x17c9e400
+ESI=0x17c314e8 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0x174c0000,0x17510000],  sp=0x1750f3e0,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x70bd1]
+V  [jvm.dll+0x7150a]
+V  [jvm.dll+0x4cd0a]
+V  [jvm.dll+0x4e002]
+V  [jvm.dll+0x4b2a0]
+j  bussiness.MessageIndexService.doAdvanceSearch(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;+1259
+j  bussiness.MessageIndexService.advanceInfoSearch(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;+138
+j  controllers.MessageIndexCt.doAdvanceInfoSearch(JLdto/CommonSearchDto;I)Ljava/util/List;+143
+j  controllers.MessageIndexCt.getMessageIndexList(Ldto/CommonSearchDto;I)Lplay/libs/F$T2;+214
+j  controllers.MessageIndexCt.messageIndex(Ldto/CommonSearchDto;I)V+155
+j  sun.reflect.GeneratedMethodAccessor1675.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+106
+J  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  play.mvc.ActionInvoker.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+40
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;)Ljava/lang/Object;+2
+j  play.mvc.ActionInvoker.invoke(Lplay/mvc/Http$Request;Lplay/mvc/Http$Response;)V+341
+j  play.server.PlayHandler$NettyInvocation.execute()V+64
+j  play.Invoker$Invocation.run()V+31
+j  play.server.PlayHandler$NettyInvocation.run()V+16
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask$Sync.innerRun()V+30
+j  java.util.concurrent.FutureTask.run()V+4
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Ljava/util/concurrent/ScheduledThreadPoolExecutor$ScheduledFutureTask;)V+1
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V+15
+j  java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Ljava/lang/Runnable;)V+59
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+28
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xfb7cb]
+V  [jvm.dll+0x18d3d1]
+V  [jvm.dll+0xfb971]
+V  [jvm.dll+0xfb9cb]
+V  [jvm.dll+0xb5e99]
+V  [jvm.dll+0x119ab4]
+V  [jvm.dll+0x14209c]
+C  [msvcr71.dll+0x9565]  endthreadex+0xa0
+C  [kernel32.dll+0x2481f]  GetModuleHandleA+0xdf
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bussiness.MessageIndexService.doAdvanceSearch(Ldto/MessageIndexCnd;Ljava/util/List;ILdto/CommonSearchDto;)Ljava/util/List;+1259
+j  bussiness.MessageIndexService.advanceInfoSearch(JILutil/UserComposeInfo;Ljava/util/List;Ldto/CommonSearchDto;)Ljava/util/List;+138
+j  controllers.MessageIndexCt.doAdvanceInfoSearch(JLdto/CommonSearchDto;I)Ljava/util/List;+143
+j  controllers.MessageIndexCt.getMessageIndexList(Ldto/CommonSearchDto;I)Lplay/libs/F$T2;+214
+j  controllers.MessageIndexCt.messageIndex(Ldto/CommonSearchDto;I)V+155
+j  sun.reflect.GeneratedMethodAccessor1675.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+106
+J  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+J  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+j  play.mvc.ActionInvoker.invokeWithContinuation(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+234
+j  play.mvc.ActionInvoker.invoke(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;+40
+j  play.mvc.ActionInvoker.invokeControllerMethod(Ljava/lang/reflect/Method;)Ljava/lang/Object;+2
+j  play.mvc.ActionInvoker.invoke(Lplay/mvc/Http$Request;Lplay/mvc/Http$Response;)V+341
+j  play.server.PlayHandler$NettyInvocation.execute()V+64
+j  play.Invoker$Invocation.run()V+31
+j  play.server.PlayHandler$NettyInvocation.run()V+16
+j  java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object;+4
+j  java.util.concurrent.FutureTask$Sync.innerRun()V+30
+j  java.util.concurrent.FutureTask.run()V+4
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(Ljava/util/concurrent/ScheduledThreadPoolExecutor$ScheduledFutureTask;)V+1
+j  java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V+15
+j  java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Ljava/lang/Runnable;)V+59
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+28
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x186c3800 JavaThread "New I/O  worker #32" daemon [_thread_in_native, id=7004, stack(0x19980000,0x199d0000)]
+  0x186c1400 JavaThread "pool-10-thread-4" [_thread_blocked, id=7108, stack(0x197a0000,0x197f0000)]
+  0x181a9800 JavaThread "New I/O  worker #31" daemon [_thread_in_native, id=5208, stack(0x19930000,0x19980000)]
+  0x181a9400 JavaThread "New I/O  worker #30" daemon [_thread_in_native, id=7300, stack(0x198e0000,0x19930000)]
+  0x1819d800 JavaThread "AsyncHttpClient-Reaper" daemon [_thread_blocked, id=7032, stack(0x19890000,0x198e0000)]
+  0x1819d400 JavaThread "AsyncHttpClient-Reaper" daemon [_thread_blocked, id=6312, stack(0x19840000,0x19890000)]
+  0x18775800 JavaThread "New I/O  worker #29" daemon [_thread_in_native, id=7952, stack(0x197f0000,0x19840000)]
+  0x186bac00 JavaThread "Timer-15" daemon [_thread_blocked, id=4524, stack(0x19660000,0x196b0000)]
+  0x18662000 JavaThread "jobs-thread-1" [_thread_blocked, id=6700, stack(0x18610000,0x18660000)]
+  0x1829c400 JavaThread "Timer-14" daemon [_thread_blocked, id=5108, stack(0x175b0000,0x17600000)]
+  0x18127400 JavaThread "net.sf.ehcache.CacheManager@e88892" daemon [_thread_blocked, id=5820, stack(0x17560000,0x175b0000)]
+  0x181ae400 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=5096, stack(0x19750000,0x197a0000)]
+  0x17c4b800 JavaThread "New I/O  worker #4" [_thread_in_native, id=4660, stack(0x196b0000,0x19700000)]
+  0x172a5800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4628, stack(0x185c0000,0x18610000)]
+  0x17ba1000 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4624, stack(0x18570000,0x185c0000)]
+  0x17ba0400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4620, stack(0x18520000,0x18570000)]
+  0x17bfd800 JavaThread "Timer-3" daemon [_thread_blocked, id=4616, stack(0x184d0000,0x18520000)]
+  0x17b56800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4612, stack(0x18480000,0x184d0000)]
+  0x177b1800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4608, stack(0x18430000,0x18480000)]
+  0x17b92c00 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4604, stack(0x183e0000,0x18430000)]
+  0x177b3400 JavaThread "Timer-2" daemon [_thread_blocked, id=4600, stack(0x18390000,0x183e0000)]
+  0x17b17800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2" daemon [_thread_blocked, id=4596, stack(0x18340000,0x18390000)]
+  0x17ad9800 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1" daemon [_thread_blocked, id=4592, stack(0x176a0000,0x176f0000)]
+  0x172ac400 JavaThread "com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0" daemon [_thread_blocked, id=4588, stack(0x17650000,0x176a0000)]
+  0x17cb9400 JavaThread "Timer-1" daemon [_thread_blocked, id=4584, stack(0x17600000,0x17650000)]
+  0x17eac400 JavaThread "New I/O  worker #3" [_thread_in_native, id=4572, stack(0x17510000,0x17560000)]
+=>0x17c9e400 JavaThread "play-thread-1" [_thread_in_vm, id=140, stack(0x174c0000,0x17510000)]
+  0x17b60400 JavaThread "New I/O  worker #2" [_thread_in_native, id=136, stack(0x17470000,0x174c0000)]
+  0x17abd400 JavaThread "New I/O  worker #1" [_thread_in_native, id=4048, stack(0x17420000,0x17470000)]
+  0x00309400 JavaThread "DestroyJavaVM" [_thread_blocked, id=2052, stack(0x00910000,0x00960000)]
+  0x17b3ac00 JavaThread "New I/O server boss #1 ([id: 0x4123e2cf, /0.0.0.0:9200])" [_thread_in_native, id=3388, stack(0x173d0000,0x17420000)]
+  0x16d1fc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3420, stack(0x170c0000,0x17110000)]
+  0x16d1e000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1932, stack(0x17070000,0x170c0000)]
+  0x16d17400 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=1948, stack(0x17020000,0x17070000)]
+  0x16d01800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=3952, stack(0x16fd0000,0x17020000)]
+  0x16ced400 JavaThread "Attach Listener" daemon [_thread_blocked, id=3136, stack(0x16ea0000,0x16ef0000)]
+  0x16cef400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2492, stack(0x16e50000,0x16ea0000)]
+  0x16cdc800 JavaThread "Finalizer" daemon [_thread_blocked, id=2348, stack(0x16e00000,0x16e50000)]
+  0x16cd7c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2304, stack(0x16db0000,0x16e00000)]
+
+Other Threads:
+  0x16cd4000 VMThread [stack: 0x16d60000,0x16db0000] [id=3216]
+  0x16d3d000 WatcherThread [stack: 0x17110000,0x17160000] [id=3244]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 26240K, used 16051K [0x02b20000, 0x04790000, 0x08070000)
+  eden space 23360K,  67% used [0x02b20000, 0x03a73df8, 0x041f0000)
+  from space 2880K,  12% used [0x041f0000, 0x04249128, 0x044c0000)
+  to   space 2880K,   0% used [0x044c0000, 0x044c0000, 0x04790000)
+ tenured generation   total 58140K, used 36371K [0x08070000, 0x0b937000, 0x12b20000)
+   the space 58140K,  62% used [0x08070000, 0x0a3f4e18, 0x0a3f5000, 0x0b937000)
+ compacting perm gen  total 46592K, used 46388K [0x12b20000, 0x158a0000, 0x16b20000)
+   the space 46592K,  99% used [0x12b20000, 0x1586d3d0, 0x1586d400, 0x158a0000)
+No shared spaces configured.
+
+Code Cache  [0x00aa0000, 0x01b78000, 0x02aa0000)
+ total_blobs=6965 nmethods=6529 adapters=378 free_code_cache=15923776 largest_free_block=384
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\WINDOWS\system32\java.exe
+0x7c930000 - 0x7ca03000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c92b000 	C:\WINDOWS\system32\kernel32.dll
+0x77f30000 - 0x77fdc000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77c20000 - 0x77cc1000 	C:\WINDOWS\system32\RPCRT4.dll
+0x76eb0000 - 0x76ec3000 	C:\WINDOWS\system32\Secur32.dll
+0x7c340000 - 0x7c396000 	D:\jdk\bin\msvcr71.dll
+0x6d7f0000 - 0x6daa0000 	D:\jdk\bin\client\jvm.dll
+0x77e10000 - 0x77ea0000 	C:\WINDOWS\system32\USER32.dll
+0x77bd0000 - 0x77c19000 	C:\WINDOWS\system32\GDI32.dll
+0x769e0000 - 0x76a0a000 	C:\WINDOWS\system32\WINMM.dll
+0x76180000 - 0x7619d000 	C:\WINDOWS\system32\IMM32.DLL
+0x7f000000 - 0x7f009000 	C:\WINDOWS\system32\LPK.DLL
+0x74ae0000 - 0x74b45000 	C:\WINDOWS\system32\USP10.dll
+0x6fa00000 - 0x6fa38000 	C:\PROGRA~1\Sophos\SOPHOS~1\SOPHOS~1.DLL
+0x76ab0000 - 0x76abb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d7a0000 - 0x6d7ac000 	D:\jdk\bin\verify.dll
+0x6d320000 - 0x6d33f000 	D:\jdk\bin\java.dll
+0x6d370000 - 0x6d399000 	D:\jdk\bin\jdwp.dll
+0x6d2c0000 - 0x6d2da000 	D:\jdk\bin\instrument.dll
+0x6d690000 - 0x6d696000 	D:\jdk\bin\npt.dll
+0x6d7e0000 - 0x6d7ef000 	D:\jdk\bin\zip.dll
+0x6d200000 - 0x6d207000 	D:\jdk\bin\dt_socket.dll
+0x71b60000 - 0x71b77000 	C:\WINDOWS\system32\WS2_32.dll
+0x77b70000 - 0x77bca000 	C:\WINDOWS\system32\msvcrt.dll
+0x71b50000 - 0x71b58000 	C:\WINDOWS\system32\WS2HELP.dll
+0x6fa40000 - 0x6fa57000 	C:\Documents and Settings\All Users\Application Data\Sophos\Web Intelligence\swi_ifslsp.dll
+0x77b60000 - 0x77b68000 	C:\WINDOWS\system32\VERSION.dll
+0x7ca10000 - 0x7d1ec000 	C:\WINDOWS\system32\SHELL32.dll
+0x77eb0000 - 0x77f02000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x77cd0000 - 0x77dd3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.4770_x-ww_05FDF087\comctl32.dll
+0x71a80000 - 0x71ac0000 	C:\WINDOWS\system32\mswsock.dll
+0x69660000 - 0x696b7000 	C:\WINDOWS\system32\hnetcfg.dll
+0x71a40000 - 0x71a48000 	C:\WINDOWS\System32\wshtcpip.dll
+0x6d600000 - 0x6d613000 	D:\jdk\bin\net.dll
+0x76e30000 - 0x76e5b000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76ed0000 - 0x76ed7000 	C:\WINDOWS\System32\winrnr.dll
+0x76e70000 - 0x76e9e000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76ee0000 - 0x76ee5000 	C:\WINDOWS\system32\rasadhlp.dll
+0x68000000 - 0x68035000 	C:\WINDOWS\system32\rsaenh.dll
+0x75870000 - 0x7592d000 	C:\WINDOWS\system32\USERENV.dll
+0x71ba0000 - 0x71bf7000 	C:\WINDOWS\system32\netapi32.dll
+0x6d620000 - 0x6d629000 	D:\jdk\bin\nio.dll
+0x6d550000 - 0x6d559000 	D:\jdk\bin\management.dll
+
+VM Arguments:
+jvm_args: -javaagent:E:\javaTools\play1\framework/play-master-localbuild.jar -XX:-UseSplitVerifier -Dfile.encoding=utf-8 -Xdebug -Xrunjdwp:transport=dt_socket,address=8200,server=y,suspend=n -Dplay.debug=yes -Dapplication.path=E:\f10workspace\f10 -Dplay.id= 
+java_command: play.server.Server 
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=D:\Program Files\JetBrains\IntelliJ IDEA 11.1.3\bin\..\.\bin;d:\Program Files\GTA\QSim_MinGW\QIDE\jre\bin;D:\jdk\bin;d:\Program Files\GTA\QSim_MinGW\QIDE\MinGW\msys\1.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Program Files\TortoiseSVN\bin;E:\javaTools\play1\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\Program Files\nodejs\;d:\Program Files\MATLAB\R2012a\runtime\win32;d:\Program Files\MATLAB\R2012a\bin;d:\program files\jetbrains\intellij idea 11.1.3\jre\jre\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 16 Model 6 Stepping 2, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Server 2003 family Build 3790 Service Pack 2
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 16 model 6 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a
+
+Memory: 4k page, physical 3931200k(1051064k free), swap 5860952k(2437672k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.12-b01) for windows-x86 JRE (1.6.0_37-b06), built on Sep 24 2012 12:44:35 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Wed Sep 11 14:36:26 2013
+elapsed time: 184698 seconds
+

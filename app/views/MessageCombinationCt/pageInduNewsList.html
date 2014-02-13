@@ -1,0 +1,13 @@
+#{list items:induNewstList, as:'item'}
+<tr>
+    <td>#{sinceVF item.declareDate, f:'HH:mm'/}</td>
+    <td>
+        <a href="javascript:void(0)" data-url="@{NewsCt.newsDetail(item.newsId)}"
+           data-title="#{cutStr item.title, len:50 /}"
+           #{if item.title.length()>50}title="${item.title}"#{/if}
+           class="newstd tooltip">#{cutStr item.title, len:50 /}
+        </a>
+    </td>
+    <td>#{emVF item.newsSource/}</td>
+</tr>
+#{/list}

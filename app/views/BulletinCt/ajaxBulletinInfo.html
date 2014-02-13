@@ -1,0 +1,30 @@
+#{if list==null || list.size()==0}
+<tr>
+    <td colspan="4"> 暂无公告</td>
+</tr>
+#{/if}
+#{else }
+    #{list items:list , as:'item' }
+    <tr>
+        <td width="10%">#{emVF item.declareDate/}</td>
+        <td width="18%">
+            #{if item.symbol != null && !"".equals(item.symbol)}
+                <a href="javascript:jumpToQuote('#{emVF v : item.symbol/}');" style="text-decoration: none"> #{emVF item.shortName/}（#{emVF item.symbol/}）</a>
+            #{/if}
+            #{else}
+                #{emVF item.shortName/}（#{emVF item.symbol/}）
+            #{/else}
+        </td>
+        <td width="62%">#{emVF item.title/}</td>
+        <td width="10%">
+            *{<a #{bulletinUrl item.announcementRoute /}><div class="m_attachement">附件</div></a>}*
+            #{if org.apache.commons.lang.StringUtils.isBlank(item.announcementRoute) }
+                <a href="#"><div class="m_attachement">附件</div></a>
+            #{/if}
+            #{else }
+                <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.announcementRoute)}')" href="javascript:void(0)"> <div class="m_attachement">附件</div> </a>
+            #{/else}
+        </td>
+    </tr>
+    #{/list}
+#{/else}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>公司公告 sql</comment>
+
+    <!--公司公告列表（取24小时以内的数据） -->
+    <!--
+      DATE_ADD(NOW(), INTERVAL - 1 DAY)
+      公告提取A股（P50100）和B股(P50101)两个分类的数据
+    -->
+    <entry key="leftJoinBulletinInfo">
+        <![CDATA[
+        SELECT DISTINCT a.DeclareDate AS declareDate,
+                c.Symbol AS symbol,
+                a.Title AS title,
+                a.AnnouncementRoute AS announcementRoute
+            FROM qic_db.c_ann_announcementinfo_lst a
+                    LEFT JOIN c_ann_security_lst c
+                ON a.ANNOUNCEMENTID = c.ANNOUNCEMENTID
+            WHERE a.DECLAREDATE >= DATE_ADD((SELECT MAX(DECLAREDATE) FROM c_ann_announcementinfo_lst), INTERVAL - 1 DAY) AND c.`SECURITYTYPEID` IN ('P50100','P50101')
+        ]]>
+    </entry>
+    <entry key="bulletinInfo">
+        <![CDATA[
+        SELECT DISTINCT a.DeclareDate AS declareDate,
+                c.Symbol AS symbol,
+                a.Title AS title,
+                a.AnnouncementRoute AS announcementRoute
+            FROM c_ann_announcementinfo_lst a
+                    INNER JOIN c_ann_security_lst c
+                ON a.ANNOUNCEMENTID = c.ANNOUNCEMENTID
+            WHERE a.DECLAREDATE >= DATE_ADD((SELECT MAX(DECLAREDATE) FROM c_ann_announcementinfo_lst), INTERVAL - 1 DAY) AND c.`SECURITYTYPEID` IN ('P50100','P50101')
+        ]]>
+    </entry>
+
+    <!--根据classifyId查询公司ID-->
+    <entry key="queryIdByClassifyId">
+        <![CDATA[
+        SELECT
+                a.ANNOUNCEMENTID AS announcementID
+            FROM qic_db.c_ANN_Classify_lst a
+            WHERE a.ClassifyID IN (#TypeGroup)
+        ]]>
+    </entry>
+
+
+    <entry key="stkStockinfoSql">
+        <![CDATA[
+        SELECT a.SYMBOL AS symbol,
+                a.SHORTNAME AS shortname,
+                a.PYSHORTNAME as pyshortname
+            FROM gta_data.stk_stockinfo a
+        ]]>
+    </entry>
+</properties>

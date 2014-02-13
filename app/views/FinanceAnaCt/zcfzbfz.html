@@ -1,0 +1,111 @@
+*{资产负债表附注}*
+<div>
+    <ul class="fuzuSel">
+        <li><a href="#zcfz1">资产减值准备</a></li>
+        <li><a href="#zcfz2">长期股权投资</a></li>
+        <li><a href="#zcfz3">长期待摊费用</a></li>
+        <li><a href="#zcfz4">递延所得税资产和递延所得税负债</a></li>
+    </ul>
+</div>
+
+<div id="zcfz1">资产减值准备</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td rowspan="2">项目</td>
+        <td rowspan="2">期初余额(万元)</td>
+        <td colspan="2">本期增加额(万元)</td>
+        <td colspan="3">本期减少额(万元)</td>
+        <td rowspan="2">期末余额(万元)</td>
+    </tr>
+    <tr>
+        <td>本期计提额(万元)</td>
+        <td>其他(万元)</td>
+        <td>转回(万元)</td>
+        <td>转销(万元)</td>
+        <td>其他(万元)</td>
+    </tr>
+#{list items:assetImpairmentSubList, as:'ais'}
+    <tr>
+        <td>#{emVF ais.item, scale:-4, f:'#,##0.00' /}</td>
+        <td>#{emVF ais.beginningYearValue, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.currentProvision, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.addOther, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.currentReversal, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.currentReseller, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.lowerOther, scale:-4, f:'#,##0.00'  /}</td>
+        <td>#{emVF ais.endingYearValue, scale:-4, f:'#,##0.00'  /}</td>
+    </tr>
+#{/list}
+</table>
+
+<div id="zcfz2">长期股权投资</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>类别</td>
+        <td>长期投资项目</td>
+        <td>核算方法</td>
+        <td>投资成本(万元)</td>
+        <td>期初余额(万元)</td>
+        <td>增减变动(万元)</td>
+        <td>期末余额(万元)</td>
+        <td>持股比例(%)</td>
+        <td>表决权比例(%)</td>
+        <td>币种</td>
+    </tr>
+#{list items:equityInvestSubList, as:'eil'}
+    <tr>
+        <td>${eil.category2Cn()}</td>
+        <td>${eil.longtermInvestmentProjects}</td>
+        <td>${eil.accountingMethods}</td>
+        <td>#{emVF eil.investmentCost, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF eil.beginningBalance, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF eil.changesValue, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF eil.endingBalance, f:'#,##0.00', scale:-4/}</td>
+        <td>${eil.fixShareholdingScale()}</td>
+        <td>${eil.fixVoteScale()}</td>
+        <td>#{currency2Cn eil.currency /}</td>
+    </tr>
+#{/list}
+</table>
+
+<div id="zcfz3">长期待摊费用</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>项目</td>
+        <td>期初余额(万元)</td>
+        <td>本年增加(万元)</td>
+        <td>本年摊销(万元)</td>
+        <td>其他减少(万元)</td>
+        <td>期末余额(万元)</td>
+    </tr>
+#{list items:longtermPrepaidFeeSubList, as:'lpf'}
+    <tr>
+        <td>${lpf.item}</td>
+        <td>#{emVF lpf.beginningYearValue, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF lpf.increaseDuringYear, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF lpf.amortizationYear, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF lpf.decreaseDueOther, f:'#,##0.00', scale:-4/}</td>
+        <td>#{emVF lpf.endingYearValue, f:'#,##0.00', scale:-4/}</td>
+    </tr>
+#{/list}
+</table>
+
+<div id="zcfz4">递延所得税资产和递延所得税负债</div>
+<table width="100%" border="0" class="tbl_common tbl_three" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>递延所得税类型</td>
+        <td>类别</td>
+        <td>项目</td>
+        <td>期初余额(万元)</td>
+        <td>期末余额(万元)</td>
+    </tr>
+#{list items:deferredIncomeTaxSubList, as:'dit'}
+    <tr>
+        <td>${dit.deferredIncomeTaxType2Cn()}</td>
+        <td>${dit.category2Cn()}</td>
+        <td>${dit.item}</td>
+        <td>#{emVF dit.beginningYearValue, f:'#,##0.00', scale:-4 /}</td>
+        <td>#{emVF dit.endingYearValue, f:'#,##0.00', scale:-4 /}</td>
+    </tr>
+#{/list}
+</table>

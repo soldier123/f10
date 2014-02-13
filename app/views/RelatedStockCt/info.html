@@ -1,0 +1,162 @@
+#{extends 'f10Main.html'/}
+#{set title:'关联个股'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function () {
+        $("#RelatedStock").addClass('sub_menu_current');
+        tableBgFunc("tbl_special_2"); //表格隔行换色
+
+        $("tr.tgdTitle").click(function(){
+            var $this = $(this);
+            var $detail = $this.next("tr");
+            if($detail.is(":hidden")){
+                $this.find("span").empty().append("点击收起");
+                $detail.show(400);
+
+            }else{
+                $this.find("span").empty().append("点击展开");
+                $detail.hide(400);
+            }
+        });
+    });
+</script>
+
+#{/set}
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <h3 class="news_main til_left">同股东持股</h3>
+        #{list items:holderItemList, as:'item'}
+            <table width="100%" border="0" class="tbl_common tbl_exec tbl_special" cellspacing="0" cellpadding="0">
+                <tr  class="tgdTitle">
+                    <th colspan="3">#{emVF item.name/} #{if  mapList.get(item) != null && mapList.get(item).size() > 0}<span style="float: right;">点击展开</span>#{/if}</th>
+                </tr>
+                #{if mapList.get(item) != null && mapList.get(item).size() > 0}
+                <tr class="tgdDetail" style="display: none;">
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>持股数量(万股)</td>
+                            </tr>
+                        #{list items:mapList.get(item), as:'it1'}
+                        #{if (it1_index % 3 == 1)}
+                            <tr>
+                                <td>#{emVF it1.scode /}</td>
+                                <td>#{emVF it1.secName() /}</td>
+                                <td>#{emVF it1.holdNum, f:'#,##0.00', scale:-4 /}</td>
+                            </tr>
+                        #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>持股数量(万股)</td>
+                            </tr>
+                        #{list items:mapList.get(item), as:'it1'}
+                        #{if (it1_index % 3 == 2)}
+                            <tr>
+                                <td>#{emVF it1.scode /}</td>
+                                <td>#{emVF it1.secName() /}</td>
+                                <td>#{emVF it1.holdNum, f:'#,##0.00', scale:-4/}</td>
+                            </tr>
+                        #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>持股数量(万股)</td>
+                            </tr>
+                        #{list items:mapList.get(item), as:'it1'}
+                        #{if (it1_index % 3 == 0)}
+                            <tr>
+                                <td>#{emVF it1.scode /}</td>
+                                <td>#{emVF it1.secName() /}</td>
+                                <td>#{emVF it1.holdNum, f:'#,##0.00', scale:-4/}</td>
+                            </tr>
+                        #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                </tr>
+                #{/if}
+            </table>
+        #{/list}
+
+            <h3 class="news_main til_left">同行业个股</h3>
+            <table width="100%" border="0" class="tbl_common tbl_exec tbl_special" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>每股收益(元)</td>
+                            </tr>
+                        #{list items:sameInduItemList, as:'item'}
+                        #{if (item_index % 3 == 1)}
+                            <tr>
+                                <td>#{emVF item.scode /}</td>
+                                <td>#{emVF item.secName() /}</td>
+                                <td>#{emVF item.eps, f:'#,##0.0000' /}</td>
+                            </tr>
+                        #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>每股收益(元)</td>
+                            </tr>
+                        #{list items:sameInduItemList, as:'item'}
+                            #{if (item_index % 3 == 2)}
+                                <tr>
+                                    <td>#{emVF item.scode /}</td>
+                                    <td>#{emVF item.secName() /}</td>
+                                    <td>#{emVF item.eps, f:'#,##0.0000' /}</td>
+                                </tr>
+                            #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                    <td valign="top" width="33%">
+                        <table width="100%" border="0" class="tbl_special_2" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>证劵代码</td>
+                                <td>证劵名称</td>
+                                <td>每股收益(元)</td>
+                            </tr>
+                        #{list items:sameInduItemList, as:'item'}
+                            #{if (item_index % 3 == 0)}
+                                <tr>
+                                    <td>#{emVF item.scode /}</td>
+                                    <td>#{emVF item.secName() /}</td>
+                                    <td>#{emVF item.eps, f:'#,##0.0000' /}</td>
+                                </tr>
+                            #{/if}
+                        #{/list}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<!--main End-->

@@ -1,0 +1,236 @@
+#{extends 'f10Main.html'/}
+#{set title:'盈利预测'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(function () {
+        $("#PredictProfit").addClass('sub_menu_current');
+        tableBgFunc(); //表格隔行换色
+
+        tabMenu("menuTab", "subContImp", "display");
+
+        tableBgFunc_2("tbl_important")
+    });
+
+    $(function () {
+        $(".show_hide").live('click', function () {
+            var $this = $(this);
+            if ($this.hasClass('show_hide_2')) {
+                $this.removeClass("show_hide_2")
+            } else {
+                $this.addClass("show_hide_2");
+            }
+            $this.siblings("div").find('.e_p2').toggle();
+        });
+    });
+
+    //综合评级数据
+    var reportRatingCharJson = ${reportRatingCharJson.raw()};
+
+
+    //目标价
+     //var targetPriceCharJson = [[Date.UTC(2013,2,8),9.0, 'aa', 'cc']];
+
+    //实际价
+     //var actualPriceCharJson =[[Date.UTC(2013,1,21),7.05],[Date.UTC(2013,1,22),6.86],[Date.UTC(2013,1,25),6.92],[Date.UTC(2013,1,26),6.86],[Date.UTC(2013,1,27),6.62],[Date.UTC(2013,1,28),6.61],[Date.UTC(2013,2,1),6.5],[Date.UTC(2013,2,4),6.22],[Date.UTC(2013,2,5),6.27],[Date.UTC(2013,2,6),6.37],[Date.UTC(2013,2,7),6.34],[Date.UTC(2013,2,8),6.34],[Date.UTC(2013,2,11),6.42],[Date.UTC(2013,2,12),6.14],[Date.UTC(2013,2,13),6.05],[Date.UTC(2013,2,14),6.07],[Date.UTC(2013,2,15),6.06],[Date.UTC(2013,2,18),5.9]];
+
+
+
+    //目标价
+    var targetPriceCharJson = ${targetPriceCharJson.raw()};
+
+    //实际价
+    var actualPriceCharJson =${actualPriceCharJson.raw()};
+
+    //机构预测及明细
+    var yearList = ${yearListJson.raw()};
+    var epsList = ${epsListJson.raw()};
+    var netProfitList = ${netProfitListJson.raw()};
+</script>
+
+<script type="text/javascript" src="@{'/public/js/predictprofitct/info.js'}"></script>
+#{/set}
+
+<!--main Begin-->
+<div class="main">
+    <div class="main_wrap_2" id="mainWrap">
+        <input type="text" name="scode" value="${sec.code}  ${sec.name}" class="stock_code" readonly="readonly">
+
+        <div class="market_per_wrap">
+            <h2 class="h2_title">更多评级变动历史记录</h2>
+
+            <div class="earning_1">
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+                <div class="market_per_img earning_left_1" style="">
+                    <div class="earning_list_1">
+                        <p class="p1 earning_p1">最新综合评级</p>
+
+                        <div id="compositeRatingChart"></div>
+                    </div>
+
+                    <div class="earning_list_1">
+                        <p class="p1 earning_p1">最近一个月机构评级</p>
+                        <table width="100%" border="0" class="tbl_earning_1" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th>评级</th>
+                                <th>买入</th>
+                                <th>增持</th>
+                                <th>中性</th>
+                                <th>减持</th>
+                                <th>卖出</th>
+                            </tr>
+                            <tr>
+                                <td>最近一个月</td>
+                                <td>#{emVF reportRating?.buy /}</td>
+                                <td>#{emVF reportRating?.outperform /}</td>
+                                <td>#{emVF reportRating?.neutral /}</td>
+                                <td>#{emVF reportRating?.underperform /}</td>
+                                <td>#{emVF reportRating?.sell /}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="earning_list_1">
+                        <p class="p1 earning_p1">近期评级调整状况:</p>
+                        #{if ratingChange!=null}
+                        <p class="p1">#{emVF ratingChange.reportDate /} &nbsp;&nbsp; #{emVF ratingChange.orgName /} &nbsp;&nbsp; #{emVF ratingChange.ratingChange /} 评级到“#{emVF ratingChange.rating /}”</p>
+                        #{/if}
+                    </div>
+                </div>
+
+                <div class="market_per_total" style="height: 390px; width:600px; ">
+                    <div id="priceForecastChart" ></div>
+                    当前价为:#{emVF newestPrice, f:'#,##0.00' /}元，预测目标均价为:#{emVF forecastAvgPrice, f:'#,##0.00'/}
+                    元
+                </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear">&nbsp;</div>
+            <h2 class="h2_title">机构预测及明细</h2>
+
+            <div class="earning_1">
+                <div class="level_scroll_wrap">
+                    <div class="level_scroll">
+
+                <div class="market_per_img earning_left_1" style="">
+                    <div class="earning_list_1">
+                        <div id="predictChart" style="height: 300px"></div>
+                    </div>
+
+                </div>
+
+                <div class="market_per_total" style="width: 500px;">
+                    <div class="earning_list_1">
+                        <p class="p1 earning_p1">预测数据</p>
+                        <table width="100%" border="0" class="tbl_earning_1" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th>&nbsp;</th>
+                            #{list items:yearTabList, as:'y'}
+                                <th width="15%">${y}</th>
+                            #{/list}
+                            </tr>
+                            <tr>
+                                <td>每股收益(元)</td>
+                            #{list items:epsTabList, as:'eps'}
+                                <td  width="15%">#{emVF eps /}</td>
+                            #{/list}
+                            </tr>
+                            <tr>
+                                <td>净利润(亿元)</td>
+                            #{list items:netTabProfitList, as:'ntp'}
+                                <td  width="15%">#{emVF ntp ,f:'###,##0.00'/}</td>
+                            #{/list}
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </div></div>
+            </div>
+
+            <div class="clear">&nbsp;</div>
+
+
+            <h3 class="news_main til_left">预测明细</h3>
+
+            <div class="finance_tab">
+                <ul id="menuTab" class="tab_li">
+                    <li class="display">每股收益</li>
+                    <li>净利润(万元)</li>
+                </ul>
+                <ul id="subContImp" class="sub_content">
+                    <li class="display">
+                        <!--每股收益 Begin-->
+                        <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th width="13%">时间<br></th>
+                                <th width="11%">机构</th>
+                                <th width="11%">研究员</th>
+                            #{list items:actualEpsMap.keySet(), as:'year'}
+                                <th width="11%">${year}</th>
+                            #{/list}
+                                <th width="11%">${epsNewestYear + 1}E</th>
+                                <th width="11%">${epsNewestYear + 2}E</th>
+                                <th width="11%">${epsNewestYear + 3}E</th>
+                                <th width="15%">评级</th>
+                            </tr>
+                        #{list items:f3yearEpsDetail, as:'row'}
+                            <tr>
+                                <td>#{emVF row.reportDate, f:'yyyy-MM-dd' /}</td>
+                                <td>#{emVF row.orgName /}</td>
+                                <td>#{emVF row.analyst /}</td>
+                            #{list items:actualEpsMap.keySet(), as:'year'}
+                                <td width="11%">#{emVF actualEpsMap.get(year), f:'#,##0.00' /}</td>
+                            #{/list}
+                                <td width="11%">#{emVF row.fprice1, f:'#,##0.00' /}</td>
+                                <td width="11%">#{emVF row.fprice2, f:'#,##0.00' /}</td>
+                                <td width="11%">#{emVF row.fprice3, f:'#,##0.00' /}</td>
+                                <td>#{emVF row.rating/}</td>
+                            </tr>
+                        #{/list}
+                        </table>
+                        <!--对外担保 End-->
+                    </li>
+                    <!--净利润 Begin -->
+                    <li>
+                        <table width="100%" border="0" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <th width="13%">时间<br></th>
+                                <th width="11%">机构</th>
+                                <th width="11%">研究员</th>
+                            #{list items:actualNetProfitMap.keySet(), as:'year'}
+                                <th width="11%">${year}</th>
+                            #{/list}
+                                <th width="11%">${netProfitNewestYear + 1}E</th>
+                                <th width="11%">${netProfitNewestYear + 2}E</th>
+                                <th width="11%">${netProfitNewestYear + 3}E</th>
+                                <th width="15%">评级</th>
+                            </tr>
+                        #{list items:f3yearNetProfitDetail, as:'row'}
+                            <tr>
+                                <td>#{emVF row.reportDate, f:'yyyy-MM-dd' /}</td>
+                                <td>#{emVF row.orgName /}</td>
+                                <td>#{emVF row.analyst /}</td>
+                            #{list items:actualNetProfitMap.keySet(), as:'year'}
+                                    <td width="11%">#{emVF actualNetProfitMap.get(year), f:'#,##0.00', scale:-4 /}</td>
+                            #{/list}
+                                <td width="11%">#{emVF row.fprice1, f:'#,##0.00', scale:-4 /}</td>
+                                <td width="11%">#{emVF row.fprice2, f:'#,##0.00', scale:-4 /}</td>
+                                <td width="11%">#{emVF row.fprice3, f:'#,##0.00', scale:-4 /}</td>
+                                <td>#{emVF row.rating/}</td>
+                            </tr>
+                        #{/list}
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <!--净利润 End -->
+        </div>
+    </div>
+</div>
+<!--main End-->
+</body>
+</html>

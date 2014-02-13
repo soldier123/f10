@@ -1,0 +1,118 @@
+#{extends 'main.html' /}
+#{set title:'更多新闻' /}
+
+#{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" href="@{'/public/style/global-marketnews.css'}">
+<link rel="stylesheet" type="text/css" href="@{'/public/style/scroll-page.css'}">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+<style type="text/css">
+    .cndSelected {
+        background-color: #6ca9e1;
+    }
+    .sider_news{ width: 280px}
+    .folder_2{ left: 280px;}
+    .main_wrap{ margin-left: 300px;}
+</style>
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/newsjs/news.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+#{/set}
+
+<!--sider_news Begin-->
+<div class="sider_news">
+    <div id="news_list" style="margin: 0px" class="news_list">
+        <table width="100%" id="tb_news" class="tbl_news" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="70%">标题</td>
+                <td width="30%">发布时间</td>
+            </tr>
+        #{list items:newsList, as:'item'}
+            <tr>
+                <td width="70%"><a href="javascript:fun(${item.newsId})">${item.getRawTitle()}</a></td>
+                <td width="30%">#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+            </tr>
+        #{/list}
+        </table>
+    </div>
+</div>
+<!--sider_news End-->
+
+<!--folder Begin-->
+<div class="folder folder_2" id="folder" title="折叠菜单">
+    <div class="folder_tips_hide">&nbsp;</div>
+</div>
+<!--folder End-->
+
+<div class="main">
+    <div class="main_wrap">
+
+
+        <div class="content" id="newsDetail">
+            <h1 class="cont_title">#{emVF newsInfo.title/}</h1>
+            <br>
+            <div class="sub_title">
+                <span class="c_source">#{emVF newsInfo.newsSource/}</span>
+                <span class="author">#{emVF newsInfo.autor/}</span>
+                <span class="report_date">#{emVF newsInfo.declareDate,f:'yyyy-MM-dd HH:mm'/}</span>
+            </div>
+
+            <div class="c_detail">
+            #{if newsInfo.newsContent!=null}
+            ${newsInfo.newsContent.nl2br()}
+            #{/if}
+            #{elseif nadlist.size()>0}
+            内容请查看附件
+            #{/elseif}
+            #{else }
+            内容和附件都为空
+            #{/else}
+            <br>
+            #{list items:nadlist, as:'item'}
+                <a href="@{AttachCt.attachDownload(item.accessOryroute)}"><img src="@{'/public/images/fontword.png'}" style=" width:22px; height:23px; margin:0 auto;"></a>${item.fullName}
+            #{/list}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    //取新闻内容
+    var contentRoute = #{jsRoute @NewsCt.newsDetail() /};
+    function fun(id){
+        $.ajax({
+            url:contentRoute.url(),
+            data: {newsId:id},
+            type:"GET",
+            dataType:"HTML",
+            success:function (html) {
+                $("#newsDetail").html(html);
+            }
+        });
+    }
+
+
+
+
+
+    new ScrollPage({
+        scrollTarget:".sider_news",
+        appendTarget:"#news_list",
+        pageNo:2,
+        getUrl:getQueryUrl
+    });
+
+    function getQueryUrl(){
+        var url = "@{NewestInfoCt.downPageNews(sec)}";
+        return url;
+    }
+
+</script>
+

@@ -1,0 +1,440 @@
+#{extends 'main.html' /}
+#{set title:'研究报告' /}
+
+#{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" href="/public/style/global-marketnews.css">
+<link rel="stylesheet" type="text/css" href="/public/style/scroll-page.css">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="/public/style/ui-lightness/jquery-ui-1.9.1.custom.css" rel="stylesheet">
+<link href="/public/style/ui-lightness/jquery-ui-1.10.1.custom.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="@{'/public/js/ligerUI/ligerui-tree.css'}">
+<!--jqueryUI tootip Begin-->
+<link href="@{'/public/style/tooltip/jquery.ui.tooltips.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip End-->
+<style type="text/css">
+    .l-children {
+        width: 235px;
+    }
+
+    .pb_list .list_c_m {
+        height: 320px;
+    }
+    .cndSelected {
+        background-color: #6ca9e1;
+    }
+
+    .for_til_width {
+        width: 10px;
+    }
+
+    .m_attachement, .m_attm_til {
+        margin-left: 20px;
+    }
+    .pb_list .list_sremove{
+        height: 270px;
+    }
+</style>
+<style>
+    .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+
+        /* IE 6 doesn't support max-height
+        * we use height instead, but this forces the menu to always be this tall
+        */
+    * html .ui-autocomplete {
+        height: 100px;
+    }
+    @media screen and (max-width:700px){
+        .my_subscribe, .m_export{ display: none;}
+    }
+</style>
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/ligerUI/base.js'}"></script>
+<script src="@{'/public/js/ligerUI/ligerTree.js'}"></script>
+<script src="@{'/public/js/treeResource/reportOrg.js'}"></script>
+<script src="@{'/public/js/newsjs/report.js'}"></script>
+<script src="@{'/public/js/treeResource/reportClassifyOrg.js'}"></script>
+<script src="@{'/public/js/treeResource/plateTreeOrg.js'}"></script>
+<!--jqueryUI tootip Begin-->
+<script src="@{'/public/js/tooltip/jquery.ui.tooltip.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip End-->
+<script>
+    //注册tooltip事件
+    $(function() {
+        registToolTip();
+    });
+    function registToolTip(){
+        $(".tooltip").tooltip({
+            track: true
+        });
+    }
+</script>
+#{/set}
+
+<!--sider_news Begin-->
+<div class="sider_news sider_news_o">
+    <ul class="sub_menu_ul" style="display: block;" id="classTable">
+        <li><a href="@{ReportCt.reportInfo()}" id="P3200">全部报告</a></li>
+    #{list items : reportClassifyList , as : 'classify'}
+        #{if !classify.code.equals("P3203")}
+            <li><a href="@{ReportCt.reportInfo()}?sp.classCode=${classify.code}"
+                   id="${classify.code}">#{emVF v : classify.name/}</a></li>
+        #{/if}
+        #{else }
+            <li>
+                <a href="@{ReportCt.reportInfo()}?sp.classCode=${classify.code}"
+                   class="for_folder">#{emVF v : classify.name/}<span class="sp_tip sp_tip_2">&nbsp;</span></a>
+                <ul class="submenu_mn" style="display:none" id="institution_ul">
+                    #{list items : classify.children, as :'item'}
+                        <li><a href="@{ReportCt.reportInfo()}?sp.childrenCode=${item.code}"
+                               id="${item.code}" class="tooltip" #{if item.name.length() > 6} title="#{emVF item.name/}" #{/if}>
+                                #{subString v : item.name, l:6 /}
+                            </a>
+                        </li>
+                    #{/list}
+                </ul>
+            </li>
+        #{/else}
+    #{/list}
+    </ul>
+
+
+</div>
+<!--folder Begin-->
+<div class="folder" id="folder" title="折叠菜单">
+    <div class="folder_tips_hide">
+        &nbsp;
+    </div>
+</div>
+<!--folder End-->
+<script>
+
+</script>
+
+<!--sider_news End-->
+
+
+<div class="main">
+    <div class="main_wrap main_wrap_o">
+        <!--search_code Begin-->
+        <div class="search_code share_til pb_til">
+            <form action="@{ReportCt.reportInfo()}" method="get" id="infoForm">
+                <input type="text" name="sp.keywords" value="${sp.keywords}" placeholder="标题关键字/证券代码" class="stock_code" maxlength="38">
+                <input type="submit" class="code_btn" id="codeBtn">
+            </form>
+
+            <div class="my_subscribe">
+                <div class="dialog_box">
+                    <div id="select_info_year1_2" class="sel_84_dialog sel_subscribe">&nbsp;</div>
+                    <ul id="options_year1_2" class="sel_91_option new_sel_option sel_subscribe_opt"
+                        style="display: none;">
+                    #{list items : utList,as :'item'}
+                        <li id="${item.id}"><a style="display:block;width: 100%" #{if item.name.length()>4} title="${item.name}"#{/if} class="tooltip" href="@{ReportCt.reportInfo()}?sp.id=${item.id}">#{subString v : item.name,l:4/}</a>
+                        </li>
+                    #{/list}
+                        <li data-value="10">编辑订阅</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <a onclick="javascript:exportFile('@{ReportCt.exportReport(sp)}')" href="javascript:void(0)">
+                <div class="sel_84_dialog m_export" id="m_export"></div>
+            </a>
+
+
+        </div>
+        <!--search_code End-->
+
+        <div id="content" class="content p_content pb_cont">
+
+            <div class="c_detail">
+                <div class="p_detail">
+                    <table width="100%" class="tbl_til" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="3%">
+                                <div class="rr_num">序号</div>
+                            </th>
+                            <th width="49%">标题</th>
+                            <th width="10%">发布日期</th>
+                            <th width="22%">研究机构</th>
+                            <th width="10%">研究员</th>
+                            <th width="5%">摘要</th>
+                            <th class="for_til_width"><span class="for_til_width">&nbsp;</span></th>
+                        </tr>
+                    </table>
+
+
+                    <div class="p_scroll">
+                        <table id="autoLoadContent" width="100%" class="tbl_public" border="0" cellspacing="0"
+                               cellpadding="0">
+                        #{if reportList == null || reportList.size() == 0 }
+                            <tr>
+                                <td>搜索到0条研究报告</td>
+                            </tr>
+                        #{/if}
+                        #{else }
+                            #{list items : reportList, as : 'item'}
+                                <tr>
+                                    #{if pageNo == null}
+                                        <td width="3%">
+                                            <div class="rr_num">${item_index  }</div>
+                                        </td>
+                                    #{/if}
+                                    #{else }
+                                        <td width="3%">
+                                            <div class="rr_num">${item_index + pageSize * (pageNo - 1)}</div>
+                                        </td>
+                                    #{/else}
+
+                                    <td width="50%"><span class="p_c3">#{emVF v : item.title/}</span></td>
+                                    <strong></strong>
+
+                                    <td width="10%">#{emVF v : item.declareDate/}</td>
+                                    <td width="22%"><span class="p_c2"> #{emVF v : item.institutionName/}</span></td>
+                                    <td width="10%"><span class="p_c2">#{emVF v : item.researcherName/}</span></td>
+                                    <td width="5%"><span id="${item.reportId}"
+                                                         class="m_attachement m_attachement_2">摘要</span></td>
+                                </tr>
+                            #{/list}
+                        #{/else}
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        var currentAId = '${sp.classCode}';
+        var childrenId = '${sp.childrenCode}';
+        $("#" + currentAId).addClass("sub_menu_current");       //选中分类高亮
+        if(currentAId == "" && childrenId == ""){
+            $("#P3200").addClass("sub_menu_current");
+        }
+        if (childrenId != "") {
+            $("#institution_ul").removeAttr("style");
+            $("#" + childrenId).addClass("sub_menu_current");
+        }
+        if($("#"+childrenId).offset() != null) {
+            $(".sider_news").animate({scrollTop:$("#"+childrenId).offset().top},100);
+        }
+        showContent();                                          //研报摘要
+        new ScrollPage({complete:showContent, getUrl:getLoadUrl, scrollTarget:".p_scroll", appendTarget:"#autoLoadContent", pageNo:2});
+
+        var listSize = '${total}';
+        $("#m_export").click(function(){
+             if(eval(listSize) > 1000) {
+                 $.qicTips({message:'数据太多,无法导出', level:2, target:"#m_export", mleft:-60, mtop:-30});
+                 return false;
+             }
+        });
+
+    });
+    //公司公告 内容高度实时变化
+    marketNews.contentResize(".p_scroll", 160);
+    marketNews.mySubscribe(); //我的订阅
+    marketNews.subMenu(); //子菜单
+    *{function getLoadtUrl(){}*
+
+    *{var baseUrl="http://localhost:9200/reportct/moreReportInfo";}*
+    *{baseUrl+="?sp.classCode=${sp.classCode}&sp.keywords=${sp.keywords}&sp.childrenCode=${sp.childrenCode}&sp.id=${sp.id}";}*
+    *{return  baseUrl  ;}*
+    *{}*
+    function getLoadUrl() {
+        var url = "@{ReportCt.moreReportInfo(sp)}";
+        return url;
+    }
+</script>
+
+<script>
+    var delCondRoute = #{jsRoute @ReportCt.delCndReport() /}; //删除url
+    var checkOrderName = #{jsRoute @ReportCt.findReportByName()/};//验证订阅名是否重复
+    var addReportOrder = #{jsRoute @ReportCt.addReportCnd()/}; //保存研报订阅
+    var editReportOrder = #{jsRoute @ReportCt.editReportCnd()/};   //修改研报订阅信息
+    var findReportById = #{jsRoute @ReportCt.reportInfo()/};   //根据研报id查找研报信息
+    var findPlateTreeByPlateTreeId = #{jsRoute @ReportCt.getPlateTreeByPlateTreeId()/};   //根据板块树id查找子节点
+    var findStockAutoComplete = #{jsRoute @ReportCt.findStockAutoComplete()/};  //自动完成搜索
+    var findStockBySymbol = #{jsRoute @ReportCt.findStockBySymbol()/};          //根据股票代码查股票
+    var getPlateTreeName = #{jsRoute @ReportCt.getPlateTreeName()/};          //根据板块id得到名称
+    var renameCondRoute = #{jsRoute @ReportCt.renameOrNewCond(':id', ":name") /} //改名url
+    var utMap = {}; //新建一个空对象 new Object()
+    var utName = {};
+    #{list items:utList, as:'ut'}
+    utMap['${ut.id}'] = ${ut.content.raw()};
+    utName['${ut.id}'] = '${ut.name}';
+    #{/list}
+    var cndType = 103;//研报条件类型 103
+</script>
+
+<!--我的订阅 Begin-->
+<div class="mysubcribe_box hide" title="我的订阅">
+    <form action="" id="ReportOrderForm">
+        <div class="subscribe_list pb_list">
+            <div class="order_list c_high">
+                <h2>订阅列表<span class="subscribe_add" id="subscribe_add">订阅添加</span></h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c for_remove" id="ut_ul_list">
+                    #{list items:utList,as :'ut'}
+                        <li id="ut_${ut.id}" style="cursor: pointer" mytitle="${ut.name}" class="ut_li_text tooltip" #{if ut.name.length()>7}title="${ut.name}"#{/if} >#{subString v:ut.name,l:7/}<span class="for_remove_item"></span></li>
+                    #{/list}
+                    </ul>
+                    *{<div class="order_list_btn">
+                        <div class="dark_share dark_s_reset">重置</div>
+                        <div class="dark_share" id="del_report">删除</div>
+                    </div>}*
+                </div>
+            </div>
+
+            <div class="news_source_m c_high">
+                <h2>报告类型</h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m" id="reportClassifyTree">
+
+
+                    </ul>
+                </div>
+                <!--显示横向滚动条-->
+
+                <input type="hidden" id="classifyTree" name="cnd.reportClassify" value="">
+            </div>
+
+            <div class="news_type c_high">
+                <h2>研报来源</h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m" id="reportOrgTree" style="width: 190px;">
+
+                    </ul>
+                </div>
+                <input type="hidden" id="OrgTree" name="cnd.reportOrg" value="">
+            </div>
+
+
+
+            <div class="news_type c_high pb_data">
+                <h2>板块数据</h2>
+
+                <div class="border_subscribe">
+                    <input type="hidden" id="plateTreeStr" value="${plateTreeStr}">
+                    <ul class="list_c list_c_m" id="reportPlateTree">
+
+
+                    </ul>
+                </div>
+                <input type="hidden" id="plateTree" name="cnd.plateTree" value="">
+                <input type="hidden" id="symbolList" name="cnd.symbolArr" value="">
+            </div>
+            <div class="news_type c_high pb_remove">
+                <h2>&nbsp;<input type="text" class="stock_code pb_stock_code" placeholder="证券/代码/简称"  name=""   maxlength="20"
+                                 id="autoComplete"></h2>
+                          <input type="text" style="display: none;">
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m list_sremove" id="resultList">
+
+
+                    </ul>
+                    <div class="order_list_btn">
+                        <div class="dark_share" id="result_del">删除</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <div class="share_btn_box">
+        <div class="share_btn">
+            <div class="share_common btn_save" id="btn_save">
+                保存
+            </div>
+            <div class="share_common btn_cancle" id="btn_cancle">
+                重置
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--我的订阅 End-->
+
+<!--订阅保存 begin -->
+<div class="" title="保存" id="report_save" style="display: none;">
+    <form onsubmit="javascript:return saveReport();">
+        <strong>输入订阅名称</strong> <input type="text" id="order_name"><br><br>
+        <input type="submit" class="share_common btn_save" value="确定" id="report_save_submit">
+        <input type="button" class="share_common btn_cancle" value="取消" id="report_save_cancle">
+    </form>
+
+</div>
+<!--订阅保存 begin -->
+
+
+<div class="research_cont hide" title="研究摘要" style="max-height: 455px;">
+    <div class="research_cont_s"><div id='default_loading'  class='p_loading'><span >正在加载，请稍后...</span></div></div>
+</div>
+
+<!--jquery-ui插件 Begin-->
+<script>
+
+    //$(".sel_91_option li").click();
+    //研究摘要
+    function showContent() {
+        $(".m_attachement").click(function () {
+            $(".research_cont_s").html("<div id='default_loading'  class='p_loading'><span >正在加载，请稍后...</span>");
+            var element = $(this);
+            var id = $(this).attr("id");
+            var reportCtUrl = #{jsRoute @ReportCt.detail(':reportId')/}
+
+                    $.post(reportCtUrl.url({'reportId':id}), null, function (data) {
+                        $(".research_cont_s").html(autoSection(data.summary));
+                        var title = data.title;
+                        if (title.length > 35) {
+                            title = title.substr(0, 35) + "……";
+                        }
+                        $(".ui-dialog-title").html(title);
+                    });
+
+            $(".research_cont").dialog({
+               close:function(){
+                   $(".research_cont_s").html("");
+                   $(".ui-dialog-title").html("");
+               },
+                "autoOpen":true,
+                "width":585,
+                "modal":true,
+                //"height":455,
+                "resizable":false,
+                position:[450, 150]
+            });
+        });
+    }
+
+</script>
+
+<!--jquery-ui插件 Begin-->
+
+<script type="text/javascript">
+    //板块数据宽度
+    $(function(){
+        $(".list_c_m, #reportPlateTree").live("click", function(){
+            $(".list_c_m, #reportPlateTree").css({color:'', width: 190})
+        })
+    })
+</script>

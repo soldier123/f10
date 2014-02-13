@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="utf-8">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        *{这里定义全局变量, 用javascript表示. 如上下文路径等}*
+        <script type="text/javascript">
+            var _gF10 = {
+                "ctx":"${play.ctxPath}"
+            };
+            var _gIsProd = ${play.mode.prod};
+            var _openKeyBrowser = false;
+        </script>
+        <script src="@{'/public/js/jquery-1.7.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+        *{<script src="@{'/public/js/blockUI/jquery.blockUI.js'}" type="text/javascript" charset="utf-8"></script>}*
+        <script src="@{'/public/js/global-page.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/js/global-f10.js'}" type="text/javascript" charset="utf-8"></script>
+        #{get 'moreScripts' /}
+    </head>
+    <body>
+        <div style="position: absolute;
+                left: 60%;
+                top: 32px;
+                border: 1px solid;
+                background-color: #fff;
+                padding: 2px;
+                z-index: 200;display: none" id="loading">正在导出,请稍后...</div>
+        #{doLayout /}
+    </body>
+</html>

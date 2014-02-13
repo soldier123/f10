@@ -1,0 +1,43 @@
+#{list items:messageIndexDtoList, as:'item'}
+<tr>
+    #{if pageNo == null}
+        <td width="3%"><div class="rr_num">${item_index  }</div></td>
+    #{/if}
+    #{else }
+        <td width="3%"><div class="rr_num">${item_index + 40*(pageNo-1)}</div></td>
+    #{/else}
+    <td width="9%">#{emVF v : item.declaredate/}</td>
+    <td width="9%">
+        #{if item.symbolOne !=null && item.symbolOne.length()==6}
+            <a href="javascript:jumpToQuote('#{emVF v : item.symbolOne/}');" style="text-decoration: none"> #{emVF v : item.symbolOne/}</a>
+        #{/if}
+        #{else}
+            #{emVF v : item.symbolOne/}
+        #{/else}
+    </td>
+    <td width="9%">#{emVF v : item.getStockName()/}</td>
+    <td width="50%"><span class="p_c2">#{emVF v : item.title/}</span></td>
+    <td width="10%">#{emVF v : item.getStringType()/}</td>
+    #{if item.type == 2}
+        <td width="10%">
+            *{<a #{bulletinUrl item.attach /}><div class="m_attachement m_attachement_2">附件</div></a>}*
+            #{if org.apache.commons.lang.StringUtils.isBlank(item.attach) }
+                <a href="#"><div class="m_attachement">附件</div></a>
+            #{/if}
+            #{else}
+                <a href="javascript:void(0);" onclick="javascript:exportFile('@{AttachCt.attachDownload(item.attach)}')"><div class="m_attachement">附件</div></a>
+            #{/else}
+        </td>
+    #{/if}
+    #{elseif item.type == 3}
+        <td width="10%">
+            <span id="${item.repId}" class="m_attachement m_attachement_2 report">摘要</span>
+        </td>
+    #{/elseif}
+    #{else }
+        <td width="10%">
+            <span id="${item.newsId}" class="m_attachement m_attachement_2 news">摘要</span>
+        </td>
+    #{/else}
+</tr>
+#{/list}

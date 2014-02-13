@@ -1,0 +1,15 @@
+#{if bulletinsList!=null&&bulletinsList.size()>0}
+        #{list items:bulletinsList, as:'item'}
+        <tr>
+            <td>#{emVF item.pubDate, f:"yyyy-MM-dd" /}</td>
+            <td>
+                #{if org.apache.commons.lang.StringUtils.isBlank(item.attachUrl) }
+                    <a href="javascript:void(0);">#{emVF item.title/}</a>
+                #{/if}
+                #{else}
+                    <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.attachUrl)}')" href="javascript:void(0)">#{emVF item.title/}</a>
+                #{/else}
+            </td>
+        </tr>
+        #{/list}
+#{/if}

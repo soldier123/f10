@@ -1,0 +1,353 @@
+#{extends 'main.html'/}
+#{set title:'公司公告'/}
+
+#{set 'moreStyles'}
+<link href="@{'/public/style/global-marketnews.css'}" rel="stylesheet" type="text/css">
+<link href="@{'/public/style/scroll-page.css'}" rel="stylesheet" type="text/css">
+<link href="@{'/public/style/qic-dialog.css'}" rel="stylesheet" type="text/css">
+<link href="@{'/public/js/ligerUI/ligerui-tree.css'}" rel="stylesheet" type="text/css">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet" type="text/css">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.10.1.custom.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip Begin-->
+<link href="@{'/public/style/tooltip/jquery.ui.tooltips.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip End-->
+
+<style type="text/css">
+    body, div{margin: 0; padding: 0;}
+    .l-children {
+        width: 230px;
+    }
+
+    .pb_list .list_c_m {
+        height: 320px;
+    }
+
+    .pb_list .list_sremove {
+        height: 270px;
+    }
+    @media screen and (max-width:700px){
+        .my_subscribe, .m_export{ display: none;}
+    }
+    @media screen and (max-width:1200px){
+        .pb_cont .c_detail{ padding: 30px 42px;}
+    }
+
+
+</style>
+<style>
+    .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+
+        /* IE 6 doesn't support max-height
+        * we use height instead, but this forces the menu to always be this tall
+        */
+    * html .ui-autocomplete {
+        height: 100px;
+    }
+</style>
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/scroll-page.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/jquery.query-2.1.7.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/qic-dialog.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/global-marketnews.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/ligerUI/base.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/ligerUI/ligerTree.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/treeResource/bulletinOrg.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/treeResource/bulletinTree.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/newsjs/bulletin.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}" type="text/javascript" charset="utf-8"></script>
+<script src="@{'/public/js/treeResource/plateTreeOrg.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip Begin-->
+<script src="@{'/public/js/tooltip/jquery.ui.tooltip.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip End-->
+<script>
+    //注册tooltip事件
+    $(function() {
+        registToolTip();
+    });
+    function registToolTip(){
+        $(".tooltip").tooltip({
+            track: true
+        });
+    }
+</script>
+
+#{/set}
+
+<div class="sider_news sider_news_o">
+    <ul class="sub_menu_ul" style="display: block;">
+    #{list items : navigateList , as : 'classify'}
+        #{if classify.children == null}
+            <li><a href="@{BulletinCt.bulletinInfo("",classify.code)}"
+                   id="${classify.code}">#{emVF v : classify.text/}</a></li>
+        #{/if}
+        #{else }
+            <li>
+                <a href="#" class="for_folder">#{emVF v : classify.text/}<span class="sp_tip sp_tip_2">&nbsp;</span></a>
+                <ul class="submenu_mn" style="display: none;">
+                    #{list items : classify.children, as :'item'}
+                        <li><a href="@{BulletinCt.bulletinInfo("",item.code)}" id="${item.code}"
+                               title="#{emVF v : item.text/}">#{emVFSubStr v : item.text/}</a></li>
+                    #{/list}
+                </ul>
+            </li>
+        #{/else}
+    #{/list}
+    </ul>
+</div>
+<!--folder Begin-->
+<div class="folder" id="folder" title="折叠菜单">
+    <div class="folder_tips_hide">
+        &nbsp;
+    </div>
+</div>
+<!--folder End-->
+<!--sider_news End-->
+<div class="main">
+    <div class="main_wrap main_wrap_o">
+        <!--search_code Begin-->
+            <form action="@{BulletinCt.bulletinInfo()}" method="get" id="infoForm">
+            <div class="search_code share_til pb_til">
+                <input type="text" name="searchInfo" value="${searchInfo}" placeholder="关键字/证券代码" class="stock_code" maxlength="38" />
+                <input type="submit" class="code_btn" id="codeBtn">
+                <div class="my_subscribe">
+                    <div class="dialog_box">
+                        <div id="select_info_year1_2" class="sel_84_dialog sel_subscribe">&nbsp;</div>
+                        <ul id="options_year1_2" class="sel_91_option new_sel_option sel_subscribe_opt"
+                            style="display: none;">
+                        #{list items : utList,as :'item'}
+                            <li id="${item.id}"><a style="display:block;width: 100%" href="@{BulletinCt.orderBulletinInfo()}?orderId=${item.id}" #{if item.name.length()>4} title="${item.name}"#{/if} class="tooltip">#{subString v : item.name,l:4/}</a>
+                            </li>
+                        #{/list}
+                            <li data-value="10">编辑订阅</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <a  onclick="javascript:exportFile('@{BulletinCt.exportAnnSecurity(searchInfo,code,orderId)}')" href="javascript:void(0)">
+                    <div class="sel_84_dialog m_export"></div>
+                </a>
+
+
+            </div>
+        </form>
+        <!--search_code End-->
+        <div class="content p_content pb_cont">
+
+            <div class="c_detail">
+                <div class="p_detail">
+                    <table width="99%" class="tbl_til" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="5%">
+                                序号
+                            </th>
+                            <th width="10%">发布日期</th>
+                            <th width="18%">证券名称</th>
+                            <th width="60%">标题</th>
+                            <th width="7%">
+                                <div class="m_attm_til">附件</div>
+                            </th>
+                        </tr>
+                    </table>
+
+                    <div class="p_scroll">
+                        <table width="100%" id="tbl_public" class="tbl_public" border="0" cellspacing="0" cellpadding="0">
+                        #{list items:list ,as:'item' }
+                            <tr>
+                                #{if pageNo == null}
+                                    <td width="5%">
+                                    ${item_index}
+                                    </td>
+                                #{/if}
+                                #{else }
+                                    <td width="5%">
+                                    ${item_index + 21*(pageNo)}
+                                    </td>
+                                #{/else}
+                                <td width="10%">#{emVF item.declareDate/}</td>
+                                <td width="18%">
+                                    #{if item.symbol != null && !"".equals(item.symbol)}
+                                        <a href="javascript:jumpToQuote('#{emVF v : item.symbol/}');" style="text-decoration: none"> #{emVF item.shortName/}（#{emVF item.symbol/}）</a>
+                                    #{/if}
+                                    #{else}
+                                        #{emVF item.shortName/}（#{emVF item.symbol/}）
+                                    #{/else}
+                                </td>
+                                <td width="60%">#{emVF item.title/}</td>
+                                <td width="7%">
+                                    *{<a #{bulletinUrl item.announcementRoute /}><div class="m_attachement">附件</div></a>}*
+                                    #{if org.apache.commons.lang.StringUtils.isBlank(item.announcementRoute) }
+                                        <a href="#"><div class="m_attachement">附件</div></a>
+                                    #{/if}
+                                    #{else}
+                                        <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.announcementRoute)}')" href="javascript:void(0)"> <div class="m_attachement">附件</div> </a>
+                                    #{/else}
+                                </td>
+                            </tr>
+                        #{/list}
+                        #{else}
+                            <tr>
+                                <td colspan="4"> 搜索到0条公告</td>
+                            </tr>
+                        #{/else}
+                        </table>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            //左边分类样式记忆
+                            var currentAId = "${code}";
+                            $("#" + currentAId).addClass("sub_menu_current");       //选中分类高亮
+                            $("#" + currentAId).parents(".submenu_mn").css("display", "block");
+                            $("#" + currentAId).parents(".submenu_mn").siblings(".for_folder").children(".sp_tip").addClass("sp_tip_2");
+                            if($("#"+currentAId).offset() != null){
+                                $(".sider_news").animate({scrollTop:$("#"+currentAId).offset().top},100);
+                            }
+                            new ScrollPage({scrollTarget:".p_scroll", appendTarget:".tbl_public", pageNo:2, getUrl:getPageUrl});
+                        });
+                        function getPageUrl() {
+                            var keyword = "${searchInfo}";
+                            var typeId = "${code}";
+                            var orderID = "${orderId}";
+                            var Route;
+                            if (keyword != "") {
+                                Route = #{jsRoute @BulletinCt.moreBulletinInfo(':searchInfo')/};
+                                return Route.url({searchInfo:keyword});
+                            } else if (typeId != "") {
+                                Route = #{jsRoute @BulletinCt.moreBulletinInfo(":searchInfo",":code")/};
+                                return Route.url({searchInfo:"", code:typeId});
+                            } else if (orderID != "") {
+                                Route = #{jsRoute @BulletinCt.orderMoreInfo(':orderId')/};
+                                return Route.url({orderId:orderID});
+                            } else {
+                                Route = #{jsRoute @BulletinCt.moreBulletinInfo()/};
+                                return Route.url();
+                            }
+                        }
+
+                        //公司公告 内容高度实时变化
+                        marketNews.contentResize(".p_scroll", 160);
+                        marketNews.mySubscribe(); //我的订阅
+                        marketNews.subMenu();
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--我的订阅 Begin-->
+<div class="mysubcribe_box hide" title="我的订阅">
+    <form action="" id="BulletinOrderForm">
+        <div class="subscribe_list pb_list">
+            <div class="order_list c_high">
+                <h2>订阅列表
+                    <span class="subscribe_add">订阅添加</span>
+                </h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c" id="ut_ul_list">
+                    #{list items:utList,as :'item'}
+                        <li id="ut_${item.id}" style="cursor: pointer" class="ut_li_text tooltip" mytitle="${item.name}" #{if item.name.length()>7}title="${item.name}"#{/if} >#{subString v:item.name,l:7/}<span class="for_remove_item"></span></li>
+                    #{/list}
+                    </ul>
+                   *{ <div class="order_list_btn">
+                        <div class="dark_share" id="reset_bulletin">重置</div>
+                        <div class="dark_share" id="del_report">删除</div>
+                    </div>}*
+                </div>
+            </div>
+
+            <div class="news_source_m c_high">
+                <h2>公告类型</h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m" id="list1">
+                    </ul>
+                </div>
+                <!--显示横向滚动条-->
+                <style type="text/css">
+
+                </style>
+                <input type="hidden" id="bulletin_tree" name="dto.bulletinClassify" value="">
+            </div>
+            <!--订阅JS begin-->
+            <script>
+                var checkOrderNameUrl = #{jsRoute @BulletinCt.findBulletinByName()/};//验证订阅名是否重复
+                var addBulletinOrderUrl = #{jsRoute @BulletinCt.addBulletinOrder()/}; //保存研报订阅
+                var editBulletinOrderUrl = #{jsRoute @BulletinCt.editBulletinOrder()/};   //修改研报订阅信息
+                var delBulletinRoute = #{jsRoute @BulletinCt.delBulletinOrder() /}; //删除url
+                var findStockAutoComplete = #{jsRoute @BulletinCt.findStockAutoComplete()/};  //自动完成搜索
+                var findStockBySymbol = #{jsRoute @ReportCt.findStockBySymbol()/};          //根据股票代码查股票
+                var findPlateTreeByPlateTreeId = #{jsRoute @ReportCt.getPlateTreeByPlateTreeId()/};   //根据板块树id查找子节点
+                var getPlateTreeName = #{jsRoute @BulletinCt.getPlateTreeName()/};          //根据板块id得到名称
+                var utMap = {}; //新建一个空对象 new Object()
+                var utName = {};
+                #{list items:utList, as:'ut'}
+                utMap['${ut.id}'] = ${ut.content.raw()};
+                utName['${ut.id}'] = '${ut.name}';
+                #{/list}
+            </script>
+
+            <div class="news_type c_high">
+                <h2>板块数据</h2>
+
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m" id="reportPlateTree">
+                    </ul>
+                </div>
+                <input type="hidden" id="plateTree" name="dto.plateTree" value="">
+                <input type="hidden" id="symbolList" name="dto.symbolArr" value="">
+            </div>
+
+            <div class="news_type c_high pb_data">
+                <h2>&nbsp;<input type="text" id="autoComplete" class="stock_code pb_stock_code" placeholder="证券/代码/简称" maxlength="20"  name=""></h2>
+                <input type="text" style="display: none;">
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m list_sremove" id="resultList">
+                    </ul>
+                    <div class="order_list_btn">
+                        <div class="dark_share" id="result_del">删除</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="share_btn_box">
+        <div class="share_btn">
+            <div class="share_common btn_save" id="btn_save">
+                保存
+            </div>
+            <div class="share_common btn_cancle" id="btn_cancle">
+                重置
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--jquery-ui插件 Begin-->
+*{<script>
+    $(".code_btn").click(function () {
+        var searchInfo = $("#keyWord").val();
+        var combinationform = $('#combination')[0];
+        combinationform.action = "@{BulletinCt.bulletinInfo()}?searchInfo=" + searchInfo;
+        combinationform.submit();
+    });
+</script>}*
+<!--jquery-ui插件 Begin-->
+
+<script type="text/javascript">
+    //板块数据宽度
+    $(function(){
+        $(".list_c_m, #reportPlateTree").live("click", function(){
+            $(".list_c_m, #reportPlateTree").css({color:'', width: 190})
+        })
+    })
+</script>

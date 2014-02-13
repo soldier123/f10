@@ -1,0 +1,293 @@
+#{extends 'combinationMain.html'/}
+#{set title:'组合资讯' /}
+#{set 'moreStyles'}
+<!--jqueryUI tootip Begin-->
+<link rel="stylesheet" type="text/css" href="@{'/public/style/global-marketnews.css'}">
+<link rel="stylesheet" type="text/css" href="@{'/public/style/scroll-page.css'}">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+*{<link href="@{'/public/style/tooltip/jquery.ui.tooltips.css'}" rel="stylesheet" type="text/css">}*
+
+<!--jqueryUI tootip End-->
+    <style type="text/css">
+        body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+        body,button,input,select,textarea{font:14px/1.5 \5b8b\4f53,tahoma,arial;outline:none; resize:none;}
+        h1,h2,h3,h4,h5,h6{font-size:100%;}
+        address,cite,dfn,em,var{font-style:normal;}
+        code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+        ul,ol{list-style:none;}
+        a{text-decoration:none; color:#b1b1b1;}
+        a:hover{text-decoration:underline;}
+        fieldset,img{border:0;}
+        button,input,select,textarea{font-size:100%;}
+        table{border-collapse:collapse;border-spacing:0;}
+        body{ background-color:#000; color:#c3c3c3; font-family:\5b8b\4f53;}
+        select{ vertical-align:middle;}
+
+        .clear{ clear:both;}
+        section h2{background: -webkit-linear-gradient(top, #363636 0%, #1c1c1c 100%);
+            height: 32px;
+            line-height: 32px;
+            color: #cca76b;
+            padding-left: 15px;
+            border: 1px solid #303030;
+            border-radius: 2px;
+            position: relative;
+        }
+        section h2 a{ position: absolute;  right: 5px; top: 0px;}
+        .box{ box-sizing: border-box;}
+        .box section{width: 49%; float: left; margin: 10px 0 0 10px; height: 185px;}
+        @media screen and (max-width:1124px) {
+            .box section{width: 48%;}
+        }
+        section ul{ margin-top: 6px;}
+        section li{ white-space: nowrap; width: 98%;text-overflow:ellipsis; overflow: hidden; line-height: 24px; height: 24px;}
+        section li a{ margin-left: 7px;
+            width: 60%;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;}
+        .news-date{width: 10%; display: inline-block;}
+        section li.report-percent a{width: 85%;}
+        section li span{margin-left: 17px; }
+
+        .remind_dialog h1{text-align: center; margin-top: 10px;}
+        .remind_dialog h1 span{font-weight: normal;}
+        .remind_dialog h2{text-align: center;font-weight: normal;}
+        .remind-title{width:20%; display: inline-block;;}
+
+        *{这里是覆盖的CSS}*
+        .c_detail{margin-right: 0px;}
+        .sub_title {margin: 0px 0 15px;}
+
+    </style>
+#{/set}
+#{set 'moreScripts'}
+<!--jqueryUI tootip Begin-->
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/newsjs/news.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+<script src="@{'/public/js/tooltip/jquery.ui.tooltip.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip End-->
+<script>
+    //注册tooltip事件
+    $(function() {
+        registToolTip();
+    });
+    function registToolTip(){
+        $(".tooltip").tooltip({
+            track: true
+        });
+    }
+</script>
+<script>
+
+
+    $(".more").click(function(){
+        var $this = $(this);
+        var url = $this.attr("data-url");
+        var title = $this.attr("data-title");
+        if (url) {
+            //$("#subPageIframe").get(0).src = url;
+            $.ajax({
+                type:"POST",
+                url:url,
+                dataType:"html",
+                data: {"scodeStr":$("#scodes").val(), "pageNo":1},
+                success:function(value){
+                    $(".dialog_list").html(value);
+                    registerDialog();
+                }
+            });
+            $(".dialog_list").dialog({
+                autoOpen:true,
+                width:1000,
+                height:500,
+                resizable:false,
+                modal:true,
+                title:title
+            });
+        }
+    });
+
+    function getDialog(){
+        var jqDom =  $(".newstd");
+        jqDom.click(function(){
+            var $this = $(this);
+            var url = $this.attr("data-url");
+            var title = $this.attr("data-title");
+            if(url){
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    data:{},
+                    dataType:"html",
+                    success:function(data){
+                        $(".news_lists").html(data);
+                        registToolTip();
+                    }
+                });
+                $(".news_lists").dialog({
+                    autoOpen:true,
+                    width:800,
+                    height:500,
+                    resizable:true,
+                    title:title,
+                    modal:true
+                });
+            }
+        });
+    }
+    function registerRemindDialog(){
+        var jqDom =  $(".remindDialog");
+        jqDom.click(function(){
+            var $this = $(this);
+            $("#dialog_eventType").html($this.attr("eventType")+" <span>"+"【"+$this.attr("symbol")+"】"+$this.attr("shortName")+"</span>");
+            $("#dialog_declareDate").html($this.attr("declareDate"));
+            $("#dialog_content").html($this.attr("content"));
+            if($this.attr("eventType")){
+                $(".remind_dialog").dialog({
+                    autoOpen:true,
+                    width:800,
+                    height:500,
+                    resizable:true,
+                    title:"大事提醒",
+                    modal:true
+                });
+            }
+        });
+    }
+    registerDialog();
+    function registerDialog(){
+        getDialog();
+        registerRemindDialog();
+    }
+</script>
+
+#{/set}
+
+#{set 'footHtml'}
+<div class="dialog_list"  style="display: none;">
+</div>
+
+<div class="news_lists" style="display: none;">
+</div>
+<div class="remind_dialog" style="display: none;">
+    <h1 id="dialog_eventType"><span></span></h1>
+            <h2 id="dialog_declareDate">2012-05-04</h2>
+    <br/><br/>
+    <p id="dialog_content"></p>
+
+</div>
+#{/set}
+*{这里放股票代码}*
+<input type="hidden" id="scodes" value="${scodeStr}">
+
+<section class="box">
+    <section>
+        <h2>大事提醒<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreRemindList()}" data-title="大事提醒" class="more" >更多&gt;&gt;</a> </h2>
+        <ul>
+            #{list items:remindList, as:'item'}
+                <li class="remind-percent"><span class="news-date">#{emVF item.declareDate /}</span>
+                    <span class="remind-title">#{ifnot org.apache.commons.lang.StringUtils.isBlank(item.symbol)} [#{emVF item.symbol/}]#{/ifnot}#{emVF item.shortName/}</span>
+                    <span>
+                        <a href="javascript:void(0);" class="remindDialog"
+                           eventType="#{emVF item.eventType/}"
+                           symbol="#{emVF item.symbol/}"
+                           shortName="#{emVF item.shortName/}"
+                           content="#{emVF item.content/}"
+                           declareDate="#{emVF item.declareDate/}">
+                            #{emVF item.eventType /}
+                        </a>
+                    </span>
+                </li>
+            #{/list}
+        </ul>
+    </section>
+    <section>
+        <h2>公司新闻<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreNewsList()}" data-title="公司新闻" class="more" >更多&gt;&gt;</a></h2>
+        <ul>
+            #{list items:newsList,as:'item'}
+                <li>
+                    <span class="news-date" >#{sinceVF item.declareDate, f:'HH:mm'/}</span>
+                    <span class="news-title">
+                        <a href="javascript:void(0)" data-url="@{NewsCt.newsDetail(item.newsId)}"
+                           data-title="公司新闻"
+                           #{if item.title.length()>50}title="${item.title}"#{/if}
+                           class="newstd tooltip">#{cutStr item.title, len:45 /}
+                        </a>
+                    </span>
+                    <span>#{emVF item.newsSource/}</span>
+                </li>
+            #{/list}
+        </ul>
+    </section>
+
+    <section>
+        <h2>公司公告<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreBulletinsList()}"
+                   data-title="公司公告" class="more">更多&gt;&gt;</a></h2>
+        <ul>
+        #{list items:bulletinsList, as:'item'}
+            <li class="report-percent">
+                <span class="news-date">#{emVF item.pubDate/}</span>
+                <span class="news-title">
+                    #{if org.apache.commons.lang.StringUtils.isBlank(item.attachUrl) }
+                        <a href="javascript:void(0);">#{emVF item.title/}</a>
+                    #{/if}
+                    #{else}
+                        <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.attachUrl)}');" href="javascript:void(0)">#{emVF item.title/}</a>
+                    #{/else}
+                </span>
+            </li>
+        #{/list}
+        </ul>
+    </section>
+
+    <section>
+        <h2>行业新闻<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreInduNewsList()}" data-title="行业新闻" class="more">更多&gt;&gt;</a></h2>
+        <ul>
+        #{list items:induNewstList, as:'item'}
+            <li>
+                <span class="news-date">#{sinceVF item.declareDate, f:'HH:mm'/}</span>
+                <span class="news-title">
+                    <a href="javascript:void(0)" data-url="@{NewsCt.newsDetail(item.newsId)}"
+                       data-title="#{cutStr item.title, len:45 /}"
+                       #{if item.title.length()>50}title="${item.title}"#{/if}
+                       class="newstd tooltip">#{cutStr item.title, len:45 /}
+                    </a>
+                </span>
+                <span>#{emVF item.newsSource /}</span>
+            </li>
+        #{/list}
+        </ul>
+    </section>
+
+    <section>
+        <h2>公司研究报告<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreReportList()}" data-title="公司研究报告" class="more">更多&gt;&gt;</a></h2>
+        <ul>
+        #{list items:reportList, as:'item'}
+            <li>
+                <span class="news-date">#{emVF item.declareDate/}</span>
+                <span class="news-title"><a href="javascript:void(0)" data-url="@{MessageCombinationCt.fetchReportSummary(item.reportId)}" data-title="#{cutStr item.title, len:45 /}" class="newstd" >#{emVF item.title/}</a></span>
+                <span>#{emVF item.institutionName/}</span>
+            </li>
+        #{/list}
+        </ul>
+    </section>
+    <section>
+        <h2>行业研究报告<a href="javascript:void(0);" data-url="@{MessageCombinationCt.moreInduReportList()}" data-title="行业研究报告" class="more">更多&gt;&gt;</a></h2>
+        <ul>
+        #{list items:induReportList, as:'item'}
+            <li>
+                <span class="news-date">#{emVF item.declareDate/}</span>
+                <span class="news-title"><a href="javascript:void(0)" data-url="@{MessageCombinationCt.fetchReportSummary(item.reportId)}" data-title="#{cutStr item.title, len:45 /}" class="newstd" >#{emVF item.title/}</a></span>
+                <span>#{emVF item.institutionName/}</span>
+            </li>
+        #{/list}
+        </ul>
+    </section>
+</section>
+

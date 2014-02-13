@@ -1,0 +1,141 @@
+#{extends 'subPageMain.html'/}
+#{set title:'行业分析--估值水平--更多'/}
+<div>
+    ${sec.name}(${sec.code})同行业估值水平比较
+    <a style="position:relative;float:right" href="@{IndustryAnaCt.exportMoreAppraisement(sec.code)}">
+        <img width="40" height="45" src="@{'/public/images/excel.png'}" alt="导出excel" />
+    </a>
+</div>
+
+<style type="text/css">
+    #scrollTable table.thead th{/*表头*/
+        border: 1px solid #3e3e3e;
+        border-right:#C96;
+        color:#fff;
+        background: #4b4b4b;/*亮桔黄色*/
+        text-align: center;
+    }
+
+    #scrollTable div{/*能带滚动条的表身*/
+        /*div的第二个子元素*/
+        width:100%;
+        height:340px;
+        overflow:auto;/*必需*/
+    }
+    .tbl_appraisement td{
+       min-width: 10px;
+    }
+</style>
+
+<div id="scrollTable">
+    <table class="thead" width="100%" border="1" class="tbl_common tbl_exec" cellspacing="0" cellpadding="0">
+        <col width="21px"/><col width=49px/><col width="72px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="60px"/><col width="60px"/><col width="62px"/><col width="72px"/>
+        <tbody>
+        <tr>
+            <th rowspan="2">排名</th>
+            <th rowspan="2">代码</th>
+            <th rowspan="2">简称</th>
+            <th colspan="2">市盈率</th>
+            <th colspan="2">市销率</th>
+            <th colspan="2">市净率</th>
+            <th colspan="2">市现率</th>
+            <th colspan="2">EV/EBITDA</th>
+        </tr>
+        <tr>
+            <th>${yearVal}A</th>
+            <th>TTM</th>
+            <th>${yearVal}A</th>
+            <th>TTM</th>
+            <th>${yearVal}A</th>
+            <th>现值</th>
+            <th>${yearVal}A</th>
+            <th>TTM</th>
+            <th>${yearVal}A</th>
+            <th>TTM</th>
+        </tr>
+        </tbody>
+    </table>
+
+<div>
+<table width="100%" border="1" class="tbl_common tbl_exec tbl_appraisement" cellspacing="0" cellpadding="0">
+    <col width="21px"/><col width=49px/><col width="72px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="56px"/><col width="60px"/><col width="60px"/><col width="62px"/><col width="60px"/>
+    <tbody>
+    #{if current != null}
+    <tr>
+        <td>${current.rank}</td>
+        <td>${current.scode()}</td>
+        <td>${current.sname()}</td>
+        <td>#{emVF2 current.pe1a , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.pe1ttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.psa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.psttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.pbva , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.pbCur , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.pcfa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.pcfttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.evtoebitdattm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 current.evtoebitda , f:'#,##0.00'/}</td>
+    </tr>
+    #{/if}
+    #{if fullIndu != null && fullIndu.avg != null}
+    <tr>
+        <td colspan="3" align="center">行业平均</td>
+        <td>#{emVF2 fullIndu.avg.pe1a , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.pe1ttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.psa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.psttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.pbva , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.pbCur , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.pcfa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.pcfttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.evtoebitdattm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.avg.evtoebitda , f:'#,##0.00'/}</td>
+    </tr>
+    #{/if}
+
+    #{if fullIndu != null && fullIndu.middle != null}
+    <tr>
+        <td colspan="3" align="center">行业中位值</td>
+        <td>#{emVF2 fullIndu.middle.pe1a , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.pe1ttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.psa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.psttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.pbva , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.pbCur , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.pcfa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.pcfttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.evtoebitdattm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 fullIndu.middle.evtoebitda , f:'#,##0.00'/}</td>
+    </tr>
+    #{/if}
+
+    #{if fullIndu != null && fullIndu.list != null}
+    #{list items:fullIndu.list, as:'item'}
+    <tr>
+        <td>${item.rank}</td>
+        <td>${item.scode()}</td>
+        <td>${item.sname()}</td>
+        <td>#{emVF2 item.pe1a , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.pe1ttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.psa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.psttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.pbva , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.pbCur , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.pcfa , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.pcfttm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.evtoebitdattm , f:'#,##0.00'/}</td>
+        <td>#{emVF2 item.evtoebitda , f:'#,##0.00'/}</td>
+    </tr>
+    #{/list}
+    #{/if}
+    </tbody>
+</table>
+</div>
+</div>
+#{set 'moreScripts'}
+<script type="text/javascript">
+$(function(){
+    tableBgFunc(); //表格隔行换色
+});
+</script>
+#{/set}

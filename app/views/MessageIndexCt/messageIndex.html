@@ -1,0 +1,616 @@
+#{extends 'main.html' /}
+#{set title:'资讯索引' /}
+
+#{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" href="@{'/public/style/global-marketnews.css'}">
+<link rel="stylesheet" type="text/css" href="/public/style/scroll-page.css">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.10.1.custom.css'}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="@{'/public/js/ligerUI/ligerui-tree.css'}">
+<!--jqueryUI tootip Begin-->
+<link href="@{'/public/style/tooltip/jquery.ui.tooltips.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip End-->
+<style type="text/css">
+    .cndSelected {
+        background-color: #6ca9e1;
+    }
+
+    .for_til_width {
+        width: 33px;
+        display: inline-block;
+        position: relative;
+        top: 1px;
+    }
+    .dc_list{ height: 400px;}
+    .dc_high{ height: 415px;}
+    .dc_list .border_subscribe{height:345px;}
+    .dc_list .border_subscribe_left{height: 375px;}
+    .dc_list .list_c{height: inherit; margin: 0 0 0 15px;}
+    .sider_news, .main{ width: inherit;}
+    .research_cont_s{
+        min-height: 340px;
+    }
+</style>
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+<script src="@{'/public/js/ligerUI/base.js'}"></script>
+<script src="@{'/public/js/ligerUI/ligerTree.js'}"></script>
+<script src="@{'/public/js/WdatePicker.js'}"></script>
+<script src="@{'/public/js/newsjs/messageIndex.js'}"></script>
+<script src="@{'/public/js/treeResource/reportClassifyOrg.js'}"></script>
+<script src="@{'/public/js/treeResource/reportOrg.js'}"></script>
+<script src="@{'/public/js/treeResource/newsresource.js'}"></script>
+<script src="@{'/public/js/treeResource/bulletinTree.js'}"></script>
+<script src="@{'/public/js/treeResource/newsclassify.js'}"></script>
+<script src="@{'/public/js/treeResource/plateTreeOrg.js'}"></script>
+<!--jqueryUI tootip Begin-->
+<script src="@{'/public/js/tooltip/jquery.ui.tooltip.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip End-->
+<script>
+    //注册tooltip事件
+    $(function() {
+        registToolTip();
+    });
+    function registToolTip(){
+        $(".tooltip").tooltip({
+            track: true
+        });
+    }
+</script>
+
+#{/set}
+
+
+<div class="main">
+    <div class="index_wrap main_wrap_o">
+        <!--search_code Begin-->
+        <div class="search_code share_til pb_til">
+            <form action="@{MessageIndexCt.messageIndex()}" method="post" id="commonSearchForm" name="commonSearchForm">
+                <input type="text" id="keyWordText" name="cs.keyWord" placeholder="关键字/证券代码" class="stock_code" value="${cs.keyWord}" maxlength="38">
+                <input type="submit" class="code_btn" id="commonSearch">
+                <div class="newsindex_type newsindex_moresearch">
+                    <div class="dialog_box">
+                        <div class=" sel_subscribe s_search" id="select_info_year1_3">高级搜索</div>
+                        <ul class="sel_91_option new_sel_option sel_subscribe_opt" id="options_year1_3">
+                            <li data-value="12"><a style="display:block;width: 100%"onclick="javascript:doOrderAndvanceSearch('-1')">全部</a></li>
+                        #{list items : utList, as:"item"}
+                            <li id="${item.id}"><a style="display:block;width: 100%" onclick="javascript:doOrderAndvanceSearch('${item.id}')" #{if item.name.length()>4} title="${item.name}"#{/if} class="tooltip" >#{subString v : item.name,l:4/}</a>
+                            </li>
+                        #{/list}
+                            <li data-value="10">搜索设置</li>
+                        </ul>
+                    </div>
+
+                    <!--<input type="button" class="s_search more_search" value="高级搜索">-->
+                </div>
+
+                <div class="newsindex_type">
+                    <label>类型：</label>
+
+                    <div class="dialog_box">
+                        <input type="hidden" autocomplete="off" id="newsType" name="cs.iType" value="${cs.iType}">
+                        <input type="hidden" autocomplete="off" id="newsTypeValue">
+
+                        <div id="select_info_news" class="sel_84_dialog">${cs.getTypeName()}</div>
+                        <ul id="options_type" class="sel_91_option">
+                            <li data-value="0">全部</li>
+                            <li data-value="1">新闻</li>
+                            <li data-value="2">公司公告</li>
+                            <li data-value="3">研究报告</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="newsindex_type newsindex_time">
+                    <label>发布时间：</label>
+
+                    <div class="dialog_box">
+                        <input type="hidden" autocomplete="off" id="reportDate" name="cs.startTime"
+                               value="${cs.startTime}">
+                        <input type="hidden" autocomplete="off" id="reportName" name="cs.timeName"
+                               value="${cs.getSearchDate()}">
+                        <input type="hidden" autocomplete="off"  name="cs.tempField"
+                               value="${cs.startTime}">
+                        <input type="hidden" autocomplete="off" id="endDate" name="cs.endTime" value="${cs.endTime}">
+
+                        <div id="select_info_year1_2" class="sel_84_dialog">${cs.getSearchDate()}</div>
+                        <ul id="options_year1_2" class="sel_91_option sel_date">
+                            <li data-value="today">今日</li>
+                            <li data-value="week">最近一周</li>
+                            <li data-value="month">最近一个月</li>
+                            <li data-value="threeMonth">最近三个月</li>
+                            <li data-value="year">最近一年</li>
+                            <li data-value="custom">自定义</li>
+                        </ul>
+                    </div>
+                </div>
+
+                *{<div class="newsindex_type newsindex_search">
+                    <input type="submit" class="s_search" value="搜索" id="commonSearch">
+                </div>}*
+                <input type="hidden" id="newsSource2" name="cs.newsSource" value="${cs.customerNewsSource}">
+                <input type="hidden" id="newsClassify2" name="cs.newsClassify" value="${cs.customerNewsClassify}">
+                <input type="hidden" id="bulletinClassify2" name="cs.bulletinClassify" value="${cs.customerBulletinClassify}">
+                <input type="hidden" id="bulletinPlate2" name="cs.bulletinPlateTree" value="${cs.customerBulletinPlateTree}">
+                <input type="hidden" id="reportClassify2" name="cs.reportClassify" value="${cs.customerReportClassify}">
+                <input type="hidden" id="reportOrg2" name="cs.reportOrg" value="${cs.customerReportOrg}">
+                <input type="hidden" id="reportPlate2" name="cs.reportPlateTree" value="${cs.customerReportPlateTree}">
+                <input type="hidden" id="advanceType2" name="cs.advanceType" value="${cs.customerAdvanceType}">
+                <input type="hidden" id="searchType" name="cs.searchType" value="${cs.searchType}">
+                <input type="hidden" id="advanceId2" name="cs.advanceId" value="${cs.advanceId}">
+
+
+            </form>
+
+
+
+
+            <a onclick="javascript:exportFile('@{MessageIndexCt.exportMessageIndex(cs)}')" href="javascript:void(0)">
+                <div class="sel_84_dialog m_export">导出</div>
+            </a>
+
+
+        </div>
+        <!--search_code End-->
+
+        <div class="content p_content pb_cont">
+
+            <div class="c_detail">
+                <div class="p_detail">
+                    <table width="100%" class="tbl_til" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="3%">
+                                <div class="rr_num">序号</div>
+                            </th>
+                            <th width="9%">更新时间</th>
+                            <th width="9%">证券代码</th>
+                            <th width="9%">证券简称</th>
+                            <th width="50%">标题</th>
+                            <th width="10%">类型</th>
+                            <th width="9%">
+                                <div class="m_attm_til">附件</div>
+                            </th>
+                            <th class="for_til_width"><span class="for_til_width">&nbsp;</span></th>
+                        </tr>
+                    </table>
+
+                    <div class="p_scroll">
+                        <table width="100%" class="tbl_public" border="0" cellspacing="0" cellpadding="0"
+                               id="autoLoadContent">
+                        #{list items:messageIndexDtoList, as:'item'}
+                            <tr>
+                                #{if pageNo == null}
+                                    <td width="3%">
+                                        <div class="rr_num">${item_index  }</div>
+                                    </td>
+                                #{/if}
+                                #{else }
+                                    <td width="3%">
+                                        <div class="rr_num">${item_index + 40*(pageNo)}</div>
+                                    </td>
+                                #{/else}
+                                <td width="9%">#{emVF v : item.declaredate/}</td>
+                                <td width="9%">
+                                    #{if item.symbolOne !=null && item.symbolOne.length()==6}
+                                        <a href="javascript:jumpToQuote('#{emVF v : item.symbolOne/}');" style="text-decoration: none"> #{emVF v : item.symbolOne/}</a>
+                                    #{/if}
+                                    #{else}
+                                        #{emVF v : item.symbolOne/}
+                                    #{/else}
+                                </td>
+                                <td width="9%">#{emVF v : item.stockName/}</td>
+                                <td width="50%"><span class="p_c2">#{emVF v : item.title/}</span></td>
+                                <td width="10%">#{emVF v : item.stringType/}</td>
+                                #{if item.type == 2}
+                                    <td width="10%">
+                                        *{<a #{bulletinUrl item.attach /}><div class="m_attachement m_attachement_2">附件</div></a>}*
+                                        #{if org.apache.commons.lang.StringUtils.isBlank(item.attach) }
+                                            <a href="#"><div class="m_attachement">附件</div></a>
+                                        #{/if}
+                                        #{else}
+                                            <a href="javascript:void(0);" onclick="javascript:exportFile('@{AttachCt.attachDownload(item.attach)}')"><div class="m_attachement">附件</div></a>
+                                        #{/else}
+                                    </td>
+                                #{/if}
+                                #{elseif item.type == 3}
+                                    <td width="10%">
+                                        <span id="${item.repId}" class="m_attachement m_attachement_2 report">摘要</span>
+                                    </td>
+                                #{/elseif}
+                                #{else }
+                                    <td width="10%">
+                                        <span id="${item.newsId}" class="m_attachement m_attachement_2 news">摘要</span>
+                                    </td>
+                                #{/else}
+                            </tr>
+                        #{/list}
+                        #{else }
+                            <tr>
+                                <td colspan="8"> 搜索到0条记录 </td>
+                            </tr>
+                        #{/else}
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+    //公司公告 内容高度实时变化
+    marketNews.contentResize(".p_scroll", 160);
+    marketNews.mySubscribe(); //我的订阅
+
+    marketNews.downBox('select_info_news', '#options_type', 'newsType', 'newsTypeValue');
+
+    marketNews.downBox('select_info_year1_2', '#options_year1_2', 'reportDate', 'reportName');
+
+</script>
+<script>
+    var findPlateTreeByPlateTreeId = #{jsRoute @ReportCt.getPlateTreeByPlateTreeId()/};   //根据板块树id查找子节点
+    var delCondRoute = #{jsRoute @ReportCt.delCndReport() /}; //删除url
+    var checkOrderName = #{jsRoute @MessageIndexCt.findReportByName()/};//验证订阅名是否重复
+    var addReportOrder = #{jsRoute @MessageIndexCt.addMessageIndexCnd()/}; //保存订阅
+    var editReportOrder = #{jsRoute @MessageIndexCt.editMessageIndexCnd()/};   //修改订阅信息
+    var advanceSearch = #{jsRoute @MessageIndexCt.messageIndex()/}
+    var renameCondRoute = #{jsRoute @MessageIndexCt.renameOrNewCond(':id', ":name") /} //改名url
+    var utMap = {};
+    var utName = {};
+    #{list items:utList, as:'ut'}
+    utMap['${ut.id}'] = ${ut.content.raw()};
+    utName['${ut.id}'] = '${ut.name}';
+    #{/list}
+    var cndType = 104;
+</script>
+
+<!--搜索设置 Begin-->
+<div class="mysubcribe_box hide" title="我的订阅">
+
+    <div class="subscribe_list dc_list">
+        <div class="order_list dc_high" style="width: 190px">
+            <h2>已有设置<span class="subscribe_add" id="subscribe_add">订阅添加</span></h2>
+
+            <div class="border_subscribe border_subscribe_left">
+                <ul class="list_c" id="ut_ul_list">
+                #{list items:utList , as :'ut'}
+                    <li id="ut_${ut.id}" style="cursor: pointer" mytitle="${ut.name}" class="ut_li_text tooltip" #{if ut.name.length()>7}title="${ut.name}"#{/if} >#{subString v:ut.name,l:7/}<span class="for_remove_item"></span></li>
+                #{/list}
+                </ul>
+            *{<div class="order_list_btn">
+                    <div class="dark_share" id="darkReset">重置</div>
+                    <div class="dark_share" id="darkDel">删除</div>
+                </div>}*
+            </div>
+        </div>
+
+        <div class="news_source_m dc_high">
+            <h2>搜索条件设置</h2>
+
+            <div class="tab_title">
+                <ul class="tab_li" id="menuTab">
+                    <li class="display">新闻</li>
+                    <li class="">公司公告</li>
+                    <li class="">研究报告</li>
+                </ul>
+            </div>
+
+            <div class="border_subscribe dc_border_subscribe">
+
+                <form action="@{MessageIndexCt.messageIndex()}" method="post" id="messageIndexForm">
+                    <ul class="sub_content stable_content" id="subContImp">
+                        <li class="display" id="news">
+                            <h2>新闻来源</h2>
+                            <ul id="newsSourceTree"></ul>
+                            <input type="hidden" id="newsSource" name="cnd.newsSource">
+
+                            <h2>新闻类型</h2>
+                            <ul class="list_c list_c_m" id="newsClassifyTree"></ul>
+                            <input type="hidden" id="newsClassify" name="cnd.newsClassify">
+                        </li>
+                        <li class="">
+                            <h2>公告类型</h2>
+                            <ul class="" id="bulletinClassifyTree"></ul>
+                            <input type="hidden" id="bulletinClassify" name="cnd.bulletinClassify">
+
+                            <h2>板块选择</h2>
+                            <ul class=" " id="bulletinPlateTree"></ul>
+                            <input type="hidden" id="bulletinPlate" name="cnd.bulletinPlateTree">
+                        </li>
+                        <li class="">
+                            <h2>报告类型</h2>
+                            <ul class="" id="reportClassifyTree"></ul>
+                            <input type="hidden" id="reportClassify" name="cnd.reportClassify">
+
+                            <div>
+                                <h2>研报来源</h2>
+                                <ul class="" id="reportOrgTree"></ul>
+                                <input type="hidden" id="reportOrg" name="cnd.reportOrg">
+                            </div>
+                            <div>
+                                <h2>板块选择</h2>
+                                <ul class="" id="reportPlateTree"></ul>
+                                <input type="hidden" id="reportPlate" name="cnd.reportPlateTree">
+                            </div>
+                        </li>
+                        <input type="hidden" id="advanceType" name="cnd.advanceType">
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="share_btn_box">
+        <div class="share_btn">
+            <div class="share_common btn_save" id="btn_save">保存</div>
+            <div class="share_common btn_search">搜索</div>
+            <div class="share_common btn_cancle">重置</div>
+        </div>
+    </div>
+
+    <form action="@{MessageIndexCt.messageIndex(cs)}" id="advanceForm">
+        <input type="hidden" id="advanceId" name="cs.advanceId">
+    </form>
+
+</div>
+<!--搜索设置 End-->
+
+
+<script type="text/javascript">
+
+    var moreType = "${moreType}";
+    var adId = "${advanceId}";
+    var scrollObj = null;
+    $(document).ready(function () {
+        showContent();
+        scrollObj =  new ScrollPage({complete:showContent, getUrl:getLoadUrl, scrollTarget:".p_scroll", appendTarget:"#autoLoadContent", pageNo:2});
+    })
+    function getLoadUrl() {
+        var data = $("#commonSearchForm").serializeArray();
+        var pageNo =   scrollObj.getPageNo();
+        if($.isArray(data)) {
+            data[++data.length] = {"name":"pageNo","value":pageNo}
+        }
+        scrollObj.setData(data);
+        var Route;
+        if(moreType == 1) {
+            Route = "@{MessageIndexCt.moreMessage()}";
+            return Route;
+        } else if(moreType == 2){
+            Route = "@{MessageIndexCt.moreAdvanceSearch()}"
+            return Route;
+        } else {
+            Route = "@{MessageIndexCt.moreDirectAdvanceSearch()}";
+            return Route;
+        }
+    }
+</script>
+
+<div class="research_cont hide" title="研究摘要" style="max-height: 455px;">
+    <div class="research_cont_s"></div>
+</div>
+
+
+<script>
+
+    function showContent() {
+        $(".report").click(function () {
+            var element = $(this);
+            var id = $(this).attr("id");
+           *{var reportCtUrl = #{jsRoute @ReportCt.detail(':reportId')/}}*
+            var reportCtUrl = #{jsRoute @ReportCt.detail()/};
+            $.ajax({
+                url:reportCtUrl.url(),
+                type:"get",
+                dataType:"json",
+                data:{"reportId":id},
+                success:function (data) {
+                    $(".research_cont_s").html("<pre style='word-wrap:break-word'>"+data.summary+"</pre>");
+                    var title = data.title;
+                    if (title.length > 35) {
+                        title = title.substr(0, 35) + "……";
+                    }
+                    $(".ui-dialog-title").html(title);
+                }
+            });
+//                    $.post(reportCtUrl.url({'reportId':id}), null, function (data) {
+//                        $(".research_cont_s").html("<pre style='word-wrap:break-word'>"+data.summary+"</pre>");
+//                        var title = data.title;
+//                        if (title.length > 35) {
+//                            title = title.substr(0, 35) + "……";
+//                        }
+//                        $(".ui-dialog-title").html(title);
+//                    });
+
+            $(".research_cont").dialog({
+                "autoOpen":true,
+                "width":850,
+                "modal":true,
+                "height":455,
+                "resizable":false,
+                position:'center'
+            });
+        });
+
+        $(".news").click(function () {
+            var element = $(this);
+            var id = $(this).attr("id");
+           *{var newsCtUrl = #{jsRoute @MessageIndexCt.getNewsInfo('newsId')/};}*
+            var newsCtUrl = #{jsRoute @MessageIndexCt.getNewsInfo()/};
+            $.ajax({
+                url:newsCtUrl.url(),
+                type:"get",
+                dataType:"json",
+                data:{"newsId":id},
+                success:function (data) {
+                    if(data.filenameExtension!=null&&data.filenameExtension!=""){
+                        var accessOryroute = data.accessOryroute;
+                        var downurl = "'/AttachCt/attachDownload?url="+encodeURIComponent(accessOryroute)+"'"
+                                ;
+                        if(data.filenameExtension=="PDF"){
+                            $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_attachement5'>"+data.fullName+"</div></a>" +
+                                    "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+                        }else if(data.filenameExtension=="DOC"){
+                            $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_fontword'>"+data.fullName+"</div></a>" +
+                                    "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+                        }else{
+                            $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_fujian'>"+data.fullName+"</div></a>" +
+                                    "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+                        }
+                    }else{
+                        $(".research_cont_s").html("" +
+                                "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+                    }
+                    var title = data.title;
+                    if (title.length > 35) {
+                        title = title.substr(0, 35) + "……";
+                    }
+                    $(".ui-dialog-title").html(title);
+                }
+            });
+//                    $.post(newsCtUrl.url({'newsId':id}), null, function (data) {
+//                        if(data.filenameExtension!=null&&data.filenameExtension!=""){
+//                            var accessOryroute = data.accessOryroute;
+//                            var downurl = "'/AttachCt/attachDownload?url="+encodeURIComponent(accessOryroute)+"'"
+//                                    ;
+//                            if(data.filenameExtension=="PDF"){
+//                                $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_attachement5'>"+data.fullName+"</div></a>" +
+//                                        "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+//                            }else if(data.filenameExtension=="DOC"){
+//                                $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_fontword'>"+data.fullName+"</div></a>" +
+//                                        "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+//                            }else{
+//                                $(".research_cont_s").html("<a onclick=javascript:exportFile("+downurl+")  href='javascript:void(0)'><div class='m_fujian'>"+data.fullName+"</div></a>" +
+//                                        "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+//                            }
+//                        }else{
+//                            $(".research_cont_s").html("" +
+//                                    "<pre style='word-wrap:break-word'>" + data.newsContent+"</pre>");
+//                        }
+//                        var title = data.title;
+//                        if (title.length > 35) {
+//                            title = title.substr(0, 35) + "……";
+//                        }
+//                        $(".ui-dialog-title").html(title);
+//                    });
+
+            $(".research_cont").dialog({
+                close:function(){
+                    $(".research_cont_s").html("");
+                    $(".ui-dialog-title").html("");
+                },
+                "autoOpen":true,
+                "width":850,
+                "modal":true,
+                "height":455,
+                "resizable":false,
+                position:'center'
+            });
+        });
+
+
+
+    }
+</script>
+
+<!--自定义时间 Begin-->
+<div class="customdate hide" title="自定义时间">
+    <div class="custom_s_box">
+        <div class="dialog_box newsindex_type custom_s">
+            <label>起始时间:</label>
+
+            <div class="sel_84_dialog" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true})"
+                 id="startTime">
+            #{if !"".equals(cs.startTime)}
+                ${cs.startTime}
+            #{/if}
+            #{else }
+                ${org.apache.commons.lang.time.DateUtils.addMonths(new java.util.Date(), -6).format("yyyy-MM-dd")}
+            #{/else}
+            </div>
+            <label>&nbsp;-&nbsp;</label>
+            <label>结束时间:</label>
+            <div class="sel_84_dialog" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:true,maxDate:'${new java.util.Date().format("yyyy-MM-dd")}'})"
+                 id="endTime">
+            #{if !"".equals(cs.endTime)}
+                ${cs.endTime}
+            #{/if}
+            #{else }
+                ${new java.util.Date().format("yyyy-MM-dd")}
+            #{/else}
+            </div>
+        </div>
+    </div>
+    <div class="share_btn_box">
+        <div class="share_btn share_btn_d">
+            <div class="share_common btn_save" id="saveTime">确定</div>
+            <div class="share_common btn_cancle" id="cancelTime">取消</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //类型过滤条件
+    $("#options_type li").live("click", function(){
+        //filterSubmit();
+
+        $("#commonSearchForm").submit();
+    });
+
+    //发布时间过滤条件
+    $(".sel_date li").live("click", function(){
+        var lastChild = $(this).last().length,
+                index = $(this).index(),
+                length = $(this).parent("ul").find("li").length;
+        if (index == (length - 1)) {
+            $(".customdate").dialog({
+                "autoOpen":true,
+                "width":419,
+                'height':195,
+                "resizable":false,
+                modal:true
+            });
+        } else {
+            //后台处理的地方
+            $("#commonSearchForm").submit();
+        }
+    });
+    //$(".sel_date li").click();
+
+
+    marketNews.tabClick();
+
+    function doOrderAndvanceSearch(advanceId){
+        $("#advanceId2").val(advanceId)
+        $("#searchType").val(2)
+        $("#commonSearchForm").submit();
+    }
+</script>
+
+<!--自定义时间 End-->
+
+<!--关键字搜索 表单提交时校验 start-->
+<script>
+    $("#commonSearch").click(function(){
+        var name = $('.stock_code').val();
+        var reg = new RegExp("^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[a-zA-Z0-9])*$");
+        if(!reg.test(name)){
+            $.qicTips({message:"请输入中文，字母或数字,不能包含空格", level:2, target:".stock_code", mleft:0, mtop:-20});
+            return false ;
+        }
+        $("#searchType").val(1)
+        $("#commonSearchForm").submit();
+    })
+</script>
+<!--关键字搜索 表单提交时校验 end-->

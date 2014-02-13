@@ -1,0 +1,14 @@
+play-thread-1-ERROR-[2013-09-03 11:38:54,864]-play.Logger.niceThrowable(Logger.java:571)-
+
+@6ff8odgf3
+newsct.todaynews？ntToken=9e4fef710c9bff4b3b8539ccc82457ed98f785c33b751f8b11f3ad7a9bc3589c30cb9b87cc15d018a0c72b92126d8d9b action not found
+
+Action not found
+Action newsct.todaynews？ntToken=9e4fef710c9bff4b3b8539ccc82457ed98f785c33b751f8b11f3ad7a9bc3589c30cb9b87cc15d018a0c72b92126d8d9b could not be found. Error raised is No method public static void todaynews？ntToken=9e4fef710c9bff4b3b8539ccc82457ed98f785c33b751f8b11f3ad7a9bc3589c30cb9b87cc15d018a0c72b92126d8d9b() was found in class controllers.newsct
+
+play.exceptions.ActionNotFoundException: Action newsct.todaynews？ntToken=9e4fef710c9bff4b3b8539ccc82457ed98f785c33b751f8b11f3ad7a9bc3589c30cb9b87cc15d018a0c72b92126d8d9b not found
+	at play.mvc.ActionInvoker.getActionMethod(ActionInvoker.java:610)
+	at play.mvc.ActionInvoker.resolve(ActionInvoker.java:85)
+	at Invocation.HTTP Request(Play!)
+Caused by: java.lang.Exception: No method public static void todaynews？ntToken=9e4fef710c9bff4b3b8539ccc82457ed98f785c33b751f8b11f3ad7a9bc3589c30cb9b87cc15d018a0c72b92126d8d9b() was found in class controllers.newsct
+	... 3 more

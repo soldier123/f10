@@ -1,0 +1,46 @@
+<!--sider_news Begin-->
+<div class="dialog_more">
+        <table class="dialog_table_thead">
+        <thead>
+        <tr>
+        <td width="15%">日期</td>
+        <td width="65%">标题</td>
+        <td>来源</td>
+        </tr>
+        </thead>
+        </table>
+        <div class="dialog_scoll">
+        <table class="dialog_table_tbody">
+        <tbody>
+            #{list items:induReportList, as:'item'}
+                    <tr>
+                    <td width="15%">#{emVF item.declareDate, f:"yyyy-MM-dd" /}</td>
+                    <td width="65%"><a href="javascript:void(0)" data-url="@{MessageCombinationCt.fetchReportSummary(item.reportId)}" data-title="#{cutStr item.title, len:50 /}" class="newstd" >#{emVF item.title/}</a></td>
+                    <td>#{emVF item.institutionName/}</td>
+                    </tr>
+            #{/list}
+        </tbody>
+        </table>
+        </div>
+        </div>
+    <!--sider_news End-->
+        <script>
+        new ScrollPage({
+            scrollTarget:".dialog_scoll",
+            appendTarget:".dialog_table_tbody",
+            getUrl:getQueryUrl,
+            pageNo:2,
+            data:{"scodeStr":$("#scodes").val(), "pageNo":2},
+            complete:registerDialog
+        });
+function getQueryUrl() {
+    var url = "@{MessageCombinationCt.moreInduReportList()}";
+    return url;
+}
+
+        </script>
+
+
+
+
+

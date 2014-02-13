@@ -1,0 +1,14 @@
+#{extends 'main.html'/}
+
+#{set 'moreStyles'}
+<link href="@{'/public/style/global-f10.css'}" rel="stylesheet" type="text/css">
+<style>
+html, body{ background-color:#000; color:#b1b1b1; }
+.tbl_common td{ min-width:80px; max-width:320px;}
+table{ max-height:500px;}
+.tbl_common td, .tbl_common th{ padding:0 2px;}
+.tbl_wrap{ max-height:405px; overflow:auto;}
+</style>
+#{/set}
+
+#{doLayout /}

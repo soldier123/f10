@@ -1,0 +1,341 @@
+#{extends 'main.html' /}
+#{set title:'今日头条' /}
+
+#{set 'moreStyles'}
+<link rel="stylesheet" type="text/css" href="@{'/public/style/global-marketnews.css'}">
+<link rel="stylesheet" type="text/css" href="@{'/public/style/scroll-page.css'}">
+<link rel="stylesheet" type="text/css" href="@{'public/style/qic-dialog.css'}">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.9.1.custom.css'}" rel="stylesheet">
+<link href="@{'/public/style/ui-lightness/jquery-ui-1.10.1.custom.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip Begin-->
+<link href="@{'/public/style/tooltip/jquery.ui.tooltips.css'}" rel="stylesheet" type="text/css">
+<!--jqueryUI tootip End-->
+
+<style type="text/css">
+    .cndSelected {
+        background-color: #6ca9e1;
+    }
+
+    .c_detail{height: 555px; overflow: auto; word-wrap:break-word}
+    .cont_title{ white-space: nowrap;}
+    @media screen and (max-width:900px){
+        .my_subscribe{display: none;}
+        h1.cont_title{width:180px; white-space: nowrap;  overflow: hidden; text-overflow: ellipsis;}
+        .c_service span, .report_date{display: none;}
+        .c_service{ display: none;}
+        .c_service span, .report_date{display: none;}
+    }
+
+</style>
+#{/set}
+
+#{set 'moreScripts'}
+<script src="@{'/public/js/jquery.timers.js'}"></script>
+<script src="@{'/public/js/scroll-page.js'}"></script>
+<script src="@{'/public/js/qic-dialog.js'}"></script>
+<script src="@{'/public/js/newsjs/news.js'}"></script>
+<script src="@{'/public/js/jquery-ui-1.9.1.custom.js'}"></script>
+<script src="@{'/public/js/global-marketnews.js'}"></script>
+
+<!--jqueryUI tootip Begin-->
+<script src="@{'/public/js/tooltip/jquery.ui.tooltip.js'}" type="text/javascript" charset="utf-8"></script>
+<!--jqueryUI tootip End-->
+
+<script>
+    //注册tooltip事件
+    $(function() {
+        registToolTip();
+    });
+    function registToolTip(){
+        $(".tooltip").tooltip({
+            track: true
+        });
+    }
+</script>
+
+#{/set}
+
+<!--sider_news Begin-->
+<div class="sider_news">
+        <table width="100%" style="position: fixed; width: 434px; margin-top: 15px;" class="tbl_news bl_news_hide" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th width="58%">标题</th>
+                <th width="12%">时间</th>
+                <th width="30%" align="left">&nbsp;&nbsp;来源</th>
+            </tr>
+            </table>
+    <div id="news_list" class="news_list">
+        <table width="100%" id="tb_news" class="tbl_news" border="0" cellspacing="0" cellpadding="0">
+            <tr style="display: none;" id="loadNews">
+                <td width="100%" colspan="3" align="center"></td>
+            </tr>
+        #{list items:newsList ,as:'item'}
+            <tr>
+                <td width="57%"><a href="javascript:fun(${item.newsId})" id="news${item.newsId}" #{if item.title.length()>16} title="#{emVF item.title/}" #{/if} class="news_a tooltip">#{subString v : item.title,l:16/}</a></td>
+                <td  width="12%" align="center">#{emVF item.declareDate ,f:'HH:mm'/}</td>
+                <td width="31%"><div class="news_source">${item.newsSource}</div></td>
+            </tr>
+            #{/list}
+            #{else}
+            <tr>
+                <td colspan="3"> 共搜索到0条记录 </td>
+            </tr>
+            #{/else}
+        </table>
+    </div>
+</div>
+<!--sider_news End-->
+    
+<!--folder Begin-->
+<div class="folder folder_2" id="folder" title="折叠菜单">
+    <div class="folder_tips_hide">&nbsp;</div>
+</div>
+<!--folder End-->
+    
+<div class="main">
+    <div class="main_wrap">
+        <!--search_code Begin-->
+        <div class="search_code">
+            <form action="@{NewsCt.todayNews()}" method="get" id="infoForm">
+                <input type="text" name="content" value="${content}"  placeholder="关键字/证券代码" class="stock_code" maxlength="38">
+                <input type="submit" class="code_btn" id="codeBtn">
+            </form>
+            <div class="my_subscribe">
+                <div class="dialog_box">
+                    <div id="select_info_year1_2" class="sel_84_dialog sel_subscribe">&nbsp;</div>
+                    <ul id="options_year1_2" class="sel_91_option sel_subscribe_opt" style="display:none;">
+                    #{list items:utList, as:'item'}
+                        <li id="utt_${item.id}"><a style="display:block;width: 100%" href="@{NewsCt.orderNews()}?id=${item.id}"  #{if item.name.length()>4} title="${item.name}"#{/if} class="tooltip">#{subString v : item.name,l:4/}</a></li>
+                    #{/list}
+                        <li data-value="10">编辑订阅</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--search_code End-->
+        <div class="content" id="newsDetail">
+            <h1 class="cont_title tooltip"  #{if newsInfo.title.length()>38} title="#{emVF newsInfo.title/}" #{/if} >#{subString v : newsInfo.title,l:38/}</h1>
+            <div class="sub_title">
+                <span class="c_source">#{emVF newsInfo.newsSource/}</span>
+                <span class="author">#{emVF newsInfo.autor/}</span>
+                <span class="report_date">#{emVF newsInfo.declareDate,f:'yyyy-MM-dd HH:mm'/}</span>
+                <div class="c_service">
+                    #{if newsInfo.newsContent!=null}
+                    <a onclick="javascript:exportFile('@{NewsCt.exportNews(newsInfo.newsId)}')" href="javascript:void(0)"><span title="导出word" class="c_word tooltip" > 导出word</span></a>
+                        <span  title="打印"  class="c_print tooltip" > 打印</span>
+                    #{/if}
+
+                </div>
+            </div>
+
+            <div class="c_detail">
+            #{list items:nadlist, as:'item'}
+                #{if item.filenameExtension.equals("PDF")}
+                    <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_attachement5">${item.fullName}</div></a>
+                #{/if}
+                #{elseif item.filenameExtension.equals("DOC")}
+                    <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_fontword">${item.fullName}</div></a>
+                #{/elseif}
+                #{else }
+                    <a onclick="javascript:exportFile('@{AttachCt.attachDownload(item.accessOryroute)}')" href="javascript:void(0)"><div class="m_fujian">${item.fullName}</div></a>
+                #{/else}
+            #{/list}
+            #{if newsInfo.newsContent!=null&&!"null".equals(newsInfo.newsContent)}
+                <pre>${newsInfo.newsContent}</pre>
+                <br>
+            #{/if}
+            #{elseif nadlist==null && nadlist.size()<0}
+                内容和附件都为空<br>
+            #{/elseif}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+        var id = '${id}';
+
+        new ScrollPage({
+            scrollTarget:".news_list",
+            appendTarget:"#tb_news",
+            pageNo:2,
+            complete:registToolTip,
+        getUrl:getQueryUrl
+        });
+
+
+function getQueryUrl(){
+
+    if (id != "") {
+        var url = "@{NewsCt.advanceMoreNews(id)}";
+    }
+    else {
+        var url = "@{NewsCt.moreNews(content)}";
+    }
+    return url;
+}
+
+//今日头条 内容高度实时变化
+marketNews.contentResize(".c_detail", 240);
+marketNews.mySubscribe(); //我的订阅
+
+
+</script>
+
+<!--我的订阅 Begin-->
+<div class="mysubcribe_box hide" title="我的订阅">
+    <form id="newsForm" action="" onsubmit="return false;">
+    	<div class="subscribe_list">
+            <div class="order_list">
+            	<h2>订阅列表<span class="subscribe_add">订阅添加</span></h2>
+                <div class="border_subscribe">
+                    <ul class="list_c" id="ut_ul_list">
+                    #{list items:utList, as:'ut'}
+                        <li id="ut_${ut.id}" style="cursor: pointer" mytitle="${ut.name}" class="ut_li_text tooltip" #{if ut.name.length()>7}title="${ut.name}"#{/if} >#{subString v:ut.name,l:7/}<span class="for_remove_item"></span></li>
+                    #{/list}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="news_source_m">
+        	    <h2>新闻来源</h2>
+                <div class="border_subscribe">
+            	    <ul class="list_c list_c_m">
+                	    <li><input type="checkbox" name="source" value="easy-forex"><span class="for_left">easy-forex</span></li>
+                        <li><input type="checkbox" name="source" value="FBS"><span class="for_left">FBS</span></li>
+                        <li><input type="checkbox" name="source" value="FT中文网"><span class="for_left">FT中文网</span></li>
+                        <li><input type="checkbox" name="source" value="FxPro"><span class="for_left">FxPro</span></li>
+                        <li><input type="checkbox" name="source" value="GMI"><span class="for_left">GMI</span></li>
+                        <li><input type="checkbox" name="source" value="IFX"><span class="for_left">IFX</span></li>
+                        <li><input type="checkbox" name="source" value="NordFX"><span class="for_left">NordFX</span></li>
+                        <li><input type="checkbox" name="source" value="ThinkForex"><span class="for_left">ThinkForex</span></li>
+                        <li><input type="checkbox" name="source" value="Trading Point"><span class="for_left">Trading Point</span></li>
+                        <li><input type="checkbox" name="source" value="XTB"><span class="for_left">XTB</span></li>
+                        <li><input type="checkbox" name="source" value="长江商报"><span class="for_left">长江商报</span></li>
+                        <li><input type="checkbox" name="source" value="成都商报"><span class="for_left">成都商报</span></li>
+                        <li><input type="checkbox" name="source" value="第一财经日报"><span class="for_left">第一财经日报</span></li>
+                        <li><input type="checkbox" name="source" value="观点地产网"><span class="for_left">观点地产网</span></li>
+                        <li><input type="checkbox" name="source" value="国际金融报"><span class="for_left">国际金融报</span></li>
+                        <li><input type="checkbox" name="source" value="华西都市报"><span class="for_left">华西都市报</span></li>
+                        <li><input type="checkbox" name="source" value="环球外汇网"><span class="for_left">环球外汇网</span></li>
+                        <li><input type="checkbox" name="source" value="金融投资报"><span class="for_left">金融投资报</span></li>
+                        <li><input type="checkbox" name="source" value="巨潮网（www.cninfo.com.cn）"><span class="for_left">巨潮网（www.cninfo.com.cn）</span></li>
+                        <li><input type="checkbox" name="source" value="每日经济新闻"><span class="for_left">每日经济新闻</span></li>
+                        <li><input type="checkbox" name="source" value="全景网"><span class="for_left">全景网</span></li>
+                        <li><input type="checkbox" name="source" value="人民日报"><span class="for_left">人民日报</span></li>
+                        <li><input type="checkbox" name="source" value="上海证券报"><span class="for_left">上海证券报</span></li>
+                        <li><input type="checkbox" name="source" value="深圳商报"><span class="for_left">深圳商报</span></li>
+                        <li><input type="checkbox" name="source" value="新华网"><span class="for_left">新华网</span></li>
+                        <li><input type="checkbox" name="source" value="新浪财经"><span class="for_left">新浪财经</span></li>
+                        <li><input type="checkbox" name="source" value="证券日报"> <span class="for_left">证券日报</span></li>
+                        <li><input type="checkbox" name="source" value="证券时报"><span class="for_left">证券时报</span></li>
+                        <li><input type="checkbox" name="source" value="中国广播网"><span class="for_left">中国广播网</span></li>
+                        <li><input type="checkbox" name="source" value="中国经济时报"><span class="for_left">中国经济时报</span></li>
+                        <li><input type="checkbox" name="source" value="中国新闻网"><span class="for_left">中国新闻网</span></li>
+                        <li><input type="checkbox" name="source" value="中国证券报"><span class="for_left">中国证券报 </span></li>
+                        <li><input type="checkbox" name="source" value="中华工商时报"><span class="for_left">中华工商时报</span></li>
+                        <li><input type="checkbox" name="source" value="重庆商报"><span class="for_left">重庆商报</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="news_type">
+        	    <h2>新闻类型</h2>
+                <div class="border_subscribe">
+                    <ul class="list_c list_c_m">
+                        <li><input type="checkbox" name="newsClass" value="1"><span class="for_left">宏观经济</span></li>
+                        <li><input type="checkbox" name="newsClass" value="2"><span class="for_left">政策动向</span></li>
+                        <li><input type="checkbox" name="newsClass" value="3"><span class="for_left">市场动态</span></li>
+                        <li><input type="checkbox" name="newsClass" value="4"><span class="for_left">产业新闻</span></li>
+                        <li><input type="checkbox" name="newsClass" value="5"><span class="for_left">公司动态</span></li>
+                        <li><input type="checkbox" name="newsClass" value="6"><span class="for_left">基金要闻</span></li>
+                        <li><input type="checkbox" name="newsClass" value="7"><span class="for_left">债券要闻</span></li>
+                        <li><input type="checkbox" name="newsClass" value="8"><span class="for_left">外汇期货</span></li>
+                        <li><input type="checkbox" name="newsClass" value="9"><span class="for_left">全球市场</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+        <div class="share_btn_box">
+            <div class="share_btn">
+                <div class="share_common btn_save" id="savebtn">保存</div>
+                <div class="share_common btn_cancle" id="btn_cancle">重置</div>
+            </div>
+        </div>
+
+</div>
+<!--我的订阅 End-->
+
+<script>
+    var againLoadNewsRoute = #{jsRoute @NewsCt.examineNews() /};
+    var  maxDate = "${maxDate}";
+    function againLoadNews(){
+        $.ajax({
+            url:againLoadNewsRoute.url(),
+            data:{"date":maxDate},
+            type:"post",
+            dataType:"json",
+            success:function (data) {
+                 if(data.success){
+                   $('#loadNews td').html("<a href='javascript:onReLoad()'>"+data.content+"</a>")
+                   $('#loadNews').show()
+                 }
+
+            }
+        });
+    }
+    $('body').everyTime('20s',againLoadNews);
+
+    function onReLoad(){
+        window.location.reload();
+    }
+
+
+//取新闻内容
+var contentRoute = #{jsRoute @NewsCt.ajaxRefreshContent() /};
+function fun(id){
+    $.ajax({
+        url:contentRoute.url(),
+        data: {newsId:id},
+        type:"GET",
+        dataType:"HTML",
+        success:function (html) {
+            $("#newsDetail").html(html);
+            $("#news"+id).css("color","rgb(117, 117, 114);");
+            registToolTip();
+            marketNews.contentResize(".c_detail", 240);
+        }
+    });
+}
+
+//订阅条件处理
+var delCondRoute = #{jsRoute @NewsCt.delCndNews() /};  //删除url
+var checkOrderName = #{jsRoute @NewsCt.findSubByName()/};//验证订阅名是否重复
+var addNewOrder = #{jsRoute @NewsCt.addNewsCnd()/}; //保存新闻订阅
+var editNewsOrder = #{jsRoute @NewsCt.editNewsCnd()/};   //修改新闻订阅信息
+var utMap = {}; //新建一个空对象 new Object()
+var utName = {};
+#{list items:utList, as:'ut'}
+utMap['${ut.id}'] = ${ut.content.raw()};
+utName['${ut.id}'] = '${ut.name}';
+#{/list}
+var cndType = 103;
+
+    //调用打印预览
+    $(".c_print").live("click", function(){
+        window.print();
+    })
+
+
+</script>
+<style type="text/css">
+        /*内容栏框架*/
+    .sider_news, .main{  margin-bottom:20px; overflow-y:auto;  overflow-x:hidden; position:relative; width:100%; height:100%; overflow: hidden;}
+    .sider_news{ width:434px; z-index:2;  position: absolute; left: 0; top:0; }
+    .main_wrap{ margin-left:460px; z-index:1; left: 460px; top: 0;}
+    #tb_news td { height:32px; line-height: 32px; }
+    #news_list{  overflow: scroll;height: inherit; margin-top: 27px;}
+</style>
